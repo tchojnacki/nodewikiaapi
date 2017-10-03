@@ -6,7 +6,7 @@
  */
 class WikiaAPI {
   constructor (url) {
-    if (url === undefined) {
+    if (!url) {
       throw new Error('Argument \'url\' is required')
     }
     this.url = url

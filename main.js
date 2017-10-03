@@ -1,11 +1,15 @@
 'use strict'
 
 /**
- * Node.js wrapper for Wikia API V1
+ * Main class
+ * @param {string} url - Wiki url, for example "dev" or "pl.community"
  */
 class WikiaAPI {
-  constructor () {
-    console.log('test')
+  constructor (url) {
+    if (url === undefined) {
+      throw new Error('Argument \'url\' is required')
+    }
+    this.url = url
   }
 }
 

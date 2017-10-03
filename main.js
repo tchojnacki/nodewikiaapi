@@ -1,7 +1,7 @@
 'use strict'
 
 /**
- * Node.js wrapper for Wikia API
+ * Node.js wrapper for Wikia API V1
  */
 class WikiaAPI {
   constructor () {

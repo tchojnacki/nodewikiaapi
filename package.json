@@ -1,0 +1,16 @@
+{
+  "name": "nodewikiaapi",
+  "version": "1.0.0",
+  "description": "Node.js wrapper for Wikia API",
+  "main": "main.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tchojnacki/nodewikiaapi.git"
+  },
+  "author": "tchojnacki",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tchojnacki/nodewikiaapi/issues"
+  },
+  "homepage": "https://github.com/tchojnacki/nodewikiaapi#readme"
+}

@@ -24,7 +24,7 @@
 <label for="nav-trigger" class="overlay"></label>
 
 <nav>
-    <li class="nav-link nav-home-link"><a href="index.html">Home</a></li><li class="nav-heading">Classes</li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="WikiaAPI.html">WikiaAPI</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="WikiaAPI.html#getLatestActivity">getLatestActivity</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="WikiaAPI.html#getRecentlyChangedArticles">getRecentlyChangedArticles</a></span></li>
+    <li class="nav-link nav-home-link"><a href="index.html">Home</a></li><li class="nav-heading">Classes</li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="WikiaAPI.html">WikiaAPI</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="WikiaAPI.html#getArticlesAsSimpleJson">getArticlesAsSimpleJson</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="WikiaAPI.html#getLatestActivity">getLatestActivity</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="WikiaAPI.html#getRecentlyChangedArticles">getRecentlyChangedArticles</a></span></li>
 </nav>
 
 <div id="main">
@@ -45,7 +45,7 @@
         WikiaAPI
         </h2>
         
-            <div class="class-description">Class representing WikiaAPI V1</div>
+            <div class="class-description"><p>Class representing WikiaAPI V1</p></div>
         
     
 </header>
@@ -160,7 +160,7 @@
             
 
             <td class="description last">
-                Subdomain, for example "dev" or "pl.community"
+                <p>Subdomain, for example &quot;dev&quot; or &quot;pl.community&quot;</p>
                 
             </td>
         </tr>
@@ -210,7 +210,7 @@
 
 
 <div class="description">
-    Subdomain, for example "dev" or "pl.community"
+    <p>Subdomain, for example &quot;dev&quot; or &quot;pl.community&quot;</p>
 </div>
 
 
@@ -253,6 +253,13 @@
     
 
     
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><p><a href="http://community.wikia.com/wiki/Help:URL">Help:URL</a> on Community Central</p></li>
+        </ul>
+    </dd>
+    
 
     
 </dl>
@@ -284,7 +291,7 @@
 
 
 <div class="description">
-    Basepath of Wikia API V1 for given subdomain
+    <p>Basepath of Wikia API V1 for given subdomain</p>
 </div>
 
 
@@ -320,7 +327,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="main.js.html">main.js</a>, <a href="main.js.html#line106">line 106</a>
+        <a href="main.js.html">main.js</a>, <a href="main.js.html#line134">line 134</a>
     </li></ul></dd>
     
 
@@ -361,14 +368,14 @@
 
     
 
-    <h4 class="name" id="getLatestActivity"><span class="type-signature"></span>getLatestActivity<span class="signature">(limit, namespaces, allowDuplicates<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Promise.&lt;Object, Error>}</span></h4>
+    <h4 class="name" id="getArticlesAsSimpleJson"><span class="type-signature"></span>getArticlesAsSimpleJson<span class="signature">(id)</span><span class="type-signature"> &rarr; {Promise.&lt;Object, Error>}</span></h4>
 
     
 
 
 
 <div class="description">
-    Get latest activity information
+    <p>Get simplified article contents</p>
 </div>
 
 
@@ -404,7 +411,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="main.js.html">main.js</a>, <a href="main.js.html#line34">line 34</a>
+        <a href="main.js.html">main.js</a>, <a href="main.js.html#line118">line 118</a>
     </li></ul></dd>
     
 
@@ -414,7 +421,176 @@
     <dt class="tag-see">See:</dt>
     <dd class="tag-see">
         <ul>
-            <li><a href="http://dev.wikia.com/api/v1#!/Activity/getLatestActivity_get_0">Wikia API Documentation</a></li>
+            <li><p><a href="http://dev.wikia.com/api/v1#!/Articles/getAsSimpleJson_get_0">Wikia API Documentation</a></p></li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>id</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>number</code></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                <p>A single article ID</p>
+                
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="section-returns">
+<h5>Returns:</h5>
+
+        
+
+<dl class="param-type">
+    <dt>
+        Type:
+    </dt>
+    <dd>
+        
+<span class="param-type"><code>Promise.&lt;Object, Error></code></span>
+
+
+    </dd>
+</dl>
+
+
+<div class="param-desc">
+    <ul>
+<li>A Promise with an Object containing simple article data on fulfil, and Error on rejection</li>
+</ul>
+</div>
+
+    
+</div>
+
+
+
+</div>
+        
+            
+<div class="section-method">
+
+    
+
+    <h4 class="name" id="getLatestActivity"><span class="type-signature"></span>getLatestActivity<span class="signature">(limit, namespaces, allowDuplicates<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Promise.&lt;Object, Error>}</span></h4>
+
+    
+
+
+
+<div class="description">
+    <p>Get latest activity information</p>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="main.js.html">main.js</a>, <a href="main.js.html#line36">line 36</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><p><a href="http://dev.wikia.com/api/v1#!/Activity/getLatestActivity_get_0">Wikia API Documentation</a></p></li>
         </ul>
     </dd>
     
@@ -488,7 +664,7 @@
             
 
             <td class="description last">
-                Limit the number of results
+                <p>Limit the number of results</p>
                 
             </td>
         </tr>
@@ -529,7 +705,7 @@
             
 
             <td class="description last">
-                Array of namespace ids or a single namespace id, see more: <a href="http://community.wikia.com/wiki/Help:Namespaces">http://community.wikia.com/wiki/Help:Namespaces</a>
+                <p>Array of namespace ids or a single namespace id, see more: <a href="http://community.wikia.com/wiki/Help:Namespaces">http://community.wikia.com/wiki/Help:Namespaces</a></p>
                 
             </td>
         </tr>
@@ -571,7 +747,7 @@
             
 
             <td class="description last">
-                Set if duplicate values of an article's revisions made by the same user are not allowed
+                <p>Set if duplicate values of an article's revisions made by the same user are not allowed</p>
                 
             </td>
         </tr>
@@ -612,7 +788,7 @@
 
 
 <div class="param-desc">
-    A Promise with an Object containing latest activity on fulfil, and Error on rejection
+    <p>A Promise with an Object containing latest activity on fulfil, and Error on rejection</p>
 </div>
 
     
@@ -634,7 +810,7 @@
 
 
 <div class="description">
-    Get recently changed articles
+    <p>Get recently changed articles</p>
 </div>
 
 
@@ -670,7 +846,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="main.js.html">main.js</a>, <a href="main.js.html#line76">line 76</a>
+        <a href="main.js.html">main.js</a>, <a href="main.js.html#line78">line 78</a>
     </li></ul></dd>
     
 
@@ -680,7 +856,7 @@
     <dt class="tag-see">See:</dt>
     <dd class="tag-see">
         <ul>
-            <li><a href="http://dev.wikia.com/api/v1#!/Activity/getRecentlyChangedArticles_get_1">Wikia API Documentation</a></li>
+            <li><p><a href="http://dev.wikia.com/api/v1#!/Activity/getRecentlyChangedArticles_get_1">Wikia API Documentation</a></p></li>
         </ul>
     </dd>
     
@@ -754,7 +930,7 @@
             
 
             <td class="description last">
-                Limit the number of results
+                <p>Limit the number of results</p>
                 
             </td>
         </tr>
@@ -795,7 +971,7 @@
             
 
             <td class="description last">
-                Array of namespace ids or a single namespace id, see more: <a href="http://community.wikia.com/wiki/Help:Namespaces">http://community.wikia.com/wiki/Help:Namespaces</a>
+                <p>Array of namespace ids or a single namespace id, see more: <a href="http://community.wikia.com/wiki/Help:Namespaces">http://community.wikia.com/wiki/Help:Namespaces</a></p>
                 
             </td>
         </tr>
@@ -837,7 +1013,7 @@
             
 
             <td class="description last">
-                Set if duplicate values of an article's revisions made by the same user are not allowed
+                <p>Set if duplicate values of an article's revisions made by the same user are not allowed</p>
                 
             </td>
         </tr>
@@ -878,7 +1054,7 @@
 
 
 <div class="param-desc">
-    A Promise with an Object containing recently changed articles on fulfil, and Error on rejection
+    <p>A Promise with an Object containing recently changed articles on fulfil, and Error on rejection</p>
 </div>
 
     
@@ -905,7 +1081,7 @@
 <br class="clear">
 
 <footer>
-    Generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Wed Oct 04 2017 19:48:22 GMT+0200 (Środkowoeuropejski czas letni) using the Minami theme.
+    Generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Wed Oct 04 2017 20:17:11 GMT+0200 (Środkowoeuropejski czas letni) using the Minami theme.
 </footer>
 
 <script>prettyPrint();</script>

@@ -1,9 +1,13 @@
 {
   "source": {
-    "include": ["main.js"]
+    "include": ["main.js", "README.md"]
   },
   "opts": {
-    "template": "node_modules/docdash",
+    "template": "node_modules/minami",
     "destination": "./docs/"
+  },
+  "tags": {
+    "allowUnknownTags": true,
+    "dictionaries": ["jsdoc", "closure"]
   }
 }

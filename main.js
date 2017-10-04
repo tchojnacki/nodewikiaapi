@@ -13,6 +13,8 @@ class WikiaAPI {
     }
     /**
      * Subdomain, for example "dev" or "pl.community"
+     * @see [Help:URL]{@link http://community.wikia.com/wiki/Help:URL} on Community Central
+     *
      * @name WikiaAPI#subdomain
      * @type {string}
      */
@@ -95,8 +97,34 @@ class WikiaAPI {
         limit: limit,
         namespaces: ns.join(','),
         allowDuplicates: allowDuplicates
-      }).then(response => {
-        resolve(response)
+      }).then(body => {
+        resolve(body)
+      }).catch(error => {
+        reject(error)
+      })
+    })
+  }
+
+  /**
+   * Get simplified article contents
+   * @see [Wikia API Documentation]{@link http://dev.wikia.com/api/v1#!/Articles/getAsSimpleJson_get_0}
+   *
+   * @param {number} id - A single article ID
+   * @return {Promise<Object, Error>} - A Promise with an Object containing simple article data on fulfil, and Error on rejection
+   *
+   * @instance
+   * @memberof WikiaAPI
+   */
+  getArticleAsSimpleJson (id) {
+    if (isNaN(id)) {
+      throw new Error('Argument \'id\' is required')
+    }
+
+    return new Promise((resolve, reject) => {
+      this._makeRequest('Articles/AsSimpleJson', {
+        id: id
+      }).then(body => {
+        resolve(body)
       }).catch(error => {
         reject(error)
       })

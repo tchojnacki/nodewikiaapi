@@ -34,3 +34,16 @@ test('ArticleAsSimpleJson should catch on 404', () => {
     expect(error.statusCode).toBe(404)
   })
 })
+
+test('ArticlesDetails must return an object', () => {
+  expect.assertions(1)
+  return new WikiaAPI('dev').getArticlesDetails(12649).then(data => {
+    expect(typeof data).toBe('object')
+  })
+})
+
+test('ArticlesDetails needs at least one generator', () => {
+  expect(() => {
+    new WikiaAPI('dev').getArticlesDetails()
+  }).toThrow()
+})

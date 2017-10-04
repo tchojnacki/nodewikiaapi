@@ -24,7 +24,7 @@
 <label for="nav-trigger" class="overlay"></label>
 
 <nav>
-    <li class="nav-link nav-home-link"><a href="index.html">Home</a></li><li class="nav-heading">Classes</li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="WikiaAPI.html">WikiaAPI</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="WikiaAPI.html#getArticleAsSimpleJson">getArticleAsSimpleJson</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="WikiaAPI.html#getLatestActivity">getLatestActivity</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="WikiaAPI.html#getRecentlyChangedArticles">getRecentlyChangedArticles</a></span></li>
+    <li class="nav-link nav-home-link"><a href="index.html">Home</a></li><li class="nav-heading">Classes</li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="WikiaAPI.html">WikiaAPI</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="WikiaAPI.html#getArticleAsSimpleJson">getArticleAsSimpleJson</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="WikiaAPI.html#getArticlesDetails">getArticlesDetails</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="WikiaAPI.html#getLatestActivity">getLatestActivity</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="WikiaAPI.html#getRecentlyChangedArticles">getRecentlyChangedArticles</a></span></li>
 </nav>
 
 <div id="main">
@@ -246,7 +246,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="main.js.html">main.js</a>, <a href="main.js.html#line141">line 141</a>
+        <a href="main.js.html">main.js</a>, <a href="main.js.html#line189">line 189</a>
     </li></ul></dd>
     
 
@@ -401,7 +401,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="main.js.html">main.js</a>, <a href="main.js.html#line128">line 128</a>
+        <a href="main.js.html">main.js</a>, <a href="main.js.html#line176">line 176</a>
     </li></ul></dd>
     
 
@@ -601,6 +601,336 @@
 
     
 </div>
+
+
+
+</div>
+        
+            
+<div class="section-method">
+
+    
+
+    <h4 class="name" id="getArticlesDetails"><span class="type-signature"></span>getArticlesDetails<span class="signature">(ids, titles<span class="signature-attributes">opt</span>, abstract<span class="signature-attributes">opt</span>, width<span class="signature-attributes">opt</span>, height<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    <p>Get details about one or more articles</p>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="main.js.html">main.js</a>, <a href="main.js.html#line138">line 138</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><p><a href="http://dev.wikia.com/api/v1#!/Articles/getDetails_get_1">Wikia API Documentation</a></p></li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>ids</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>Array.&lt;number></code></span>
+|
+
+<span class="param-type"><code>number</code></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last">
+                <p>An Array of article ids or a single article id, pass -1 if you want to search only using titles</p>
+                
+            </td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>titles</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>Array.&lt;string></code></span>
+|
+
+<span class="param-type"><code>string</code></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last">
+                <p>An Array of article titles or a single article title, can be used alongside ids</p>
+                
+            </td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>abstract</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>number</code></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    100
+                
+                </td>
+            
+
+            <td class="description last">
+                <p>The desired length for the article's abstract</p>
+                
+            </td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>width</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>number</code></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    200
+                
+                </td>
+            
+
+            <td class="description last">
+                <p>The desired width for the thumbnail</p>
+                
+            </td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>height</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>number</code></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    200
+                
+                </td>
+            
+
+            <td class="description last">
+                <p>The desired height for the thumbnail</p>
+                
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1171,7 +1501,7 @@
 <br class="clear">
 
 <footer>
-    Generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Wed Oct 04 2017 20:29:09 GMT+0200 (Środkowoeuropejski czas letni) using the Minami theme.
+    Generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Wed Oct 04 2017 21:27:25 GMT+0200 (Środkowoeuropejski czas letni) using the Minami theme.
 </footer>
 
 <script>prettyPrint();</script>

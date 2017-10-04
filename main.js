@@ -25,20 +25,17 @@ class WikiaAPI {
    * Get latest activity information
    * @see [Wikia API Documentation]{@link http://dev.wikia.com/api/v1#!/Activity/getLatestActivity_get_0}
    *
-   * @param {number} limit - Limit the number of results
-   * @param {(number[]|number)} namespaces - Array of namespace ids or a single namespace id, see more: {@link http://community.wikia.com/wiki/Help:Namespaces}
+   * @param {number} [limit=10] - Limit the number of results
+   * @param {(number[]|number)} [namespaces=0] - Array of namespace ids or a single namespace id, see more: {@link http://community.wikia.com/wiki/Help:Namespaces}
    * @param {boolean} [allowDuplicates=true] - Set if duplicate values of an article's revisions made by the same user are not allowed
    * @return {Promise<Object, Error>} A Promise with an Object containing latest activity on fulfil, and Error on rejection
    *
    * @instance
    * @memberof WikiaAPI
    */
-  getLatestActivity (limit, namespaces, allowDuplicates = true) {
+  getLatestActivity (limit = 10, namespaces = 0, allowDuplicates = true) {
     if (isNaN(limit)) {
-      throw new Error('Argument \'limit\' is required')
-    }
-    if (namespaces === undefined) {
-      throw new Error('Argument \'namespaces\' is required')
+      throw new Error('Argument \'limit\' must be a number')
     }
 
     let ns = []
@@ -67,20 +64,17 @@ class WikiaAPI {
    * Get recently changed articles
    * @see [Wikia API Documentation]{@link http://dev.wikia.com/api/v1#!/Activity/getRecentlyChangedArticles_get_1}
    *
-   * @param {number} limit - Limit the number of results
-   * @param {(number[]|number)} namespaces - Array of namespace ids or a single namespace id, see more: {@link http://community.wikia.com/wiki/Help:Namespaces}
+   * @param {number} [limit=10] - Limit the number of results
+   * @param {(number[]|number)} [namespaces=0] - Array of namespace ids or a single namespace id, see more: {@link http://community.wikia.com/wiki/Help:Namespaces}
    * @param {boolean} [allowDuplicates=true] - Set if duplicate values of an article's revisions made by the same user are not allowed
    * @return {Promise<Object, Error>} A Promise with an Object containing recently changed articles on fulfil, and Error on rejection
    *
    * @instance
    * @memberof WikiaAPI
    */
-  getRecentlyChangedArticles (limit, namespaces, allowDuplicates = true) {
+  getRecentlyChangedArticles (limit = 10, namespaces = 0, allowDuplicates = true) {
     if (isNaN(limit)) {
-      throw new Error('Argument \'limit\' is required')
-    }
-    if (namespaces === undefined) {
-      throw new Error('Argument \'namespaces\' is required')
+      throw new Error('Argument \'limit\' must be a number')
     }
 
     let ns = []

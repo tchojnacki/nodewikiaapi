@@ -24,7 +24,7 @@
 <label for="nav-trigger" class="overlay"></label>
 
 <nav>
-    <li class="nav-link nav-home-link"><a href="index.html">Home</a></li><li class="nav-heading">Classes</li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="WikiaAPI.html">WikiaAPI</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="WikiaAPI.html#getArticlesAsSimpleJson">getArticlesAsSimpleJson</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="WikiaAPI.html#getLatestActivity">getLatestActivity</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="WikiaAPI.html#getRecentlyChangedArticles">getRecentlyChangedArticles</a></span></li>
+    <li class="nav-link nav-home-link"><a href="index.html">Home</a></li><li class="nav-heading">Classes</li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="WikiaAPI.html">WikiaAPI</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="WikiaAPI.html#getArticleAsSimpleJson">getArticleAsSimpleJson</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="WikiaAPI.html#getLatestActivity">getLatestActivity</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="WikiaAPI.html#getRecentlyChangedArticles">getRecentlyChangedArticles</a></span></li>
 </nav>
 
 <div id="main">
@@ -204,6 +204,80 @@
         
             
 <div class="section-members">
+<h4 class="name" id="basepath"><span class="type-signature">(readonly) </span>basepath<span class="type-signature"> :string</span></h4>
+
+
+
+
+<div class="description">
+    <p>Basepath of wiki for given subdomain</p>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="main.js.html">main.js</a>, <a href="main.js.html#line141">line 141</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type"><code>string</code></span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</div>
+
+        
+            
+<div class="section-members">
 <h4 class="name" id="subdomain"><span class="type-signature"></span>subdomain<span class="type-signature"> :string</span></h4>
 
 
@@ -327,7 +401,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="main.js.html">main.js</a>, <a href="main.js.html#line134">line 134</a>
+        <a href="main.js.html">main.js</a>, <a href="main.js.html#line128">line 128</a>
     </li></ul></dd>
     
 
@@ -368,7 +442,7 @@
 
     
 
-    <h4 class="name" id="getArticlesAsSimpleJson"><span class="type-signature"></span>getArticlesAsSimpleJson<span class="signature">(id)</span><span class="type-signature"> &rarr; {Promise.&lt;Object, Error>}</span></h4>
+    <h4 class="name" id="getArticleAsSimpleJson"><span class="type-signature"></span>getArticleAsSimpleJson<span class="signature">(id)</span><span class="type-signature"> &rarr; {Promise.&lt;Object, Error>}</span></h4>
 
     
 
@@ -411,7 +485,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="main.js.html">main.js</a>, <a href="main.js.html#line118">line 118</a>
+        <a href="main.js.html">main.js</a>, <a href="main.js.html#line112">line 112</a>
     </li></ul></dd>
     
 
@@ -537,7 +611,7 @@
 
     
 
-    <h4 class="name" id="getLatestActivity"><span class="type-signature"></span>getLatestActivity<span class="signature">(limit, namespaces, allowDuplicates<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Promise.&lt;Object, Error>}</span></h4>
+    <h4 class="name" id="getLatestActivity"><span class="type-signature"></span>getLatestActivity<span class="signature">(limit<span class="signature-attributes">opt</span>, namespaces<span class="signature-attributes">opt</span>, allowDuplicates<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Promise.&lt;Object, Error>}</span></h4>
 
     
 
@@ -650,6 +724,8 @@
             
                 <td class="attributes">
                 
+                    &lt;optional><br>
+                
 
                 
 
@@ -659,6 +735,8 @@
 
             
                 <td class="default">
+                
+                    10
                 
                 </td>
             
@@ -691,6 +769,8 @@
             
                 <td class="attributes">
                 
+                    &lt;optional><br>
+                
 
                 
 
@@ -700,6 +780,8 @@
 
             
                 <td class="default">
+                
+                    0
                 
                 </td>
             
@@ -803,7 +885,7 @@
 
     
 
-    <h4 class="name" id="getRecentlyChangedArticles"><span class="type-signature"></span>getRecentlyChangedArticles<span class="signature">(limit, namespaces, allowDuplicates<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Promise.&lt;Object, Error>}</span></h4>
+    <h4 class="name" id="getRecentlyChangedArticles"><span class="type-signature"></span>getRecentlyChangedArticles<span class="signature">(limit<span class="signature-attributes">opt</span>, namespaces<span class="signature-attributes">opt</span>, allowDuplicates<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Promise.&lt;Object, Error>}</span></h4>
 
     
 
@@ -846,7 +928,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="main.js.html">main.js</a>, <a href="main.js.html#line78">line 78</a>
+        <a href="main.js.html">main.js</a>, <a href="main.js.html#line75">line 75</a>
     </li></ul></dd>
     
 
@@ -916,6 +998,8 @@
             
                 <td class="attributes">
                 
+                    &lt;optional><br>
+                
 
                 
 
@@ -925,6 +1009,8 @@
 
             
                 <td class="default">
+                
+                    10
                 
                 </td>
             
@@ -957,6 +1043,8 @@
             
                 <td class="attributes">
                 
+                    &lt;optional><br>
+                
 
                 
 
@@ -966,6 +1054,8 @@
 
             
                 <td class="default">
+                
+                    0
                 
                 </td>
             
@@ -1081,7 +1171,7 @@
 <br class="clear">
 
 <footer>
-    Generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Wed Oct 04 2017 20:17:11 GMT+0200 (Środkowoeuropejski czas letni) using the Minami theme.
+    Generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Wed Oct 04 2017 20:29:09 GMT+0200 (Środkowoeuropejski czas letni) using the Minami theme.
 </footer>
 
 <script>prettyPrint();</script>

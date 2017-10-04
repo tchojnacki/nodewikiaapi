@@ -174,7 +174,7 @@ class WikiaAPI {
   }
 
   /**
-   * Basepath of Wikia API V1 for given subdomain
+   * Basepath of Wikia API V1 for given subdomain, for example "http://dev.wikia.com/api/v1/"
    * @name WikiaAPI#url
    * @type {string}
    * @readonly
@@ -187,7 +187,7 @@ class WikiaAPI {
   }
 
   /**
-   * Basepath of wiki for given subdomain
+   * Basepath of wiki for given subdomain, for example "http://dev.wikia.com"
    * @name WikiaAPI#basepath
    * @type {string}
    * @readonly

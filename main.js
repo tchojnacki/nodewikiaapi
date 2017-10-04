@@ -144,6 +144,19 @@ class WikiaAPI {
     throw new Error('Cannot set a read-only property \'url\'')
   }
 
+  /**
+   * Basepath of wiki for given subdomain
+   * @name WikiaAPI#basepath
+   * @type {string}
+   * @readonly
+   */
+  get basepath () {
+    return `http://${this.subdomain}.wikia.com`
+  }
+  set basepath (value) {
+    throw new Error('Cannot set a read-only property \'basepath\'')
+  }
+
   _makeRequest (endpoint, params) {
     return new Promise((resolve, reject) => {
       let query = []

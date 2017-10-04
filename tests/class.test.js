@@ -9,9 +9,24 @@ test('returns correct subdomain', () => {
   expect(new WikiaAPI('dev').subdomain).toBe('dev')
 })
 
+test('can change subdomain', () => {
+  expect((() => {
+    const wikia = new WikiaAPI('dev')
+    wikia.subdomain = 'community'
+    return wikia.subdomain
+  })()).toBe('community')
+})
+
 test('can\'t set url', () => {
   expect(() => {
     const wikia = new WikiaAPI('dev')
-    wikia.url = 'community'
+    wikia.url = 'test'
+  }).toThrow()
+})
+
+test('can\'t set basepath', () => {
+  expect(() => {
+    const wikia = new WikiaAPI('dev')
+    wikia.basepath = 'test'
   }).toThrow()
 })

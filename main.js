@@ -73,23 +73,6 @@ class WikiaAPI {
    * @memberof WikiaAPI
    */
   getRecentlyChangedArticles (limit = 10, namespaces = 0, allowDuplicates = true) {
-    /*
-    if (isNaN(limit)) {
-      throw new Error('Argument \'limit\' must be a number')
-    }
-    */
-
-    /*
-    let ns = []
-    if (Array.isArray(namespaces)) {
-      ns = namespaces
-    } else if (!isNaN(namespaces)) {
-      ns = [namespaces]
-    } else {
-      throw new Error('Argument \'namespaces\' must be a number or array of numbers')
-    }
-    */
-
     return new Promise((resolve, reject) => {
       this._makeRequest('Activity/RecentlyChangedArticles', {
         limit: limit,
@@ -147,26 +130,6 @@ class WikiaAPI {
     if (ids === -1 && titles === '') {
       throw new Error('Argument \'ids\' or \'titles\' should be passed')
     }
-
-    /*
-    let queryIds = []
-    if (Array.isArray(ids)) {
-      queryIds = ids
-    } else if (!isNaN(ids)) {
-      queryIds = [ids]
-    } else {
-      throw new Error('Argument \'ids\' must be a number or array of numbers')
-    }
-
-    let queryTitles = []
-    if (Array.isArray(titles)) {
-      queryTitles = titles
-    } else if (typeof titles === 'string') {
-      queryTitles = [titles]
-    } else {
-      throw new Error('Argument \'titles\' must be a string or array of strings')
-    }
-    */
 
     return new Promise((resolve, reject) => {
       this._makeRequest('Articles/Details', {

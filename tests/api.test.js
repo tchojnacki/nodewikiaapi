@@ -48,3 +48,10 @@ test('ArticlesDetails needs at least one generator', () => {
     new WikiaAPI('dev').getArticlesDetails()
   }).toThrow()
 })
+
+test('ArticlesList must return an object', () => {
+  expect.assertions(1)
+  return new WikiaAPI('dev').getArticlesList().then(data => {
+    expect(typeof data).toBe('object')
+  })
+})

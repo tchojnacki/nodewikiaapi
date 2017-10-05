@@ -160,7 +160,18 @@ class WikiaAPI {
    * @memberof WikiaAPI
    */
   getArticlesList (category = '', namespaces = 0, limit = 25, offset = '!') {
-
+    return new Promise((resolve, reject) => {
+      this._makeRequest('Articles/List', {
+        category: category,
+        namespaces: this._arrayOrSingleElement(namespaces),
+        limit: limit,
+        offset: offset
+      }).then(body => {
+        resolve(body)
+      }).catch(error => {
+        reject(error)
+      })
+    })
   }
 
   /**

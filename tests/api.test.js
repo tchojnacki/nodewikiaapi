@@ -36,9 +36,10 @@ test('ArticleAsSimpleJson should catch on 404', () => {
 })
 
 test('ArticlesDetails must return an object', () => {
-  expect.assertions(1)
+  expect.assertions(2)
   return new WikiaAPI('dev').getArticlesDetails(12649).then(data => {
     expect(typeof data).toBe('object')
+    expect(Object.keys(data.items).length).toBe(1)
   })
 })
 

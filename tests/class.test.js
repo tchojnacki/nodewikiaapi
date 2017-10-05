@@ -1,3 +1,6 @@
+/* global test, expect */
+/* eslint no-new: 0 */
+
 const WikiaAPI = require('../main')
 
 test('must have a subdomain', () => {

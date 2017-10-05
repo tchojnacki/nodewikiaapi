@@ -1,3 +1,5 @@
+/* global test, expect */
+
 const WikiaAPI = require('../main')
 
 test('limit is working', () => {

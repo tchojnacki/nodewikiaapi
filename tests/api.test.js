@@ -55,3 +55,19 @@ test('ArticlesList must return an object', () => {
     expect(typeof data).toBe('object')
   })
 })
+
+test('ArticlesListExpanded must return an object', () => {
+  expect.assertions(1)
+  return new WikiaAPI('dev').getArticlesListExpanded().then(data => {
+    expect(typeof data).toBe('object')
+  })
+})
+
+test('ArticlesList and ArticlesListExpanded must return same articles', () => {
+  expect.assertions(1)
+
+  const wikia = new WikiaAPI('dev')
+  return Promise.all([wikia.getArticlesList(), wikia.getArticlesListExpanded()]).then(data => {
+    expect(Object.keys(data[0].items)).toEqual(Object.keys(data[1].items))
+  })
+})

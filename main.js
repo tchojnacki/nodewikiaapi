@@ -153,7 +153,7 @@ class WikiaAPI {
    * @param {string} [category] - Return only articles belonging to the provided valid category title
    * @param {(number[]|number)} [namespaces=0] - Array of namespace ids or a single namespace id, see more: {@link http://community.wikia.com/wiki/Help:Namespaces}
    * @param {number} [limit=25] - Limit the number of results
-   * @param {string} [offset='!'] - Lexicographically minimal article title
+   * @param {string} [offset=!] - Lexicographically minimal article title
    * @return {Promise<Object, Error>} - A Promise with an Object containing articles list on fulfil, and Error on rejection
    *
    * @instance
@@ -166,6 +166,35 @@ class WikiaAPI {
         namespaces: this._arrayOrSingleElement(namespaces),
         limit: limit,
         offset: offset
+      }).then(body => {
+        resolve(body)
+      }).catch(error => {
+        reject(error)
+      })
+    })
+  }
+
+  /**
+   * Get a list of pages on the current wiki
+   * @see [Wikia API Documentation]{@link http://dev.wikia.com/api/v1#!/Articles/getListExpanded_get_3}
+   *
+   * @param {string} [category] - Return only articles belonging to the provided valid category title
+   * @param {(number[]|number)} [namespaces=0] - Array of namespace ids or a single namespace id, see more: {@link http://community.wikia.com/wiki/Help:Namespaces}
+   * @param {number} [limit=25] - Limit the number of results
+   * @param {string} [offset=!] - Lexicographically minimal article title
+   * @return {Promise<Object, Error>} - A Promise with an Object containing articles list on fulfil, and Error on rejection
+   *
+   * @instance
+   * @memberof WikiaAPI
+   */
+  getArticlesListExpanded (category = '', namespaces = 0, limit = 25, offset = '!') {
+    return new Promise((resolve, reject) => {
+      this._makeRequest('Articles/List', {
+        category: category,
+        namespaces: this._arrayOrSingleElement(namespaces),
+        limit: limit,
+        offset: offset,
+        expand: 1
       }).then(body => {
         resolve(body)
       }).catch(error => {

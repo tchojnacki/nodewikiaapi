@@ -80,3 +80,26 @@ test('ArticlesList and ArticlesListExpanded must return same articles', () => {
     expect(Object.keys(data[0].items)).toEqual(Object.keys(data[1].items))
   })
 })
+
+test('MostLinkedArticles must return an object', () => {
+  expect.assertions(1)
+  return new WikiaAPI('dev').getMostLinkedArticles().then(data => {
+    expect(typeof data).toBe('object')
+  })
+})
+
+test('MostLinkedArticlesExpanded must return an object', () => {
+  expect.assertions(1)
+  return new WikiaAPI('dev').getMostLinkedArticlesExpanded().then(data => {
+    expect(typeof data).toBe('object')
+  })
+})
+
+test('MostLinkedArticles and MostLinkedArticlesExpanded must return same articles', () => {
+  expect.assertions(1)
+
+  const wikia = new WikiaAPI('dev')
+  return Promise.all([wikia.getMostLinkedArticles(), wikia.getMostLinkedArticlesExpanded()]).then(data => {
+    expect(Object.keys(data[0].items)).toEqual(Object.keys(data[1].items))
+  })
+})

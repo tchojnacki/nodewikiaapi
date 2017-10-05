@@ -182,7 +182,7 @@ class WikiaAPI {
    * @param {(number[]|number)} [namespaces=0] - Array of namespace ids or a single namespace id, see more: {@link http://community.wikia.com/wiki/Help:Namespaces}
    * @param {number} [limit=25] - Limit the number of results
    * @param {string} [offset=!] - Lexicographically minimal article title
-   * @return {Promise<Object, Error>} - A Promise with an Object containing articles list on fulfil, and Error on rejection
+   * @return {Promise<Object, Error>} - A Promise with an Object containing expanded articles list on fulfil, and Error on rejection
    *
    * @instance
    * @memberof WikiaAPI
@@ -196,6 +196,44 @@ class WikiaAPI {
         offset: offset,
         expand: 1
       }).then(body => {
+        resolve(body)
+      }).catch(error => {
+        reject(error)
+      })
+    })
+  }
+
+  /**
+   * Get the most linked articles on this wiki
+   * @see [Wikia API Documentation]{@link http://dev.wikia.com/api/v1#!/Articles/getTop_get_4}
+   *
+   * @return {Promise<Object, Error>} - A Promise with an Object containing most linked articles on fulfil, and Error on rejection
+   *
+   * @instance
+   * @memberof WikiaAPI
+   */
+  getMostLinkedArticles () {
+    return new Promise((resolve, reject) => {
+      this._makeRequest('Articles/MostLinked').then(body => {
+        resolve(body)
+      }).catch(error => {
+        reject(error)
+      })
+    })
+  }
+
+  /**
+   * Get the most linked articles on this wiki (expanded results)
+   * @see [Wikia API Documentation]{@link http://dev.wikia.com/api/v1#!/Articles/getTopExpanded_get_5}
+   *
+   * @return {Promise<Object, Error>} - A Promise with an Object containing most linked articles on fulfil, and Error on rejection
+   *
+   * @instance
+   * @memberof WikiaAPI
+   */
+  getMostLinkedArticlesExpanded () {
+    return new Promise((resolve, reject) => {
+      this._makeRequest('Articles/MostLinked', { expand: 1 }).then(body => {
         resolve(body)
       }).catch(error => {
         reject(error)

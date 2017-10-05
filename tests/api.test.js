@@ -49,6 +49,15 @@ test('ArticlesDetails needs at least one generator', () => {
   }).toThrow()
 })
 
+test('ArticlesDetails with space in title', () => {
+  expect.assertions(1)
+
+  const wikia = new WikiaAPI('dev')
+  return Promise.all([wikia.getArticlesDetails(-1, 'Lua_templating/Basics'), wikia.getArticlesDetails(-1, 'Lua templating/Basics')]).then(data => {
+    expect(Object.keys(data[0].items)).toEqual(Object.keys(data[1].items))
+  })
+})
+
 test('ArticlesList must return an object', () => {
   expect.assertions(1)
   return new WikiaAPI('dev').getArticlesList().then(data => {

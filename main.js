@@ -73,10 +73,13 @@ class WikiaAPI {
    * @memberof WikiaAPI
    */
   getRecentlyChangedArticles (limit = 10, namespaces = 0, allowDuplicates = true) {
+    /*
     if (isNaN(limit)) {
       throw new Error('Argument \'limit\' must be a number')
     }
+    */
 
+    /*
     let ns = []
     if (Array.isArray(namespaces)) {
       ns = namespaces
@@ -85,11 +88,12 @@ class WikiaAPI {
     } else {
       throw new Error('Argument \'namespaces\' must be a number or array of numbers')
     }
+    */
 
     return new Promise((resolve, reject) => {
       this._makeRequest('Activity/RecentlyChangedArticles', {
         limit: limit,
-        namespaces: ns.join(','),
+        namespaces: this._arrayOrSingleElement(namespaces),
         allowDuplicates: allowDuplicates
       }).then(body => {
         resolve(body)
@@ -134,12 +138,17 @@ class WikiaAPI {
    * @param {number} [abstract=100] - The desired length for the article's abstract
    * @param {number} [width=200] - The desired width for the thumbnail
    * @param {number} [height=200] - The desired height for the thumbnail
+   * @return {Promise<Object, Error>} - A Promise with an Object containing articles details on fulfil, and Error on rejection
+   *
+   * @instance
+   * @memberof WikiaAPI
    */
   getArticlesDetails (ids = -1, titles = '', abstract = 100, width = 200, height = 200) {
     if (ids === -1 && titles === '') {
       throw new Error('Argument \'ids\' or \'titles\' should be passed')
     }
 
+    /*
     let queryIds = []
     if (Array.isArray(ids)) {
       queryIds = ids
@@ -157,11 +166,12 @@ class WikiaAPI {
     } else {
       throw new Error('Argument \'titles\' must be a string or array of strings')
     }
+    */
 
     return new Promise((resolve, reject) => {
       this._makeRequest('Articles/Details', {
-        ids: queryIds.join(','),
-        titles: queryTitles.join(','),
+        ids: this._arrayOrSingleElement(ids),
+        titles: this._arrayOrSingleElement(titles, 'string'),
         abstract: abstract,
         width: width,
         height: height
@@ -171,6 +181,23 @@ class WikiaAPI {
         reject(error)
       })
     })
+  }
+
+  /**
+   * Get articles list in alphabetical order
+   * @see [Wikia API Documentation]{@link http://dev.wikia.com/api/v1#!/Articles/getList_get_2}
+   *
+   * @param {string} [category] - Return only articles belonging to the provided valid category title
+   * @param {(number[]|number)} [namespaces=0] - Array of namespace ids or a single namespace id, see more: {@link http://community.wikia.com/wiki/Help:Namespaces}
+   * @param {number} [limit=25] - Limit the number of results
+   * @param {string} [offset='!'] - Lexicographically minimal article title
+   * @return {Promise<Object, Error>} - A Promise with an Object containing articles list on fulfil, and Error on rejection
+   *
+   * @instance
+   * @memberof WikiaAPI
+   */
+  getArticlesList (category = '', namespaces = 0, limit = 25, offset = '!') {
+
   }
 
   /**
@@ -218,6 +245,18 @@ class WikiaAPI {
         reject(error)
       })
     })
+  }
+
+  _arrayOrSingleElement (input, inputType = 'number') {
+    let outputString
+    if (Array.isArray(input)) {
+      outputString = input.join(',')
+    } else if (typeof input === inputType) {
+      outputString = input.toString()
+    } else {
+      throw new Error(`Incorrect argument type. Expected ${inputType} or array of ${inputType}s, got ${typeof input} instead`)
+    }
+    return outputString
   }
 }
 

@@ -158,3 +158,17 @@ test('TopArticles and TopArticlesExpanded must return same articles', () => {
     expect(Object.keys(data[0].items)).toEqual(Object.keys(data[1].items))
   })
 })
+
+test('WikiVariables must return an object', () => {
+  expect.assertions(1)
+  return new WikiaAPI('dev').getWikiVariables().then(data => {
+    expect(typeof data).toBe('object')
+  })
+})
+
+test('NavigationData must return an object', () => {
+  expect.assertions(1)
+  return new WikiaAPI('dev').getNavigationData().then(data => {
+    expect(typeof data).toBe('object')
+  })
+})

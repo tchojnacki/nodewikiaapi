@@ -5,6 +5,7 @@ const got = require('got')
 /**
  * Class representing Wikia API V1 wrapper
  * @tutorial Endpoints
+ * @tutorial Getting started
  *
  * @param {string} [subdomain] - Subdomain, for example "dev" or "pl.community". Providing subdomain isn't necessary, but strongly recommended, because without it you can only use global (non-wiki) APIs.
  */
@@ -368,6 +369,42 @@ class WikiaAPI {
         baseArticleId: baseArticleId,
         expand: 1
       }).then(body => {
+        resolve(body)
+      }).catch(error => {
+        reject(error)
+      })
+    })
+  }
+
+  /**
+   * Get wiki data, including key values, navigation data, and more
+   * @see [Mercury/WikiVariables]{@link http://dev.wikia.com/api/v1#!/Mercury/getWikiData_get_0}
+   *
+   * @return {Promise<Object, Error>} - A Promise with an Object containing wiki data on fulfil, and Error on rejection
+   */
+  getWikiVariables () {
+    this._requireSubdomain()
+
+    return new Promise((resolve, reject) => {
+      this._makeRequest('Mercury/WikiVariables').then(body => {
+        resolve(body)
+      }).catch(error => {
+        reject(error)
+      })
+    })
+  }
+
+  /**
+   * Get wiki navigation links (the main menu of given wiki)
+   * @see [Navigation/Data](http://dev.wikia.com/api/v1#!/Navigation/getData_get_0)
+   *
+   * @return {Promise<Object, Error>} - A Promise with an Object containing navigation data on fulfil, and Error on rejection
+   */
+  getNavigationData () {
+    this._requireSubdomain()
+
+    return new Promise((resolve, reject) => {
+      this._makeRequest('Navigation/Data').then(body => {
         resolve(body)
       }).catch(error => {
         reject(error)

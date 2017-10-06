@@ -39,3 +39,9 @@ test('can\'t set wikiurl', () => {
     wikia.wikiurl = 'test'
   }).toThrow()
 })
+
+test('wikiurl without subdomain', () => {
+  const wikia = new WikiaAPI()
+  expect(wikia.wikiurl).toBe(WikiaAPI.wikiaurl)
+  expect(wikia.wikiapiurl).toBe(WikiaAPI.wikiaapiurl)
+})

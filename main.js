@@ -382,7 +382,7 @@ class WikiaAPI {
    * @readonly
    */
   get wikiapiurl () {
-    return this.subdomain === null ? null : `http://${this.subdomain}.wikia.com/api/v1`
+    return this.subdomain === null ? WikiaAPI.wikiaapiurl : `http://${this.subdomain}.wikia.com/api/v1`
   }
   set wikiapiurl (value) {
     throw new Error('Cannot set a read-only property \'wikiapiurl\'')
@@ -395,7 +395,7 @@ class WikiaAPI {
    * @readonly
    */
   get wikiurl () {
-    return this.subdomain === null ? null : `http://${this.subdomain}.wikia.com`
+    return this.subdomain === null ? WikiaAPI.wikiaurl : `http://${this.subdomain}.wikia.com`
   }
   set wikiurl (value) {
     throw new Error('Cannot set a read-only property \'wikiurl\'')

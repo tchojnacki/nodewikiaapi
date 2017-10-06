@@ -1,7 +1,7 @@
 # Endpoints
 List of currently available endpoints.
 ## Wikia API V1
-Wikia API V1 endpoints for a given wiki.
+[Wikia API V1](http://dev.wikia.com/api/v1) endpoints for a given wiki.
 * [`Activity`](http://dev.wikia.com/api/v1#!/Activity)
   * `LatestActivity` - [`getLatestActivity()`](WikiaAPI.html#getLatestActivity)
   * `RecentlyChangedArticles` - [`getRecentlyChangedArticles()`](WikiaAPI.html#getRecentlyChangedArticles)
@@ -31,7 +31,7 @@ Wikia API V1 endpoints for a given wiki.
   * `Details`
 
 ## Wikia API V1 Global
-Wikia API V1 endpoints for `wikia.com`.
+[Wikia API V1](http://www.wikia.com/api/v1) endpoints for `wikia.com`. Note that you can use most of local endpoints directly on `wikia.com` by providing no subdomain to the constructor.
 * [`Articles`](http://wikia.com/api/v1#!/Activity)
   * `TopByHub`
 * [`Search`](http://www.wikia.com/api/v1#!/Search)
@@ -49,4 +49,4 @@ Wikia API V1 endpoints for `wikia.com`.
   * `List?expand=1`
 
 ## MW API
-MediaWiki API endpoints for a given wiki.
+[MediaWiki API](http://dev.wikia.com/api.php) endpoints for a given wiki.

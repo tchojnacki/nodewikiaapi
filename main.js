@@ -257,6 +257,14 @@ class WikiaAPI {
     })
   }
 
+  set subdomain (value) {
+    if (!value) {
+      this.subdomain = null
+    } else {
+      this.subdomain = value
+    }
+  }
+
   /**
    * Basepath of Wikia API V1 for given subdomain, for example "http://dev.wikia.com/api/v1/"
    * @name WikiaAPI#wikiapiurl

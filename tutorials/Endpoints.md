@@ -18,9 +18,9 @@ List of currently available endpoints.
   * `Top` - [`getTopArticles()`](WikiaAPI.html#getTopArticles)
   * `Top?expand=1` - [`getTopArticlesExpanded()`](WikiaAPI.html#getTopArticlesExpanded)
 * [`Mercury`](http://dev.wikia.com/api/v1#!/Mercury)
-  * `WikiVariables`
+  * `WikiVariables` - [`getWikiVariables()`](WikiaAPI.html#getWikiVariables)
 * [`Navigation`](http://dev.wikia.com/api/v1#!/Navigation)
-  * `Data`
+  * `Data` - [`getNavigationData()`](WikiaAPI.html#getNavigationData)
 * [`RelatedPages`](http://dev.wikia.com/api/v1#!/RelatedPages)
   * `List`
 * [`Search`](http://dev.wikia.com/api/v1#!/Search)

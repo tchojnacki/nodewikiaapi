@@ -24,7 +24,7 @@ class WikiaAPI {
 
   /**
    * Get latest activity information
-   * @see [Wikia API Documentation]{@link http://dev.wikia.com/api/v1#!/Activity/getLatestActivity_get_0}
+   * @see [Activity/LatestActivity]{@link http://dev.wikia.com/api/v1#!/Activity/getLatestActivity_get_0}
    *
    * @param {Object} [options] - An Object containing every other parameter
    * @param {number} [options.limit=10] - Limit the number of results
@@ -55,7 +55,7 @@ class WikiaAPI {
 
   /**
    * Get recently changed articles
-   * @see [Wikia API Documentation]{@link http://dev.wikia.com/api/v1#!/Activity/getRecentlyChangedArticles_get_1}
+   * @see [Activity/RecentlyChangedArticles]{@link http://dev.wikia.com/api/v1#!/Activity/getRecentlyChangedArticles_get_1}
    *
    * @param {Object} [options] - An Object containing every other parameter
    * @param {number} [options.limit=10] - Limit the number of results
@@ -86,7 +86,7 @@ class WikiaAPI {
 
   /**
    * Get simplified article contents
-   * @see [Wikia API Documentation]{@link http://dev.wikia.com/api/v1#!/Articles/getAsSimpleJson_get_0}
+   * @see [Articles/AsSimpleJson]{@link http://dev.wikia.com/api/v1#!/Articles/getAsSimpleJson_get_0}
    *
    * @param {Object} [options] - An Object containing every other parameter
    * @param {number} options.id - A single article ID
@@ -113,7 +113,7 @@ class WikiaAPI {
 
   /**
    * Get details about one or more articles
-   * @see [Wikia API Documentation]{@link http://dev.wikia.com/api/v1#!/Articles/getDetails_get_1}
+   * @see [Articles/Details]{@link http://dev.wikia.com/api/v1#!/Articles/getDetails_get_1}
    *
    * @param {Object} [options] - An Object containing every other parameter
    * @param {(number[]|number)} [options.ids] - An Array of article ids or a single article id
@@ -152,7 +152,7 @@ class WikiaAPI {
 
   /**
    * Get articles list in alphabetical order
-   * @see [Wikia API Documentation]{@link http://dev.wikia.com/api/v1#!/Articles/getList_get_2}
+   * @see [Articles/List]{@link http://dev.wikia.com/api/v1#!/Articles/getList_get_2}
    *
    * @param {Object} [options] - An Object containing every other parameter
    * @param {string} [options.category] - Return only articles belonging to the provided valid category title
@@ -185,7 +185,7 @@ class WikiaAPI {
 
   /**
    * Get a list of pages on the current wiki
-   * @see [Wikia API Documentation]{@link http://dev.wikia.com/api/v1#!/Articles/getListExpanded_get_3}
+   * @see [Articles/List?expand=1]{@link http://dev.wikia.com/api/v1#!/Articles/getListExpanded_get_3}
    *
    * @param {Object} [options] - An Object containing every other parameter
    * @param {string} [options.category] - Return only articles belonging to the provided valid category title
@@ -219,7 +219,7 @@ class WikiaAPI {
 
   /**
    * Get the most linked articles on this wiki
-   * @see [Wikia API Documentation]{@link http://dev.wikia.com/api/v1#!/Articles/getTop_get_4}
+   * @see [Articles/MostLinked]{@link http://dev.wikia.com/api/v1#!/Articles/getTop_get_4}
    *
    * @return {Promise<Object, Error>} - A Promise with an Object containing most linked articles on fulfil, and Error on rejection
    *
@@ -239,7 +239,7 @@ class WikiaAPI {
 
   /**
    * Get the most linked articles on this wiki (expanded results)
-   * @see [Wikia API Documentation]{@link http://dev.wikia.com/api/v1#!/Articles/getTopExpanded_get_5}
+   * @see [Articles/MostLinked?expand=1]{@link http://dev.wikia.com/api/v1#!/Articles/getTopExpanded_get_5}
    *
    * @return {Promise<Object, Error>} - A Promise with an Object containing most linked articles on fulfil, and Error on rejection
    *

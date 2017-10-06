@@ -4,6 +4,8 @@ const got = require('got')
 
 /**
  * Class representing Wikia API V1 wrapper
+ * @tutorial Endpoints
+ *
  * @param {string} [subdomain] - Subdomain, for example "dev" or "pl.community". Providing subdomain isn't necessary, but strongly recommended, because without it you can only use global (non-wiki) APIs.
  */
 class WikiaAPI {
@@ -234,6 +236,34 @@ class WikiaAPI {
   }
 
   /**
+   * Get list of new articles on this wiki
+   * @see [Articles/New]{@link http://dev.wikia.com/api/v1#!/Articles/getNew_get_6}
+   *
+   * @param {Object} [options] - An Object containing every other parameter
+   * @param {(number[]|number)} [options.namespaces] - Comma-separated namespace ids, see more: {@link http://community.wikia.com/wiki/Help:Namespaces}
+   * @param {number} [options.limit=20] - Limit the number of result - maximum limit is 100
+   * @param {number} [options.minArticleQuality=10] - Minimal value of article quality. Ranges from 0 to 99
+   * @return {Promise<Object, Error>} - A Promise with an Object containing new articles on fulfil, and Error on rejection
+   */
+  getNewArticles (options = {}) {
+    this._requireSubdomain()
+    options = this._parseParams(options, {namespaces: null, limit: 20, minArticleQuality: 10}, {namespaces: (x) => { return (typeof x === 'number' || Array.isArray(x) || x === null) }, limit: 'number', minArticleQuality: 'number'})
+    const {namespaces, limit, minArticleQuality} = options
+
+    return new Promise((resolve, reject) => {
+      this._makeRequest('Articles/New', {
+        namespaces: this._arrayOrSingleElement(namespaces),
+        limit: limit,
+        minArticleQuality: minArticleQuality
+      }).then(body => {
+        resolve(body)
+      }).catch(error => {
+        reject(error)
+      })
+    })
+  }
+
+  /**
    * Basepath of Wikia API V1 for given subdomain, for example "http://dev.wikia.com/api/v1/"
    * @name WikiaAPI#wikiapiurl
    * @type {string}
@@ -283,7 +313,9 @@ class WikiaAPI {
     return new Promise((resolve, reject) => {
       let query = []
       for (let param in params) {
-        query.push(param + '=' + encodeURIComponent(params[param]))
+        if (params[param] !== null) {
+          query.push(param + '=' + encodeURIComponent(params[param]))
+        }
       }
 
       got(`${this.wikiapiurl}/${endpoint}?${query.join('&')}`).then(response => {
@@ -306,6 +338,8 @@ class WikiaAPI {
       outputString = input.join(',')
     } else if (typeof input === inputType) {
       outputString = input.toString()
+    } else if (input === null) {
+      outputString = input
     } else {
       throw new Error(`Incorrect argument type. Expected ${inputType} or array of ${inputType}s, got ${typeof input} instead`)
     }

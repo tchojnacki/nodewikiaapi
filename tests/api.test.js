@@ -105,3 +105,10 @@ test('MostLinkedArticles and MostLinkedArticlesExpanded must return same article
     expect(Object.keys(data[0].items)).toEqual(Object.keys(data[1].items))
   })
 })
+
+test('NewArticles must return an object', () => {
+  expect.assertions(1)
+  return new WikiaAPI('dev').getNewArticles().then(data => {
+    expect(typeof data).toBe('object')
+  })
+})

@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Home - Documentation</title>
+    <title>Endpoints - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -29,42 +29,42 @@
 
 <div id="main">
     
-
+    <h1 class="page-title">Endpoints</h1>
     
 
+    <section>
 
-
+<header>
     
+</header>
 
-
-
-
-
-
-
-
-
-    
-
-
-    <section class="readme">
-        <article><h1>nodewikiaapi</h1><p>Node.js wrapper for <a href="http://dev.wikia.com/api/v1">Wikia API V1</a>.</p>
-<p>Documentation available at <a href="https://tchojnacki.github.io/nodewikiaapi/">Github Pages</a>.</p>
-<p>See also:</p>
-<ul>
-<li><a href="/nodewikiaapi/docs/tutorial-Endpoints.html">List of available endpoints</a></li>
+<article>
+    <h1>Endpoints</h1><p>List of currently available endpoints.</p>
+<h2>Wikia API V1</h2><ul>
+<li><a href="http://dev.wikia.com/api/v1#!/Activity"><code>Activity</code></a><ul>
+<li><code>LatestActivity</code> - <a href="WikiaAPI.html#getLatestActivity"><code>getLatestActivity()</code></a></li>
+<li><code>RecentlyChangedArticles</code> - <a href="WikiaAPI.html#getRecentlyChangedArticles"><code>getRecentlyChangedArticles()</code></a></li>
 </ul>
-<p>Text content from accessed through the API is made available under the <a href="http://www.wikia.com/Licensing">CC-BY-SA License</a>.</p>
-<h2>TODO:</h2><ul>
-<li>Add MW endpoints</li>
-<li>Modify _makeRequest function to support other APIs</li>
-</ul></article>
-    </section>
+</li>
+<li><a href="http://dev.wikia.com/api/v1#!/Articles"><code>Articles</code></a><ul>
+<li><code>AsSimpleJson</code> - <a href="WikiaAPI.html#getArticleAsSimpleJson"><code>getArticleAsSimpleJson()</code></a></li>
+<li><code>Details</code> - <a href="WikiaAPI.html#getArticlesDetails"><code>getArticlesDetails()</code></a></li>
+<li><code>List</code> - <a href="WikiaAPI.html#getArticlesList"><code>getArticlesList()</code></a></li>
+<li><code>List?expand=1</code> - <a href="WikiaAPI.html#getArticlesListExpanded"><code>getArticlesListExpanded()</code></a></li>
+<li><code>MostLinked</code> - <a href="WikiaAPI.html#getMostLinked"><code>getMostLinked()</code></a></li>
+<li><code>MostLinked?expand=1</code> - <a href="WikiaAPI.html#getMostLinkedExpanded"><code>getMostLinkedExpanded()</code></a></li>
+<li><code>New</code> - <a href="WikiaAPI.html#getNewArticles"><code>getNewArticles()</code></a></li>
+<li><code>Popular</code></li>
+<li><code>Popular?expand=1</code></li>
+<li><code>Top</code></li>
+<li><code>Top?expand=1</code></li>
+<li><code>TopByHub</code></li>
+</ul>
+</li>
+</ul>
+</article>
 
-
-
-
-
+</section>
 
 </div>
 

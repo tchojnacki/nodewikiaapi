@@ -272,7 +272,7 @@ class WikiaAPI {
    * @readonly
    */
   get wikiapiurl () {
-    return this.subdomain === null ? null : `http://${this.subdomain}.wikia.com/api/v1/`
+    return this.subdomain === null ? null : `http://${this.subdomain}.wikia.com/api/v1`
   }
   set wikiapiurl (value) {
     throw new Error('Cannot set a read-only property \'wikiapiurl\'')
@@ -291,6 +291,28 @@ class WikiaAPI {
     throw new Error('Cannot set a read-only property \'wikiurl\'')
   }
 
+  /**
+   * Basepath of Wikia API V1 for Wikia (http://wikia.com/api/v1/)
+   * @name WikiaAPI.wikiaapiurl
+   * @type {string}
+   * @static
+   * @readonly
+   */
+  static get wikiaapiurl () {
+    return 'http://wikia.com/api/v1'
+  }
+
+  /**
+   * Basepath of Wikia (http://wikia.com)
+   * @name WikiaAPI.wikiaurl
+   * @type {string}
+   * @static
+   * @readonly
+   */
+  static get wikiaurl () {
+    return 'http://wikia.com'
+  }
+
   _makeRequest (endpoint, params) {
     return new Promise((resolve, reject) => {
       let query = []
@@ -298,7 +320,7 @@ class WikiaAPI {
         query.push(param + '=' + encodeURIComponent(params[param]))
       }
 
-      got(`${this.wikiapiurl}${endpoint}?${query.join('&')}`).then(response => {
+      got(`${this.wikiapiurl}/${endpoint}?${query.join('&')}`).then(response => {
         let body
         try {
           body = JSON.parse(response.body)

@@ -25,21 +25,21 @@ test('RecentlyChangedArticles must return an object', () => {
 
 test('ArticleAsSimpleJson must return an object', () => {
   expect.assertions(1)
-  return new WikiaAPI('dev').getArticleAsSimpleJson(12649).then(data => {
+  return new WikiaAPI('dev').getArticleAsSimpleJson({id: 12649}).then(data => {
     expect(typeof data).toBe('object')
   })
 })
 
 test('ArticleAsSimpleJson should catch on 404', () => {
   expect.assertions(1)
-  return new WikiaAPI('dev').getArticleAsSimpleJson(1).catch(error => {
+  return new WikiaAPI('dev').getArticleAsSimpleJson({id: 1}).catch(error => {
     expect(error.statusCode).toBe(404)
   })
 })
 
 test('ArticlesDetails must return an object', () => {
   expect.assertions(2)
-  return new WikiaAPI('dev').getArticlesDetails(12649).then(data => {
+  return new WikiaAPI('dev').getArticlesDetails({ids: 12649}).then(data => {
     expect(typeof data).toBe('object')
     expect(Object.keys(data.items).length).toBe(1)
   })
@@ -55,7 +55,7 @@ test('ArticlesDetails with space in title', () => {
   expect.assertions(1)
 
   const wikia = new WikiaAPI('dev')
-  return Promise.all([wikia.getArticlesDetails(-1, 'Lua_templating/Basics'), wikia.getArticlesDetails(-1, 'Lua templating/Basics')]).then(data => {
+  return Promise.all([wikia.getArticlesDetails({titles: 'Lua_templating/Basics'}), wikia.getArticlesDetails({titles: 'Lua templating/Basics'})]).then(data => {
     expect(Object.keys(data[0].items)).toEqual(Object.keys(data[1].items))
   })
 })
@@ -85,14 +85,14 @@ test('ArticlesList and ArticlesListExpanded must return same articles', () => {
 
 test('MostLinkedArticles must return an object', () => {
   expect.assertions(1)
-  return new WikiaAPI('dev').getMostLinkedArticles().then(data => {
+  return new WikiaAPI('dev').getMostLinked().then(data => {
     expect(typeof data).toBe('object')
   })
 })
 
 test('MostLinkedArticlesExpanded must return an object', () => {
   expect.assertions(1)
-  return new WikiaAPI('dev').getMostLinkedArticlesExpanded().then(data => {
+  return new WikiaAPI('dev').getMostLinkedExpanded().then(data => {
     expect(typeof data).toBe('object')
   })
 })
@@ -101,7 +101,7 @@ test('MostLinkedArticles and MostLinkedArticlesExpanded must return same article
   expect.assertions(1)
 
   const wikia = new WikiaAPI('dev')
-  return Promise.all([wikia.getMostLinkedArticles(), wikia.getMostLinkedArticlesExpanded()]).then(data => {
+  return Promise.all([wikia.getMostLinked(), wikia.getMostLinkedExpanded()]).then(data => {
     expect(Object.keys(data[0].items)).toEqual(Object.keys(data[1].items))
   })
 })

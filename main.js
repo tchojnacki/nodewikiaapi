@@ -264,6 +264,59 @@ class WikiaAPI {
   }
 
   /**
+   * Get popular articles for the current wiki (from the beginning of time)
+   * @see [Articles/Popular]{@link http://dev.wikia.com/api/v1#!/Articles/getPopular_get_7}
+   *
+   * @param {Object} [options] - An Object containing every other parameter
+   * @param {integer} [options.limit=10] - Limit the number of result - maximum limit is 10
+   * @param {integer} [options.baseArticleId] - Trending and popular related to article with given id
+   * @return {Promise<Object, Error>} - A Promise with an Object containing popular articles on fulfil, and Error on rejection
+   */
+  getPopularArticles (options = {}) {
+    this._requireSubdomain()
+    options = this._parseParams(options, {limit: 10, baseArticleId: null}, {limit: 'number', baseArticleId: (x) => { return (typeof x === 'number' || x === null) }})
+    const {limit, baseArticleId} = options
+
+    return new Promise((resolve, reject) => {
+      this._makeRequest('Articles/Popular', {
+        limit: limit,
+        baseArticleId: baseArticleId
+      }).then(body => {
+        resolve(body)
+      }).catch(error => {
+        reject(error)
+      })
+    })
+  }
+
+  /**
+   * Get popular articles for the current wiki (from the beginning of time)
+   * @see [Articles/Popular?expand=1]{@link http://dev.wikia.com/api/v1#!/Articles/getPopularExpanded_get_8}
+   *
+   * @param {Object} [options] - An Object containing every other parameter
+   * @param {integer} [options.limit=10] - Limit the number of result - maximum limit is 10
+   * @param {integer} [options.baseArticleId] - Trending and popular related to article with given id
+   * @return {Promise<Object, Error>} - A Promise with an Object containing popular articles on fulfil, and Error on rejection
+   */
+  getPopularArticlesExpanded (options = {}) {
+    this._requireSubdomain()
+    options = this._parseParams(options, {limit: 10, baseArticleId: null}, {limit: 'number', baseArticleId: (x) => { return (typeof x === 'number' || x === null) }})
+    const {limit, baseArticleId} = options
+
+    return new Promise((resolve, reject) => {
+      this._makeRequest('Articles/Popular', {
+        limit: limit,
+        baseArticleId: baseArticleId,
+        expand: 1
+      }).then(body => {
+        resolve(body)
+      }).catch(error => {
+        reject(error)
+      })
+    })
+  }
+
+  /**
    * Basepath of Wikia API V1 for given subdomain, for example "http://dev.wikia.com/api/v1/"
    * @name WikiaAPI#wikiapiurl
    * @type {string}

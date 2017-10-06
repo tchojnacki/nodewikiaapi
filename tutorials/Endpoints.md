@@ -12,8 +12,8 @@ List of currently available endpoints.
   * `MostLinked` - [`getMostLinked()`](WikiaAPI.html#getMostLinked)
   * `MostLinked?expand=1` - [`getMostLinkedExpanded()`](WikiaAPI.html#getMostLinkedExpanded)
   * `New` - [`getNewArticles()`](WikiaAPI.html#getNewArticles)
-  * `Popular`
-  * `Popular?expand=1`
+  * `Popular` - [`getPopularArticles()`](WikiaAPI.html#getPopularArticles)
+  * `Popular?expand=1` - [`getPopularArticlesExpanded()`](WikiaAPI.html#getPopularArticlesExpanded)
   * `Top`
   * `Top?expand=1`
   * `TopByHub`

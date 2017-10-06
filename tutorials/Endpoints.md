@@ -1,6 +1,7 @@
 # Endpoints
 List of currently available endpoints.
 ## Wikia API V1
+Wikia API V1 endpoints for a given wiki.
 * [`Activity`](http://dev.wikia.com/api/v1#!/Activity)
   * `LatestActivity` - [`getLatestActivity()`](WikiaAPI.html#getLatestActivity)
   * `RecentlyChangedArticles` - [`getRecentlyChangedArticles()`](WikiaAPI.html#getRecentlyChangedArticles)
@@ -16,4 +17,36 @@ List of currently available endpoints.
   * `Popular?expand=1` - [`getPopularArticlesExpanded()`](WikiaAPI.html#getPopularArticlesExpanded)
   * `Top` - [`getTopArticles()`](WikiaAPI.html#getTopArticles)
   * `Top?expand=1` - [`getTopArticlesExpanded()`](WikiaAPI.html#getTopArticlesExpanded)
+* [`Mercury`](http://dev.wikia.com/api/v1#!/Mercury)
+  * `WikiVariables`
+* [`Navigation`](http://dev.wikia.com/api/v1#!/Navigation)
+  * `Data`
+* [`RelatedPages`](http://dev.wikia.com/api/v1#!/RelatedPages)
+  * `List`
+* [`Search`](http://dev.wikia.com/api/v1#!/Search)
+  * `List`
+* [`SearchSuggestions`](http://dev.wikia.com/api/v1#!/SearchSuggestions)
+  * `List`
+* [`User`](http://dev.wikia.com/api/v1#!/User)
+  * `Details`
+
+## Wikia API V1 Global
+Wikia API V1 endpoints for `wikia.com`.
+* [`Articles`](http://wikia.com/api/v1#!/Activity)
   * `TopByHub`
+* [`Search`](http://www.wikia.com/api/v1#!/Search)
+  * `CrossWiki`
+  * `CrossWiki?expand=1`
+* [`WAM`](http://www.wikia.com/api/v1#!/WAM)
+  * `MinMaxWamIndexDate`
+  * `WAMIndex`
+  * `WAMLanguages`
+* [`Wikis`](http://www.wikia.com/api/v1#!/Wikis)
+  * `ByString`
+  * `ByString?expand=1`
+  * `Details`
+  * `List`
+  * `List?expand=1`
+
+## MW API
+MediaWiki API endpoints for a given wiki.

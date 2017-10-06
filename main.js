@@ -317,6 +317,65 @@ class WikiaAPI {
   }
 
   /**
+   * Get the most viewed articles on this wiki
+   * @see [Aricles/Top]{@link http://dev.wikia.com/api/v1#!/Articles/getTop_get_9}
+   *
+   * @param {Object} [options] - An Object containing every other parameter
+   * @param {(number[]|number)} [options.namespaces] - Comma-separated namespace ids, see more: {@link http://community.wikia.com/wiki/Help:Namespaces}
+   * @param {string} [options.category] - Return only articles belonging to the provided valid category title
+   * @param {number} [options.limit=10] - Limit the number of result - maximum limit is 250
+   * @param {number} [baseArticleId] - Trending and popular related to article with given id
+   * @return {Promise<Object, Error>} - A Promise with an Object containing top articles on fulfil, and Error on rejection
+   */
+  getTopArticles (options = {}) {
+    this._requireSubdomain()
+    const {namespaces, category, limit, baseArticleId} = this._parseParams(options, {namespaces: null, category: '', limit: 10, baseArticleId: null}, {namespaces: (x) => { return (typeof x === 'number' || Array.isArray(x) || x === null) }, category: 'string', limit: 'number', baseArticleId: (x) => { return (typeof x === 'number' || x === null) }})
+
+    return new Promise((resolve, reject) => {
+      this._makeRequest('Articles/Top', {
+        namespaces: this._arrayOrSingleElement(namespaces),
+        category: category,
+        limit: limit,
+        baseArticleId: baseArticleId
+      }).then(body => {
+        resolve(body)
+      }).catch(error => {
+        reject(error)
+      })
+    })
+  }
+
+  /**
+   * Get the most viewed articles on this wiki (expanded results)
+   * @see [Aricles/Top?expand=1]{@link http://dev.wikia.com/api/v1#!/Articles/getTopExpanded_get_10}
+   *
+   * @param {Object} [options] - An Object containing every other parameter
+   * @param {(number[]|number)} [options.namespaces] - Comma-separated namespace ids, see more: {@link http://community.wikia.com/wiki/Help:Namespaces}
+   * @param {string} [options.category] - Return only articles belonging to the provided valid category title
+   * @param {number} [options.limit=10] - Limit the number of result - maximum limit is 250
+   * @param {number} [baseArticleId] - Trending and popular related to article with given id
+   * @return {Promise<Object, Error>} - A Promise with an Object containing top articles on fulfil, and Error on rejection
+   */
+  getTopArticlesExpanded (options = {}) {
+    this._requireSubdomain()
+    const {namespaces, category, limit, baseArticleId} = this._parseParams(options, {namespaces: null, category: '', limit: 10, baseArticleId: null}, {namespaces: (x) => { return (typeof x === 'number' || Array.isArray(x) || x === null) }, category: 'string', limit: 'number', baseArticleId: (x) => { return (typeof x === 'number' || x === null) }})
+
+    return new Promise((resolve, reject) => {
+      this._makeRequest('Articles/Top', {
+        namespaces: this._arrayOrSingleElement(namespaces),
+        category: category,
+        limit: limit,
+        baseArticleId: baseArticleId,
+        expand: 1
+      }).then(body => {
+        resolve(body)
+      }).catch(error => {
+        reject(error)
+      })
+    })
+  }
+
+  /**
    * Basepath of Wikia API V1 for given subdomain, for example "http://dev.wikia.com/api/v1/"
    * @name WikiaAPI#wikiapiurl
    * @type {string}

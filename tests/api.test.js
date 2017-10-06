@@ -135,3 +135,26 @@ test('PopularArticles and PopularArticlesExpanded must return same articles', ()
     expect(Object.keys(data[0].items)).toEqual(Object.keys(data[1].items))
   })
 })
+
+test('TopArticles must return an object', () => {
+  expect.assertions(1)
+  return new WikiaAPI('dev').getTopArticles().then(data => {
+    expect(typeof data).toBe('object')
+  })
+})
+
+test('TopArticlesExpanded must return an object', () => {
+  expect.assertions(1)
+  return new WikiaAPI('dev').getTopArticlesExpanded().then(data => {
+    expect(typeof data).toBe('object')
+  })
+})
+
+test('TopArticles and TopArticlesExpanded must return same articles', () => {
+  expect.assertions(1)
+
+  const wikia = new WikiaAPI('dev')
+  return Promise.all([wikia.getTopArticles(), wikia.getTopArticlesExpanded()]).then(data => {
+    expect(Object.keys(data[0].items)).toEqual(Object.keys(data[1].items))
+  })
+})

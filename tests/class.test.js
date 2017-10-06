@@ -11,7 +11,7 @@ test('must have a subdomain if required', () => {
 
 test('returns statics', () => {
   expect(WikiaAPI.wikiaurl).toBe('http://wikia.com')
-  expect(WikiaAPI.wikiaapiurl).toBe('http://wikia.com/api/v1/')
+  expect(WikiaAPI.wikiaapiurl).toBe('http://wikia.com/api/v1')
 })
 
 test('returns correct subdomain', () => {

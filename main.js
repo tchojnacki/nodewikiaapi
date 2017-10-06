@@ -31,9 +31,6 @@ class WikiaAPI {
    * @param {(number[]|number)} [options.namespaces=0] - Array of namespace ids or a single namespace id, see more: {@link http://community.wikia.com/wiki/Help:Namespaces}
    * @param {boolean} [options.allowDuplicates=true] - Set if duplicate values of an article's revisions made by the same user are not allowed
    * @return {Promise<Object, Error>} A Promise with an Object containing latest activity on fulfil, and Error on rejection
-   *
-   * @instance
-   * @memberof WikiaAPI
    */
   getLatestActivity (options = {}) {
     this._requireSubdomain()
@@ -62,9 +59,6 @@ class WikiaAPI {
    * @param {(number[]|number)} [options.namespaces=0] - Array of namespace ids or a single namespace id, see more: {@link http://community.wikia.com/wiki/Help:Namespaces}
    * @param {boolean} [options.allowDuplicates=true] - Set if duplicate values of an article's revisions made by the same user are not allowed
    * @return {Promise<Object, Error>} A Promise with an Object containing recently changed articles on fulfil, and Error on rejection
-   *
-   * @instance
-   * @memberof WikiaAPI
    */
   getRecentlyChangedArticles (options = {}) {
     this._requireSubdomain()
@@ -91,9 +85,6 @@ class WikiaAPI {
    * @param {Object} [options] - An Object containing every other parameter
    * @param {number} options.id - A single article ID
    * @return {Promise<Object, Error>} - A Promise with an Object containing simple article data on fulfil, and Error on rejection
-   *
-   * @instance
-   * @memberof WikiaAPI
    */
   getArticleAsSimpleJson (options = {}) {
     this._requireSubdomain()
@@ -122,9 +113,6 @@ class WikiaAPI {
    * @param {number} [options.width=200] - The desired width for the thumbnail
    * @param {number} [options.height=200] - The desired height for the thumbnail
    * @return {Promise<Object, Error>} - A Promise with an Object containing articles details on fulfil, and Error on rejection
-   *
-   * @instance
-   * @memberof WikiaAPI
    */
   getArticlesDetails (options = {}) {
     this._requireSubdomain()
@@ -160,9 +148,6 @@ class WikiaAPI {
    * @param {number} [options.limit=25] - Limit the number of results
    * @param {string} [options.offset=!] - Lexicographically minimal article title
    * @return {Promise<Object, Error>} - A Promise with an Object containing articles list on fulfil, and Error on rejection
-   *
-   * @instance
-   * @memberof WikiaAPI
    */
   getArticlesList (options = {}) {
     this._requireSubdomain()
@@ -193,9 +178,6 @@ class WikiaAPI {
    * @param {number} [options.limit=25] - Limit the number of results
    * @param {string} [options.offset=!] - Lexicographically minimal article title
    * @return {Promise<Object, Error>} - A Promise with an Object containing expanded articles list on fulfil, and Error on rejection
-   *
-   * @instance
-   * @memberof WikiaAPI
    */
   getArticlesListExpanded (options = {}) {
     this._requireSubdomain()
@@ -222,9 +204,6 @@ class WikiaAPI {
    * @see [Articles/MostLinked]{@link http://dev.wikia.com/api/v1#!/Articles/getTop_get_4}
    *
    * @return {Promise<Object, Error>} - A Promise with an Object containing most linked articles on fulfil, and Error on rejection
-   *
-   * @instance
-   * @memberof WikiaAPI
    */
   getMostLinked () {
     this._requireSubdomain()
@@ -242,9 +221,6 @@ class WikiaAPI {
    * @see [Articles/MostLinked?expand=1]{@link http://dev.wikia.com/api/v1#!/Articles/getTopExpanded_get_5}
    *
    * @return {Promise<Object, Error>} - A Promise with an Object containing most linked articles on fulfil, and Error on rejection
-   *
-   * @instance
-   * @memberof WikiaAPI
    */
   getMostLinkedExpanded () {
     this._requireSubdomain()
@@ -287,7 +263,6 @@ class WikiaAPI {
    * Basepath of Wikia API V1 for Wikia (http://wikia.com/api/v1/)
    * @name WikiaAPI.wikiaapiurl
    * @type {string}
-   * @static
    * @readonly
    */
   static get wikiaapiurl () {
@@ -298,7 +273,6 @@ class WikiaAPI {
    * Basepath of Wikia (http://wikia.com)
    * @name WikiaAPI.wikiaurl
    * @type {string}
-   * @static
    * @readonly
    */
   static get wikiaurl () {

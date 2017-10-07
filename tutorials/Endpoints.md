@@ -22,7 +22,7 @@ List of currently available endpoints.
 * [`Navigation`](http://dev.wikia.com/api/v1#!/Navigation)
   * `Data` - [`getNavigationData()`](WikiaAPI.html#getNavigationData)
 * [`RelatedPages`](http://dev.wikia.com/api/v1#!/RelatedPages)
-  * `List`
+  * `List` - [`getRelatedPages()`](WikiaAPI.html#getRelatedPages)
 * [`Search`](http://dev.wikia.com/api/v1#!/Search)
   * `List`
 * [`SearchSuggestions`](http://dev.wikia.com/api/v1#!/SearchSuggestions)

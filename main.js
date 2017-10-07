@@ -241,7 +241,7 @@ class WikiaAPI {
    * @see [Articles/New]{@link http://dev.wikia.com/api/v1#!/Articles/getNew_get_6}
    *
    * @param {Object} [options] - An Object containing every other parameter
-   * @param {(number[]|number)} [options.namespaces] - Comma-separated namespace ids, see more: {@link http://community.wikia.com/wiki/Help:Namespaces}
+   * @param {(number[]|number)} [options.namespaces] - Array of namespace ids or a single namespace id, see more: {@link http://community.wikia.com/wiki/Help:Namespaces}
    * @param {number} [options.limit=20] - Limit the number of result - maximum limit is 100
    * @param {number} [options.minArticleQuality=10] - Minimal value of article quality. Ranges from 0 to 99
    * @return {Promise<Object, Error>} - A Promise with an Object containing new articles on fulfil, and Error on rejection
@@ -322,7 +322,7 @@ class WikiaAPI {
    * @see [Aricles/Top]{@link http://dev.wikia.com/api/v1#!/Articles/getTop_get_9}
    *
    * @param {Object} [options] - An Object containing every other parameter
-   * @param {(number[]|number)} [options.namespaces] - Comma-separated namespace ids, see more: {@link http://community.wikia.com/wiki/Help:Namespaces}
+   * @param {(number[]|number)} [options.namespaces] -- Array of namespace ids or a single namespace id, see more: {@link http://community.wikia.com/wiki/Help:Namespaces}
    * @param {string} [options.category] - Return only articles belonging to the provided valid category title
    * @param {number} [options.limit=10] - Limit the number of result - maximum limit is 250
    * @param {number} [baseArticleId] - Trending and popular related to article with given id
@@ -351,7 +351,7 @@ class WikiaAPI {
    * @see [Aricles/Top?expand=1]{@link http://dev.wikia.com/api/v1#!/Articles/getTopExpanded_get_10}
    *
    * @param {Object} [options] - An Object containing every other parameter
-   * @param {(number[]|number)} [options.namespaces] - Comma-separated namespace ids, see more: {@link http://community.wikia.com/wiki/Help:Namespaces}
+   * @param {(number[]|number)} [options.namespaces] - Array of namespace ids or a single namespace id, see more: {@link http://community.wikia.com/wiki/Help:Namespaces}
    * @param {string} [options.category] - Return only articles belonging to the provided valid category title
    * @param {number} [options.limit=10] - Limit the number of result - maximum limit is 250
    * @param {number} [baseArticleId] - Trending and popular related to article with given id
@@ -405,6 +405,32 @@ class WikiaAPI {
 
     return new Promise((resolve, reject) => {
       this._makeRequest('Navigation/Data').then(body => {
+        resolve(body)
+      }).catch(error => {
+        reject(error)
+      })
+    })
+  }
+
+  /**
+   * Get pages related to a given article ID
+   * WARNING: RelatedPages extension is disabled on most wikis)
+   * @see [RelatedPages/List](http://dev.wikia.com/api/v1#!/RelatedPages/getList_get_0)
+   *
+   * @param {Object} options - An Object containing every other parameter
+   * @param {(number[]|number)} options.ids - An Array of article ids or a single article id
+   * @param {number} [options.limit=3] - Limit the number of results
+   * @return {Promise<Object, Error>} - A Promise with an Object containing related pages on fulfil, and Error on rejection
+   */
+  getRelatedPages (options = {}) {
+    this._requireSubdomain()
+    const {ids, limit} = this._parseParams(options, {limit: 3}, {ids: (x) => { return (typeof x === 'number' || Array.isArray(x)) }, limit: 'number'})
+
+    return new Promise((resolve, reject) => {
+      this._makeRequest('RelatedPages/List', {
+        ids: this._arrayOrSingleElement(ids),
+        limit: limit
+      }).then(body => {
         resolve(body)
       }).catch(error => {
         reject(error)

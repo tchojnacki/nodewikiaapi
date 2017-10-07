@@ -415,6 +415,39 @@ class WikiaAPI {
   }
 
   /**
+   * Do search for given phrase
+   * @see [Search/List](http://dev.wikia.com/api/v1#!/Search/getList_get_1)
+   *
+   * @param {Object} options - An Object containing every other parameter
+   * @param {string} options.query - Search query
+   * @param {string} [options.type=articles] - The search type, either articles (default) or videos. For 'videos' value, this parameter should be used with namespaces parameter (namespaces needs to be set to 6)
+   * @param {string} [options.rank=default] - The ranking to use in fetching the list of results, one of default, newest, oldest, recently-modified, stable, most-viewed, freshest, stalest
+   * @param {number} [options.limit=25] - Limit the number of results
+   * @param {number} [options.minArticleQuality=10] - Minimal value of article quality. Ranges from 0 to 99
+   * @param {number} [options.batch=1] - The batch (page) of results to fetch
+   * @param {(number[]|number)} [options.namespaces=[0, 14]] - Array of namespace ids or a single namespace id, see more: {@link http://community.wikia.com/wiki/Help:Namespaces}
+   */
+  getSearchList (options = {}) {
+    const {query, type, rank, limit, minArticleQuality, batch, namespaces} = this._parseParams(options, {type: 'articles', rank: 'default', limit: 25, minArticleQuality: 10, batch: 1, namespaces: [0, 14]}, {query: 'string', type: 'string', rank: 'string', limit: 'number', minArticleQuality: 'number', batch: 'number', namespaces: (x) => { return (typeof x === 'number' || Array.isArray(x)) }})
+
+    return new Promise((resolve, reject) => {
+      this._makeRequest('Search/List', {
+        query: query,
+        type: type,
+        rank: rank,
+        limit: limit,
+        minArticleQuality: minArticleQuality,
+        batch: batch,
+        namespaces: this._arrayOrSingleElement(namespaces)
+      }).then(body => {
+        resolve(body)
+      }).catch(error => {
+        reject(error)
+      })
+    })
+  }
+
+  /**
    * Basepath of Wikia API V1 for given subdomain, for example "http://dev.wikia.com/api/v1/"
    * @name WikiaAPI#wikiapiurl
    * @type {string}

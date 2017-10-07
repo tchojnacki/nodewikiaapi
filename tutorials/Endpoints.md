@@ -24,7 +24,7 @@ List of currently available endpoints.
 * [`RelatedPages`](http://dev.wikia.com/api/v1#!/RelatedPages) (currently unavailable)
   * `List` - [`getRelatedPages()`](WikiaAPI.html#getRelatedPages)
 * [`Search`](http://dev.wikia.com/api/v1#!/Search)
-  * `List`
+  * `List` - [`getSearchList()`](WikiaAPI.html#getSearchList)
 * [`SearchSuggestions`](http://dev.wikia.com/api/v1#!/SearchSuggestions)
   * `List`
 * [`User`](http://dev.wikia.com/api/v1#!/User)

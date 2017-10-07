@@ -178,3 +178,16 @@ test('RelatedPages is disabled', () => {
     new WikiaAPI('dev').getArticlesDetails()
   }).toThrow()
 })
+
+test('SearchList must return an object', () => {
+  expect.assertions(1)
+  return new WikiaAPI('dev').getSearchList({query: 'js'}).then(data => {
+    expect(typeof data).toBe('object')
+  })
+})
+
+test('SearchList requires query', () => {
+  expect(() => {
+    new WikiaAPI('dev').getSearchList()
+  }).toThrow()
+})

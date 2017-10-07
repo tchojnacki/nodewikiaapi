@@ -172,3 +172,9 @@ test('NavigationData must return an object', () => {
     expect(typeof data).toBe('object')
   })
 })
+
+test('RelatedPages is disabled', () => {
+  expect(() => {
+    new WikiaAPI('dev').getArticlesDetails()
+  }).toThrow()
+})

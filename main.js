@@ -36,9 +36,7 @@ class WikiaAPI {
    * @return {Promise<Object, Error>} A Promise with an Object containing latest activity on fulfil, and Error on rejection
    */
   getLatestActivity (options = {}) {
-    this._requireSubdomain()
-    options = this._parseParams(options, {limit: 10, namespaces: 0, allowDuplicates: true}, {limit: 'number', namespaces: (x) => { return (typeof x === 'number' || Array.isArray(x)) }, allowDuplicates: 'boolean'})
-    const {limit, namespaces, allowDuplicates} = options
+    const {limit, namespaces, allowDuplicates} = this._parseParams(options, {limit: 10, namespaces: 0, allowDuplicates: true}, {limit: 'number', namespaces: (x) => { return (typeof x === 'number' || Array.isArray(x)) }, allowDuplicates: 'boolean'})
 
     return new Promise((resolve, reject) => {
       this._makeRequest('Activity/LatestActivity', {
@@ -64,9 +62,7 @@ class WikiaAPI {
    * @return {Promise<Object, Error>} A Promise with an Object containing recently changed articles on fulfil, and Error on rejection
    */
   getRecentlyChangedArticles (options = {}) {
-    this._requireSubdomain()
-    options = this._parseParams(options, {limit: 10, namespaces: 0, allowDuplicates: true}, {limit: 'number', namespaces: (x) => { return (typeof x === 'number' || Array.isArray(x)) }, allowDuplicates: 'boolean'})
-    const {limit, namespaces, allowDuplicates} = options
+    const {limit, namespaces, allowDuplicates} = this._parseParams(options, {limit: 10, namespaces: 0, allowDuplicates: true}, {limit: 'number', namespaces: (x) => { return (typeof x === 'number' || Array.isArray(x)) }, allowDuplicates: 'boolean'})
 
     return new Promise((resolve, reject) => {
       this._makeRequest('Activity/RecentlyChangedArticles', {
@@ -90,9 +86,7 @@ class WikiaAPI {
    * @return {Promise<Object, Error>} - A Promise with an Object containing simple article data on fulfil, and Error on rejection
    */
   getArticleAsSimpleJson (options = {}) {
-    this._requireSubdomain()
-    options = this._parseParams(options, {}, {id: 'number'})
-    const {id} = options
+    const {id} = this._parseParams(options, {}, {id: 'number'})
 
     return new Promise((resolve, reject) => {
       this._makeRequest('Articles/AsSimpleJson', {
@@ -118,9 +112,7 @@ class WikiaAPI {
    * @return {Promise<Object, Error>} - A Promise with an Object containing articles details on fulfil, and Error on rejection
    */
   getArticlesDetails (options = {}) {
-    this._requireSubdomain()
-    options = this._parseParams(options, {ids: -1, titles: '', abstract: 100, width: 200, height: 200}, {ids: (x) => { return (typeof x === 'number' || Array.isArray(x)) }, titles: (x) => { return (typeof x === 'string' || Array.isArray(x)) }, abstract: 'number', width: 'number', height: 'number'})
-    const {ids, titles, abstract, width, height} = options
+    const {ids, titles, abstract, width, height} = this._parseParams(options, {ids: -1, titles: '', abstract: 100, width: 200, height: 200}, {ids: (x) => { return (typeof x === 'number' || Array.isArray(x)) }, titles: (x) => { return (typeof x === 'string' || Array.isArray(x)) }, abstract: 'number', width: 'number', height: 'number'})
 
     if (ids === -1 && titles === '') {
       throw new Error('Argument \'ids\' or \'titles\' should be passed')
@@ -153,9 +145,7 @@ class WikiaAPI {
    * @return {Promise<Object, Error>} - A Promise with an Object containing articles list on fulfil, and Error on rejection
    */
   getArticlesList (options = {}) {
-    this._requireSubdomain()
-    options = this._parseParams(options, {category: '', namespaces: 0, limit: 25, offset: '!'}, {category: 'string', namespaces: (x) => { return (typeof x === 'number' || Array.isArray(x)) }, limit: 'number', offset: 'string'})
-    const {category, namespaces, limit, offset} = options
+    const {category, namespaces, limit, offset} = this._parseParams(options, {category: '', namespaces: 0, limit: 25, offset: '!'}, {category: 'string', namespaces: (x) => { return (typeof x === 'number' || Array.isArray(x)) }, limit: 'number', offset: 'string'})
 
     return new Promise((resolve, reject) => {
       this._makeRequest('Articles/List', {
@@ -183,9 +173,7 @@ class WikiaAPI {
    * @return {Promise<Object, Error>} - A Promise with an Object containing expanded articles list on fulfil, and Error on rejection
    */
   getArticlesListExpanded (options = {}) {
-    this._requireSubdomain()
-    options = this._parseParams(options, {category: '', namespaces: 0, limit: 25, offset: '!'}, {category: 'string', namespaces: (x) => { return (typeof x === 'number' || Array.isArray(x)) }, limit: 'number', offset: 'string'})
-    const {category, namespaces, limit, offset} = options
+    const {category, namespaces, limit, offset} = this._parseParams(options, {category: '', namespaces: 0, limit: 25, offset: '!'}, {category: 'string', namespaces: (x) => { return (typeof x === 'number' || Array.isArray(x)) }, limit: 'number', offset: 'string'})
 
     return new Promise((resolve, reject) => {
       this._makeRequest('Articles/List', {
@@ -209,7 +197,6 @@ class WikiaAPI {
    * @return {Promise<Object, Error>} - A Promise with an Object containing most linked articles on fulfil, and Error on rejection
    */
   getMostLinked () {
-    this._requireSubdomain()
     return new Promise((resolve, reject) => {
       this._makeRequest('Articles/MostLinked').then(body => {
         resolve(body)
@@ -226,7 +213,6 @@ class WikiaAPI {
    * @return {Promise<Object, Error>} - A Promise with an Object containing most linked articles on fulfil, and Error on rejection
    */
   getMostLinkedExpanded () {
-    this._requireSubdomain()
     return new Promise((resolve, reject) => {
       this._makeRequest('Articles/MostLinked', {expand: 1}).then(body => {
         resolve(body)
@@ -247,9 +233,7 @@ class WikiaAPI {
    * @return {Promise<Object, Error>} - A Promise with an Object containing new articles on fulfil, and Error on rejection
    */
   getNewArticles (options = {}) {
-    this._requireSubdomain()
-    options = this._parseParams(options, {namespaces: null, limit: 20, minArticleQuality: 10}, {namespaces: (x) => { return (typeof x === 'number' || Array.isArray(x) || x === null) }, limit: 'number', minArticleQuality: 'number'})
-    const {namespaces, limit, minArticleQuality} = options
+    const {namespaces, limit, minArticleQuality} = this._parseParams(options, {namespaces: null, limit: 20, minArticleQuality: 10}, {namespaces: (x) => { return (typeof x === 'number' || Array.isArray(x) || x === null) }, limit: 'number', minArticleQuality: 'number'})
 
     return new Promise((resolve, reject) => {
       this._makeRequest('Articles/New', {
@@ -274,9 +258,7 @@ class WikiaAPI {
    * @return {Promise<Object, Error>} - A Promise with an Object containing popular articles on fulfil, and Error on rejection
    */
   getPopularArticles (options = {}) {
-    this._requireSubdomain()
-    options = this._parseParams(options, {limit: 10, baseArticleId: null}, {limit: 'number', baseArticleId: (x) => { return (typeof x === 'number' || x === null) }})
-    const {limit, baseArticleId} = options
+    const {limit, baseArticleId} = this._parseParams(options, {limit: 10, baseArticleId: null}, {limit: 'number', baseArticleId: (x) => { return (typeof x === 'number' || x === null) }})
 
     return new Promise((resolve, reject) => {
       this._makeRequest('Articles/Popular', {
@@ -300,9 +282,7 @@ class WikiaAPI {
    * @return {Promise<Object, Error>} - A Promise with an Object containing popular articles on fulfil, and Error on rejection
    */
   getPopularArticlesExpanded (options = {}) {
-    this._requireSubdomain()
-    options = this._parseParams(options, {limit: 10, baseArticleId: null}, {limit: 'number', baseArticleId: (x) => { return (typeof x === 'number' || x === null) }})
-    const {limit, baseArticleId} = options
+    const {limit, baseArticleId} = this._parseParams(options, {limit: 10, baseArticleId: null}, {limit: 'number', baseArticleId: (x) => { return (typeof x === 'number' || x === null) }})
 
     return new Promise((resolve, reject) => {
       this._makeRequest('Articles/Popular', {
@@ -329,7 +309,6 @@ class WikiaAPI {
    * @return {Promise<Object, Error>} - A Promise with an Object containing top articles on fulfil, and Error on rejection
    */
   getTopArticles (options = {}) {
-    this._requireSubdomain()
     const {namespaces, category, limit, baseArticleId} = this._parseParams(options, {namespaces: null, category: '', limit: 10, baseArticleId: null}, {namespaces: (x) => { return (typeof x === 'number' || Array.isArray(x) || x === null) }, category: 'string', limit: 'number', baseArticleId: (x) => { return (typeof x === 'number' || x === null) }})
 
     return new Promise((resolve, reject) => {
@@ -358,7 +337,6 @@ class WikiaAPI {
    * @return {Promise<Object, Error>} - A Promise with an Object containing top articles on fulfil, and Error on rejection
    */
   getTopArticlesExpanded (options = {}) {
-    this._requireSubdomain()
     const {namespaces, category, limit, baseArticleId} = this._parseParams(options, {namespaces: null, category: '', limit: 10, baseArticleId: null}, {namespaces: (x) => { return (typeof x === 'number' || Array.isArray(x) || x === null) }, category: 'string', limit: 'number', baseArticleId: (x) => { return (typeof x === 'number' || x === null) }})
 
     return new Promise((resolve, reject) => {
@@ -383,8 +361,6 @@ class WikiaAPI {
    * @return {Promise<Object, Error>} - A Promise with an Object containing wiki data on fulfil, and Error on rejection
    */
   getWikiVariables () {
-    this._requireSubdomain()
-
     return new Promise((resolve, reject) => {
       this._makeRequest('Mercury/WikiVariables').then(body => {
         resolve(body)
@@ -401,8 +377,6 @@ class WikiaAPI {
    * @return {Promise<Object, Error>} - A Promise with an Object containing navigation data on fulfil, and Error on rejection
    */
   getNavigationData () {
-    this._requireSubdomain()
-
     return new Promise((resolve, reject) => {
       this._makeRequest('Navigation/Data').then(body => {
         resolve(body)
@@ -414,7 +388,7 @@ class WikiaAPI {
 
   /**
    * Get pages related to a given article ID
-   * WARNING: RelatedPages extension is disabled on most wikis)
+   * WARNING: RelatedPages extension is disabled on every wiki
    * @see [RelatedPages/List](http://dev.wikia.com/api/v1#!/RelatedPages/getList_get_0)
    *
    * @param {Object} options - An Object containing every other parameter
@@ -423,7 +397,8 @@ class WikiaAPI {
    * @return {Promise<Object, Error>} - A Promise with an Object containing related pages on fulfil, and Error on rejection
    */
   getRelatedPages (options = {}) {
-    this._requireSubdomain()
+    throw new Error('RelatedPages extension is currently disabled on every wiki')
+    /*
     const {ids, limit} = this._parseParams(options, {limit: 3}, {ids: (x) => { return (typeof x === 'number' || Array.isArray(x)) }, limit: 'number'})
 
     return new Promise((resolve, reject) => {
@@ -436,6 +411,7 @@ class WikiaAPI {
         reject(error)
       })
     })
+    */
   }
 
   /**
@@ -538,11 +514,13 @@ class WikiaAPI {
     return newOptions
   }
 
+  /*
   _requireSubdomain () {
     if (!this.subdomain) {
       throw new Error('Subdomain is required to request this endpoint')
     }
   }
+  */
 }
 
 module.exports = WikiaAPI

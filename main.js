@@ -471,6 +471,30 @@ class WikiaAPI {
   }
 
   /**
+   * Get details about selected users
+   * @see [User/Details](http://dev.wikia.com/api/v1#!/User/getDetails_get_0)
+   *
+   * @param {Object} options - An Object containing every other parameter
+   * @param {(number[]|number)} options.ids - An Array of user ids or a single user id
+   * @param {number} [options.size=100] - The desired width (and height, because it is a square) for the thumbnail, defaults to 100, 0 for no thumbnail
+   * @return {Promise<Object, Error>} - A Promise with an Object containing user details on fulfil, and Error on rejection
+   */
+  getUserDetails (options = {}) {
+    const {ids, size} = this._parseParams(options, {size: 100}, {ids: (x) => { return (typeof x === 'number' || Array.isArray(x)) }, size: 'number'})
+
+    return new Promise((resolve, reject) => {
+      this._makeRequest('User/Details', {
+        ids: ids,
+        size: size
+      }).then(body => {
+        resolve(body)
+      }).catch(error => {
+        reject(error)
+      })
+    })
+  }
+
+  /**
    * Basepath of Wikia API V1 for given subdomain, for example "http://dev.wikia.com/api/v1/"
    * @name WikiaAPI#wikiapiurl
    * @type {string}

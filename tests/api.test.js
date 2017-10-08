@@ -198,3 +198,10 @@ test('SearchSuggestions must return an object', () => {
     expect(typeof data).toBe('object')
   })
 })
+
+test('UserDetails must return an object', () => {
+  expect.assertions(1)
+  return new WikiaAPI('dev').getUserDetails({ids: 26200197}).then(data => {
+    expect(typeof data).toBe('object')
+  })
+})

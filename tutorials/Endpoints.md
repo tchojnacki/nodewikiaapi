@@ -28,7 +28,7 @@ List of currently available endpoints.
 * [`SearchSuggestions`](http://dev.wikia.com/api/v1#!/SearchSuggestions)
   * `List` - [`getSearchSuggestions()`](WikiaAPI.html#getSearchSuggestions)
 * [`User`](http://dev.wikia.com/api/v1#!/User)
-  * `Details`
+  * `Details` - [`getUserDetails()`](WikiaAPI.html#getUserDetails)
 
 ## Wikia API V1 Global
 [Wikia API V1](http://www.wikia.com/api/v1) endpoints for `wikia.com`. Note that you can use most of local endpoints directly on `wikia.com` by providing no subdomain to the constructor.

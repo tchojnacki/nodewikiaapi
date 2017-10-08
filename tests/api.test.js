@@ -191,3 +191,10 @@ test('SearchList requires query', () => {
     new WikiaAPI('dev').getSearchList()
   }).toThrow()
 })
+
+test('SearchSuggestions must return an object', () => {
+  expect.assertions(1)
+  return new WikiaAPI('dev').getSearchSuggestions({query: 'js'}).then(data => {
+    expect(typeof data).toBe('object')
+  })
+})

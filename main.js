@@ -426,6 +426,7 @@ class WikiaAPI {
    * @param {number} [options.minArticleQuality=10] - Minimal value of article quality. Ranges from 0 to 99
    * @param {number} [options.batch=1] - The batch (page) of results to fetch
    * @param {(number[]|number)} [options.namespaces=[0, 14]] - Array of namespace ids or a single namespace id, see more: {@link http://community.wikia.com/wiki/Help:Namespaces}
+   * @return {Promise<Object, Error>} - A Promise with an Object containing search results on fulfil, and Error on rejection
    */
   getSearchList (options = {}) {
     const {query, type, rank, limit, minArticleQuality, batch, namespaces} = this._parseParams(options, {type: 'articles', rank: 'default', limit: 25, minArticleQuality: 10, batch: 1, namespaces: [0, 14]}, {query: 'string', type: 'string', rank: 'string', limit: 'number', minArticleQuality: 'number', batch: 'number', namespaces: (x) => { return (typeof x === 'number' || Array.isArray(x)) }})
@@ -439,6 +440,28 @@ class WikiaAPI {
         minArticleQuality: minArticleQuality,
         batch: batch,
         namespaces: this._arrayOrSingleElement(namespaces)
+      }).then(body => {
+        resolve(body)
+      }).catch(error => {
+        reject(error)
+      })
+    })
+  }
+
+  /**
+   * Find suggested phrases for chosen query
+   * @see [SearchSuggestions/List](http://dev.wikia.com/api/v1#!/SearchSuggestions/getList_get_0)
+   *
+   * @param {Object} options - An Object containing every other parameter
+   * @param {string} options.query - Search query
+   * @return {Promise<Object, Error>} - A Promise with an Object containing search suggestions on fulfil, and Error on rejection
+   */
+  getSearchSuggestions (options = {}) {
+    const {query} = this._parseParams(options, {}, {query: 'string'})
+
+    return new Promise((resolve, reject) => {
+      this._makeRequest('SearchSuggestions/List', {
+        query: query
       }).then(body => {
         resolve(body)
       }).catch(error => {

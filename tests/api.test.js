@@ -205,3 +205,19 @@ test('UserDetails must return an object', () => {
     expect(typeof data).toBe('object')
   })
 })
+
+test('Blank MW API request', () => {
+  expect(() => {
+    new WikiaAPI('dev').mwGet()
+  }).toThrow()
+})
+
+test('MW API Get', () => {
+  expect.assertions(1)
+  return new WikiaAPI('dev').mwGet({
+    action: 'query',
+    list: 'users'
+  }).then(data => {
+    expect(typeof data).toBe('object')
+  })
+})

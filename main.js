@@ -483,7 +483,13 @@ class WikiaAPI {
     }
     params = Object.assign({}, params, {format: 'json'})
 
-    // TODO: Array or single element
+    let newParams = params
+    for (let param in params) {
+      if (Array.isArray(params[param])) {
+        newParams[param] = params[param].join('|')
+      }
+    }
+    params = newParams
 
     return new Promise((resolve, reject) => {
       this._makeRequest('api.php', params).then(body => {
@@ -582,12 +588,12 @@ class WikiaAPI {
       let query = []
       for (let param in params) {
         if (params[param] !== null) {
-          query.push(param + '=' + encodeURIComponent(params[param]))
+          query.push(param + '=' + encodeURIComponent(params[param]).replace(/%7C/g, '|'))
         }
       }
 
       const reqUrl = endpoint === 'api.php' ? `${this.wikimwurl}?${query.join('&')}` : `${this.wikiapiurl}/${endpoint}?${query.join('&')}`
-
+      console.log(reqUrl)
       got(reqUrl).then(response => {
         let body
         try {

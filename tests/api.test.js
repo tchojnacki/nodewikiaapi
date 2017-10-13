@@ -221,3 +221,19 @@ test('MW API Get', () => {
     expect(typeof data).toBe('object')
   })
 })
+
+test('MW API Array', () => {
+  expect.assertions(3)
+  return new WikiaAPI('dev').mwGet({
+    action: 'query',
+    list: 'allusers',
+    aufrom: 'Wikia',
+    aulimit: 1,
+    auprop: ['groups', 'editcount', 'registration']
+  }).then(data => {
+    const user = data.query.allusers[0]
+    expect(Object.keys(user).includes('groups')).toBe(true)
+    expect(Object.keys(user).includes('editcount')).toBe(true)
+    expect(Object.keys(user).includes('registration')).toBe(true)
+  })
+})

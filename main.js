@@ -471,6 +471,30 @@ class WikiaAPI {
   }
 
   /**
+   * Get details about selected users
+   * @see [User/Details](http://dev.wikia.com/api/v1#!/User/getDetails_get_0)
+   *
+   * @param {Object} options - An Object containing every other parameter
+   * @param {(number[]|number)} options.ids - An Array of user ids or a single user id
+   * @param {number} [options.size=100] - The desired width (and height, because it is a square) for the thumbnail, defaults to 100, 0 for no thumbnail
+   * @return {Promise<Object, Error>} - A Promise with an Object containing user details on fulfil, and Error on rejection
+   */
+  getUserDetails (options = {}) {
+    const {ids, size} = this._parseParams(options, {size: 100}, {ids: (x) => { return (typeof x === 'number' || Array.isArray(x)) }, size: 'number'})
+
+    return new Promise((resolve, reject) => {
+      this._makeRequest('User/Details', {
+        ids: ids,
+        size: size
+      }).then(body => {
+        resolve(body)
+      }).catch(error => {
+        reject(error)
+      })
+    })
+  }
+
+  /**
    * Create a GET request to MW API
    * @see [MW API Documentation](http://dev.wikia.com/api.php)
    *
@@ -501,22 +525,28 @@ class WikiaAPI {
   }
 
   /**
-   * Get details about selected users
-   * @see [User/Details](http://dev.wikia.com/api/v1#!/User/getDetails_get_0)
+   * Create a POST request to MW API
+   * @see [MW API Documentation](http://dev.wikia.com/api.php)
    *
-   * @param {Object} options - An Object containing every other parameter
-   * @param {(number[]|number)} options.ids - An Array of user ids or a single user id
-   * @param {number} [options.size=100] - The desired width (and height, because it is a square) for the thumbnail, defaults to 100, 0 for no thumbnail
-   * @return {Promise<Object, Error>} - A Promise with an Object containing user details on fulfil, and Error on rejection
+   * @param {Object} params - An Object containing MW query parameters
+   * @return {Promise<Object, Error>} - A Promise with an Object containing response on fulfil, and Error on rejection
    */
-  getUserDetails (options = {}) {
-    const {ids, size} = this._parseParams(options, {size: 100}, {ids: (x) => { return (typeof x === 'number' || Array.isArray(x)) }, size: 'number'})
+  mwPost (params) {
+    if (!params) {
+      throw new Error('No parameters given')
+    }
+    params = Object.assign({}, params, {format: 'json'})
+
+    let newParams = params
+    for (let param in params) {
+      if (Array.isArray(params[param])) {
+        newParams[param] = params[param].join('|')
+      }
+    }
+    params = newParams
 
     return new Promise((resolve, reject) => {
-      this._makeRequest('User/Details', {
-        ids: ids,
-        size: size
-      }).then(body => {
+      this._makeRequest('api.php', params, 'POST').then(body => {
         resolve(body)
       }).catch(error => {
         reject(error)
@@ -583,7 +613,7 @@ class WikiaAPI {
     return 'http://wikia.com'
   }
 
-  _makeRequest (endpoint, params) {
+  _makeRequest (endpoint, params, method) {
     return new Promise((resolve, reject) => {
       let query = []
       for (let param in params) {
@@ -594,7 +624,7 @@ class WikiaAPI {
 
       const reqUrl = endpoint === 'api.php' ? `${this.wikimwurl}?${query.join('&')}` : `${this.wikiapiurl}/${endpoint}?${query.join('&')}`
       console.log(reqUrl)
-      got(reqUrl).then(response => {
+      got(reqUrl, {method: method || 'GET'}).then(response => {
         let body
         try {
           body = JSON.parse(response.body)

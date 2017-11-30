@@ -223,17 +223,23 @@ test('MW API Get', () => {
 })
 
 test('MW API Array', () => {
-  expect.assertions(3)
+  expect.assertions(1)
   return new WikiaAPI('dev').mwGet({
     action: 'query',
-    list: 'allusers',
-    aufrom: 'Wikia',
-    aulimit: 1,
-    auprop: ['groups', 'editcount', 'registration']
+    list: 'groupmembers',
+    gmgroups: ['sysop', 'bot']
   }).then(data => {
-    const user = data.query.allusers[0]
-    expect(Object.keys(user).includes('groups')).toBe(true)
-    expect(Object.keys(user).includes('editcount')).toBe(true)
-    expect(Object.keys(user).includes('registration')).toBe(true)
+    const user = data.users[0]
+    expect(Object.keys(user).includes('name')).toBe(true)
+  })
+})
+
+test('MW API Post', () => {
+  expect.assertions(1)
+  return new WikiaAPI('dev').mwPost({
+    action: 'purge',
+    titles: 'FANDOM_Open_Source_Library'
+  }).then(data => {
+    expect(typeof data).toBe('object')
   })
 })

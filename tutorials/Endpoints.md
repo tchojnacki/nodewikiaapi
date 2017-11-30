@@ -50,3 +50,5 @@ List of currently available endpoints.
 
 ## MW API
 [MediaWiki API](http://dev.wikia.com/api.php) endpoints for a given wiki.
+* [`mwGet`](WikiaAPI.html#mwGet)
+* [`mwPost`](WikiaAPI.html#mwPost)

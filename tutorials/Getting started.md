@@ -19,3 +19,5 @@ mywiki.getLatestActivity().then(data => {
   console.error(error)
 })
 ```
+
+You can also see the tests file to see some usage of the functions: [api.test.js](https://github.com/tchojnacki/nodewikiaapi/blob/master/tests/api.test.js).

@@ -495,66 +495,6 @@ class WikiaAPI {
   }
 
   /**
-   * Create a GET request to MW API
-   * @see [MW API Documentation](http://dev.wikia.com/api.php)
-   *
-   * @param {Object} params - An Object containing MW query parameters
-   * @return {Promise<Object, Error>} - A Promise with an Object containing response on fulfil, and Error on rejection
-   */
-  mwGet (params) {
-    if (!params) {
-      throw new Error('No parameters given')
-    }
-    params = Object.assign({}, params, {format: 'json'})
-
-    let newParams = params
-    for (let param in params) {
-      if (Array.isArray(params[param])) {
-        newParams[param] = params[param].join('|')
-      }
-    }
-    params = newParams
-
-    return new Promise((resolve, reject) => {
-      this._makeRequest('api.php', params).then(body => {
-        resolve(body)
-      }).catch(error => {
-        reject(error)
-      })
-    })
-  }
-
-  /**
-   * Create a POST request to MW API
-   * @see [MW API Documentation](http://dev.wikia.com/api.php)
-   *
-   * @param {Object} params - An Object containing MW query parameters
-   * @return {Promise<Object, Error>} - A Promise with an Object containing response on fulfil, and Error on rejection
-   */
-  mwPost (params) {
-    if (!params) {
-      throw new Error('No parameters given')
-    }
-    params = Object.assign({}, params, {format: 'json'})
-
-    let newParams = params
-    for (let param in params) {
-      if (Array.isArray(params[param])) {
-        newParams[param] = params[param].join('|')
-      }
-    }
-    params = newParams
-
-    return new Promise((resolve, reject) => {
-      this._makeRequest('api.php', params, 'POST').then(body => {
-        resolve(body)
-      }).catch(error => {
-        reject(error)
-      })
-    })
-  }
-
-  /**
    * Basepath of Wikia API V1 for given subdomain, for example "http://dev.wikia.com/api/v1/"
    * @name WikiaAPI#wikiapiurl
    * @type {string}
@@ -578,19 +518,6 @@ class WikiaAPI {
   }
   set wikiurl (value) {
     throw new Error('Cannot set a read-only property \'wikiurl\'')
-  }
-
-  /**
-   * Basepath of MW API for given subdomain, for example "http://dev.wikia.com/api.php"
-   * @name WikiaAPI#wikimwurl
-   * @type {string}
-   * @readonly
-   */
-  get wikimwurl () {
-    return this.subdomain === null ? `${WikiaAPI.wikiaurl}/api.php` : `${this.wikiurl}/api.php`
-  }
-  set wikimwurl (value) {
-    throw new Error('Cannot set a read-only property \'wikimwurl\'')
   }
 
   /**
@@ -622,8 +549,7 @@ class WikiaAPI {
         }
       }
 
-      const reqUrl = endpoint === 'api.php' ? `${this.wikimwurl}?${query.join('&')}` : `${this.wikiapiurl}/${endpoint}?${query.join('&')}`
-      console.log(reqUrl)
+      const reqUrl = `${this.wikiapiurl}/${endpoint}?${query.join('&')}`
       got(reqUrl, {method: method || 'GET'}).then(response => {
         let body
         try {

@@ -1,22 +1,22 @@
 {
   "name": "nodewikiaapi",
-  "version": "1.0.0",
-  "description": "Node.js wrapper for Wikia API V1",
+  "version": "2.0.0",
+  "description": "Node.js wrapper for Wikia API V1.",
   "main": "main.js",
   "scripts": {
-    "docs": "node_modules/.bin/jsdoc -c jsdoc.json",
+    "docs": "npx jsdoc -c jsdoc.json",
     "test": "jest"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/tchojnacki/nodewikiaapi.git"
   },
-  "author": "tchojnacki",
+  "author": "Tomasz Chojnacki <tomekch6@gmail.com>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/tchojnacki/nodewikiaapi/issues"
   },
-  "homepage": "https://github.com/tchojnacki/nodewikiaapi#readme",
+  "homepage": "https://tchojnacki.github.io/nodewikiaapi",
   "devDependencies": {
     "docdash": "^0.4.0",
     "jest": "^21.2.1",

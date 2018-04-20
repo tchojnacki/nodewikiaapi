@@ -39,9 +39,9 @@
 </header>
 
 <article>
-    <h2>Installation</h2><p>Copy the entire directory to your <code>node_modules</code> folder. Using <code>npm</code> might be supported in the future.</p>
+    <h2>Installation</h2><p><code>npm install nodewikiaapi</code></p>
 <h2>Import</h2><p>Import the module using <code>require</code>.</p>
-<pre class="prettyprint source lang-JavaScript"><code>const WikiaAPI = require('nodewikiaapi')</code></pre><h2>Your first request</h2><p>Create an instance of <code>WikiaAPI</code> and use any of the documented functions.</p>
+<pre class="prettyprint source lang-JavaScript"><code>const WikiaAPI = require('nodewikiaapi')</code></pre><h2>Your first request</h2><p>Create an instance of <code>WikiaAPI</code> and use any of the documented methods.</p>
 <pre class="prettyprint source lang-JavaScript"><code>const WikiaAPI = require('nodewikiaapi')
 
 const mywiki = new WikiaAPI('mylang.mysubdomain')
@@ -50,7 +50,7 @@ mywiki.getLatestActivity().then(data => {
   console.log(data)
 }).catch(error => {
   console.error(error)
-})</code></pre><p>You can also see the tests file to see some usage of the functions: <a href="https://github.com/tchojnacki/nodewikiaapi/blob/master/tests/api.test.js">api.test.js</a>.</p>
+})</code></pre><p>You can also see the tests file containing some usage of the methods: <a href="https://github.com/tchojnacki/nodewikiaapi/blob/master/tests/api.test.js">api.test.js</a>.</p>
 </article>
 
 </section>

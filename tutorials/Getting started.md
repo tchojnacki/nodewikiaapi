@@ -1,12 +1,12 @@
 ## Installation
-Copy the entire directory to your `node_modules` folder. Using `npm` might be supported in the future.
+```npm install nodewikiaapi```
 ## Import
 Import the module using `require`.
 ```JavaScript
 const WikiaAPI = require('nodewikiaapi')
 ```
 ## Your first request
-Create an instance of `WikiaAPI` and use any of the documented functions.
+Create an instance of `WikiaAPI` and use any of the documented methods.
 ```JavaScript
 const WikiaAPI = require('nodewikiaapi')
 
@@ -19,4 +19,4 @@ mywiki.getLatestActivity().then(data => {
 })
 ```
 
-You can also see the tests file to see some usage of the functions: [api.test.js](https://github.com/tchojnacki/nodewikiaapi/blob/master/tests/api.test.js).
+You can also see the tests file containing some usage of the methods: [api.test.js](https://github.com/tchojnacki/nodewikiaapi/blob/master/tests/api.test.js).

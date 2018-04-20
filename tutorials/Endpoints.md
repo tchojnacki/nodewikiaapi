@@ -1,4 +1,3 @@
-# Endpoints
 List of currently available endpoints.
 ## Wikia API V1
 [Wikia API V1](http://dev.wikia.com/api/v1) endpoints for a given wiki.

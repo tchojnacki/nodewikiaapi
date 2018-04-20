@@ -4,7 +4,7 @@
   "description": "Node.js wrapper for Wikia API V1",
   "main": "main.js",
   "scripts": {
-    "gendocs": "node_modules/.bin/jsdoc -c jsdoc.json -u tutorials",
+    "docs": "node_modules/.bin/jsdoc -c jsdoc.json",
     "test": "jest"
   },
   "repository": {
@@ -18,9 +18,9 @@
   },
   "homepage": "https://github.com/tchojnacki/nodewikiaapi#readme",
   "devDependencies": {
+    "docdash": "^0.4.0",
     "jest": "^21.2.1",
-    "jsdoc": "^3.5.5",
-    "minami": "^1.2.3"
+    "jsdoc": "^3.5.5"
   },
   "dependencies": {
     "got": "^7.1.0"

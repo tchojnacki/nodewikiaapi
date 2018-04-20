@@ -1,4 +1,3 @@
-# Endpoints
 List of currently available endpoints.
 ## Wikia API V1
 [Wikia API V1](http://dev.wikia.com/api/v1) endpoints for a given wiki.
@@ -47,8 +46,3 @@ List of currently available endpoints.
   * `Details`
   * `List`
   * `List?expand=1`
-
-## MW API
-[MediaWiki API](http://dev.wikia.com/api.php) endpoints for a given wiki.
-* [`mwGet`](WikiaAPI.html#mwGet)
-* [`mwPost`](WikiaAPI.html#mwPost)

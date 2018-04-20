@@ -1,4 +1,3 @@
-# Getting started
 ## Installation
 Copy the entire directory to your `node_modules` folder. Using `npm` might be supported in the future.
 ## Import

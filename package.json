@@ -1,7 +1,13 @@
 {
   "name": "nodewikiaapi",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Node.js wrapper for Wikia API V1.",
+  "keywords": [
+    "wikia",
+    "api",
+    "wrapper",
+    "fandom"
+  ],
   "main": "main.js",
   "scripts": {
     "docs": "npx jsdoc -c jsdoc.json",

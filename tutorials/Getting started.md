@@ -19,4 +19,4 @@ mywiki.getLatestActivity().then(data => {
 })
 ```
 
-You can also see the tests file containing some usage of the methods: [api.test.js](https://github.com/tchojnacki/nodewikiaapi/blob/master/tests/api.test.js).
+You can also see the tests file containing some usage of the methods: [api.test.js](https://github.com/tmkch/nodewikiaapi/blob/master/tests/api.test.js).

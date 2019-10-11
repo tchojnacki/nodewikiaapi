@@ -25,8 +25,8 @@
   "homepage": "https://tmkch.github.io/nodewikiaapi",
   "devDependencies": {
     "docdash": "^0.4.0",
-    "jest": "^21.2.1",
-    "jsdoc": "^3.5.5"
+    "jest": "^24.9.0",
+    "jsdoc": "^3.6.3"
   },
   "dependencies": {
     "got": "^7.1.0"

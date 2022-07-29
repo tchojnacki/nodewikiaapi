@@ -37,19 +37,7 @@ class WikiaAPI {
    * @return {Promise<Object, Error>} A Promise with an Object containing latest activity on fulfil, and Error on rejection
    */
   getLatestActivity (options = {}) {
-    const {limit, namespaces, allowDuplicates} = this._parseParams(options, {limit: 10, namespaces: 0, allowDuplicates: true}, {limit: 'number', namespaces: (x) => { return (typeof x === 'number' || Array.isArray(x)) }, allowDuplicates: 'boolean'})
-
-    return new Promise((resolve, reject) => {
-      this._makeRequest('Activity/LatestActivity', {
-        limit: limit,
-        namespaces: this._arrayOrSingleElement(namespaces),
-        allowDuplicates: allowDuplicates
-      }).then(response => {
-        resolve(response)
-      }).catch(error => {
-        reject(error)
-      })
-    })
+    throw new Error('Activity/LatestActivity endpoint is no longer supported.')
   }
 
   /**
@@ -64,19 +52,7 @@ class WikiaAPI {
    * @return {Promise<Object, Error>} A Promise with an Object containing recently changed articles on fulfil, and Error on rejection
    */
   getRecentlyChangedArticles (options = {}) {
-    const {limit, namespaces, allowDuplicates} = this._parseParams(options, {limit: 10, namespaces: 0, allowDuplicates: true}, {limit: 'number', namespaces: (x) => { return (typeof x === 'number' || Array.isArray(x)) }, allowDuplicates: 'boolean'})
-
-    return new Promise((resolve, reject) => {
-      this._makeRequest('Activity/RecentlyChangedArticles', {
-        limit: limit,
-        namespaces: this._arrayOrSingleElement(namespaces),
-        allowDuplicates: allowDuplicates
-      }).then(body => {
-        resolve(body)
-      }).catch(error => {
-        reject(error)
-      })
-    })
+    throw new Error('Activity/RecentlyChangedArticles endpoint is no longer supported.')
   }
 
   /**
@@ -89,17 +65,7 @@ class WikiaAPI {
    * @return {Promise<Object, Error>} - A Promise with an Object containing simple article data on fulfil, and Error on rejection
    */
   getArticleAsSimpleJson (options = {}) {
-    const {id} = this._parseParams(options, {}, {id: 'number'})
-
-    return new Promise((resolve, reject) => {
-      this._makeRequest('Articles/AsSimpleJson', {
-        id: id
-      }).then(body => {
-        resolve(body)
-      }).catch(error => {
-        reject(error)
-      })
-    })
+    throw new Error('Activity/AsSimpleJson endpoint is no longer supported.')
   }
 
   /**
@@ -201,13 +167,7 @@ class WikiaAPI {
    * @return {Promise<Object, Error>} - A Promise with an Object containing most linked articles on fulfil, and Error on rejection
    */
   getMostLinked () {
-    return new Promise((resolve, reject) => {
-      this._makeRequest('Articles/MostLinked').then(body => {
-        resolve(body)
-      }).catch(error => {
-        reject(error)
-      })
-    })
+    throw new Error('Articles/MostLinked endpoint is no longer supported.')
   }
 
   /**
@@ -218,13 +178,7 @@ class WikiaAPI {
    * @return {Promise<Object, Error>} - A Promise with an Object containing most linked articles on fulfil, and Error on rejection
    */
   getMostLinkedExpanded () {
-    return new Promise((resolve, reject) => {
-      this._makeRequest('Articles/MostLinked', {expand: 1}).then(body => {
-        resolve(body)
-      }).catch(error => {
-        reject(error)
-      })
-    })
+    throw new Error('Articles/MostLinked endpoint is no longer supported.')
   }
 
   /**
@@ -239,19 +193,7 @@ class WikiaAPI {
    * @return {Promise<Object, Error>} - A Promise with an Object containing new articles on fulfil, and Error on rejection
    */
   getNewArticles (options = {}) {
-    const {namespaces, limit, minArticleQuality} = this._parseParams(options, {namespaces: null, limit: 20, minArticleQuality: 10}, {namespaces: (x) => { return (typeof x === 'number' || Array.isArray(x) || x === null) }, limit: 'number', minArticleQuality: 'number'})
-
-    return new Promise((resolve, reject) => {
-      this._makeRequest('Articles/New', {
-        namespaces: this._arrayOrSingleElement(namespaces),
-        limit: limit,
-        minArticleQuality: minArticleQuality
-      }).then(body => {
-        resolve(body)
-      }).catch(error => {
-        reject(error)
-      })
-    })
+    throw new Error('Articles/New endpoint is no longer supported.')
   }
 
   /**
@@ -265,18 +207,7 @@ class WikiaAPI {
    * @return {Promise<Object, Error>} - A Promise with an Object containing popular articles on fulfil, and Error on rejection
    */
   getPopularArticles (options = {}) {
-    const {limit, baseArticleId} = this._parseParams(options, {limit: 10, baseArticleId: null}, {limit: 'number', baseArticleId: (x) => { return (typeof x === 'number' || x === null) }})
-
-    return new Promise((resolve, reject) => {
-      this._makeRequest('Articles/Popular', {
-        limit: limit,
-        baseArticleId: baseArticleId
-      }).then(body => {
-        resolve(body)
-      }).catch(error => {
-        reject(error)
-      })
-    })
+    throw new Error('Articles/Popular endpoint is no longer supported.')
   }
 
   /**
@@ -290,19 +221,7 @@ class WikiaAPI {
    * @return {Promise<Object, Error>} - A Promise with an Object containing popular articles on fulfil, and Error on rejection
    */
   getPopularArticlesExpanded (options = {}) {
-    const {limit, baseArticleId} = this._parseParams(options, {limit: 10, baseArticleId: null}, {limit: 'number', baseArticleId: (x) => { return (typeof x === 'number' || x === null) }})
-
-    return new Promise((resolve, reject) => {
-      this._makeRequest('Articles/Popular', {
-        limit: limit,
-        baseArticleId: baseArticleId,
-        expand: 1
-      }).then(body => {
-        resolve(body)
-      }).catch(error => {
-        reject(error)
-      })
-    })
+    throw new Error('Articles/Popular endpoint is no longer supported.')
   }
 
   /**
@@ -386,13 +305,7 @@ class WikiaAPI {
    * @return {Promise<Object, Error>} - A Promise with an Object containing navigation data on fulfil, and Error on rejection
    */
   getNavigationData () {
-    return new Promise((resolve, reject) => {
-      this._makeRequest('Navigation/Data').then(body => {
-        resolve(body)
-      }).catch(error => {
-        reject(error)
-      })
-    })
+    throw new Error('Navigation/Data endpoint is no longer supported.')
   }
 
   /**
@@ -407,21 +320,7 @@ class WikiaAPI {
    * @return {Promise<Object, Error>} - A Promise with an Object containing related pages on fulfil, and Error on rejection
    */
   getRelatedPages (options = {}) {
-    throw new Error('RelatedPages extension is currently disabled on every wiki')
-    /*
-    const {ids, limit} = this._parseParams(options, {limit: 3}, {ids: (x) => { return (typeof x === 'number' || Array.isArray(x)) }, limit: 'number'})
-
-    return new Promise((resolve, reject) => {
-      this._makeRequest('RelatedPages/List', {
-        ids: this._arrayOrSingleElement(ids),
-        limit: limit
-      }).then(body => {
-        resolve(body)
-      }).catch(error => {
-        reject(error)
-      })
-    })
-    */
+    throw new Error('RelatedPages/List endpoint is no longer supported.')
   }
 
   /**
@@ -440,23 +339,7 @@ class WikiaAPI {
    * @return {Promise<Object, Error>} - A Promise with an Object containing search results on fulfil, and Error on rejection
    */
   getSearchList (options = {}) {
-    const {query, type, rank, limit, minArticleQuality, batch, namespaces} = this._parseParams(options, {type: 'articles', rank: 'default', limit: 25, minArticleQuality: 10, batch: 1, namespaces: [0, 14]}, {query: 'string', type: 'string', rank: 'string', limit: 'number', minArticleQuality: 'number', batch: 'number', namespaces: (x) => { return (typeof x === 'number' || Array.isArray(x)) }})
-
-    return new Promise((resolve, reject) => {
-      this._makeRequest('Search/List', {
-        query: query,
-        type: type,
-        rank: rank,
-        limit: limit,
-        minArticleQuality: minArticleQuality,
-        batch: batch,
-        namespaces: this._arrayOrSingleElement(namespaces)
-      }).then(body => {
-        resolve(body)
-      }).catch(error => {
-        reject(error)
-      })
-    })
+    throw new Error('Search/List endpoint is no longer supported.')
   }
 
   /**

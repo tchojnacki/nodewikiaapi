@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    
     <meta charset="utf-8">
     <title>Home - Documentation</title>
-
+    
+    
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
     <!--[if lt IE 9]>
@@ -11,6 +13,8 @@
     <![endif]-->
     <link type="text/css" rel="stylesheet" href="styles/prettify.css">
     <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <script src="scripts/nav.js" defer></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
 
@@ -21,7 +25,8 @@
 
 <label for="nav-trigger" class="overlay"></label>
 
-<nav>
+<nav >
+    
     <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="WikiaAPI.html">WikiaAPI</a><ul class='methods'><li data-type='method'><a href="WikiaAPI.html#getArticleAsSimpleJson">getArticleAsSimpleJson</a></li><li data-type='method'><a href="WikiaAPI.html#getArticlesDetails">getArticlesDetails</a></li><li data-type='method'><a href="WikiaAPI.html#getArticlesList">getArticlesList</a></li><li data-type='method'><a href="WikiaAPI.html#getArticlesListExpanded">getArticlesListExpanded</a></li><li data-type='method'><a href="WikiaAPI.html#getLatestActivity">getLatestActivity</a></li><li data-type='method'><a href="WikiaAPI.html#getMostLinked">getMostLinked</a></li><li data-type='method'><a href="WikiaAPI.html#getMostLinkedExpanded">getMostLinkedExpanded</a></li><li data-type='method'><a href="WikiaAPI.html#getNavigationData">getNavigationData</a></li><li data-type='method'><a href="WikiaAPI.html#getNewArticles">getNewArticles</a></li><li data-type='method'><a href="WikiaAPI.html#getPopularArticles">getPopularArticles</a></li><li data-type='method'><a href="WikiaAPI.html#getPopularArticlesExpanded">getPopularArticlesExpanded</a></li><li data-type='method'><a href="WikiaAPI.html#getRecentlyChangedArticles">getRecentlyChangedArticles</a></li><li data-type='method'><a href="WikiaAPI.html#getRelatedPages">getRelatedPages</a></li><li data-type='method'><a href="WikiaAPI.html#getSearchList">getSearchList</a></li><li data-type='method'><a href="WikiaAPI.html#getSearchSuggestions">getSearchSuggestions</a></li><li data-type='method'><a href="WikiaAPI.html#getTopArticles">getTopArticles</a></li><li data-type='method'><a href="WikiaAPI.html#getTopArticlesExpanded">getTopArticlesExpanded</a></li><li data-type='method'><a href="WikiaAPI.html#getUserDetails">getUserDetails</a></li><li data-type='method'><a href="WikiaAPI.html#getWikiVariables">getWikiVariables</a></li></ul></li></ul><h3>Tutorials</h3><ul><li><a href="tutorial-Endpoints.html">Endpoints</a></li><li><a href="tutorial-Getting started.html">Getting started</a></li></ul>
 </nav>
 
@@ -35,6 +40,11 @@
     
 
 
+    <section class="package">
+        <h3> </h3>		
+    </section>
+
+
 
 
 
@@ -45,10 +55,14 @@
     
 
 
-    <section class="readme">
+
+    <section class="readme usertext">
         <article><h1>nodewikiaapi</h1>
-<p>Node.js wrapper for <a href="http://dev.wikia.com/api/v1">Wikia API V1</a>.</p>
-<p>Documentation available at <a href="https://tchojnacki.github.io/nodewikiaapi/">Github Pages</a>.</p>
+<p>JavaScript wrapper for the (no longer supported) Fandom's <strong>Wikia API V1</strong>.</p>
+<h2>⚠️ UNSTABLE ⚠️</h2>
+<p>The Wikia API V1 <a href="https://community.fandom.com/f/p/4400000000001906655">lost its documentation</a> following the <a href="https://community.fandom.com/wiki/Help:Unified_Community_Platform">UCP update</a>. Some of the endpoints disappeared without notice throughout the years and, generally, it seems that this API is no longer supported. Thus any of the wrapper library's methods could stop working at any time. It is not recommended to use this library for fresh projects any longer, however, I am keeping it online to make sure that all of the current users can keep depending on it.</p>
+<h2>Documentation</h2>
+<p>The documentation is available on <a href="https://tchojnacki.github.io/nodewikiaapi/">Github Pages</a>.</p>
 <p>See also:</p>
 <ul>
 <li><a href="https://tchojnacki.github.io/nodewikiaapi">Documentation</a></li>
@@ -56,7 +70,8 @@
 <li><a href="https://tchojnacki.github.io/nodewikiaapi/tutorial-Endpoints.html">List of available endpoints</a></li>
 <li><a href="https://www.npmjs.com/package/nodewikiaapi">Package in the npm registry</a></li>
 </ul>
-<p>Text content from accessed through the API is made available under the <a href="http://www.wikia.com/Licensing">Creative Commons Attribution-Share Alike License</a>. Wikia is a registered trademark of <a href="http://www.wikia.com/Terms_of_Use">Wikia, Inc.</a>. This library isn't endorsed by Wikia, Inc. and doesn't reflect the views or opinions of the company.</p></article>
+<h2>Legal info</h2>
+<p>Text content accessed through the API is made available under the <a href="https://www.fandom.com/licensing">Creative Commons Attribution-Share Alike License 3.0</a>. Wikia is a registered trademark of <a href="https://www.fandom.com/terms-of-use">Fandom, Inc.</a> (formerly known as Wikia, Inc.). This library isn't endorsed by Fandom, Inc. and doesn't reflect the views or opinions of the company.</p></article>
     </section>
 
 
@@ -64,15 +79,21 @@
 
 
 
+    
+    
 </div>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.3</a> using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.11</a> using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
 </footer>
 
 <script>prettyPrint();</script>
+<script src="scripts/polyfill.js"></script>
 <script src="scripts/linenumber.js"></script>
+
+
+
 </body>
 </html>

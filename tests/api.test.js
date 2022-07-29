@@ -30,16 +30,16 @@ test.skip('ArticleAsSimpleJson must return an object', () => {
   })
 })
 
-test('ArticleAsSimpleJson should catch on 404', () => {
+test.skip('ArticleAsSimpleJson should catch on 404', () => {
   expect.assertions(1)
   return new WikiaAPI('dev').getArticleAsSimpleJson({id: 1}).catch(error => {
     expect(error.statusCode).toBe(404)
   })
 })
 
-test.skip('ArticlesDetails must return an object', () => {
+test('ArticlesDetails must return an object', () => {
   expect.assertions(2)
-  return new WikiaAPI('dev').getArticlesDetails({ids: 12649}).then(data => {
+  return new WikiaAPI('dev').getArticlesDetails({ids: 8168}).then(data => {
     expect(typeof data).toBe('object')
     expect(Object.keys(data.items).length).toBe(1)
   })
@@ -173,7 +173,7 @@ test.skip('NavigationData must return an object', () => {
   })
 })
 
-test('RelatedPages is disabled', () => {
+test.skip('RelatedPages is disabled', () => {
   expect(() => {
     new WikiaAPI('dev').getArticlesDetails()
   }).toThrow()
@@ -186,7 +186,7 @@ test.skip('SearchList must return an object', () => {
   })
 })
 
-test('SearchList requires query', () => {
+test.skip('SearchList requires query', () => {
   expect(() => {
     new WikiaAPI('dev').getSearchList()
   }).toThrow()

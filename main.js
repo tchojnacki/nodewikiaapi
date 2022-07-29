@@ -27,6 +27,7 @@ class WikiaAPI {
 
   /**
    * Get latest activity information
+   * @deprecated since 2.0.5
    * @see [Activity/LatestActivity]{@link http://dev.wikia.com/api/v1#!/Activity/getLatestActivity_get_0}
    *
    * @param {Object} [options] - An Object containing every other parameter
@@ -53,6 +54,7 @@ class WikiaAPI {
 
   /**
    * Get recently changed articles
+   * @deprecated since 2.0.5
    * @see [Activity/RecentlyChangedArticles]{@link http://dev.wikia.com/api/v1#!/Activity/getRecentlyChangedArticles_get_1}
    *
    * @param {Object} [options] - An Object containing every other parameter
@@ -79,6 +81,7 @@ class WikiaAPI {
 
   /**
    * Get simplified article contents
+   * @deprecated since 2.0.5
    * @see [Articles/AsSimpleJson]{@link http://dev.wikia.com/api/v1#!/Articles/getAsSimpleJson_get_0}
    *
    * @param {Object} [options] - An Object containing every other parameter
@@ -192,6 +195,7 @@ class WikiaAPI {
 
   /**
    * Get the most linked articles on this wiki
+   * @deprecated since 2.0.5
    * @see [Articles/MostLinked]{@link http://dev.wikia.com/api/v1#!/Articles/getTop_get_4}
    *
    * @return {Promise<Object, Error>} - A Promise with an Object containing most linked articles on fulfil, and Error on rejection
@@ -208,6 +212,7 @@ class WikiaAPI {
 
   /**
    * Get the most linked articles on this wiki (expanded results)
+   * @deprecated since 2.0.5
    * @see [Articles/MostLinked?expand=1]{@link http://dev.wikia.com/api/v1#!/Articles/getTopExpanded_get_5}
    *
    * @return {Promise<Object, Error>} - A Promise with an Object containing most linked articles on fulfil, and Error on rejection
@@ -224,6 +229,7 @@ class WikiaAPI {
 
   /**
    * Get list of new articles on this wiki
+   * @deprecated since 2.0.5
    * @see [Articles/New]{@link http://dev.wikia.com/api/v1#!/Articles/getNew_get_6}
    *
    * @param {Object} [options] - An Object containing every other parameter
@@ -250,6 +256,7 @@ class WikiaAPI {
 
   /**
    * Get popular articles for the current wiki (from the beginning of time)
+   * @deprecated since 2.0.5
    * @see [Articles/Popular]{@link http://dev.wikia.com/api/v1#!/Articles/getPopular_get_7}
    *
    * @param {Object} [options] - An Object containing every other parameter
@@ -274,6 +281,7 @@ class WikiaAPI {
 
   /**
    * Get popular articles for the current wiki (from the beginning of time)
+   * @deprecated since 2.0.5
    * @see [Articles/Popular?expand=1]{@link http://dev.wikia.com/api/v1#!/Articles/getPopularExpanded_get_8}
    *
    * @param {Object} [options] - An Object containing every other parameter
@@ -372,6 +380,7 @@ class WikiaAPI {
 
   /**
    * Get wiki navigation links (the main menu of given wiki)
+   * @deprecated since 2.0.5
    * @see [Navigation/Data](http://dev.wikia.com/api/v1#!/Navigation/getData_get_0)
    *
    * @return {Promise<Object, Error>} - A Promise with an Object containing navigation data on fulfil, and Error on rejection
@@ -389,6 +398,7 @@ class WikiaAPI {
   /**
    * Get pages related to a given article ID
    * WARNING: RelatedPages extension is disabled on every wiki
+   * @deprecated since 2.0.5
    * @see [RelatedPages/List](http://dev.wikia.com/api/v1#!/RelatedPages/getList_get_0)
    *
    * @param {Object} options - An Object containing every other parameter
@@ -416,6 +426,7 @@ class WikiaAPI {
 
   /**
    * Do search for given phrase
+   * @deprecated since 2.0.5
    * @see [Search/List](http://dev.wikia.com/api/v1#!/Search/getList_get_1)
    *
    * @param {Object} options - An Object containing every other parameter

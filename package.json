@@ -1,6 +1,6 @@
 {
   "name": "nodewikiaapi",
-  "version": "2.0.4",
+  "version": "2.0.5",
   "description": "Node.js wrapper for Wikia API V1.",
   "keywords": [
     "wikia",
@@ -24,11 +24,11 @@
   },
   "homepage": "https://tchojnacki.github.io/nodewikiaapi",
   "devDependencies": {
-    "docdash": "^0.4.0",
-    "jest": "^24.9.0",
-    "jsdoc": "^3.6.3"
+    "docdash": "^1.2.0",
+    "jest": "^28.1.3",
+    "jsdoc": "^3.6.11"
   },
   "dependencies": {
-    "got": "^7.1.0"
+    "got": "^9.6.0"
   }
 }

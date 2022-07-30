@@ -1,4 +1,4 @@
-'use strict'
+// @ts-check
 
 const got = require('got')
 
@@ -83,7 +83,7 @@ class WikiaAPI {
    * @param {string} [options.category] - Return only articles belonging to the provided valid category title
    * @param {(number[]|number)} [options.namespaces=0] - Array of namespace ids or a single namespace id, see more: {@link http://community.wikia.com/wiki/Help:Namespaces}
    * @param {number} [options.limit=25] - Limit the number of results
-   * @param {string} [options.offset=!] - Lexicographically minimal article title
+   * @param {string} [options.offset=1] - Lexicographically minimal article title
    * @return {Promise<Object, Error>} - A Promise with an Object containing articles list on fulfil, and Error on rejection
    */
   getArticlesList(options = {}) {
@@ -124,7 +124,7 @@ class WikiaAPI {
    * @param {string} [options.category] - Return only articles belonging to the provided valid category title
    * @param {(number[]|number)} [options.namespaces=0] - Array of namespace ids or a single namespace id, see more: {@link http://community.wikia.com/wiki/Help:Namespaces}
    * @param {number} [options.limit=25] - Limit the number of results
-   * @param {string} [options.offset=!] - Lexicographically minimal article title
+   * @param {string} [options.offset=1] - Lexicographically minimal article title
    * @return {Promise<Object, Error>} - A Promise with an Object containing expanded articles list on fulfil, and Error on rejection
    */
   getArticlesListExpanded(options = {}) {
@@ -166,7 +166,7 @@ class WikiaAPI {
    * @param {(number[]|number)} [options.namespaces] -- Array of namespace ids or a single namespace id, see more: {@link http://community.wikia.com/wiki/Help:Namespaces}
    * @param {string} [options.category] - Return only articles belonging to the provided valid category title
    * @param {number} [options.limit=10] - Limit the number of result - maximum limit is 250
-   * @param {number} [baseArticleId] - Trending and popular related to article with given id
+   * @param {number} [options.baseArticleId] - Trending and popular related to article with given id
    * @return {Promise<Object, Error>} - A Promise with an Object containing top articles on fulfil, and Error on rejection
    */
   getTopArticles(options = {}) {
@@ -209,7 +209,7 @@ class WikiaAPI {
    * @param {(number[]|number)} [options.namespaces] - Array of namespace ids or a single namespace id, see more: {@link http://community.wikia.com/wiki/Help:Namespaces}
    * @param {string} [options.category] - Return only articles belonging to the provided valid category title
    * @param {number} [options.limit=10] - Limit the number of result - maximum limit is 250
-   * @param {number} [baseArticleId] - Trending and popular related to article with given id
+   * @param {number} [options.baseArticleId] - Trending and popular related to article with given id
    * @return {Promise<Object, Error>} - A Promise with an Object containing top articles on fulfil, and Error on rejection
    */
   getTopArticlesExpanded(options = {}) {
@@ -267,8 +267,8 @@ class WikiaAPI {
    * Find suggested phrases for chosen query
    * @see [SearchSuggestions/List](http://dev.wikia.com/api/v1#!/SearchSuggestions/getList_get_0)
    *
-   * @param {Object} options - An Object containing every other parameter
-   * @param {string} options.query - Search query
+   * @param {Object} [options] - An Object containing every other parameter
+   * @param {string} [options.query] - Search query
    * @return {Promise<Object, Error>} - A Promise with an Object containing search suggestions on fulfil, and Error on rejection
    */
   getSearchSuggestions(options = {}) {
@@ -291,8 +291,8 @@ class WikiaAPI {
    * Get details about selected users
    * @see [User/Details](http://dev.wikia.com/api/v1#!/User/getDetails_get_0)
    *
-   * @param {Object} options - An Object containing every other parameter
-   * @param {(number[]|number)} options.ids - An Array of user ids or a single user id
+   * @param {Object} [options] - An Object containing every other parameter
+   * @param {(number[]|number)} [options.ids] - An Array of user ids or a single user id
    * @param {number} [options.size=100] - The desired width (and height, because it is a square) for the thumbnail, defaults to 100, 0 for no thumbnail
    * @return {Promise<Object, Error>} - A Promise with an Object containing user details on fulfil, and Error on rejection
    */

@@ -25,6 +25,7 @@
   },
   "homepage": "https://tchojnacki.github.io/nodewikiaapi",
   "devDependencies": {
+    "@types/jest": "^28.1.6",
     "eslint": "^8.20.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-jest": "^26.7.0",

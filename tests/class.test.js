@@ -1,3 +1,5 @@
+// @ts-check
+
 const WikiaAPI = require('../main')
 
 test('returns statics', () => {

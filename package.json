@@ -10,9 +10,9 @@
   ],
   "main": "main.js",
   "scripts": {
-    "docs": "npx jsdoc -c jsdoc.json",
+    "docs": "jsdoc -c jsdoc.json",
     "test": "jest",
-    "lint": "yarn eslint ./main.js ./tests/*.js"
+    "lint": "eslint ./main.js ./tests/*.js"
   },
   "repository": {
     "type": "git",

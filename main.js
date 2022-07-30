@@ -44,12 +44,8 @@ class WikiaAPI {
       options,
       { ids: -1, titles: '', abstract: 100, width: 200, height: 200 },
       {
-        ids: x => {
-          return typeof x === 'number' || Array.isArray(x)
-        },
-        titles: x => {
-          return typeof x === 'string' || Array.isArray(x)
-        },
+        ids: x => typeof x === 'number' || Array.isArray(x),
+        titles: x => typeof x === 'string' || Array.isArray(x),
         abstract: 'number',
         width: 'number',
         height: 'number',
@@ -60,20 +56,12 @@ class WikiaAPI {
       throw new Error("Argument 'ids' or 'titles' should be passed")
     }
 
-    return new Promise((resolve, reject) => {
-      this._makeRequest('Articles/Details', {
-        ids: this._arrayOrSingleElement(ids),
-        titles: this._arrayOrSingleElement(titles, 'string'),
-        abstract: abstract,
-        width: width,
-        height: height,
-      })
-        .then(body => {
-          resolve(body)
-        })
-        .catch(error => {
-          reject(error)
-        })
+    return this._makeRequest('Articles/Details', {
+      ids: this._arrayOrSingleElement(ids),
+      titles: this._arrayOrSingleElement(titles, 'string'),
+      abstract: abstract,
+      width: width,
+      height: height,
     })
   }
 
@@ -93,27 +81,17 @@ class WikiaAPI {
       { category: '', namespaces: 0, limit: 25, offset: '!' },
       {
         category: 'string',
-        namespaces: x => {
-          return typeof x === 'number' || Array.isArray(x)
-        },
+        namespaces: x => typeof x === 'number' || Array.isArray(x),
         limit: 'number',
         offset: 'string',
       }
     )
 
-    return new Promise((resolve, reject) => {
-      this._makeRequest('Articles/List', {
-        category: category,
-        namespaces: this._arrayOrSingleElement(namespaces),
-        limit: limit,
-        offset: offset,
-      })
-        .then(body => {
-          resolve(body)
-        })
-        .catch(error => {
-          reject(error)
-        })
+    return this._makeRequest('Articles/List', {
+      category: category,
+      namespaces: this._arrayOrSingleElement(namespaces),
+      limit: limit,
+      offset: offset,
     })
   }
 
@@ -133,28 +111,18 @@ class WikiaAPI {
       { category: '', namespaces: 0, limit: 25, offset: '!' },
       {
         category: 'string',
-        namespaces: x => {
-          return typeof x === 'number' || Array.isArray(x)
-        },
+        namespaces: x => typeof x === 'number' || Array.isArray(x),
         limit: 'number',
         offset: 'string',
       }
     )
 
-    return new Promise((resolve, reject) => {
-      this._makeRequest('Articles/List', {
-        category: category,
-        namespaces: this._arrayOrSingleElement(namespaces),
-        limit: limit,
-        offset: offset,
-        expand: 1,
-      })
-        .then(body => {
-          resolve(body)
-        })
-        .catch(error => {
-          reject(error)
-        })
+    return this._makeRequest('Articles/List', {
+      category: category,
+      namespaces: this._arrayOrSingleElement(namespaces),
+      limit: limit,
+      offset: offset,
+      expand: 1,
     })
   }
 
@@ -173,30 +141,18 @@ class WikiaAPI {
       options,
       { namespaces: null, category: '', limit: 10, baseArticleId: null },
       {
-        namespaces: x => {
-          return typeof x === 'number' || Array.isArray(x) || x === null
-        },
+        namespaces: x => typeof x === 'number' || Array.isArray(x) || x === null,
         category: 'string',
         limit: 'number',
-        baseArticleId: x => {
-          return typeof x === 'number' || x === null
-        },
+        baseArticleId: x => typeof x === 'number' || x === null,
       }
     )
 
-    return new Promise((resolve, reject) => {
-      this._makeRequest('Articles/Top', {
-        namespaces: this._arrayOrSingleElement(namespaces),
-        category: category,
-        limit: limit,
-        baseArticleId: baseArticleId,
-      })
-        .then(body => {
-          resolve(body)
-        })
-        .catch(error => {
-          reject(error)
-        })
+    return this._makeRequest('Articles/Top', {
+      namespaces: this._arrayOrSingleElement(namespaces),
+      category: category,
+      limit: limit,
+      baseArticleId: baseArticleId,
     })
   }
 
@@ -215,31 +171,19 @@ class WikiaAPI {
       options,
       { namespaces: null, category: '', limit: 10, baseArticleId: null },
       {
-        namespaces: x => {
-          return typeof x === 'number' || Array.isArray(x) || x === null
-        },
+        namespaces: x => typeof x === 'number' || Array.isArray(x) || x === null,
         category: 'string',
         limit: 'number',
-        baseArticleId: x => {
-          return typeof x === 'number' || x === null
-        },
+        baseArticleId: x => typeof x === 'number' || x === null,
       }
     )
 
-    return new Promise((resolve, reject) => {
-      this._makeRequest('Articles/Top', {
-        namespaces: this._arrayOrSingleElement(namespaces),
-        category: category,
-        limit: limit,
-        baseArticleId: baseArticleId,
-        expand: 1,
-      })
-        .then(body => {
-          resolve(body)
-        })
-        .catch(error => {
-          reject(error)
-        })
+    return this._makeRequest('Articles/Top', {
+      namespaces: this._arrayOrSingleElement(namespaces),
+      category: category,
+      limit: limit,
+      baseArticleId: baseArticleId,
+      expand: 1,
     })
   }
 
@@ -249,15 +193,7 @@ class WikiaAPI {
    * @return {Promise<Object, Error>} - A Promise with an Object containing wiki data on fulfil, and Error on rejection
    */
   getWikiVariables() {
-    return new Promise((resolve, reject) => {
-      this._makeRequest('Mercury/WikiVariables')
-        .then(body => {
-          resolve(body)
-        })
-        .catch(error => {
-          reject(error)
-        })
-    })
+    return this._makeRequest('Mercury/WikiVariables')
   }
 
   /**
@@ -270,16 +206,8 @@ class WikiaAPI {
   getSearchSuggestions(options = {}) {
     const { query } = this._parseParams(options, {}, { query: 'string' })
 
-    return new Promise((resolve, reject) => {
-      this._makeRequest('SearchSuggestions/List', {
-        query: query,
-      })
-        .then(body => {
-          resolve(body)
-        })
-        .catch(error => {
-          reject(error)
-        })
+    return this._makeRequest('SearchSuggestions/List', {
+      query: query,
     })
   }
 
@@ -296,24 +224,14 @@ class WikiaAPI {
       options,
       { size: 100 },
       {
-        ids: x => {
-          return typeof x === 'number' || Array.isArray(x)
-        },
+        ids: x => typeof x === 'number' || Array.isArray(x),
         size: 'number',
       }
     )
 
-    return new Promise((resolve, reject) => {
-      this._makeRequest('User/Details', {
-        ids: ids,
-        size: size,
-      })
-        .then(body => {
-          resolve(body)
-        })
-        .catch(error => {
-          reject(error)
-        })
+    return this._makeRequest('User/Details', {
+      ids: ids,
+      size: size,
     })
   }
 

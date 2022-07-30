@@ -4,20 +4,16 @@ const got = require('got')
 
 /**
  * Class representing Wikia API V1 wrapper
- * @tutorial Endpoints
- * @tutorial Getting started
  *
- * @param {string} [subdomain] - Subdomain, for example "dev" or "pl.community". Providing subdomain isn't necessary, but strongly recommended, because without it you can only use global (non-wiki) APIs.
+ * @tutorial getting-started
+ * @tutorial endpoints
+ * @tutorial migration-guide
  */
 class WikiaAPI {
+  /**
+   * @param {string} [subdomain] - Subdomain, for example "dev" or "pl.community". Providing subdomain isn't necessary, but strongly recommended, because without it you can only use global (non-wiki) APIs.
+   */
   constructor(subdomain) {
-    /**
-     * Subdomain, for example "dev" or "pl.community"
-     * @see [Help:URL]{@link http://community.wikia.com/wiki/Help:URL} on Community Central
-     *
-     * @name WikiaAPI#subdomain
-     * @type {string}
-     */
     if (!subdomain) {
       this.subdomain = null
     } else {
@@ -27,7 +23,6 @@ class WikiaAPI {
 
   /**
    * Get details about one or more articles
-   * @see [Articles/Details]{@link http://dev.wikia.com/api/v1#!/Articles/getDetails_get_1}
    *
    * @param {Object} [options] - An Object containing every other parameter
    * @param {(number[]|number)} [options.ids] - An Array of article ids or a single article id
@@ -77,7 +72,6 @@ class WikiaAPI {
 
   /**
    * Get articles list in alphabetical order
-   * @see [Articles/List]{@link http://dev.wikia.com/api/v1#!/Articles/getList_get_2}
    *
    * @param {Object} [options] - An Object containing every other parameter
    * @param {string} [options.category] - Return only articles belonging to the provided valid category title
@@ -118,7 +112,6 @@ class WikiaAPI {
 
   /**
    * Get a list of pages on the current wiki
-   * @see [Articles/List?expand=1]{@link http://dev.wikia.com/api/v1#!/Articles/getListExpanded_get_3}
    *
    * @param {Object} [options] - An Object containing every other parameter
    * @param {string} [options.category] - Return only articles belonging to the provided valid category title
@@ -160,7 +153,6 @@ class WikiaAPI {
 
   /**
    * Get the most viewed articles on this wiki
-   * @see [Aricles/Top]{@link http://dev.wikia.com/api/v1#!/Articles/getTop_get_9}
    *
    * @param {Object} [options] - An Object containing every other parameter
    * @param {(number[]|number)} [options.namespaces] -- Array of namespace ids or a single namespace id, see more: {@link http://community.wikia.com/wiki/Help:Namespaces}
@@ -203,7 +195,6 @@ class WikiaAPI {
 
   /**
    * Get the most viewed articles on this wiki (expanded results)
-   * @see [Aricles/Top?expand=1]{@link http://dev.wikia.com/api/v1#!/Articles/getTopExpanded_get_10}
    *
    * @param {Object} [options] - An Object containing every other parameter
    * @param {(number[]|number)} [options.namespaces] - Array of namespace ids or a single namespace id, see more: {@link http://community.wikia.com/wiki/Help:Namespaces}
@@ -247,7 +238,6 @@ class WikiaAPI {
 
   /**
    * Get wiki data, including key values, navigation data, and more
-   * @see [Mercury/WikiVariables]{@link http://dev.wikia.com/api/v1#!/Mercury/getWikiData_get_0}
    *
    * @return {Promise<Object, Error>} - A Promise with an Object containing wiki data on fulfil, and Error on rejection
    */
@@ -265,7 +255,6 @@ class WikiaAPI {
 
   /**
    * Find suggested phrases for chosen query
-   * @see [SearchSuggestions/List](http://dev.wikia.com/api/v1#!/SearchSuggestions/getList_get_0)
    *
    * @param {Object} [options] - An Object containing every other parameter
    * @param {string} [options.query] - Search query
@@ -289,7 +278,6 @@ class WikiaAPI {
 
   /**
    * Get details about selected users
-   * @see [User/Details](http://dev.wikia.com/api/v1#!/User/getDetails_get_0)
    *
    * @param {Object} [options] - An Object containing every other parameter
    * @param {(number[]|number)} [options.ids] - An Array of user ids or a single user id

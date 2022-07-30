@@ -24,7 +24,7 @@
 <label for="nav-trigger" class="overlay"></label>
 
 <nav>
-    <li class="nav-link nav-home-link"><a href="index.html">Home</a></li><li class="nav-heading">Tutorials</li><li class="nav-item"><a href="tutorial-Endpoints.html">Endpoints</a></li><li class="nav-item"><a href="tutorial-Getting started.html">Getting started</a></li><li class="nav-item"><a href="tutorial-Migration guide.html">Migration guide</a></li><li class="nav-heading">Classes</li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="WikiaAPI.html">WikiaAPI</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="WikiaAPI.html#getArticlesDetails">getArticlesDetails</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="WikiaAPI.html#getArticlesList">getArticlesList</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="WikiaAPI.html#getArticlesListExpanded">getArticlesListExpanded</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="WikiaAPI.html#getSearchSuggestions">getSearchSuggestions</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="WikiaAPI.html#getTopArticles">getTopArticles</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="WikiaAPI.html#getTopArticlesExpanded">getTopArticlesExpanded</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="WikiaAPI.html#getUserDetails">getUserDetails</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="WikiaAPI.html#getWikiVariables">getWikiVariables</a></span></li>
+    <li class="nav-link nav-home-link"><a href="index.html">Home</a></li><li class="nav-heading">Tutorials</li><li class="nav-item"><a href="tutorial-endpoints.html">Endpoints</a></li><li class="nav-item"><a href="tutorial-getting-started.html">Getting started</a></li><li class="nav-item"><a href="tutorial-migration-guide.html">Migration guide</a></li><li class="nav-heading">Classes</li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="WikiaAPI.html">WikiaAPI</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="WikiaAPI.html#getArticlesDetails">getArticlesDetails</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="WikiaAPI.html#getArticlesList">getArticlesList</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="WikiaAPI.html#getArticlesListExpanded">getArticlesListExpanded</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="WikiaAPI.html#getSearchSuggestions">getSearchSuggestions</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="WikiaAPI.html#getTopArticles">getTopArticles</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="WikiaAPI.html#getTopArticlesExpanded">getTopArticlesExpanded</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="WikiaAPI.html#getUserDetails">getUserDetails</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="WikiaAPI.html#getWikiVariables">getWikiVariables</a></span></li>
 </nav>
 
 <div id="main">
@@ -39,26 +39,22 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>'use strict'
+            <pre class="prettyprint source linenums"><code>// @ts-check
 
 const got = require('got')
 
 /**
  * Class representing Wikia API V1 wrapper
- * @tutorial Endpoints
- * @tutorial Getting started
  *
- * @param {string} [subdomain] - Subdomain, for example "dev" or "pl.community". Providing subdomain isn't necessary, but strongly recommended, because without it you can only use global (non-wiki) APIs.
+ * @tutorial getting-started
+ * @tutorial endpoints
+ * @tutorial migration-guide
  */
 class WikiaAPI {
+  /**
+   * @param {string} [subdomain] - Subdomain, for example "dev" or "pl.community". Providing subdomain isn't necessary, but strongly recommended, because without it you can only use global (non-wiki) APIs.
+   */
   constructor(subdomain) {
-    /**
-     * Subdomain, for example "dev" or "pl.community"
-     * @see [Help:URL]{@link http://community.wikia.com/wiki/Help:URL} on Community Central
-     *
-     * @name WikiaAPI#subdomain
-     * @type {string}
-     */
     if (!subdomain) {
       this.subdomain = null
     } else {
@@ -68,7 +64,6 @@ class WikiaAPI {
 
   /**
    * Get details about one or more articles
-   * @see [Articles/Details]{@link http://dev.wikia.com/api/v1#!/Articles/getDetails_get_1}
    *
    * @param {Object} [options] - An Object containing every other parameter
    * @param {(number[]|number)} [options.ids] - An Array of article ids or a single article id
@@ -118,13 +113,12 @@ class WikiaAPI {
 
   /**
    * Get articles list in alphabetical order
-   * @see [Articles/List]{@link http://dev.wikia.com/api/v1#!/Articles/getList_get_2}
    *
    * @param {Object} [options] - An Object containing every other parameter
    * @param {string} [options.category] - Return only articles belonging to the provided valid category title
    * @param {(number[]|number)} [options.namespaces=0] - Array of namespace ids or a single namespace id, see more: {@link http://community.wikia.com/wiki/Help:Namespaces}
    * @param {number} [options.limit=25] - Limit the number of results
-   * @param {string} [options.offset=!] - Lexicographically minimal article title
+   * @param {string} [options.offset=1] - Lexicographically minimal article title
    * @return {Promise&lt;Object, Error>} - A Promise with an Object containing articles list on fulfil, and Error on rejection
    */
   getArticlesList(options = {}) {
@@ -159,13 +153,12 @@ class WikiaAPI {
 
   /**
    * Get a list of pages on the current wiki
-   * @see [Articles/List?expand=1]{@link http://dev.wikia.com/api/v1#!/Articles/getListExpanded_get_3}
    *
    * @param {Object} [options] - An Object containing every other parameter
    * @param {string} [options.category] - Return only articles belonging to the provided valid category title
    * @param {(number[]|number)} [options.namespaces=0] - Array of namespace ids or a single namespace id, see more: {@link http://community.wikia.com/wiki/Help:Namespaces}
    * @param {number} [options.limit=25] - Limit the number of results
-   * @param {string} [options.offset=!] - Lexicographically minimal article title
+   * @param {string} [options.offset=1] - Lexicographically minimal article title
    * @return {Promise&lt;Object, Error>} - A Promise with an Object containing expanded articles list on fulfil, and Error on rejection
    */
   getArticlesListExpanded(options = {}) {
@@ -201,13 +194,12 @@ class WikiaAPI {
 
   /**
    * Get the most viewed articles on this wiki
-   * @see [Aricles/Top]{@link http://dev.wikia.com/api/v1#!/Articles/getTop_get_9}
    *
    * @param {Object} [options] - An Object containing every other parameter
    * @param {(number[]|number)} [options.namespaces] -- Array of namespace ids or a single namespace id, see more: {@link http://community.wikia.com/wiki/Help:Namespaces}
    * @param {string} [options.category] - Return only articles belonging to the provided valid category title
    * @param {number} [options.limit=10] - Limit the number of result - maximum limit is 250
-   * @param {number} [baseArticleId] - Trending and popular related to article with given id
+   * @param {number} [options.baseArticleId] - Trending and popular related to article with given id
    * @return {Promise&lt;Object, Error>} - A Promise with an Object containing top articles on fulfil, and Error on rejection
    */
   getTopArticles(options = {}) {
@@ -244,13 +236,12 @@ class WikiaAPI {
 
   /**
    * Get the most viewed articles on this wiki (expanded results)
-   * @see [Aricles/Top?expand=1]{@link http://dev.wikia.com/api/v1#!/Articles/getTopExpanded_get_10}
    *
    * @param {Object} [options] - An Object containing every other parameter
    * @param {(number[]|number)} [options.namespaces] - Array of namespace ids or a single namespace id, see more: {@link http://community.wikia.com/wiki/Help:Namespaces}
    * @param {string} [options.category] - Return only articles belonging to the provided valid category title
    * @param {number} [options.limit=10] - Limit the number of result - maximum limit is 250
-   * @param {number} [baseArticleId] - Trending and popular related to article with given id
+   * @param {number} [options.baseArticleId] - Trending and popular related to article with given id
    * @return {Promise&lt;Object, Error>} - A Promise with an Object containing top articles on fulfil, and Error on rejection
    */
   getTopArticlesExpanded(options = {}) {
@@ -288,7 +279,6 @@ class WikiaAPI {
 
   /**
    * Get wiki data, including key values, navigation data, and more
-   * @see [Mercury/WikiVariables]{@link http://dev.wikia.com/api/v1#!/Mercury/getWikiData_get_0}
    *
    * @return {Promise&lt;Object, Error>} - A Promise with an Object containing wiki data on fulfil, and Error on rejection
    */
@@ -306,10 +296,9 @@ class WikiaAPI {
 
   /**
    * Find suggested phrases for chosen query
-   * @see [SearchSuggestions/List](http://dev.wikia.com/api/v1#!/SearchSuggestions/getList_get_0)
    *
-   * @param {Object} options - An Object containing every other parameter
-   * @param {string} options.query - Search query
+   * @param {Object} [options] - An Object containing every other parameter
+   * @param {string} [options.query] - Search query
    * @return {Promise&lt;Object, Error>} - A Promise with an Object containing search suggestions on fulfil, and Error on rejection
    */
   getSearchSuggestions(options = {}) {
@@ -330,10 +319,9 @@ class WikiaAPI {
 
   /**
    * Get details about selected users
-   * @see [User/Details](http://dev.wikia.com/api/v1#!/User/getDetails_get_0)
    *
-   * @param {Object} options - An Object containing every other parameter
-   * @param {(number[]|number)} options.ids - An Array of user ids or a single user id
+   * @param {Object} [options] - An Object containing every other parameter
+   * @param {(number[]|number)} [options.ids] - An Array of user ids or a single user id
    * @param {number} [options.size=100] - The desired width (and height, because it is a square) for the thumbnail, defaults to 100, 0 for no thumbnail
    * @return {Promise&lt;Object, Error>} - A Promise with an Object containing user details on fulfil, and Error on rejection
    */

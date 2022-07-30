@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Home - Documentation</title>
+    <title>Getting started - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -29,47 +29,38 @@
 
 <div id="main">
     
-
+    <h1 class="page-title">Getting started</h1>
     
 
+    <section>
 
-
+<header>
     
+</header>
 
+<article>
+    <h2>Installation</h2>
+<p><code>npm install nodewikiaapi</code></p>
+<h2>Import</h2>
+<p>Import the module using <code>require</code>.</p>
+<pre class="prettyprint source lang-JavaScript"><code>const WikiaAPI = require('nodewikiaapi')
+</code></pre>
+<h2>Your first request</h2>
+<p>Create an instance of <code>WikiaAPI</code> and use any of the documented methods.</p>
+<pre class="prettyprint source lang-JavaScript"><code>const WikiaAPI = require('nodewikiaapi')
 
+const mywiki = new WikiaAPI('mylang.mysubdomain')
 
+mywiki.getLatestActivity().then(data => { // TODO
+  console.log(data)
+}).catch(error => {
+  console.error(error)
+})
+</code></pre>
+<p>You can also see the tests file containing some usage of the methods: <a href="https://github.com/tchojnacki/nodewikiaapi/blob/master/tests/api.test.js">api.test.js</a>.</p>
+</article>
 
-
-
-
-
-
-    
-
-
-    <section class="readme">
-        <article><h1>nodewikiaapi</h1>
-<p>JavaScript wrapper for the (no longer supported) Fandom's <strong>Wikia API V1</strong>.</p>
-<h2>⚠️ UNSTABLE ⚠️</h2>
-<p>The Wikia API V1 <a href="https://community.fandom.com/f/p/4400000000001906655">lost its documentation</a> following the <a href="https://community.fandom.com/wiki/Help:Unified_Community_Platform">UCP update</a>. Some of the endpoints disappeared without notice throughout the years and, generally, it seems that this API is no longer supported. Thus any of the wrapper library's methods could stop working at any time. It is not recommended to use this library for fresh projects any longer, however, I am keeping it online to make sure that all of the current users can keep depending on it.</p>
-<h2>Documentation</h2>
-<p>The documentation is available on <a href="https://tchojnacki.github.io/nodewikiaapi/">Github Pages</a>.</p>
-<p>See also:</p>
-<ul>
-<li><a href="https://tchojnacki.github.io/nodewikiaapi">Documentation</a></li>
-<li><a href="https://tchojnacki.github.io/nodewikiaapi/tutorial-Getting%20started.html">Getting started tutorial</a></li>
-<li><a href="https://tchojnacki.github.io/nodewikiaapi/tutorial-Migration%25guide.html">Migration guide</a></li>
-<li><a href="https://tchojnacki.github.io/nodewikiaapi/tutorial-Endpoints.html">List of available endpoints</a></li>
-<li><a href="https://www.npmjs.com/package/nodewikiaapi">Package in the npm registry</a></li>
-</ul>
-<h2>Legal info</h2>
-<p>Text content accessed through the API is made available under the <a href="https://www.fandom.com/licensing">Creative Commons Attribution-Share Alike License 3.0</a>. Wikia is a registered trademark of <a href="https://www.fandom.com/terms-of-use">Fandom, Inc.</a> (formerly known as Wikia, Inc.). This library isn't endorsed by Fandom, Inc. and doesn't reflect the views or opinions of the company.</p></article>
-    </section>
-
-
-
-
-
+</section>
 
 </div>
 

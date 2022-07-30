@@ -34,6 +34,8 @@ These endpoints were removed following the UCP, with no information on whether t
 
 ## Parameter changes
 - [`WikiaAPI`](WikiaAPI.html)'s constructor `subdomain` param is now required
+- [`WikiaAPI.getArticleDetails()`](WikiaAPI.html#getArticleDetails)'s options object no longer contains `width` and `height`
+- [`WikiaAPI.getTopArticles()`](WikiaAPI.html#getTopArticles)'s options object no longer contains `baseArticleId`
 
 ## Other changes
 - [`WikiaAPI.apiBasepath`](WikiaAPI.html#apiBasepath) (formerly `wikiapiurl`) now:

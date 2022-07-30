@@ -35,20 +35,16 @@ class WikiaAPI {
    * @param {(number[]|number)} [options.ids] - An Array of article ids or a single article id
    * @param {(string[]|string)} [options.titles] - An Array of article titles or a single article title, can be used alongside ids
    * @param {number} [options.abstract=100] - The desired length for the article's abstract
-   * @param {number} [options.width=200] - The desired width for the thumbnail
-   * @param {number} [options.height=200] - The desired height for the thumbnail
    * @return {Promise<Object, Error>} - A Promise with an Object containing articles details on fulfil, and Error on rejection
    */
   getArticleDetails(options = {}) {
-    const { ids, titles, abstract, width, height } = this._parseParams(
+    const { ids, titles, abstract } = this._parseParams(
       options,
-      { ids: -1, titles: '', abstract: 100, width: 200, height: 200 },
+      { ids: -1, titles: '', abstract: 100 },
       {
         ids: x => typeof x === 'number' || Array.isArray(x),
         titles: x => typeof x === 'string' || Array.isArray(x),
         abstract: 'number',
-        width: 'number',
-        height: 'number',
       }
     )
 
@@ -60,8 +56,6 @@ class WikiaAPI {
       ids: this._arrayOrSingleElement(ids),
       titles: this._arrayOrSingleElement(titles, 'string'),
       abstract: abstract,
-      width: width,
-      height: height,
     })
   }
 
@@ -72,7 +66,7 @@ class WikiaAPI {
    * @param {string} [options.category] - Return only articles belonging to the provided valid category title
    * @param {(number[]|number)} [options.namespaces=0] - Array of namespace ids or a single namespace id, see more: {@link http://community.wikia.com/wiki/Help:Namespaces}
    * @param {number} [options.limit=25] - Limit the number of results
-   * @param {string} [options.offset=1] - Lexicographically minimal article title
+   * @param {string} [options.offset="!"] - Lexicographically minimal article title
    * @return {Promise<Object, Error>} - A Promise with an Object containing articles list on fulfil, and Error on rejection
    */
   getArticleList(options = {}) {
@@ -102,18 +96,16 @@ class WikiaAPI {
    * @param {(number[]|number)} [options.namespaces] -- Array of namespace ids or a single namespace id, see more: {@link http://community.wikia.com/wiki/Help:Namespaces}
    * @param {string} [options.category] - Return only articles belonging to the provided valid category title
    * @param {number} [options.limit=10] - Limit the number of result - maximum limit is 250
-   * @param {number} [options.baseArticleId] - Trending and popular related to article with given id
    * @return {Promise<Object, Error>} - A Promise with an Object containing top articles on fulfil, and Error on rejection
    */
   getTopArticles(options = {}) {
-    const { namespaces, category, limit, baseArticleId } = this._parseParams(
+    const { namespaces, category, limit } = this._parseParams(
       options,
-      { namespaces: null, category: '', limit: 10, baseArticleId: null },
+      { namespaces: null, category: '', limit: 10 },
       {
         namespaces: x => typeof x === 'number' || Array.isArray(x) || x === null,
         category: 'string',
         limit: 'number',
-        baseArticleId: x => typeof x === 'number' || x === null,
       }
     )
 
@@ -121,7 +113,6 @@ class WikiaAPI {
       namespaces: this._arrayOrSingleElement(namespaces),
       category: category,
       limit: limit,
-      baseArticleId: baseArticleId,
     })
   }
 

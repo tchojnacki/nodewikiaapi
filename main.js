@@ -39,7 +39,7 @@ class WikiaAPI {
    * @param {number} [options.height=200] - The desired height for the thumbnail
    * @return {Promise<Object, Error>} - A Promise with an Object containing articles details on fulfil, and Error on rejection
    */
-  getArticlesDetails(options = {}) {
+  getArticleDetails(options = {}) {
     const { ids, titles, abstract, width, height } = this._parseParams(
       options,
       { ids: -1, titles: '', abstract: 100, width: 200, height: 200 },
@@ -75,7 +75,7 @@ class WikiaAPI {
    * @param {string} [options.offset=1] - Lexicographically minimal article title
    * @return {Promise<Object, Error>} - A Promise with an Object containing articles list on fulfil, and Error on rejection
    */
-  getArticlesList(options = {}) {
+  getArticleList(options = {}) {
     const { category, namespaces, limit, offset } = this._parseParams(
       options,
       { category: '', namespaces: 0, limit: 25, offset: '!' },
@@ -105,7 +105,7 @@ class WikiaAPI {
    * @param {string} [options.offset=1] - Lexicographically minimal article title
    * @return {Promise<Object, Error>} - A Promise with an Object containing expanded articles list on fulfil, and Error on rejection
    */
-  getArticlesListExpanded(options = {}) {
+  getArticleListExpanded(options = {}) {
     const { category, namespaces, limit, offset } = this._parseParams(
       options,
       { category: '', namespaces: 0, limit: 25, offset: '!' },

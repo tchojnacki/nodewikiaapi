@@ -27,6 +27,9 @@ These endpoints were removed following the UCP, with no information on whether t
 
 ## Renames
 - `WikiaAPI.wikiapiurl` is now called [`WikiaAPI.apiBasepath`](WikiaAPI.html#apiBasepath)
+- `WikiaAPI.getArticlesDetails()` is now called [`WikiaAPI.getArticleDetails()`](WikiaAPI.html#getArticleDetails)
+- `WikiaAPI.getArticlesList()` is now called [`WikiaAPI.getArticleList()`](WikiaAPI.html#getArticleList)
+- `WikiaAPI.getArticlesListExpanded()` is now called [`WikiaAPI.getArticleListExpanded()`](WikiaAPI.html#getArticleListExpanded)
 
 ## Parameter changes
 - [`WikiaAPI`](WikiaAPI.html)'s constructor `subdomain` param is now required

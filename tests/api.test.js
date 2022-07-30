@@ -2,51 +2,51 @@
 
 const WikiaAPI = require('../main')
 
-test('ArticlesDetails must return an object', () => {
+test('ArticleDetails must return an object', () => {
   expect.assertions(2)
-  return new WikiaAPI('dev').getArticlesDetails({ ids: 8168 }).then(data => {
+  return new WikiaAPI('dev').getArticleDetails({ ids: 8168 }).then(data => {
     expect(typeof data).toBe('object')
     expect(Object.keys(data.items)).toHaveLength(1)
   })
 })
 
-test('ArticlesDetails needs at least one generator', () => {
+test('ArticleDetails needs at least one generator', () => {
   expect(() => {
-    new WikiaAPI('dev').getArticlesDetails()
+    new WikiaAPI('dev').getArticleDetails()
   }).toThrow()
 })
 
-test('ArticlesDetails with space in title', () => {
+test('ArticleDetails with space in title', () => {
   expect.assertions(1)
 
   const wikia = new WikiaAPI('dev')
   return Promise.all([
-    wikia.getArticlesDetails({ titles: 'Lua_templating/Basics' }),
-    wikia.getArticlesDetails({ titles: 'Lua templating/Basics' }),
+    wikia.getArticleDetails({ titles: 'Lua_templating/Basics' }),
+    wikia.getArticleDetails({ titles: 'Lua templating/Basics' }),
   ]).then(data => {
     expect(Object.keys(data[0].items)).toEqual(Object.keys(data[1].items))
   })
 })
 
-test('ArticlesList must return an object', () => {
+test('ArticleList must return an object', () => {
   expect.assertions(1)
-  return new WikiaAPI('dev').getArticlesList().then(data => {
+  return new WikiaAPI('dev').getArticleList().then(data => {
     expect(typeof data).toBe('object')
   })
 })
 
-test('ArticlesListExpanded must return an object', () => {
+test('ArticleListExpanded must return an object', () => {
   expect.assertions(1)
-  return new WikiaAPI('dev').getArticlesListExpanded().then(data => {
+  return new WikiaAPI('dev').getArticleListExpanded().then(data => {
     expect(typeof data).toBe('object')
   })
 })
 
-test('ArticlesList and ArticlesListExpanded must return same articles', () => {
+test('ArticleList and ArticleListExpanded must return same articles', () => {
   expect.assertions(1)
 
   const wikia = new WikiaAPI('dev')
-  return Promise.all([wikia.getArticlesList(), wikia.getArticlesListExpanded()]).then(data => {
+  return Promise.all([wikia.getArticleList(), wikia.getArticleListExpanded()]).then(data => {
     expect(Object.keys(data[0].items)).toEqual(Object.keys(data[1].items))
   })
 })

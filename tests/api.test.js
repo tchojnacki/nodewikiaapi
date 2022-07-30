@@ -1,12 +1,10 @@
-/* global test, expect */
-
 const WikiaAPI = require('../main')
 
 test('ArticlesDetails must return an object', () => {
   expect.assertions(2)
   return new WikiaAPI('dev').getArticlesDetails({ ids: 8168 }).then(data => {
     expect(typeof data).toBe('object')
-    expect(Object.keys(data.items).length).toBe(1)
+    expect(Object.keys(data.items)).toHaveLength(1)
   })
 })
 

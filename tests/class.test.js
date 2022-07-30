@@ -1,14 +1,5 @@
-/* global test, expect */
-/* eslint no-new: 0 */
-
 const WikiaAPI = require('../main')
-/*
-test('must have a subdomain if required', () => {
-  expect(() => {
-    new WikiaAPI().getLatestActivity()
-  }).toThrow()
-})
-*/
+
 test('returns statics', () => {
   expect(WikiaAPI.wikiaurl).toBe('http://wikia.com')
   expect(WikiaAPI.wikiaapiurl).toBe('http://wikia.com/api/v1')

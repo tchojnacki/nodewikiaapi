@@ -1,10 +1,12 @@
 ## Installation
 ```npm install nodewikiaapi```
+
 ## Import
 Import the module using `require`.
 ```JavaScript
 const WikiaAPI = require('nodewikiaapi')
 ```
+
 ## Your first request
 Create an instance of `WikiaAPI` and use any of the documented methods.
 ```JavaScript
@@ -12,7 +14,7 @@ const WikiaAPI = require('nodewikiaapi')
 
 const mywiki = new WikiaAPI('mylang.mysubdomain')
 
-mywiki.getLatestActivity().then(data => {
+mywiki.getLatestActivity().then(data => { // TODO
   console.log(data)
 }).catch(error => {
   console.error(error)

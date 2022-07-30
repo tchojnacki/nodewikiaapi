@@ -26,49 +26,6 @@ class WikiaAPI {
   }
 
   /**
-   * Get latest activity information
-   * @deprecated since 2.0.5
-   * @see [Activity/LatestActivity]{@link http://dev.wikia.com/api/v1#!/Activity/getLatestActivity_get_0}
-   *
-   * @param {Object} [options] - An Object containing every other parameter
-   * @param {number} [options.limit=10] - Limit the number of results
-   * @param {(number[]|number)} [options.namespaces=0] - Array of namespace ids or a single namespace id, see more: {@link http://community.wikia.com/wiki/Help:Namespaces}
-   * @param {boolean} [options.allowDuplicates=true] - Set if duplicate values of an article's revisions made by the same user are not allowed
-   * @return {Promise<Object, Error>} A Promise with an Object containing latest activity on fulfil, and Error on rejection
-   */
-  getLatestActivity (options = {}) {
-    throw new Error('Activity/LatestActivity endpoint is no longer supported.')
-  }
-
-  /**
-   * Get recently changed articles
-   * @deprecated since 2.0.5
-   * @see [Activity/RecentlyChangedArticles]{@link http://dev.wikia.com/api/v1#!/Activity/getRecentlyChangedArticles_get_1}
-   *
-   * @param {Object} [options] - An Object containing every other parameter
-   * @param {number} [options.limit=10] - Limit the number of results
-   * @param {(number[]|number)} [options.namespaces=0] - Array of namespace ids or a single namespace id, see more: {@link http://community.wikia.com/wiki/Help:Namespaces}
-   * @param {boolean} [options.allowDuplicates=true] - Set if duplicate values of an article's revisions made by the same user are not allowed
-   * @return {Promise<Object, Error>} A Promise with an Object containing recently changed articles on fulfil, and Error on rejection
-   */
-  getRecentlyChangedArticles (options = {}) {
-    throw new Error('Activity/RecentlyChangedArticles endpoint is no longer supported.')
-  }
-
-  /**
-   * Get simplified article contents
-   * @deprecated since 2.0.5
-   * @see [Articles/AsSimpleJson]{@link http://dev.wikia.com/api/v1#!/Articles/getAsSimpleJson_get_0}
-   *
-   * @param {Object} [options] - An Object containing every other parameter
-   * @param {number} options.id - A single article ID
-   * @return {Promise<Object, Error>} - A Promise with an Object containing simple article data on fulfil, and Error on rejection
-   */
-  getArticleAsSimpleJson (options = {}) {
-    throw new Error('Activity/AsSimpleJson endpoint is no longer supported.')
-  }
-
-  /**
    * Get details about one or more articles
    * @see [Articles/Details]{@link http://dev.wikia.com/api/v1#!/Articles/getDetails_get_1}
    *
@@ -160,71 +117,6 @@ class WikiaAPI {
   }
 
   /**
-   * Get the most linked articles on this wiki
-   * @deprecated since 2.0.5
-   * @see [Articles/MostLinked]{@link http://dev.wikia.com/api/v1#!/Articles/getTop_get_4}
-   *
-   * @return {Promise<Object, Error>} - A Promise with an Object containing most linked articles on fulfil, and Error on rejection
-   */
-  getMostLinked () {
-    throw new Error('Articles/MostLinked endpoint is no longer supported.')
-  }
-
-  /**
-   * Get the most linked articles on this wiki (expanded results)
-   * @deprecated since 2.0.5
-   * @see [Articles/MostLinked?expand=1]{@link http://dev.wikia.com/api/v1#!/Articles/getTopExpanded_get_5}
-   *
-   * @return {Promise<Object, Error>} - A Promise with an Object containing most linked articles on fulfil, and Error on rejection
-   */
-  getMostLinkedExpanded () {
-    throw new Error('Articles/MostLinked endpoint is no longer supported.')
-  }
-
-  /**
-   * Get list of new articles on this wiki
-   * @deprecated since 2.0.5
-   * @see [Articles/New]{@link http://dev.wikia.com/api/v1#!/Articles/getNew_get_6}
-   *
-   * @param {Object} [options] - An Object containing every other parameter
-   * @param {(number[]|number)} [options.namespaces] - Array of namespace ids or a single namespace id, see more: {@link http://community.wikia.com/wiki/Help:Namespaces}
-   * @param {number} [options.limit=20] - Limit the number of result - maximum limit is 100
-   * @param {number} [options.minArticleQuality=10] - Minimal value of article quality. Ranges from 0 to 99
-   * @return {Promise<Object, Error>} - A Promise with an Object containing new articles on fulfil, and Error on rejection
-   */
-  getNewArticles (options = {}) {
-    throw new Error('Articles/New endpoint is no longer supported.')
-  }
-
-  /**
-   * Get popular articles for the current wiki (from the beginning of time)
-   * @deprecated since 2.0.5
-   * @see [Articles/Popular]{@link http://dev.wikia.com/api/v1#!/Articles/getPopular_get_7}
-   *
-   * @param {Object} [options] - An Object containing every other parameter
-   * @param {integer} [options.limit=10] - Limit the number of result - maximum limit is 10
-   * @param {integer} [options.baseArticleId] - Trending and popular related to article with given id
-   * @return {Promise<Object, Error>} - A Promise with an Object containing popular articles on fulfil, and Error on rejection
-   */
-  getPopularArticles (options = {}) {
-    throw new Error('Articles/Popular endpoint is no longer supported.')
-  }
-
-  /**
-   * Get popular articles for the current wiki (from the beginning of time)
-   * @deprecated since 2.0.5
-   * @see [Articles/Popular?expand=1]{@link http://dev.wikia.com/api/v1#!/Articles/getPopularExpanded_get_8}
-   *
-   * @param {Object} [options] - An Object containing every other parameter
-   * @param {integer} [options.limit=10] - Limit the number of result - maximum limit is 10
-   * @param {integer} [options.baseArticleId] - Trending and popular related to article with given id
-   * @return {Promise<Object, Error>} - A Promise with an Object containing popular articles on fulfil, and Error on rejection
-   */
-  getPopularArticlesExpanded (options = {}) {
-    throw new Error('Articles/Popular endpoint is no longer supported.')
-  }
-
-  /**
    * Get the most viewed articles on this wiki
    * @see [Aricles/Top]{@link http://dev.wikia.com/api/v1#!/Articles/getTop_get_9}
    *
@@ -295,51 +187,6 @@ class WikiaAPI {
         reject(error)
       })
     })
-  }
-
-  /**
-   * Get wiki navigation links (the main menu of given wiki)
-   * @deprecated since 2.0.5
-   * @see [Navigation/Data](http://dev.wikia.com/api/v1#!/Navigation/getData_get_0)
-   *
-   * @return {Promise<Object, Error>} - A Promise with an Object containing navigation data on fulfil, and Error on rejection
-   */
-  getNavigationData () {
-    throw new Error('Navigation/Data endpoint is no longer supported.')
-  }
-
-  /**
-   * Get pages related to a given article ID
-   * WARNING: RelatedPages extension is disabled on every wiki
-   * @deprecated since 2.0.5
-   * @see [RelatedPages/List](http://dev.wikia.com/api/v1#!/RelatedPages/getList_get_0)
-   *
-   * @param {Object} options - An Object containing every other parameter
-   * @param {(number[]|number)} options.ids - An Array of article ids or a single article id
-   * @param {number} [options.limit=3] - Limit the number of results
-   * @return {Promise<Object, Error>} - A Promise with an Object containing related pages on fulfil, and Error on rejection
-   */
-  getRelatedPages (options = {}) {
-    throw new Error('RelatedPages/List endpoint is no longer supported.')
-  }
-
-  /**
-   * Do search for given phrase
-   * @deprecated since 2.0.5
-   * @see [Search/List](http://dev.wikia.com/api/v1#!/Search/getList_get_1)
-   *
-   * @param {Object} options - An Object containing every other parameter
-   * @param {string} options.query - Search query
-   * @param {string} [options.type=articles] - The search type, either articles (default) or videos. For 'videos' value, this parameter should be used with namespaces parameter (namespaces needs to be set to 6)
-   * @param {string} [options.rank=default] - The ranking to use in fetching the list of results, one of default, newest, oldest, recently-modified, stable, most-viewed, freshest, stalest
-   * @param {number} [options.limit=25] - Limit the number of results
-   * @param {number} [options.minArticleQuality=10] - Minimal value of article quality. Ranges from 0 to 99
-   * @param {number} [options.batch=1] - The batch (page) of results to fetch
-   * @param {(number[]|number)} [options.namespaces=[0, 14]] - Array of namespace ids or a single namespace id, see more: {@link http://community.wikia.com/wiki/Help:Namespaces}
-   * @return {Promise<Object, Error>} - A Promise with an Object containing search results on fulfil, and Error on rejection
-   */
-  getSearchList (options = {}) {
-    throw new Error('Search/List endpoint is no longer supported.')
   }
 
   /**

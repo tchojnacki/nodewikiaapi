@@ -10,6 +10,7 @@ The documentation is available on [Github Pages](https://tchojnacki.github.io/no
 See also:
 * [Documentation](https://tchojnacki.github.io/nodewikiaapi)
 * [Getting started tutorial](https://tchojnacki.github.io/nodewikiaapi/tutorial-Getting%20started.html)
+* [Migration guide](https://tchojnacki.github.io/nodewikiaapi/tutorial-Migration%guide.html)
 * [List of available endpoints](https://tchojnacki.github.io/nodewikiaapi/tutorial-Endpoints.html)
 * [Package in the npm registry](https://www.npmjs.com/package/nodewikiaapi)
 

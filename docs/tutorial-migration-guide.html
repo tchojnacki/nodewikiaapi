@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Migration guide - Documentation</title>
+    <title>Migration guide (3.x) - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -24,12 +24,12 @@
 <label for="nav-trigger" class="overlay"></label>
 
 <nav>
-    <li class="nav-link nav-home-link"><a href="index.html">Home</a></li><li class="nav-heading">Tutorials</li><li class="nav-item"><a href="tutorial-endpoints.html">Endpoints</a></li><li class="nav-item"><a href="tutorial-getting-started.html">Getting started</a></li><li class="nav-item"><a href="tutorial-migration-guide.html">Migration guide</a></li><li class="nav-heading">Classes</li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="WikiaAPI.html">WikiaAPI</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="WikiaAPI.html#getArticlesDetails">getArticlesDetails</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="WikiaAPI.html#getArticlesList">getArticlesList</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="WikiaAPI.html#getArticlesListExpanded">getArticlesListExpanded</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="WikiaAPI.html#getSearchSuggestions">getSearchSuggestions</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="WikiaAPI.html#getTopArticles">getTopArticles</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="WikiaAPI.html#getTopArticlesExpanded">getTopArticlesExpanded</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="WikiaAPI.html#getUserDetails">getUserDetails</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="WikiaAPI.html#getWikiVariables">getWikiVariables</a></span></li>
+    <li class="nav-link nav-home-link"><a href="index.html">Home</a></li><li class="nav-heading">Tutorials</li><li class="nav-item"><a href="tutorial-endpoints.html">Endpoints</a></li><li class="nav-item"><a href="tutorial-getting-started.html">Getting started</a></li><li class="nav-item"><a href="tutorial-migration-guide.html">Migration guide (3.x)</a></li><li class="nav-heading">Classes</li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="WikiaAPI.html">WikiaAPI</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="WikiaAPI.html#getArticlesDetails">getArticlesDetails</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="WikiaAPI.html#getArticlesList">getArticlesList</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="WikiaAPI.html#getArticlesListExpanded">getArticlesListExpanded</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="WikiaAPI.html#getSearchSuggestions">getSearchSuggestions</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="WikiaAPI.html#getTopArticles">getTopArticles</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="WikiaAPI.html#getTopArticlesExpanded">getTopArticlesExpanded</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="WikiaAPI.html#getUserDetails">getUserDetails</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="WikiaAPI.html#getWikiVariables">getWikiVariables</a></span></li>
 </nav>
 
 <div id="main">
     
-    <h1 class="page-title">Migration guide</h1>
+    <h1 class="page-title">Migration guide (3.x)</h1>
     
 
     <section>
@@ -39,7 +39,7 @@
 </header>
 
 <article>
-    <p>The following page lists <strong>BREAKING CHANGES</strong> between versions <code>2.x</code> and <code>3.x</code> of the library alongside any possible ways of migration.</p>
+    <p>The following page lists <strong>BREAKING CHANGES</strong> between versions <code>2.x</code> and <code>3.x</code> of the library alongside any possible workarounds.</p>
 <h2>Removed endpoints</h2>
 <p>These endpoints were removed following the UCP, with no information on whether they will be made available again in the future. Thus they were also removed from the wrapper library. You should no longer depend on those methods.</p>
 <ul>
@@ -72,6 +72,30 @@
 <li><code>Search</code>
 <ul>
 <li><code>List</code> (<code>getSearchList()</code>)</li>
+</ul>
+</li>
+</ul>
+<h2>Removed members</h2>
+<ul>
+<li><code>WikiaAPI.wikiaapiurl</code> static member has been removed as the <code>subdomain</code> is now required</li>
+<li><code>WikiaAPI.wikiurl</code> instance member has been removed as the <code>subdomain</code> is now required</li>
+<li><code>WikiaAPI.wikiaurl</code> static member has been removed as the <code>subdomain</code> is now required</li>
+</ul>
+<h2>Renames</h2>
+<ul>
+<li><code>WikiaAPI.wikiapiurl</code> is now called <a href="WikiaAPI.html#apiBasepath"><code>WikiaAPI.apiBasepath</code></a></li>
+</ul>
+<h2>Parameter changes</h2>
+<ul>
+<li><a href="WikiaAPI.html"><code>WikiaAPI</code></a>'s constructor <code>subdomain</code> param is now required</li>
+</ul>
+<h2>Other changes</h2>
+<ul>
+<li><a href="WikiaAPI.html#apiBasepath"><code>WikiaAPI.apiBasepath</code></a> (formerly <code>WikiaAPI.wikiapiurl</code>) now:
+<ul>
+<li>returns an extra trailing slash</li>
+<li>uses <code>https://</code> instead of <code>http://</code></li>
+<li>uses <code>fandom.com</code> instead of <code>wikia.com</code></li>
 </ul>
 </li>
 </ul>

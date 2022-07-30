@@ -2,41 +2,27 @@
 
 const WikiaAPI = require('../main')
 
-test('returns statics', () => {
-  expect(WikiaAPI.wikiaurl).toBe('http://wikia.com')
-  expect(WikiaAPI.wikiaapiurl).toBe('http://wikia.com/api/v1')
-})
+describe('WikiaAPI', () => {
+  it('saves subdomain correctly', () => {
+    const devApi = new WikiaAPI('dev')
 
-test('returns correct subdomain', () => {
-  expect(new WikiaAPI('dev').subdomain).toBe('dev')
-})
+    expect(devApi.subdomain).toBe('dev')
+    expect(devApi.language).toBeNull()
+    expect(devApi.apiBasepath).toBe('https://dev.fandom.com/api/v1/')
+  })
 
-test('can change subdomain', () => {
-  expect(
-    (() => {
-      const wikia = new WikiaAPI('dev')
-      wikia.subdomain = 'community'
-      return wikia.subdomain
-    })()
-  ).toBe('community')
-})
+  it('can have a custom language', () => {
+    const plLolApi = new WikiaAPI('leagueoflegends', 'pl')
 
-test("can't set wikiapiurl", () => {
-  expect(() => {
+    expect(plLolApi.subdomain).toBe('leagueoflegends')
+    expect(plLolApi.language).toBe('pl')
+    expect(plLolApi.apiBasepath).toBe('https://leagueoflegends.fandom.com/pl/api/v1/')
+  })
+
+  it('can have subdomain changed', () => {
     const wikia = new WikiaAPI('dev')
-    wikia.wikiapiurl = 'test'
-  }).toThrow()
-})
+    wikia.subdomain = 'community'
 
-test("can't set wikiurl", () => {
-  expect(() => {
-    const wikia = new WikiaAPI('dev')
-    wikia.wikiurl = 'test'
-  }).toThrow()
-})
-
-test('wikiurl without subdomain', () => {
-  const wikia = new WikiaAPI()
-  expect(wikia.wikiurl).toBe(WikiaAPI.wikiaurl)
-  expect(wikia.wikiapiurl).toBe(WikiaAPI.wikiaapiurl)
+    expect(wikia.apiBasepath).toBe('https://community.fandom.com/api/v1/')
+  })
 })

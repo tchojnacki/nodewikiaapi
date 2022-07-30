@@ -24,7 +24,7 @@
 <label for="nav-trigger" class="overlay"></label>
 
 <nav>
-    <li class="nav-link nav-home-link"><a href="index.html">Home</a></li><li class="nav-heading">Tutorials</li><li class="nav-item"><a href="tutorial-endpoints.html">Endpoints</a></li><li class="nav-item"><a href="tutorial-getting-started.html">Getting started</a></li><li class="nav-item"><a href="tutorial-migration-guide.html">Migration guide</a></li><li class="nav-heading">Classes</li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="WikiaAPI.html">WikiaAPI</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="WikiaAPI.html#getArticlesDetails">getArticlesDetails</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="WikiaAPI.html#getArticlesList">getArticlesList</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="WikiaAPI.html#getArticlesListExpanded">getArticlesListExpanded</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="WikiaAPI.html#getSearchSuggestions">getSearchSuggestions</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="WikiaAPI.html#getTopArticles">getTopArticles</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="WikiaAPI.html#getTopArticlesExpanded">getTopArticlesExpanded</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="WikiaAPI.html#getUserDetails">getUserDetails</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="WikiaAPI.html#getWikiVariables">getWikiVariables</a></span></li>
+    <li class="nav-link nav-home-link"><a href="index.html">Home</a></li><li class="nav-heading">Tutorials</li><li class="nav-item"><a href="tutorial-endpoints.html">Endpoints</a></li><li class="nav-item"><a href="tutorial-getting-started.html">Getting started</a></li><li class="nav-item"><a href="tutorial-migration-guide.html">Migration guide (3.x)</a></li><li class="nav-heading">Classes</li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="WikiaAPI.html">WikiaAPI</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="WikiaAPI.html#getArticlesDetails">getArticlesDetails</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="WikiaAPI.html#getArticlesList">getArticlesList</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="WikiaAPI.html#getArticlesListExpanded">getArticlesListExpanded</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="WikiaAPI.html#getSearchSuggestions">getSearchSuggestions</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="WikiaAPI.html#getTopArticles">getTopArticles</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="WikiaAPI.html#getTopArticlesExpanded">getTopArticlesExpanded</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="WikiaAPI.html#getUserDetails">getUserDetails</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="WikiaAPI.html#getWikiVariables">getWikiVariables</a></span></li>
 </nav>
 
 <div id="main">
@@ -44,7 +44,7 @@
 const got = require('got')
 
 /**
- * Class representing Wikia API V1 wrapper
+ * Object wrapping a particular wiki's Wikia API V1.
  *
  * @tutorial getting-started
  * @tutorial endpoints
@@ -52,14 +52,21 @@ const got = require('got')
  */
 class WikiaAPI {
   /**
-   * @param {string} [subdomain] - Subdomain, for example "dev" or "pl.community". Providing subdomain isn't necessary, but strongly recommended, because without it you can only use global (non-wiki) APIs.
+   * @param {string} subdomain Subdomain, for example "dev" for "dev.fandom.com"
+   * @param {string} [language] Optional language code, for example "pl" for "leagueoflegends.fandom.com/pl"
    */
-  constructor(subdomain) {
-    if (!subdomain) {
-      this.subdomain = null
-    } else {
-      this.subdomain = subdomain
-    }
+  constructor(subdomain, language) {
+    /**
+     * Subdomain, for example "dev" for "dev.fandom.com"
+     * @type {string}
+     */
+    this.subdomain = subdomain
+
+    /**
+     * Language code, for example "pl" for "leagueoflegends.fandom.com/pl"
+     * @type {string | null}
+     */
+    this.language = language ?? null
   }
 
   /**
@@ -352,49 +359,12 @@ class WikiaAPI {
   }
 
   /**
-   * Basepath of Wikia API V1 for given subdomain, for example "http://dev.wikia.com/api/v1/"
-   * @name WikiaAPI#wikiapiurl
+   * Basepath of Wikia API V1 for the given subdomain and language, for example "http://dev.fandom.com/api/v1/"
    * @type {string}
    * @readonly
    */
-  get wikiapiurl() {
-    return this.subdomain === null ? WikiaAPI.wikiaapiurl : `http://${this.subdomain}.wikia.com/api/v1`
-  }
-  set wikiapiurl(value) {
-    throw new Error("Cannot set a read-only property 'wikiapiurl'")
-  }
-
-  /**
-   * Basepath of wiki for given subdomain, for example "http://dev.wikia.com"
-   * @name WikiaAPI#wikiurl
-   * @type {string}
-   * @readonly
-   */
-  get wikiurl() {
-    return this.subdomain === null ? WikiaAPI.wikiaurl : `http://${this.subdomain}.wikia.com`
-  }
-  set wikiurl(value) {
-    throw new Error("Cannot set a read-only property 'wikiurl'")
-  }
-
-  /**
-   * Basepath of Wikia API V1 for Wikia (http://wikia.com/api/v1/)
-   * @name WikiaAPI.wikiaapiurl
-   * @type {string}
-   * @readonly
-   */
-  static get wikiaapiurl() {
-    return 'http://wikia.com/api/v1'
-  }
-
-  /**
-   * Basepath of Wikia (http://wikia.com)
-   * @name WikiaAPI.wikiaurl
-   * @type {string}
-   * @readonly
-   */
-  static get wikiaurl() {
-    return 'http://wikia.com'
+  get apiBasepath() {
+    return `https://${this.subdomain}.fandom.com/${this.language ? `${this.language}/` : ''}api/v1/`
   }
 
   _makeRequest(endpoint, params, method) {
@@ -406,7 +376,7 @@ class WikiaAPI {
         }
       }
 
-      const reqUrl = `${this.wikiapiurl}/${endpoint}?${query.join('&amp;')}`
+      const reqUrl = `${this.apiBasepath}${endpoint}?${query.join('&amp;')}`
       got(reqUrl, { method: method || 'GET' })
         .then(response => {
           let body

@@ -5,9 +5,7 @@ List of all endpoints which are still supported.
 * `Articles`
   * `Details` ([`getArticlesDetails()`](WikiaAPI.html#getArticlesDetails))
   * `List` ([`getArticlesList()`](WikiaAPI.html#getArticlesList))
-  * `List?expand=1` ([`getArticlesListExpanded()`](WikiaAPI.html#getArticlesListExpanded))
   * `Top` ([`getTopArticles()`](WikiaAPI.html#getTopArticles))
-  * `Top?expand=1` ([`getTopArticlesExpanded()`](WikiaAPI.html#getTopArticlesExpanded))
 * `Mercury`
   * `WikiVariables` ([`getWikiVariables()`](WikiaAPI.html#getWikiVariables))
 * `SearchSuggestions`

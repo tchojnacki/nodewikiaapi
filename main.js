@@ -96,37 +96,6 @@ class WikiaAPI {
   }
 
   /**
-   * Get a list of pages on the current wiki
-   *
-   * @param {Object} [options] - An Object containing every other parameter
-   * @param {string} [options.category] - Return only articles belonging to the provided valid category title
-   * @param {(number[]|number)} [options.namespaces=0] - Array of namespace ids or a single namespace id, see more: {@link http://community.wikia.com/wiki/Help:Namespaces}
-   * @param {number} [options.limit=25] - Limit the number of results
-   * @param {string} [options.offset=1] - Lexicographically minimal article title
-   * @return {Promise<Object, Error>} - A Promise with an Object containing expanded articles list on fulfil, and Error on rejection
-   */
-  getArticleListExpanded(options = {}) {
-    const { category, namespaces, limit, offset } = this._parseParams(
-      options,
-      { category: '', namespaces: 0, limit: 25, offset: '!' },
-      {
-        category: 'string',
-        namespaces: x => typeof x === 'number' || Array.isArray(x),
-        limit: 'number',
-        offset: 'string',
-      }
-    )
-
-    return this._makeRequest('Articles/List', {
-      category: category,
-      namespaces: this._arrayOrSingleElement(namespaces),
-      limit: limit,
-      offset: offset,
-      expand: 1,
-    })
-  }
-
-  /**
    * Get the most viewed articles on this wiki
    *
    * @param {Object} [options] - An Object containing every other parameter
@@ -153,37 +122,6 @@ class WikiaAPI {
       category: category,
       limit: limit,
       baseArticleId: baseArticleId,
-    })
-  }
-
-  /**
-   * Get the most viewed articles on this wiki (expanded results)
-   *
-   * @param {Object} [options] - An Object containing every other parameter
-   * @param {(number[]|number)} [options.namespaces] - Array of namespace ids or a single namespace id, see more: {@link http://community.wikia.com/wiki/Help:Namespaces}
-   * @param {string} [options.category] - Return only articles belonging to the provided valid category title
-   * @param {number} [options.limit=10] - Limit the number of result - maximum limit is 250
-   * @param {number} [options.baseArticleId] - Trending and popular related to article with given id
-   * @return {Promise<Object, Error>} - A Promise with an Object containing top articles on fulfil, and Error on rejection
-   */
-  getTopArticlesExpanded(options = {}) {
-    const { namespaces, category, limit, baseArticleId } = this._parseParams(
-      options,
-      { namespaces: null, category: '', limit: 10, baseArticleId: null },
-      {
-        namespaces: x => typeof x === 'number' || Array.isArray(x) || x === null,
-        category: 'string',
-        limit: 'number',
-        baseArticleId: x => typeof x === 'number' || x === null,
-      }
-    )
-
-    return this._makeRequest('Articles/Top', {
-      namespaces: this._arrayOrSingleElement(namespaces),
-      category: category,
-      limit: limit,
-      baseArticleId: baseArticleId,
-      expand: 1,
     })
   }
 

@@ -1,20 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    
     <meta charset="utf-8">
-    <title>Tutorial: Getting started - Documentation</title>
-    
-    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Getting started - Documentation</title>
+
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
     <!--[if lt IE 9]>
       <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
-    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
-    <script src="scripts/nav.js" defer></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="text/css" rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
 </head>
 <body>
 
@@ -25,22 +23,19 @@
 
 <label for="nav-trigger" class="overlay"></label>
 
-<nav >
-    
-    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="WikiaAPI.html">WikiaAPI</a><ul class='methods'><li data-type='method'><a href="WikiaAPI.html#getArticleAsSimpleJson">getArticleAsSimpleJson</a></li><li data-type='method'><a href="WikiaAPI.html#getArticlesDetails">getArticlesDetails</a></li><li data-type='method'><a href="WikiaAPI.html#getArticlesList">getArticlesList</a></li><li data-type='method'><a href="WikiaAPI.html#getArticlesListExpanded">getArticlesListExpanded</a></li><li data-type='method'><a href="WikiaAPI.html#getLatestActivity">getLatestActivity</a></li><li data-type='method'><a href="WikiaAPI.html#getMostLinked">getMostLinked</a></li><li data-type='method'><a href="WikiaAPI.html#getMostLinkedExpanded">getMostLinkedExpanded</a></li><li data-type='method'><a href="WikiaAPI.html#getNavigationData">getNavigationData</a></li><li data-type='method'><a href="WikiaAPI.html#getNewArticles">getNewArticles</a></li><li data-type='method'><a href="WikiaAPI.html#getPopularArticles">getPopularArticles</a></li><li data-type='method'><a href="WikiaAPI.html#getPopularArticlesExpanded">getPopularArticlesExpanded</a></li><li data-type='method'><a href="WikiaAPI.html#getRecentlyChangedArticles">getRecentlyChangedArticles</a></li><li data-type='method'><a href="WikiaAPI.html#getRelatedPages">getRelatedPages</a></li><li data-type='method'><a href="WikiaAPI.html#getSearchList">getSearchList</a></li><li data-type='method'><a href="WikiaAPI.html#getSearchSuggestions">getSearchSuggestions</a></li><li data-type='method'><a href="WikiaAPI.html#getTopArticles">getTopArticles</a></li><li data-type='method'><a href="WikiaAPI.html#getTopArticlesExpanded">getTopArticlesExpanded</a></li><li data-type='method'><a href="WikiaAPI.html#getUserDetails">getUserDetails</a></li><li data-type='method'><a href="WikiaAPI.html#getWikiVariables">getWikiVariables</a></li></ul></li></ul><h3>Tutorials</h3><ul><li><a href="tutorial-Endpoints.html">Endpoints</a></li><li><a href="tutorial-Getting started.html">Getting started</a></li></ul>
+<nav>
+    <li class="nav-link nav-home-link"><a href="index.html">Home</a></li><li class="nav-heading">Tutorials</li><li class="nav-item"><a href="tutorial-Endpoints.html">Endpoints</a></li><li class="nav-item"><a href="tutorial-Getting started.html">Getting started</a></li><li class="nav-item"><a href="tutorial-Migration guide.html">Migration guide</a></li><li class="nav-heading">Classes</li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="WikiaAPI.html">WikiaAPI</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="WikiaAPI.html#getArticlesDetails">getArticlesDetails</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="WikiaAPI.html#getArticlesList">getArticlesList</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="WikiaAPI.html#getArticlesListExpanded">getArticlesListExpanded</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="WikiaAPI.html#getSearchSuggestions">getSearchSuggestions</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="WikiaAPI.html#getTopArticles">getTopArticles</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="WikiaAPI.html#getTopArticlesExpanded">getTopArticlesExpanded</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="WikiaAPI.html#getUserDetails">getUserDetails</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="WikiaAPI.html#getWikiVariables">getWikiVariables</a></span></li>
 </nav>
 
 <div id="main">
     
-    <h1 class="page-title">Tutorial: Getting started</h1>
+    <h1 class="page-title">Getting started</h1>
     
 
     <section>
 
 <header>
     
-
-    <h2>Getting started</h2>
 </header>
 
 <article>
@@ -56,7 +51,7 @@
 
 const mywiki = new WikiaAPI('mylang.mysubdomain')
 
-mywiki.getLatestActivity().then(data => {
+mywiki.getLatestActivity().then(data => { // TODO
   console.log(data)
 }).catch(error => {
   console.error(error)
@@ -67,21 +62,15 @@ mywiki.getLatestActivity().then(data => {
 
 </section>
 
-    
-    
 </div>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.11</a> using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+    Generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.11</a> using the Minami theme.
 </footer>
 
 <script>prettyPrint();</script>
-<script src="scripts/polyfill.js"></script>
 <script src="scripts/linenumber.js"></script>
-
-
-
 </body>
 </html>

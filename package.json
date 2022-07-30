@@ -24,9 +24,9 @@
   },
   "homepage": "https://tchojnacki.github.io/nodewikiaapi",
   "devDependencies": {
-    "docdash": "^1.2.0",
     "jest": "^28.1.3",
-    "jsdoc": "^3.6.11"
+    "jsdoc": "^3.6.11",
+    "minami": "^1.2.3"
   },
   "dependencies": {
     "got": "^9.6.0"

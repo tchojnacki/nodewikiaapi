@@ -3,14 +3,10 @@
     "include": ["main.js", "README.md"]
   },
   "opts": {
-    "template": "node_modules/docdash",
+    "template": "node_modules/minami",
     "destination": "./docs/",
     "encoding": "utf8",
     "tutorials": "tutorials"
-  },
-  "tags": {
-    "allowUnknownTags": true,
-    "dictionaries": ["jsdoc", "closure"]
   },
   "plugins": [
     "plugins/markdown"

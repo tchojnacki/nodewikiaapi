@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Home - Documentation</title>
+    <title>Migration guide - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -29,47 +29,55 @@
 
 <div id="main">
     
-
+    <h1 class="page-title">Migration guide</h1>
     
 
+    <section>
 
-
+<header>
     
+</header>
 
-
-
-
-
-
-
-
-
-    
-
-
-    <section class="readme">
-        <article><h1>nodewikiaapi</h1>
-<p>JavaScript wrapper for the (no longer supported) Fandom's <strong>Wikia API V1</strong>.</p>
-<h2>⚠️ UNSTABLE ⚠️</h2>
-<p>The Wikia API V1 <a href="https://community.fandom.com/f/p/4400000000001906655">lost its documentation</a> following the <a href="https://community.fandom.com/wiki/Help:Unified_Community_Platform">UCP update</a>. Some of the endpoints disappeared without notice throughout the years and, generally, it seems that this API is no longer supported. Thus any of the wrapper library's methods could stop working at any time. It is not recommended to use this library for fresh projects any longer, however, I am keeping it online to make sure that all of the current users can keep depending on it.</p>
-<h2>Documentation</h2>
-<p>The documentation is available on <a href="https://tchojnacki.github.io/nodewikiaapi/">Github Pages</a>.</p>
-<p>See also:</p>
+<article>
+    <p>The following page lists <strong>BREAKING CHANGES</strong> between versions <code>2.x</code> and <code>3.x</code> of the library alongside any possible ways of migration.</p>
+<h2>Removed endpoints</h2>
+<p>These endpoints were removed following the UCP, with no information on whether they will be made available again in the future. Thus they were also removed from the wrapper library. You should no longer depend on those methods.</p>
 <ul>
-<li><a href="https://tchojnacki.github.io/nodewikiaapi">Documentation</a></li>
-<li><a href="https://tchojnacki.github.io/nodewikiaapi/tutorial-Getting%20started.html">Getting started tutorial</a></li>
-<li><a href="https://tchojnacki.github.io/nodewikiaapi/tutorial-Migration%25guide.html">Migration guide</a></li>
-<li><a href="https://tchojnacki.github.io/nodewikiaapi/tutorial-Endpoints.html">List of available endpoints</a></li>
-<li><a href="https://www.npmjs.com/package/nodewikiaapi">Package in the npm registry</a></li>
+<li><code>Activity</code>
+<ul>
+<li><code>LatestActivity</code> (<code>getLatestActivity()</code>)</li>
+<li><code>RecentlyChangedArticles</code> (<code>getRecentlyChangedArticles()</code>)</li>
 </ul>
-<h2>Legal info</h2>
-<p>Text content accessed through the API is made available under the <a href="https://www.fandom.com/licensing">Creative Commons Attribution-Share Alike License 3.0</a>. Wikia is a registered trademark of <a href="https://www.fandom.com/terms-of-use">Fandom, Inc.</a> (formerly known as Wikia, Inc.). This library isn't endorsed by Fandom, Inc. and doesn't reflect the views or opinions of the company.</p></article>
-    </section>
+</li>
+<li><code>Articles</code>
+<ul>
+<li><code>AsSimpleJson</code> (<code>getArticleAsSimpleJson()</code>)</li>
+<li><code>MostLinked</code> (<code>getMostLinked()</code>)</li>
+<li><code>MostLinked?expand=1</code> (<code>getMostLinkedExpanded()</code>)</li>
+<li><code>New</code> (<code>getNewArticles()</code>)</li>
+<li><code>Popular</code> (<code>getPopularArticles()</code>)</li>
+<li><code>Popular?expand=1</code> (<code>getPopularArticlesExpanded()</code>)</li>
+</ul>
+</li>
+<li><code>Navigation</code>
+<ul>
+<li><code>Data</code> (<code>getNavigationData()</code>)</li>
+</ul>
+</li>
+<li><code>RelatedPages</code>
+<ul>
+<li><code>List</code> (<code>getRelatedPages()</code>)</li>
+</ul>
+</li>
+<li><code>Search</code>
+<ul>
+<li><code>List</code> (<code>getSearchList()</code>)</li>
+</ul>
+</li>
+</ul>
+</article>
 
-
-
-
-
+</section>
 
 </div>
 

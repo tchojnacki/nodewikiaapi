@@ -1,20 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>main.js - Documentation</title>
-    
-    
+
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
     <!--[if lt IE 9]>
       <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
-    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
-    <script src="scripts/nav.js" defer></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="text/css" rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
 </head>
 <body>
 
@@ -25,9 +23,8 @@
 
 <label for="nav-trigger" class="overlay"></label>
 
-<nav >
-    
-    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="WikiaAPI.html">WikiaAPI</a><ul class='methods'><li data-type='method'><a href="WikiaAPI.html#getArticleAsSimpleJson">getArticleAsSimpleJson</a></li><li data-type='method'><a href="WikiaAPI.html#getArticlesDetails">getArticlesDetails</a></li><li data-type='method'><a href="WikiaAPI.html#getArticlesList">getArticlesList</a></li><li data-type='method'><a href="WikiaAPI.html#getArticlesListExpanded">getArticlesListExpanded</a></li><li data-type='method'><a href="WikiaAPI.html#getLatestActivity">getLatestActivity</a></li><li data-type='method'><a href="WikiaAPI.html#getMostLinked">getMostLinked</a></li><li data-type='method'><a href="WikiaAPI.html#getMostLinkedExpanded">getMostLinkedExpanded</a></li><li data-type='method'><a href="WikiaAPI.html#getNavigationData">getNavigationData</a></li><li data-type='method'><a href="WikiaAPI.html#getNewArticles">getNewArticles</a></li><li data-type='method'><a href="WikiaAPI.html#getPopularArticles">getPopularArticles</a></li><li data-type='method'><a href="WikiaAPI.html#getPopularArticlesExpanded">getPopularArticlesExpanded</a></li><li data-type='method'><a href="WikiaAPI.html#getRecentlyChangedArticles">getRecentlyChangedArticles</a></li><li data-type='method'><a href="WikiaAPI.html#getRelatedPages">getRelatedPages</a></li><li data-type='method'><a href="WikiaAPI.html#getSearchList">getSearchList</a></li><li data-type='method'><a href="WikiaAPI.html#getSearchSuggestions">getSearchSuggestions</a></li><li data-type='method'><a href="WikiaAPI.html#getTopArticles">getTopArticles</a></li><li data-type='method'><a href="WikiaAPI.html#getTopArticlesExpanded">getTopArticlesExpanded</a></li><li data-type='method'><a href="WikiaAPI.html#getUserDetails">getUserDetails</a></li><li data-type='method'><a href="WikiaAPI.html#getWikiVariables">getWikiVariables</a></li></ul></li></ul><h3>Tutorials</h3><ul><li><a href="tutorial-Endpoints.html">Endpoints</a></li><li><a href="tutorial-Getting started.html">Getting started</a></li></ul>
+<nav>
+    <li class="nav-link nav-home-link"><a href="index.html">Home</a></li><li class="nav-heading">Tutorials</li><li class="nav-item"><a href="tutorial-Endpoints.html">Endpoints</a></li><li class="nav-item"><a href="tutorial-Getting started.html">Getting started</a></li><li class="nav-item"><a href="tutorial-Migration guide.html">Migration guide</a></li><li class="nav-heading">Classes</li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="WikiaAPI.html">WikiaAPI</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="WikiaAPI.html#getArticlesDetails">getArticlesDetails</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="WikiaAPI.html#getArticlesList">getArticlesList</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="WikiaAPI.html#getArticlesListExpanded">getArticlesListExpanded</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="WikiaAPI.html#getSearchSuggestions">getSearchSuggestions</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="WikiaAPI.html#getTopArticles">getTopArticles</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="WikiaAPI.html#getTopArticlesExpanded">getTopArticlesExpanded</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="WikiaAPI.html#getUserDetails">getUserDetails</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="WikiaAPI.html#getWikiVariables">getWikiVariables</a></span></li>
 </nav>
 
 <div id="main">
@@ -54,7 +51,7 @@ const got = require('got')
  * @param {string} [subdomain] - Subdomain, for example "dev" or "pl.community". Providing subdomain isn't necessary, but strongly recommended, because without it you can only use global (non-wiki) APIs.
  */
 class WikiaAPI {
-  constructor (subdomain) {
+  constructor(subdomain) {
     /**
      * Subdomain, for example "dev" or "pl.community"
      * @see [Help:URL]{@link http://community.wikia.com/wiki/Help:URL} on Community Central
@@ -70,49 +67,6 @@ class WikiaAPI {
   }
 
   /**
-   * Get latest activity information
-   * @deprecated since 2.0.5
-   * @see [Activity/LatestActivity]{@link http://dev.wikia.com/api/v1#!/Activity/getLatestActivity_get_0}
-   *
-   * @param {Object} [options] - An Object containing every other parameter
-   * @param {number} [options.limit=10] - Limit the number of results
-   * @param {(number[]|number)} [options.namespaces=0] - Array of namespace ids or a single namespace id, see more: {@link http://community.wikia.com/wiki/Help:Namespaces}
-   * @param {boolean} [options.allowDuplicates=true] - Set if duplicate values of an article's revisions made by the same user are not allowed
-   * @return {Promise&lt;Object, Error>} A Promise with an Object containing latest activity on fulfil, and Error on rejection
-   */
-  getLatestActivity (options = {}) {
-    throw new Error('Activity/LatestActivity endpoint is no longer supported.')
-  }
-
-  /**
-   * Get recently changed articles
-   * @deprecated since 2.0.5
-   * @see [Activity/RecentlyChangedArticles]{@link http://dev.wikia.com/api/v1#!/Activity/getRecentlyChangedArticles_get_1}
-   *
-   * @param {Object} [options] - An Object containing every other parameter
-   * @param {number} [options.limit=10] - Limit the number of results
-   * @param {(number[]|number)} [options.namespaces=0] - Array of namespace ids or a single namespace id, see more: {@link http://community.wikia.com/wiki/Help:Namespaces}
-   * @param {boolean} [options.allowDuplicates=true] - Set if duplicate values of an article's revisions made by the same user are not allowed
-   * @return {Promise&lt;Object, Error>} A Promise with an Object containing recently changed articles on fulfil, and Error on rejection
-   */
-  getRecentlyChangedArticles (options = {}) {
-    throw new Error('Activity/RecentlyChangedArticles endpoint is no longer supported.')
-  }
-
-  /**
-   * Get simplified article contents
-   * @deprecated since 2.0.5
-   * @see [Articles/AsSimpleJson]{@link http://dev.wikia.com/api/v1#!/Articles/getAsSimpleJson_get_0}
-   *
-   * @param {Object} [options] - An Object containing every other parameter
-   * @param {number} options.id - A single article ID
-   * @return {Promise&lt;Object, Error>} - A Promise with an Object containing simple article data on fulfil, and Error on rejection
-   */
-  getArticleAsSimpleJson (options = {}) {
-    throw new Error('Activity/AsSimpleJson endpoint is no longer supported.')
-  }
-
-  /**
    * Get details about one or more articles
    * @see [Articles/Details]{@link http://dev.wikia.com/api/v1#!/Articles/getDetails_get_1}
    *
@@ -124,11 +78,25 @@ class WikiaAPI {
    * @param {number} [options.height=200] - The desired height for the thumbnail
    * @return {Promise&lt;Object, Error>} - A Promise with an Object containing articles details on fulfil, and Error on rejection
    */
-  getArticlesDetails (options = {}) {
-    const {ids, titles, abstract, width, height} = this._parseParams(options, {ids: -1, titles: '', abstract: 100, width: 200, height: 200}, {ids: (x) => { return (typeof x === 'number' || Array.isArray(x)) }, titles: (x) => { return (typeof x === 'string' || Array.isArray(x)) }, abstract: 'number', width: 'number', height: 'number'})
+  getArticlesDetails(options = {}) {
+    const { ids, titles, abstract, width, height } = this._parseParams(
+      options,
+      { ids: -1, titles: '', abstract: 100, width: 200, height: 200 },
+      {
+        ids: x => {
+          return typeof x === 'number' || Array.isArray(x)
+        },
+        titles: x => {
+          return typeof x === 'string' || Array.isArray(x)
+        },
+        abstract: 'number',
+        width: 'number',
+        height: 'number',
+      }
+    )
 
     if (ids === -1 &amp;&amp; titles === '') {
-      throw new Error('Argument \'ids\' or \'titles\' should be passed')
+      throw new Error("Argument 'ids' or 'titles' should be passed")
     }
 
     return new Promise((resolve, reject) => {
@@ -137,12 +105,14 @@ class WikiaAPI {
         titles: this._arrayOrSingleElement(titles, 'string'),
         abstract: abstract,
         width: width,
-        height: height
-      }).then(body => {
-        resolve(body)
-      }).catch(error => {
-        reject(error)
+        height: height,
       })
+        .then(body => {
+          resolve(body)
+        })
+        .catch(error => {
+          reject(error)
+        })
     })
   }
 
@@ -157,20 +127,33 @@ class WikiaAPI {
    * @param {string} [options.offset=!] - Lexicographically minimal article title
    * @return {Promise&lt;Object, Error>} - A Promise with an Object containing articles list on fulfil, and Error on rejection
    */
-  getArticlesList (options = {}) {
-    const {category, namespaces, limit, offset} = this._parseParams(options, {category: '', namespaces: 0, limit: 25, offset: '!'}, {category: 'string', namespaces: (x) => { return (typeof x === 'number' || Array.isArray(x)) }, limit: 'number', offset: 'string'})
+  getArticlesList(options = {}) {
+    const { category, namespaces, limit, offset } = this._parseParams(
+      options,
+      { category: '', namespaces: 0, limit: 25, offset: '!' },
+      {
+        category: 'string',
+        namespaces: x => {
+          return typeof x === 'number' || Array.isArray(x)
+        },
+        limit: 'number',
+        offset: 'string',
+      }
+    )
 
     return new Promise((resolve, reject) => {
       this._makeRequest('Articles/List', {
         category: category,
         namespaces: this._arrayOrSingleElement(namespaces),
         limit: limit,
-        offset: offset
-      }).then(body => {
-        resolve(body)
-      }).catch(error => {
-        reject(error)
+        offset: offset,
       })
+        .then(body => {
+          resolve(body)
+        })
+        .catch(error => {
+          reject(error)
+        })
     })
   }
 
@@ -185,8 +168,19 @@ class WikiaAPI {
    * @param {string} [options.offset=!] - Lexicographically minimal article title
    * @return {Promise&lt;Object, Error>} - A Promise with an Object containing expanded articles list on fulfil, and Error on rejection
    */
-  getArticlesListExpanded (options = {}) {
-    const {category, namespaces, limit, offset} = this._parseParams(options, {category: '', namespaces: 0, limit: 25, offset: '!'}, {category: 'string', namespaces: (x) => { return (typeof x === 'number' || Array.isArray(x)) }, limit: 'number', offset: 'string'})
+  getArticlesListExpanded(options = {}) {
+    const { category, namespaces, limit, offset } = this._parseParams(
+      options,
+      { category: '', namespaces: 0, limit: 25, offset: '!' },
+      {
+        category: 'string',
+        namespaces: x => {
+          return typeof x === 'number' || Array.isArray(x)
+        },
+        limit: 'number',
+        offset: 'string',
+      }
+    )
 
     return new Promise((resolve, reject) => {
       this._makeRequest('Articles/List', {
@@ -194,78 +188,15 @@ class WikiaAPI {
         namespaces: this._arrayOrSingleElement(namespaces),
         limit: limit,
         offset: offset,
-        expand: 1
-      }).then(body => {
-        resolve(body)
-      }).catch(error => {
-        reject(error)
+        expand: 1,
       })
+        .then(body => {
+          resolve(body)
+        })
+        .catch(error => {
+          reject(error)
+        })
     })
-  }
-
-  /**
-   * Get the most linked articles on this wiki
-   * @deprecated since 2.0.5
-   * @see [Articles/MostLinked]{@link http://dev.wikia.com/api/v1#!/Articles/getTop_get_4}
-   *
-   * @return {Promise&lt;Object, Error>} - A Promise with an Object containing most linked articles on fulfil, and Error on rejection
-   */
-  getMostLinked () {
-    throw new Error('Articles/MostLinked endpoint is no longer supported.')
-  }
-
-  /**
-   * Get the most linked articles on this wiki (expanded results)
-   * @deprecated since 2.0.5
-   * @see [Articles/MostLinked?expand=1]{@link http://dev.wikia.com/api/v1#!/Articles/getTopExpanded_get_5}
-   *
-   * @return {Promise&lt;Object, Error>} - A Promise with an Object containing most linked articles on fulfil, and Error on rejection
-   */
-  getMostLinkedExpanded () {
-    throw new Error('Articles/MostLinked endpoint is no longer supported.')
-  }
-
-  /**
-   * Get list of new articles on this wiki
-   * @deprecated since 2.0.5
-   * @see [Articles/New]{@link http://dev.wikia.com/api/v1#!/Articles/getNew_get_6}
-   *
-   * @param {Object} [options] - An Object containing every other parameter
-   * @param {(number[]|number)} [options.namespaces] - Array of namespace ids or a single namespace id, see more: {@link http://community.wikia.com/wiki/Help:Namespaces}
-   * @param {number} [options.limit=20] - Limit the number of result - maximum limit is 100
-   * @param {number} [options.minArticleQuality=10] - Minimal value of article quality. Ranges from 0 to 99
-   * @return {Promise&lt;Object, Error>} - A Promise with an Object containing new articles on fulfil, and Error on rejection
-   */
-  getNewArticles (options = {}) {
-    throw new Error('Articles/New endpoint is no longer supported.')
-  }
-
-  /**
-   * Get popular articles for the current wiki (from the beginning of time)
-   * @deprecated since 2.0.5
-   * @see [Articles/Popular]{@link http://dev.wikia.com/api/v1#!/Articles/getPopular_get_7}
-   *
-   * @param {Object} [options] - An Object containing every other parameter
-   * @param {integer} [options.limit=10] - Limit the number of result - maximum limit is 10
-   * @param {integer} [options.baseArticleId] - Trending and popular related to article with given id
-   * @return {Promise&lt;Object, Error>} - A Promise with an Object containing popular articles on fulfil, and Error on rejection
-   */
-  getPopularArticles (options = {}) {
-    throw new Error('Articles/Popular endpoint is no longer supported.')
-  }
-
-  /**
-   * Get popular articles for the current wiki (from the beginning of time)
-   * @deprecated since 2.0.5
-   * @see [Articles/Popular?expand=1]{@link http://dev.wikia.com/api/v1#!/Articles/getPopularExpanded_get_8}
-   *
-   * @param {Object} [options] - An Object containing every other parameter
-   * @param {integer} [options.limit=10] - Limit the number of result - maximum limit is 10
-   * @param {integer} [options.baseArticleId] - Trending and popular related to article with given id
-   * @return {Promise&lt;Object, Error>} - A Promise with an Object containing popular articles on fulfil, and Error on rejection
-   */
-  getPopularArticlesExpanded (options = {}) {
-    throw new Error('Articles/Popular endpoint is no longer supported.')
   }
 
   /**
@@ -279,20 +210,35 @@ class WikiaAPI {
    * @param {number} [baseArticleId] - Trending and popular related to article with given id
    * @return {Promise&lt;Object, Error>} - A Promise with an Object containing top articles on fulfil, and Error on rejection
    */
-  getTopArticles (options = {}) {
-    const {namespaces, category, limit, baseArticleId} = this._parseParams(options, {namespaces: null, category: '', limit: 10, baseArticleId: null}, {namespaces: (x) => { return (typeof x === 'number' || Array.isArray(x) || x === null) }, category: 'string', limit: 'number', baseArticleId: (x) => { return (typeof x === 'number' || x === null) }})
+  getTopArticles(options = {}) {
+    const { namespaces, category, limit, baseArticleId } = this._parseParams(
+      options,
+      { namespaces: null, category: '', limit: 10, baseArticleId: null },
+      {
+        namespaces: x => {
+          return typeof x === 'number' || Array.isArray(x) || x === null
+        },
+        category: 'string',
+        limit: 'number',
+        baseArticleId: x => {
+          return typeof x === 'number' || x === null
+        },
+      }
+    )
 
     return new Promise((resolve, reject) => {
       this._makeRequest('Articles/Top', {
         namespaces: this._arrayOrSingleElement(namespaces),
         category: category,
         limit: limit,
-        baseArticleId: baseArticleId
-      }).then(body => {
-        resolve(body)
-      }).catch(error => {
-        reject(error)
+        baseArticleId: baseArticleId,
       })
+        .then(body => {
+          resolve(body)
+        })
+        .catch(error => {
+          reject(error)
+        })
     })
   }
 
@@ -307,8 +253,21 @@ class WikiaAPI {
    * @param {number} [baseArticleId] - Trending and popular related to article with given id
    * @return {Promise&lt;Object, Error>} - A Promise with an Object containing top articles on fulfil, and Error on rejection
    */
-  getTopArticlesExpanded (options = {}) {
-    const {namespaces, category, limit, baseArticleId} = this._parseParams(options, {namespaces: null, category: '', limit: 10, baseArticleId: null}, {namespaces: (x) => { return (typeof x === 'number' || Array.isArray(x) || x === null) }, category: 'string', limit: 'number', baseArticleId: (x) => { return (typeof x === 'number' || x === null) }})
+  getTopArticlesExpanded(options = {}) {
+    const { namespaces, category, limit, baseArticleId } = this._parseParams(
+      options,
+      { namespaces: null, category: '', limit: 10, baseArticleId: null },
+      {
+        namespaces: x => {
+          return typeof x === 'number' || Array.isArray(x) || x === null
+        },
+        category: 'string',
+        limit: 'number',
+        baseArticleId: x => {
+          return typeof x === 'number' || x === null
+        },
+      }
+    )
 
     return new Promise((resolve, reject) => {
       this._makeRequest('Articles/Top', {
@@ -316,12 +275,14 @@ class WikiaAPI {
         category: category,
         limit: limit,
         baseArticleId: baseArticleId,
-        expand: 1
-      }).then(body => {
-        resolve(body)
-      }).catch(error => {
-        reject(error)
+        expand: 1,
       })
+        .then(body => {
+          resolve(body)
+        })
+        .catch(error => {
+          reject(error)
+        })
     })
   }
 
@@ -331,59 +292,16 @@ class WikiaAPI {
    *
    * @return {Promise&lt;Object, Error>} - A Promise with an Object containing wiki data on fulfil, and Error on rejection
    */
-  getWikiVariables () {
+  getWikiVariables() {
     return new Promise((resolve, reject) => {
-      this._makeRequest('Mercury/WikiVariables').then(body => {
-        resolve(body)
-      }).catch(error => {
-        reject(error)
-      })
+      this._makeRequest('Mercury/WikiVariables')
+        .then(body => {
+          resolve(body)
+        })
+        .catch(error => {
+          reject(error)
+        })
     })
-  }
-
-  /**
-   * Get wiki navigation links (the main menu of given wiki)
-   * @deprecated since 2.0.5
-   * @see [Navigation/Data](http://dev.wikia.com/api/v1#!/Navigation/getData_get_0)
-   *
-   * @return {Promise&lt;Object, Error>} - A Promise with an Object containing navigation data on fulfil, and Error on rejection
-   */
-  getNavigationData () {
-    throw new Error('Navigation/Data endpoint is no longer supported.')
-  }
-
-  /**
-   * Get pages related to a given article ID
-   * WARNING: RelatedPages extension is disabled on every wiki
-   * @deprecated since 2.0.5
-   * @see [RelatedPages/List](http://dev.wikia.com/api/v1#!/RelatedPages/getList_get_0)
-   *
-   * @param {Object} options - An Object containing every other parameter
-   * @param {(number[]|number)} options.ids - An Array of article ids or a single article id
-   * @param {number} [options.limit=3] - Limit the number of results
-   * @return {Promise&lt;Object, Error>} - A Promise with an Object containing related pages on fulfil, and Error on rejection
-   */
-  getRelatedPages (options = {}) {
-    throw new Error('RelatedPages/List endpoint is no longer supported.')
-  }
-
-  /**
-   * Do search for given phrase
-   * @deprecated since 2.0.5
-   * @see [Search/List](http://dev.wikia.com/api/v1#!/Search/getList_get_1)
-   *
-   * @param {Object} options - An Object containing every other parameter
-   * @param {string} options.query - Search query
-   * @param {string} [options.type=articles] - The search type, either articles (default) or videos. For 'videos' value, this parameter should be used with namespaces parameter (namespaces needs to be set to 6)
-   * @param {string} [options.rank=default] - The ranking to use in fetching the list of results, one of default, newest, oldest, recently-modified, stable, most-viewed, freshest, stalest
-   * @param {number} [options.limit=25] - Limit the number of results
-   * @param {number} [options.minArticleQuality=10] - Minimal value of article quality. Ranges from 0 to 99
-   * @param {number} [options.batch=1] - The batch (page) of results to fetch
-   * @param {(number[]|number)} [options.namespaces=[0, 14]] - Array of namespace ids or a single namespace id, see more: {@link http://community.wikia.com/wiki/Help:Namespaces}
-   * @return {Promise&lt;Object, Error>} - A Promise with an Object containing search results on fulfil, and Error on rejection
-   */
-  getSearchList (options = {}) {
-    throw new Error('Search/List endpoint is no longer supported.')
   }
 
   /**
@@ -394,17 +312,19 @@ class WikiaAPI {
    * @param {string} options.query - Search query
    * @return {Promise&lt;Object, Error>} - A Promise with an Object containing search suggestions on fulfil, and Error on rejection
    */
-  getSearchSuggestions (options = {}) {
-    const {query} = this._parseParams(options, {}, {query: 'string'})
+  getSearchSuggestions(options = {}) {
+    const { query } = this._parseParams(options, {}, { query: 'string' })
 
     return new Promise((resolve, reject) => {
       this._makeRequest('SearchSuggestions/List', {
-        query: query
-      }).then(body => {
-        resolve(body)
-      }).catch(error => {
-        reject(error)
+        query: query,
       })
+        .then(body => {
+          resolve(body)
+        })
+        .catch(error => {
+          reject(error)
+        })
     })
   }
 
@@ -417,18 +337,29 @@ class WikiaAPI {
    * @param {number} [options.size=100] - The desired width (and height, because it is a square) for the thumbnail, defaults to 100, 0 for no thumbnail
    * @return {Promise&lt;Object, Error>} - A Promise with an Object containing user details on fulfil, and Error on rejection
    */
-  getUserDetails (options = {}) {
-    const {ids, size} = this._parseParams(options, {size: 100}, {ids: (x) => { return (typeof x === 'number' || Array.isArray(x)) }, size: 'number'})
+  getUserDetails(options = {}) {
+    const { ids, size } = this._parseParams(
+      options,
+      { size: 100 },
+      {
+        ids: x => {
+          return typeof x === 'number' || Array.isArray(x)
+        },
+        size: 'number',
+      }
+    )
 
     return new Promise((resolve, reject) => {
       this._makeRequest('User/Details', {
         ids: ids,
-        size: size
-      }).then(body => {
-        resolve(body)
-      }).catch(error => {
-        reject(error)
+        size: size,
       })
+        .then(body => {
+          resolve(body)
+        })
+        .catch(error => {
+          reject(error)
+        })
     })
   }
 
@@ -438,11 +369,11 @@ class WikiaAPI {
    * @type {string}
    * @readonly
    */
-  get wikiapiurl () {
+  get wikiapiurl() {
     return this.subdomain === null ? WikiaAPI.wikiaapiurl : `http://${this.subdomain}.wikia.com/api/v1`
   }
-  set wikiapiurl (value) {
-    throw new Error('Cannot set a read-only property \'wikiapiurl\'')
+  set wikiapiurl(value) {
+    throw new Error("Cannot set a read-only property 'wikiapiurl'")
   }
 
   /**
@@ -451,11 +382,11 @@ class WikiaAPI {
    * @type {string}
    * @readonly
    */
-  get wikiurl () {
+  get wikiurl() {
     return this.subdomain === null ? WikiaAPI.wikiaurl : `http://${this.subdomain}.wikia.com`
   }
-  set wikiurl (value) {
-    throw new Error('Cannot set a read-only property \'wikiurl\'')
+  set wikiurl(value) {
+    throw new Error("Cannot set a read-only property 'wikiurl'")
   }
 
   /**
@@ -464,7 +395,7 @@ class WikiaAPI {
    * @type {string}
    * @readonly
    */
-  static get wikiaapiurl () {
+  static get wikiaapiurl() {
     return 'http://wikia.com/api/v1'
   }
 
@@ -474,11 +405,11 @@ class WikiaAPI {
    * @type {string}
    * @readonly
    */
-  static get wikiaurl () {
+  static get wikiaurl() {
     return 'http://wikia.com'
   }
 
-  _makeRequest (endpoint, params, method) {
+  _makeRequest(endpoint, params, method) {
     return new Promise((resolve, reject) => {
       let query = []
       for (let param in params) {
@@ -488,21 +419,23 @@ class WikiaAPI {
       }
 
       const reqUrl = `${this.wikiapiurl}/${endpoint}?${query.join('&amp;')}`
-      got(reqUrl, {method: method || 'GET'}).then(response => {
-        let body
-        try {
-          body = JSON.parse(response.body)
-        } catch (error) {
-          reject(new Error('Community not found'))
-        }
-        resolve(body)
-      }).catch(error => {
-        reject(error)
-      })
+      got(reqUrl, { method: method || 'GET' })
+        .then(response => {
+          let body
+          try {
+            body = JSON.parse(response.body)
+          } catch (error) {
+            reject(new Error('Community not found'))
+          }
+          resolve(body)
+        })
+        .catch(error => {
+          reject(error)
+        })
     })
   }
 
-  _arrayOrSingleElement (input, inputType = 'number') {
+  _arrayOrSingleElement(input, inputType = 'number') {
     let outputString
     if (Array.isArray(input)) {
       outputString = input.join(',')
@@ -511,18 +444,22 @@ class WikiaAPI {
     } else if (input === null) {
       outputString = input
     } else {
-      throw new Error(`Incorrect argument type. Expected ${inputType} or array of ${inputType}s, got ${typeof input} instead`)
+      throw new Error(
+        `Incorrect argument type. Expected ${inputType} or array of ${inputType}s, got ${typeof input} instead`
+      )
     }
     return outputString
   }
 
-  _parseParams (options, defaultOptions, optionTypes) {
+  _parseParams(options, defaultOptions, optionTypes) {
     let newOptions
     newOptions = Object.assign({}, defaultOptions, options)
     for (let opt in optionTypes) {
       if (typeof optionTypes[opt] === 'string') {
         if (typeof newOptions[opt] !== optionTypes[opt]) {
-          throw new Error(`Bad argument type. Expected ${opt} to be a ${optionTypes[opt]}, found ${typeof newOptions[opt]} instead`)
+          throw new Error(
+            `Bad argument type. Expected ${opt} to be a ${optionTypes[opt]}, found ${typeof newOptions[opt]} instead`
+          )
         }
       } else {
         if (!optionTypes[opt](newOptions[opt])) {
@@ -542,21 +479,15 @@ module.exports = WikiaAPI
 
 
 
-    
-    
 </div>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.11</a> using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+    Generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.11</a> using the Minami theme.
 </footer>
 
 <script>prettyPrint();</script>
-<script src="scripts/polyfill.js"></script>
 <script src="scripts/linenumber.js"></script>
-
-
-
 </body>
 </html>

@@ -91,13 +91,14 @@
 </ul>
 <h2>Other changes</h2>
 <ul>
-<li><a href="WikiaAPI.html#apiBasepath"><code>WikiaAPI.apiBasepath</code></a> (formerly <code>WikiaAPI.wikiapiurl</code>) now:
+<li><a href="WikiaAPI.html#apiBasepath"><code>WikiaAPI.apiBasepath</code></a> (formerly <code>wikiapiurl</code>) now:
 <ul>
 <li>returns an extra trailing slash</li>
 <li>uses <code>https://</code> instead of <code>http://</code></li>
 <li>uses <code>fandom.com</code> instead of <code>wikia.com</code></li>
 </ul>
 </li>
+<li><code>WikiaAPI</code>'s <code>_makeRequest()</code>, <code>_arrayOrSingleElement()</code>, <code>_parseParams()</code> are now marked as <code>@private</code>, their use was never recommended or documented, but it is now prohibited by TypeScript</li>
 </ul>
 </article>
 

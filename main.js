@@ -326,6 +326,7 @@ class WikiaAPI {
     return `https://${this.subdomain}.fandom.com/${this.language ? `${this.language}/` : ''}api/v1/`
   }
 
+  /** @private */
   _makeRequest(endpoint, params, method) {
     return new Promise((resolve, reject) => {
       let query = []
@@ -352,6 +353,7 @@ class WikiaAPI {
     })
   }
 
+  /** @private */
   _arrayOrSingleElement(input, inputType = 'number') {
     let outputString
     if (Array.isArray(input)) {
@@ -368,6 +370,7 @@ class WikiaAPI {
     return outputString
   }
 
+  /** @private */
   _parseParams(options, defaultOptions, optionTypes) {
     let newOptions
     newOptions = Object.assign({}, defaultOptions, options)

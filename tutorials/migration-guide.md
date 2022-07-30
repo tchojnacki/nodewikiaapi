@@ -32,7 +32,8 @@ These endpoints were removed following the UCP, with no information on whether t
 - [`WikiaAPI`](WikiaAPI.html)'s constructor `subdomain` param is now required
 
 ## Other changes
-- [`WikiaAPI.apiBasepath`](WikiaAPI.html#apiBasepath) (formerly `WikiaAPI.wikiapiurl`) now:
+- [`WikiaAPI.apiBasepath`](WikiaAPI.html#apiBasepath) (formerly `wikiapiurl`) now:
   - returns an extra trailing slash
   - uses `https://` instead of `http://`
   - uses `fandom.com` instead of `wikia.com`
+- `WikiaAPI`'s `_makeRequest()`, `_arrayOrSingleElement()`, `_parseParams()` are now marked as `@private`, their use was never recommended or documented, but it is now prohibited by TypeScript

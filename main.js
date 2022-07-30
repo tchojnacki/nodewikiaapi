@@ -10,7 +10,7 @@ const got = require('got')
  * @param {string} [subdomain] - Subdomain, for example "dev" or "pl.community". Providing subdomain isn't necessary, but strongly recommended, because without it you can only use global (non-wiki) APIs.
  */
 class WikiaAPI {
-  constructor (subdomain) {
+  constructor(subdomain) {
     /**
      * Subdomain, for example "dev" or "pl.community"
      * @see [Help:URL]{@link http://community.wikia.com/wiki/Help:URL} on Community Central
@@ -37,11 +37,25 @@ class WikiaAPI {
    * @param {number} [options.height=200] - The desired height for the thumbnail
    * @return {Promise<Object, Error>} - A Promise with an Object containing articles details on fulfil, and Error on rejection
    */
-  getArticlesDetails (options = {}) {
-    const {ids, titles, abstract, width, height} = this._parseParams(options, {ids: -1, titles: '', abstract: 100, width: 200, height: 200}, {ids: (x) => { return (typeof x === 'number' || Array.isArray(x)) }, titles: (x) => { return (typeof x === 'string' || Array.isArray(x)) }, abstract: 'number', width: 'number', height: 'number'})
+  getArticlesDetails(options = {}) {
+    const { ids, titles, abstract, width, height } = this._parseParams(
+      options,
+      { ids: -1, titles: '', abstract: 100, width: 200, height: 200 },
+      {
+        ids: x => {
+          return typeof x === 'number' || Array.isArray(x)
+        },
+        titles: x => {
+          return typeof x === 'string' || Array.isArray(x)
+        },
+        abstract: 'number',
+        width: 'number',
+        height: 'number',
+      }
+    )
 
     if (ids === -1 && titles === '') {
-      throw new Error('Argument \'ids\' or \'titles\' should be passed')
+      throw new Error("Argument 'ids' or 'titles' should be passed")
     }
 
     return new Promise((resolve, reject) => {
@@ -50,12 +64,14 @@ class WikiaAPI {
         titles: this._arrayOrSingleElement(titles, 'string'),
         abstract: abstract,
         width: width,
-        height: height
-      }).then(body => {
-        resolve(body)
-      }).catch(error => {
-        reject(error)
+        height: height,
       })
+        .then(body => {
+          resolve(body)
+        })
+        .catch(error => {
+          reject(error)
+        })
     })
   }
 
@@ -70,20 +86,33 @@ class WikiaAPI {
    * @param {string} [options.offset=!] - Lexicographically minimal article title
    * @return {Promise<Object, Error>} - A Promise with an Object containing articles list on fulfil, and Error on rejection
    */
-  getArticlesList (options = {}) {
-    const {category, namespaces, limit, offset} = this._parseParams(options, {category: '', namespaces: 0, limit: 25, offset: '!'}, {category: 'string', namespaces: (x) => { return (typeof x === 'number' || Array.isArray(x)) }, limit: 'number', offset: 'string'})
+  getArticlesList(options = {}) {
+    const { category, namespaces, limit, offset } = this._parseParams(
+      options,
+      { category: '', namespaces: 0, limit: 25, offset: '!' },
+      {
+        category: 'string',
+        namespaces: x => {
+          return typeof x === 'number' || Array.isArray(x)
+        },
+        limit: 'number',
+        offset: 'string',
+      }
+    )
 
     return new Promise((resolve, reject) => {
       this._makeRequest('Articles/List', {
         category: category,
         namespaces: this._arrayOrSingleElement(namespaces),
         limit: limit,
-        offset: offset
-      }).then(body => {
-        resolve(body)
-      }).catch(error => {
-        reject(error)
+        offset: offset,
       })
+        .then(body => {
+          resolve(body)
+        })
+        .catch(error => {
+          reject(error)
+        })
     })
   }
 
@@ -98,8 +127,19 @@ class WikiaAPI {
    * @param {string} [options.offset=!] - Lexicographically minimal article title
    * @return {Promise<Object, Error>} - A Promise with an Object containing expanded articles list on fulfil, and Error on rejection
    */
-  getArticlesListExpanded (options = {}) {
-    const {category, namespaces, limit, offset} = this._parseParams(options, {category: '', namespaces: 0, limit: 25, offset: '!'}, {category: 'string', namespaces: (x) => { return (typeof x === 'number' || Array.isArray(x)) }, limit: 'number', offset: 'string'})
+  getArticlesListExpanded(options = {}) {
+    const { category, namespaces, limit, offset } = this._parseParams(
+      options,
+      { category: '', namespaces: 0, limit: 25, offset: '!' },
+      {
+        category: 'string',
+        namespaces: x => {
+          return typeof x === 'number' || Array.isArray(x)
+        },
+        limit: 'number',
+        offset: 'string',
+      }
+    )
 
     return new Promise((resolve, reject) => {
       this._makeRequest('Articles/List', {
@@ -107,12 +147,14 @@ class WikiaAPI {
         namespaces: this._arrayOrSingleElement(namespaces),
         limit: limit,
         offset: offset,
-        expand: 1
-      }).then(body => {
-        resolve(body)
-      }).catch(error => {
-        reject(error)
+        expand: 1,
       })
+        .then(body => {
+          resolve(body)
+        })
+        .catch(error => {
+          reject(error)
+        })
     })
   }
 
@@ -127,20 +169,35 @@ class WikiaAPI {
    * @param {number} [baseArticleId] - Trending and popular related to article with given id
    * @return {Promise<Object, Error>} - A Promise with an Object containing top articles on fulfil, and Error on rejection
    */
-  getTopArticles (options = {}) {
-    const {namespaces, category, limit, baseArticleId} = this._parseParams(options, {namespaces: null, category: '', limit: 10, baseArticleId: null}, {namespaces: (x) => { return (typeof x === 'number' || Array.isArray(x) || x === null) }, category: 'string', limit: 'number', baseArticleId: (x) => { return (typeof x === 'number' || x === null) }})
+  getTopArticles(options = {}) {
+    const { namespaces, category, limit, baseArticleId } = this._parseParams(
+      options,
+      { namespaces: null, category: '', limit: 10, baseArticleId: null },
+      {
+        namespaces: x => {
+          return typeof x === 'number' || Array.isArray(x) || x === null
+        },
+        category: 'string',
+        limit: 'number',
+        baseArticleId: x => {
+          return typeof x === 'number' || x === null
+        },
+      }
+    )
 
     return new Promise((resolve, reject) => {
       this._makeRequest('Articles/Top', {
         namespaces: this._arrayOrSingleElement(namespaces),
         category: category,
         limit: limit,
-        baseArticleId: baseArticleId
-      }).then(body => {
-        resolve(body)
-      }).catch(error => {
-        reject(error)
+        baseArticleId: baseArticleId,
       })
+        .then(body => {
+          resolve(body)
+        })
+        .catch(error => {
+          reject(error)
+        })
     })
   }
 
@@ -155,8 +212,21 @@ class WikiaAPI {
    * @param {number} [baseArticleId] - Trending and popular related to article with given id
    * @return {Promise<Object, Error>} - A Promise with an Object containing top articles on fulfil, and Error on rejection
    */
-  getTopArticlesExpanded (options = {}) {
-    const {namespaces, category, limit, baseArticleId} = this._parseParams(options, {namespaces: null, category: '', limit: 10, baseArticleId: null}, {namespaces: (x) => { return (typeof x === 'number' || Array.isArray(x) || x === null) }, category: 'string', limit: 'number', baseArticleId: (x) => { return (typeof x === 'number' || x === null) }})
+  getTopArticlesExpanded(options = {}) {
+    const { namespaces, category, limit, baseArticleId } = this._parseParams(
+      options,
+      { namespaces: null, category: '', limit: 10, baseArticleId: null },
+      {
+        namespaces: x => {
+          return typeof x === 'number' || Array.isArray(x) || x === null
+        },
+        category: 'string',
+        limit: 'number',
+        baseArticleId: x => {
+          return typeof x === 'number' || x === null
+        },
+      }
+    )
 
     return new Promise((resolve, reject) => {
       this._makeRequest('Articles/Top', {
@@ -164,12 +234,14 @@ class WikiaAPI {
         category: category,
         limit: limit,
         baseArticleId: baseArticleId,
-        expand: 1
-      }).then(body => {
-        resolve(body)
-      }).catch(error => {
-        reject(error)
+        expand: 1,
       })
+        .then(body => {
+          resolve(body)
+        })
+        .catch(error => {
+          reject(error)
+        })
     })
   }
 
@@ -179,13 +251,15 @@ class WikiaAPI {
    *
    * @return {Promise<Object, Error>} - A Promise with an Object containing wiki data on fulfil, and Error on rejection
    */
-  getWikiVariables () {
+  getWikiVariables() {
     return new Promise((resolve, reject) => {
-      this._makeRequest('Mercury/WikiVariables').then(body => {
-        resolve(body)
-      }).catch(error => {
-        reject(error)
-      })
+      this._makeRequest('Mercury/WikiVariables')
+        .then(body => {
+          resolve(body)
+        })
+        .catch(error => {
+          reject(error)
+        })
     })
   }
 
@@ -197,17 +271,19 @@ class WikiaAPI {
    * @param {string} options.query - Search query
    * @return {Promise<Object, Error>} - A Promise with an Object containing search suggestions on fulfil, and Error on rejection
    */
-  getSearchSuggestions (options = {}) {
-    const {query} = this._parseParams(options, {}, {query: 'string'})
+  getSearchSuggestions(options = {}) {
+    const { query } = this._parseParams(options, {}, { query: 'string' })
 
     return new Promise((resolve, reject) => {
       this._makeRequest('SearchSuggestions/List', {
-        query: query
-      }).then(body => {
-        resolve(body)
-      }).catch(error => {
-        reject(error)
+        query: query,
       })
+        .then(body => {
+          resolve(body)
+        })
+        .catch(error => {
+          reject(error)
+        })
     })
   }
 
@@ -220,18 +296,29 @@ class WikiaAPI {
    * @param {number} [options.size=100] - The desired width (and height, because it is a square) for the thumbnail, defaults to 100, 0 for no thumbnail
    * @return {Promise<Object, Error>} - A Promise with an Object containing user details on fulfil, and Error on rejection
    */
-  getUserDetails (options = {}) {
-    const {ids, size} = this._parseParams(options, {size: 100}, {ids: (x) => { return (typeof x === 'number' || Array.isArray(x)) }, size: 'number'})
+  getUserDetails(options = {}) {
+    const { ids, size } = this._parseParams(
+      options,
+      { size: 100 },
+      {
+        ids: x => {
+          return typeof x === 'number' || Array.isArray(x)
+        },
+        size: 'number',
+      }
+    )
 
     return new Promise((resolve, reject) => {
       this._makeRequest('User/Details', {
         ids: ids,
-        size: size
-      }).then(body => {
-        resolve(body)
-      }).catch(error => {
-        reject(error)
+        size: size,
       })
+        .then(body => {
+          resolve(body)
+        })
+        .catch(error => {
+          reject(error)
+        })
     })
   }
 
@@ -241,11 +328,11 @@ class WikiaAPI {
    * @type {string}
    * @readonly
    */
-  get wikiapiurl () {
+  get wikiapiurl() {
     return this.subdomain === null ? WikiaAPI.wikiaapiurl : `http://${this.subdomain}.wikia.com/api/v1`
   }
-  set wikiapiurl (value) {
-    throw new Error('Cannot set a read-only property \'wikiapiurl\'')
+  set wikiapiurl(value) {
+    throw new Error("Cannot set a read-only property 'wikiapiurl'")
   }
 
   /**
@@ -254,11 +341,11 @@ class WikiaAPI {
    * @type {string}
    * @readonly
    */
-  get wikiurl () {
+  get wikiurl() {
     return this.subdomain === null ? WikiaAPI.wikiaurl : `http://${this.subdomain}.wikia.com`
   }
-  set wikiurl (value) {
-    throw new Error('Cannot set a read-only property \'wikiurl\'')
+  set wikiurl(value) {
+    throw new Error("Cannot set a read-only property 'wikiurl'")
   }
 
   /**
@@ -267,7 +354,7 @@ class WikiaAPI {
    * @type {string}
    * @readonly
    */
-  static get wikiaapiurl () {
+  static get wikiaapiurl() {
     return 'http://wikia.com/api/v1'
   }
 
@@ -277,11 +364,11 @@ class WikiaAPI {
    * @type {string}
    * @readonly
    */
-  static get wikiaurl () {
+  static get wikiaurl() {
     return 'http://wikia.com'
   }
 
-  _makeRequest (endpoint, params, method) {
+  _makeRequest(endpoint, params, method) {
     return new Promise((resolve, reject) => {
       let query = []
       for (let param in params) {
@@ -291,21 +378,23 @@ class WikiaAPI {
       }
 
       const reqUrl = `${this.wikiapiurl}/${endpoint}?${query.join('&')}`
-      got(reqUrl, {method: method || 'GET'}).then(response => {
-        let body
-        try {
-          body = JSON.parse(response.body)
-        } catch (error) {
-          reject(new Error('Community not found'))
-        }
-        resolve(body)
-      }).catch(error => {
-        reject(error)
-      })
+      got(reqUrl, { method: method || 'GET' })
+        .then(response => {
+          let body
+          try {
+            body = JSON.parse(response.body)
+          } catch (error) {
+            reject(new Error('Community not found'))
+          }
+          resolve(body)
+        })
+        .catch(error => {
+          reject(error)
+        })
     })
   }
 
-  _arrayOrSingleElement (input, inputType = 'number') {
+  _arrayOrSingleElement(input, inputType = 'number') {
     let outputString
     if (Array.isArray(input)) {
       outputString = input.join(',')
@@ -314,18 +403,22 @@ class WikiaAPI {
     } else if (input === null) {
       outputString = input
     } else {
-      throw new Error(`Incorrect argument type. Expected ${inputType} or array of ${inputType}s, got ${typeof input} instead`)
+      throw new Error(
+        `Incorrect argument type. Expected ${inputType} or array of ${inputType}s, got ${typeof input} instead`
+      )
     }
     return outputString
   }
 
-  _parseParams (options, defaultOptions, optionTypes) {
+  _parseParams(options, defaultOptions, optionTypes) {
     let newOptions
     newOptions = Object.assign({}, defaultOptions, options)
     for (let opt in optionTypes) {
       if (typeof optionTypes[opt] === 'string') {
         if (typeof newOptions[opt] !== optionTypes[opt]) {
-          throw new Error(`Bad argument type. Expected ${opt} to be a ${optionTypes[opt]}, found ${typeof newOptions[opt]} instead`)
+          throw new Error(
+            `Bad argument type. Expected ${opt} to be a ${optionTypes[opt]}, found ${typeof newOptions[opt]} instead`
+          )
         }
       } else {
         if (!optionTypes[opt](newOptions[opt])) {

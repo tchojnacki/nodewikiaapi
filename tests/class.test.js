@@ -19,21 +19,23 @@ test('returns correct subdomain', () => {
 })
 
 test('can change subdomain', () => {
-  expect((() => {
-    const wikia = new WikiaAPI('dev')
-    wikia.subdomain = 'community'
-    return wikia.subdomain
-  })()).toBe('community')
+  expect(
+    (() => {
+      const wikia = new WikiaAPI('dev')
+      wikia.subdomain = 'community'
+      return wikia.subdomain
+    })()
+  ).toBe('community')
 })
 
-test('can\'t set wikiapiurl', () => {
+test("can't set wikiapiurl", () => {
   expect(() => {
     const wikia = new WikiaAPI('dev')
     wikia.wikiapiurl = 'test'
   }).toThrow()
 })
 
-test('can\'t set wikiurl', () => {
+test("can't set wikiurl", () => {
   expect(() => {
     const wikia = new WikiaAPI('dev')
     wikia.wikiurl = 'test'

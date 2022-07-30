@@ -4,7 +4,7 @@ const WikiaAPI = require('../main')
 
 test('ArticlesDetails must return an object', () => {
   expect.assertions(2)
-  return new WikiaAPI('dev').getArticlesDetails({ids: 8168}).then(data => {
+  return new WikiaAPI('dev').getArticlesDetails({ ids: 8168 }).then(data => {
     expect(typeof data).toBe('object')
     expect(Object.keys(data.items).length).toBe(1)
   })
@@ -20,7 +20,10 @@ test('ArticlesDetails with space in title', () => {
   expect.assertions(1)
 
   const wikia = new WikiaAPI('dev')
-  return Promise.all([wikia.getArticlesDetails({titles: 'Lua_templating/Basics'}), wikia.getArticlesDetails({titles: 'Lua templating/Basics'})]).then(data => {
+  return Promise.all([
+    wikia.getArticlesDetails({ titles: 'Lua_templating/Basics' }),
+    wikia.getArticlesDetails({ titles: 'Lua templating/Basics' }),
+  ]).then(data => {
     expect(Object.keys(data[0].items)).toEqual(Object.keys(data[1].items))
   })
 })
@@ -80,14 +83,14 @@ test('WikiVariables must return an object', () => {
 
 test('SearchSuggestions must return an object', () => {
   expect.assertions(1)
-  return new WikiaAPI('dev').getSearchSuggestions({query: 'js'}).then(data => {
+  return new WikiaAPI('dev').getSearchSuggestions({ query: 'js' }).then(data => {
     expect(typeof data).toBe('object')
   })
 })
 
 test('UserDetails must return an object', () => {
   expect.assertions(1)
-  return new WikiaAPI('dev').getUserDetails({ids: 26200197}).then(data => {
+  return new WikiaAPI('dev').getUserDetails({ ids: 26200197 }).then(data => {
     expect(typeof data).toBe('object')
   })
 })

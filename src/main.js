@@ -31,13 +31,10 @@ class WikiaAPI {
   /**
    * Get details about one or more articles.
    *
-   * @param {Object} [options] An object containing request parameters
-   * @param {(number[]|number)} [options.ids] An array of article ids or a single article id
-   * @param {(string[]|string)} [options.titles] An array of article titles or a single article title, can be used alongside ids
-   * @param {number} [options.abstract=100] The desired length for the article's abstract
+   * @param {ArticleDetailsReq} options
    * @returns {Promise<ArticleDetailsRes>}
    */
-  getArticleDetails(options = {}) {
+  getArticleDetails(options) {
     const { ids, titles, abstract } = this._parseParams(
       options,
       { ids: -1, titles: '', abstract: 100 },
@@ -62,11 +59,7 @@ class WikiaAPI {
   /**
    * Get article list in alphabetical order.
    *
-   * @param {Object} [options] An object containing request parameters
-   * @param {string} [options.category] Return only articles belonging to the provided valid category title
-   * @param {(number[]|number)} [options.namespaces=0] Array of namespace ids or a single namespace id, see more: {@link http://community.fandom.com/wiki/Help:Namespaces Help:Namespaces}
-   * @param {number} [options.limit=25] Limit the number of results
-   * @param {string} [options.offset="!"] Only display articles where name is lexicographically greater than provided
+   * @param {ArticleListReq} [options]
    * @returns {Promise<ArticleListRes>}
    */
   getArticleList(options = {}) {
@@ -92,10 +85,7 @@ class WikiaAPI {
   /**
    * Get the most viewed articles from this wiki.
    *
-   * @param {Object} [options] An object containing request parameters
-   * @param {(number[]|number)} [options.namespaces] Array of namespace ids or a single namespace id, see more: {@link http://community.wikia.com/wiki/Help:Namespaces Help:Namespaces}
-   * @param {string} [options.category] Return only articles belonging to the provided category title
-   * @param {number} [options.limit=10] Limit the number of results - maximum limit is 250
+   * @param {TopArticlesReq} [options]
    * @returns {Promise<TopArticlesRes>}
    */
   getTopArticles(options = {}) {
@@ -128,27 +118,21 @@ class WikiaAPI {
   /**
    * Find suggested phrases for chosen query.
    *
-   * @param {Object} [options] An object containing request parameters
-   * @param {string} [options.query] Search query
+   * @param {string} query Search query
    * @returns {Promise<SearchSuggestionsRes>}
    */
-  getSearchSuggestions(options = {}) {
-    const { query } = this._parseParams(options, {}, { query: 'string' })
-
-    return this._makeRequest('SearchSuggestions/List', {
-      query: query,
-    })
+  getSearchSuggestions(query) {
+    const { query: q } = this._parseParams({ query }, {}, { query: 'string' })
+    return this._makeRequest('SearchSuggestions/List', { query: q })
   }
 
   /**
    * Get details about selected users.
    *
-   * @param {Object} [options] An object containing request parameters
-   * @param {(number[]|number)} [options.ids] An array of user ids or a single user id
-   * @param {number} [options.size=100] The desired width and height of the thumbnail, defaults to 100, 0 for no thumbnail
+   * @param {UserDetailsReq} options
    * @returns {Promise<UserDetailsRes>}
    */
-  getUserDetails(options = {}) {
+  getUserDetails(options) {
     const { ids, size } = this._parseParams(
       options,
       { size: 100 },

@@ -12,7 +12,7 @@ test('ArticleDetails must return an object', () => {
 
 test('ArticleDetails needs at least one generator', () => {
   expect(() => {
-    new WikiaAPI('dev').getArticleDetails()
+    new WikiaAPI('dev').getArticleDetails({})
   }).toThrow()
 })
 
@@ -51,7 +51,7 @@ test('WikiVariables must return an object', () => {
 
 test('SearchSuggestions must return an object', () => {
   expect.assertions(1)
-  return new WikiaAPI('dev').getSearchSuggestions({ query: 'js' }).then(data => {
+  return new WikiaAPI('dev').getSearchSuggestions('js').then(data => {
     expect(typeof data).toBe('object')
   })
 })

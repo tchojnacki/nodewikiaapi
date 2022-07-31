@@ -3,7 +3,7 @@
     "include": ["src/main.js", "src/req.js", "src/res.js", "README.md"]
   },
   "opts": {
-    "template": "node_modules/minami",
+    "template": "node_modules/tidy-jsdoc",
     "destination": "./docs/",
     "encoding": "utf8",
     "tutorials": "tutorials"
@@ -15,5 +15,8 @@
     "default": {
       "includeDate": false
     }
+  },
+  "metadata": {
+    "title": "nodewikiaapi"
   }
 }

@@ -2,36 +2,32 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Global - Documentation</title>
-
-    <script src="scripts/prettify/prettify.js"></script>
-    <script src="scripts/prettify/lang-css.js"></script>
-    <!--[if lt IE 9]>
-      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    <link type="text/css" rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
-    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+    <title>nodewikiaapi: Global</title>
+    
+      <link type="text/css" rel="stylesheet" href="styles/vendor/prism-tomorrow-night.css">
+    
+    <link type="text/css" rel="stylesheet" href="styles/styles.css">
+    
 </head>
 <body>
 
-<input type="checkbox" id="nav-trigger" class="nav-trigger" />
-<label for="nav-trigger" class="navicon-button x">
-  <div class="navicon"></div>
-</label>
+<header class="layout-header">
+  
+  <h1>
+    <a href="./index.html">
+      nodewikiaapi
+    </a>
+  </h1>
+  <nav class="layout-nav">
+    <ul><li class="nav-heading">Tutorials</li><li class="nav-item"><a href="tutorial-endpoints.html">Endpoints</a></li><li class="nav-item"><a href="tutorial-getting-started.html">Getting started</a></li><li class="nav-item"><a href="tutorial-migration-guide.html">Migration guide (3.x)</a></li></ul><ul><li class="nav-heading">Classes</li><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class"><a href="WikiaAPI.html">WikiaAPI</a></span></li><li class="nav-item"><span class="nav-item-type type-member" title="member">M</span><span class="nav-item-name is-member"><a href="WikiaAPI.html#apiBasepath">apiBasepath</a></span></li><li class="nav-item"><span class="nav-item-type type-member" title="member">M</span><span class="nav-item-name is-member"><a href="WikiaAPI.html#language">language</a></span></li><li class="nav-item"><span class="nav-item-type type-member" title="member">M</span><span class="nav-item-name is-member"><a href="WikiaAPI.html#subdomain">subdomain</a></span></li><li class="nav-item"><span class="nav-item-type type-function" title="function">F</span><span class="nav-item-name is-function"><a href="WikiaAPI.html#getArticleDetails">getArticleDetails</a></span></li><li class="nav-item"><span class="nav-item-type type-function" title="function">F</span><span class="nav-item-name is-function"><a href="WikiaAPI.html#getArticleList">getArticleList</a></span></li><li class="nav-item"><span class="nav-item-type type-function" title="function">F</span><span class="nav-item-name is-function"><a href="WikiaAPI.html#getSearchSuggestions">getSearchSuggestions</a></span></li><li class="nav-item"><span class="nav-item-type type-function" title="function">F</span><span class="nav-item-name is-function"><a href="WikiaAPI.html#getTopArticles">getTopArticles</a></span></li><li class="nav-item"><span class="nav-item-type type-function" title="function">F</span><span class="nav-item-name is-function"><a href="WikiaAPI.html#getUserDetails">getUserDetails</a></span></li><li class="nav-item"><span class="nav-item-type type-function" title="function">F</span><span class="nav-item-name is-function"><a href="WikiaAPI.html#getWikiVariables">getWikiVariables</a></span></li></ul><li class="nav-heading"><a href="global.html">Globals</a></li><li class="nav-item"><span class="nav-item-type type-typedef" title="typedef">T</span><span class="nav-item-name is-typedef"><a href="global.html#ArticleDetailsReq">ArticleDetailsReq</a></span></li><li class="nav-item"><span class="nav-item-type type-typedef" title="typedef">T</span><span class="nav-item-name is-typedef"><a href="global.html#ArticleDetailsRes">ArticleDetailsRes</a></span></li><li class="nav-item"><span class="nav-item-type type-typedef" title="typedef">T</span><span class="nav-item-name is-typedef"><a href="global.html#ArticleDetailsResItem">ArticleDetailsResItem</a></span></li><li class="nav-item"><span class="nav-item-type type-typedef" title="typedef">T</span><span class="nav-item-name is-typedef"><a href="global.html#ArticleDetailsResItemRevision">ArticleDetailsResItemRevision</a></span></li><li class="nav-item"><span class="nav-item-type type-typedef" title="typedef">T</span><span class="nav-item-name is-typedef"><a href="global.html#ArticleItem">ArticleItem</a></span></li><li class="nav-item"><span class="nav-item-type type-typedef" title="typedef">T</span><span class="nav-item-name is-typedef"><a href="global.html#ArticleListReq">ArticleListReq</a></span></li><li class="nav-item"><span class="nav-item-type type-typedef" title="typedef">T</span><span class="nav-item-name is-typedef"><a href="global.html#ArticleListRes">ArticleListRes</a></span></li><li class="nav-item"><span class="nav-item-type type-typedef" title="typedef">T</span><span class="nav-item-name is-typedef"><a href="global.html#SearchSuggestionsRes">SearchSuggestionsRes</a></span></li><li class="nav-item"><span class="nav-item-type type-typedef" title="typedef">T</span><span class="nav-item-name is-typedef"><a href="global.html#SearchSuggestionsResItem">SearchSuggestionsResItem</a></span></li><li class="nav-item"><span class="nav-item-type type-typedef" title="typedef">T</span><span class="nav-item-name is-typedef"><a href="global.html#TopArticlesReq">TopArticlesReq</a></span></li><li class="nav-item"><span class="nav-item-type type-typedef" title="typedef">T</span><span class="nav-item-name is-typedef"><a href="global.html#TopArticlesRes">TopArticlesRes</a></span></li><li class="nav-item"><span class="nav-item-type type-typedef" title="typedef">T</span><span class="nav-item-name is-typedef"><a href="global.html#UserDetailsReq">UserDetailsReq</a></span></li><li class="nav-item"><span class="nav-item-type type-typedef" title="typedef">T</span><span class="nav-item-name is-typedef"><a href="global.html#UserDetailsRes">UserDetailsRes</a></span></li><li class="nav-item"><span class="nav-item-type type-typedef" title="typedef">T</span><span class="nav-item-name is-typedef"><a href="global.html#UserDetailsResItem">UserDetailsResItem</a></span></li><li class="nav-item"><span class="nav-item-type type-typedef" title="typedef">T</span><span class="nav-item-name is-typedef"><a href="global.html#WikiVariablesRes">WikiVariablesRes</a></span></li><li class="nav-item"><span class="nav-item-type type-typedef" title="typedef">T</span><span class="nav-item-name is-typedef"><a href="global.html#WikiVariablesResData">WikiVariablesResData</a></span></li><li class="nav-item"><span class="nav-item-type type-typedef" title="typedef">T</span><span class="nav-item-name is-typedef"><a href="global.html#WikiVariablesResDataAppleTouchIcon">WikiVariablesResDataAppleTouchIcon</a></span></li><li class="nav-item"><span class="nav-item-type type-typedef" title="typedef">T</span><span class="nav-item-name is-typedef"><a href="global.html#WikiVariablesResDataHtmlTitle">WikiVariablesResDataHtmlTitle</a></span></li><li class="nav-item"><span class="nav-item-type type-typedef" title="typedef">T</span><span class="nav-item-name is-typedef"><a href="global.html#WikiVariablesResDataLanguage">WikiVariablesResDataLanguage</a></span></li>
+  </nav>
+</header>
 
-<label for="nav-trigger" class="overlay"></label>
 
-<nav>
-    <li class="nav-link nav-home-link"><a href="index.html">Home</a></li><li class="nav-heading">Tutorials</li><li class="nav-item"><a href="tutorial-endpoints.html">Endpoints</a></li><li class="nav-item"><a href="tutorial-getting-started.html">Getting started</a></li><li class="nav-item"><a href="tutorial-migration-guide.html">Migration guide (3.x)</a></li><li class="nav-heading">Classes</li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="WikiaAPI.html">WikiaAPI</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="WikiaAPI.html#getArticleDetails">getArticleDetails</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="WikiaAPI.html#getArticleList">getArticleList</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="WikiaAPI.html#getSearchSuggestions">getSearchSuggestions</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="WikiaAPI.html#getTopArticles">getTopArticles</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="WikiaAPI.html#getUserDetails">getUserDetails</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="WikiaAPI.html#getWikiVariables">getWikiVariables</a></span></li><li class="nav-heading"><a href="global.html">Globals</a></li>
-</nav>
-
-<div id="main">
-    
+<main class="layout-main ">
+  <div class="container">
+    <p class="page-kind"></p>
     <h1 class="page-title">Global</h1>
-    
-
     
 
 
@@ -39,25 +35,34 @@
 
 <section>
 
-<header>
+
+<header class="not-class">
+
+
     
-        <h2>
         
-        </h2>
+        <!-- <h2></h2> -->
+
+        
+
+        
+
         
     
 </header>
 
 <article>
     <div class="container-overview">
+
+
+
     
         
 
         
 
 
-<dl class="details">
-
+<div class="details">
     
 
     
@@ -87,16 +92,12 @@
     
 
     
-
-    
-</dl>
+</div>
 
 
         
     
     </div>
-
-    
 
     
 
@@ -108,6 +109,9 @@
 
     
 
+
+    
+
     
 
     
@@ -115,216 +119,28 @@
 
         
                 
-<div class="section-members">
-<h4 class="name" id="ArticleDetailsReq">ArticleDetailsReq</h4>
 
-
-
-
-
-
-
-
-    <h5 class="subsection-title">Properties:</h5>
-
-    
-
-<table class="props">
-    <thead>
-    <tr>
+<article class="member">
+    <div class="method-type">
         
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-        <th>Attributes</th>
-        
-
-        
-        <th>Default</th>
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>ids</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><code>Array.&lt;number></code></span>
-|
-
-<span class="param-type"><code>number</code></span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-                </td>
-            
-
-            
-                <td class="default">
-                
-                </td>
-            
-
-            <td class="description last"><p>An array of article ids or a single article id</p></td>
-        </tr>
-
-        
-
-    
-
-        <tr>
-            
-                <td class="name"><code>titles</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><code>Array.&lt;string></code></span>
-|
-
-<span class="param-type"><code>string</code></span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-                </td>
-            
-
-            
-                <td class="default">
-                
-                </td>
-            
-
-            <td class="description last"><p>An array of article titles or a single article title, can be used alongside ids</p></td>
-        </tr>
-
-        
-
-    
-
-        <tr>
-            
-                <td class="name"><code>abstract</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><code>number</code></span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-                </td>
-            
-
-            
-                <td class="default">
-                
-                    100
-                
-                </td>
-            
-
-            <td class="description last"><p>The desired length for the article's abstract</p></td>
-        </tr>
-
-        
-
-    
-    </tbody>
-</table>
+    </div>
+<h4 class="member-name" id="ArticleDetailsReq">ArticleDetailsReq</h4>
 
 
 
 
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="req.js.html">req.js</a>, <a href="req.js.html#line3">line 3</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
 
 
-
-    <h5>Type:</h5>
+    <h4>Type</h4>
     <ul>
         <li>
             
-<span class="param-type"><code>Object</code></span>
 
+
+    <span class="param-type">
+        <code>Object</code>
+    </span>
+    
 
         </li>
     </ul>
@@ -333,103 +149,289 @@
 
 
 
+    <h4 class="method-heading">Properties</h4>
+    
+
+<ul class="method-params">
+
+
+    <li>
+        
+            <span class="param-name">ids</span>
+        
+
+        
+            
+
+
+    <span class="param-type">
+        <code>Array.&lt;number></code>
+    </span>
+    |
+
+    <span class="param-type">
+        <code>number</code>
+    </span>
+    
+
+        
+
+        
+            <span class="param-attributes">
+            
+                &lt;optional&gt;<br>
+            
+
+            
+            </span>
+        
+
+        
+            <span class="param-default">
+            
+            </span>
+        
+
+        <div class="param-description">
+            <p>An array of article ids or a single article id</p>
+        </div>
+
+    </li>
+    
+
+    <li>
+        
+            <span class="param-name">titles</span>
+        
+
+        
+            
+
+
+    <span class="param-type">
+        <code>Array.&lt;string></code>
+    </span>
+    |
+
+    <span class="param-type">
+        <code>string</code>
+    </span>
+    
+
+        
+
+        
+            <span class="param-attributes">
+            
+                &lt;optional&gt;<br>
+            
+
+            
+            </span>
+        
+
+        
+            <span class="param-default">
+            
+            </span>
+        
+
+        <div class="param-description">
+            <p>An array of article titles or a single article title, can be used alongside ids</p>
+        </div>
+
+    </li>
+    
+
+    <li>
+        
+            <span class="param-name">abstract</span>
+        
+
+        
+            
+
+
+    <span class="param-type">
+        <code>number</code>
+    </span>
+    
+
+        
+
+        
+            <span class="param-attributes">
+            
+                &lt;optional&gt;<br>
+            
+
+            
+            </span>
+        
+
+        
+            <span class="param-default">
+            
+                <code>100</code>
+            
+            </span>
+        
+
+        <div class="param-description">
+            <p>The desired length for the article's abstract</p>
+        </div>
+
+    </li>
+    
+</ul>
+
+
+
+
+<div class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
 </div>
 
+
+
+
+
+
+
+    <h4>Source</h4>
+    <ul>
+        <li class="method-source">
+            <a href="req.js.html">req.js</a><a href="req.js.html#source.3">, line 3</a>
+        </li>
+    </ul>
+
+
+</article>
             
                 
-<div class="section-members">
-<h4 class="name" id="ArticleDetailsRes">ArticleDetailsRes</h4>
+
+<article class="member">
+    <div class="method-type">
+        
+    </div>
+<h4 class="member-name" id="ArticleDetailsRes">ArticleDetailsRes</h4>
 
 
 
 
 
 
+    <h4>Type</h4>
+    <ul>
+        <li>
+            
 
 
-    <h5 class="subsection-title">Properties:</h5>
-
+    <span class="param-type">
+        <code>Object</code>
+    </span>
     
 
-<table class="props">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
+        </li>
+    </ul>
 
-        <th>Type</th>
 
-        
 
-        
 
-        <th class="last">Description</th>
-    </tr>
-    </thead>
 
-    <tbody>
+    <h4 class="method-heading">Properties</h4>
     
 
-        <tr>
-            
-                <td class="name"><code>items</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><code>Object.&lt;number, <a href="global.html#ArticleDetailsResItem">ArticleDetailsResItem</a>></code></span>
+<ul class="method-params">
 
 
-            
-            </td>
+    <li>
+        
+            <span class="param-name">items</span>
+        
 
+        
             
 
-            
 
-            <td class="description last"></td>
-        </tr>
+    <span class="param-type">
+        <code>Object.&lt;number, <a href="global.html#ArticleDetailsResItem">ArticleDetailsResItem</a>></code>
+    </span>
+    
 
         
 
-    
-
-        <tr>
-            
-                <td class="name"><code>basepath</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><code>string</code></span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
+        
 
         
 
-    
-    </tbody>
-</table>
+        <div class="param-description">
+            
+        </div>
 
-
-
-
-<dl class="details">
-
+    </li>
     
 
+    <li>
+        
+            <span class="param-name">basepath</span>
+        
+
+        
+            
+
+
+    <span class="param-type">
+        <code>string</code>
+    </span>
+    
+
+        
+
+        
+
+        
+
+        <div class="param-description">
+            
+        </div>
+
+    </li>
+    
+</ul>
+
+
+
+
+<div class="details">
     
 
     
@@ -453,34 +455,60 @@
     
 
     
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="res.js.html">res.js</a>, <a href="res.js.html#line22">line 22</a>
-    </li></ul></dd>
-    
 
     
 
     
-    <dt class="tag-see">See:</dt>
-    <dd class="tag-see">
+        <h4 class="method-heading">See</h4>
         <ul>
-            <li><a href="WikiaAPI.html#getArticleDetails">WikiaAPI#getArticleDetails</a></li>
+            
+                <li><a href="WikiaAPI.html#getArticleDetails">WikiaAPI#getArticleDetails</a></li>
+            
         </ul>
-    </dd>
     
 
     
-</dl>
+</div>
 
 
 
-    <h5>Type:</h5>
+
+
+
+
+    <h4>Source</h4>
+    <ul>
+        <li class="method-source">
+            <a href="res.js.html">res.js</a><a href="res.js.html#source.22">, line 22</a>
+        </li>
+    </ul>
+
+
+</article>
+            
+                
+
+<article class="member">
+    <div class="method-type">
+        
+    </div>
+<h4 class="member-name" id="ArticleDetailsResItem">ArticleDetailsResItem</h4>
+
+
+
+
+
+
+    <h4>Type</h4>
     <ul>
         <li>
             
-<span class="param-type"><code>Object</code></span>
 
+
+    <span class="param-type">
+        <code>Object</code>
+    </span>
+    
 
         </li>
     </ul>
@@ -489,272 +517,276 @@
 
 
 
+    <h4 class="method-heading">Properties</h4>
+    
+
+<ul class="method-params">
+
+
+    <li>
+        
+            <span class="param-name">id</span>
+        
+
+        
+            
+
+
+    <span class="param-type">
+        <code>number</code>
+    </span>
+    
+
+        
+
+        
+
+        
+
+        <div class="param-description">
+            
+        </div>
+
+    </li>
+    
+
+    <li>
+        
+            <span class="param-name">title</span>
+        
+
+        
+            
+
+
+    <span class="param-type">
+        <code>string</code>
+    </span>
+    
+
+        
+
+        
+
+        
+
+        <div class="param-description">
+            
+        </div>
+
+    </li>
+    
+
+    <li>
+        
+            <span class="param-name">ns</span>
+        
+
+        
+            
+
+
+    <span class="param-type">
+        <code>number</code>
+    </span>
+    
+
+        
+
+        
+
+        
+
+        <div class="param-description">
+            
+        </div>
+
+    </li>
+    
+
+    <li>
+        
+            <span class="param-name">url</span>
+        
+
+        
+            
+
+
+    <span class="param-type">
+        <code>string</code>
+    </span>
+    
+
+        
+
+        
+
+        
+
+        <div class="param-description">
+            
+        </div>
+
+    </li>
+    
+
+    <li>
+        
+            <span class="param-name">revision</span>
+        
+
+        
+            
+
+
+    <span class="param-type">
+        <code><a href="global.html#ArticleDetailsResItemRevision">ArticleDetailsResItemRevision</a></code>
+    </span>
+    
+
+        
+
+        
+
+        
+
+        <div class="param-description">
+            
+        </div>
+
+    </li>
+    
+
+    <li>
+        
+            <span class="param-name">type</span>
+        
+
+        
+            
+
+
+    <span class="param-type">
+        <code>string</code>
+    </span>
+    
+
+        
+
+        
+
+        
+
+        <div class="param-description">
+            
+        </div>
+
+    </li>
+    
+
+    <li>
+        
+            <span class="param-name">abstract</span>
+        
+
+        
+            
+
+
+    <span class="param-type">
+        <code>string</code>
+    </span>
+    
+
+        
+
+        
+
+        
+
+        <div class="param-description">
+            
+        </div>
+
+    </li>
+    
+</ul>
+
+
+
+
+<div class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
 </div>
 
+
+
+
+
+
+
+    <h4>Source</h4>
+    <ul>
+        <li class="method-source">
+            <a href="res.js.html">res.js</a><a href="res.js.html#source.11">, line 11</a>
+        </li>
+    </ul>
+
+
+</article>
             
                 
-<div class="section-members">
-<h4 class="name" id="ArticleDetailsResItem">ArticleDetailsResItem</h4>
 
-
-
-
-
-
-
-
-    <h5 class="subsection-title">Properties:</h5>
-
-    
-
-<table class="props">
-    <thead>
-    <tr>
+<article class="member">
+    <div class="method-type">
         
-        <th>Name</th>
-        
+    </div>
+<h4 class="member-name" id="ArticleDetailsResItemRevision">ArticleDetailsResItemRevision</h4>
 
-        <th>Type</th>
 
-        
 
-        
 
-        <th class="last">Description</th>
-    </tr>
-    </thead>
 
-    <tbody>
-    
 
-        <tr>
-            
-                <td class="name"><code>id</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><code>number</code></span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-        
-
-    
-
-        <tr>
-            
-                <td class="name"><code>title</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><code>string</code></span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-        
-
-    
-
-        <tr>
-            
-                <td class="name"><code>ns</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><code>number</code></span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-        
-
-    
-
-        <tr>
-            
-                <td class="name"><code>url</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><code>string</code></span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-        
-
-    
-
-        <tr>
-            
-                <td class="name"><code>revision</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><code><a href="global.html#ArticleDetailsResItemRevision">ArticleDetailsResItemRevision</a></code></span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-        
-
-    
-
-        <tr>
-            
-                <td class="name"><code>type</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><code>string</code></span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-        
-
-    
-
-        <tr>
-            
-                <td class="name"><code>abstract</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><code>string</code></span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-        
-
-    
-    </tbody>
-</table>
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="res.js.html">res.js</a>, <a href="res.js.html#line11">line 11</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-    <h5>Type:</h5>
+    <h4>Type</h4>
     <ul>
         <li>
             
-<span class="param-type"><code>Object</code></span>
 
+
+    <span class="param-type">
+        <code>Object</code>
+    </span>
+    
 
         </li>
     </ul>
@@ -763,197 +795,195 @@
 
 
 
+    <h4 class="method-heading">Properties</h4>
+    
+
+<ul class="method-params">
+
+
+    <li>
+        
+            <span class="param-name">id</span>
+        
+
+        
+            
+
+
+    <span class="param-type">
+        <code>number</code>
+    </span>
+    
+
+        
+
+        
+
+        
+
+        <div class="param-description">
+            
+        </div>
+
+    </li>
+    
+
+    <li>
+        
+            <span class="param-name">user</span>
+        
+
+        
+            
+
+
+    <span class="param-type">
+        <code>string</code>
+    </span>
+    
+
+        
+
+        
+
+        
+
+        <div class="param-description">
+            
+        </div>
+
+    </li>
+    
+
+    <li>
+        
+            <span class="param-name">user_id</span>
+        
+
+        
+            
+
+
+    <span class="param-type">
+        <code>number</code>
+    </span>
+    
+
+        
+
+        
+
+        
+
+        <div class="param-description">
+            
+        </div>
+
+    </li>
+    
+
+    <li>
+        
+            <span class="param-name">timestamp</span>
+        
+
+        
+            
+
+
+    <span class="param-type">
+        <code>string</code>
+    </span>
+    
+
+        
+
+        
+
+        
+
+        <div class="param-description">
+            
+        </div>
+
+    </li>
+    
+</ul>
+
+
+
+
+<div class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
 </div>
 
+
+
+
+
+
+
+    <h4>Source</h4>
+    <ul>
+        <li class="method-source">
+            <a href="res.js.html">res.js</a><a href="res.js.html#source.3">, line 3</a>
+        </li>
+    </ul>
+
+
+</article>
             
                 
-<div class="section-members">
-<h4 class="name" id="ArticleDetailsResItemRevision">ArticleDetailsResItemRevision</h4>
 
-
-
-
-
-
-
-
-    <h5 class="subsection-title">Properties:</h5>
-
-    
-
-<table class="props">
-    <thead>
-    <tr>
+<article class="member">
+    <div class="method-type">
         
-        <th>Name</th>
-        
+    </div>
+<h4 class="member-name" id="ArticleItem">ArticleItem</h4>
 
-        <th>Type</th>
 
-        
 
-        
 
-        <th class="last">Description</th>
-    </tr>
-    </thead>
 
-    <tbody>
-    
 
-        <tr>
-            
-                <td class="name"><code>id</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><code>number</code></span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-        
-
-    
-
-        <tr>
-            
-                <td class="name"><code>user</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><code>string</code></span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-        
-
-    
-
-        <tr>
-            
-                <td class="name"><code>user_id</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><code>number</code></span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-        
-
-    
-
-        <tr>
-            
-                <td class="name"><code>timestamp</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><code>string</code></span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-        
-
-    
-    </tbody>
-</table>
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="res.js.html">res.js</a>, <a href="res.js.html#line3">line 3</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-    <h5>Type:</h5>
+    <h4>Type</h4>
     <ul>
         <li>
             
-<span class="param-type"><code>Object</code></span>
 
+
+    <span class="param-type">
+        <code>Object</code>
+    </span>
+    
 
         </li>
     </ul>
@@ -962,197 +992,195 @@
 
 
 
+    <h4 class="method-heading">Properties</h4>
+    
+
+<ul class="method-params">
+
+
+    <li>
+        
+            <span class="param-name">id</span>
+        
+
+        
+            
+
+
+    <span class="param-type">
+        <code>number</code>
+    </span>
+    
+
+        
+
+        
+
+        
+
+        <div class="param-description">
+            
+        </div>
+
+    </li>
+    
+
+    <li>
+        
+            <span class="param-name">title</span>
+        
+
+        
+            
+
+
+    <span class="param-type">
+        <code>string</code>
+    </span>
+    
+
+        
+
+        
+
+        
+
+        <div class="param-description">
+            
+        </div>
+
+    </li>
+    
+
+    <li>
+        
+            <span class="param-name">url</span>
+        
+
+        
+            
+
+
+    <span class="param-type">
+        <code>string</code>
+    </span>
+    
+
+        
+
+        
+
+        
+
+        <div class="param-description">
+            
+        </div>
+
+    </li>
+    
+
+    <li>
+        
+            <span class="param-name">ns</span>
+        
+
+        
+            
+
+
+    <span class="param-type">
+        <code>number</code>
+    </span>
+    
+
+        
+
+        
+
+        
+
+        <div class="param-description">
+            
+        </div>
+
+    </li>
+    
+</ul>
+
+
+
+
+<div class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
 </div>
 
+
+
+
+
+
+
+    <h4>Source</h4>
+    <ul>
+        <li class="method-source">
+            <a href="res.js.html">res.js</a><a href="res.js.html#source.30">, line 30</a>
+        </li>
+    </ul>
+
+
+</article>
             
                 
-<div class="section-members">
-<h4 class="name" id="ArticleItem">ArticleItem</h4>
 
-
-
-
-
-
-
-
-    <h5 class="subsection-title">Properties:</h5>
-
-    
-
-<table class="props">
-    <thead>
-    <tr>
+<article class="member">
+    <div class="method-type">
         
-        <th>Name</th>
-        
+    </div>
+<h4 class="member-name" id="ArticleListReq">ArticleListReq</h4>
 
-        <th>Type</th>
 
-        
 
-        
 
-        <th class="last">Description</th>
-    </tr>
-    </thead>
 
-    <tbody>
-    
 
-        <tr>
-            
-                <td class="name"><code>id</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><code>number</code></span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-        
-
-    
-
-        <tr>
-            
-                <td class="name"><code>title</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><code>string</code></span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-        
-
-    
-
-        <tr>
-            
-                <td class="name"><code>url</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><code>string</code></span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-        
-
-    
-
-        <tr>
-            
-                <td class="name"><code>ns</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><code>number</code></span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-        
-
-    
-    </tbody>
-</table>
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="res.js.html">res.js</a>, <a href="res.js.html#line30">line 30</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-    <h5>Type:</h5>
+    <h4>Type</h4>
     <ul>
         <li>
             
-<span class="param-type"><code>Object</code></span>
 
+
+    <span class="param-type">
+        <code>Object</code>
+    </span>
+    
 
         </li>
     </ul>
@@ -1161,258 +1189,254 @@
 
 
 
+    <h4 class="method-heading">Properties</h4>
+    
+
+<ul class="method-params">
+
+
+    <li>
+        
+            <span class="param-name">category</span>
+        
+
+        
+            
+
+
+    <span class="param-type">
+        <code>string</code>
+    </span>
+    
+
+        
+
+        
+            <span class="param-attributes">
+            
+                &lt;optional&gt;<br>
+            
+
+            
+            </span>
+        
+
+        
+            <span class="param-default">
+            
+            </span>
+        
+
+        <div class="param-description">
+            <p>Return only articles belonging to the provided valid category title</p>
+        </div>
+
+    </li>
+    
+
+    <li>
+        
+            <span class="param-name">namespaces</span>
+        
+
+        
+            
+
+
+    <span class="param-type">
+        <code>Array.&lt;number></code>
+    </span>
+    |
+
+    <span class="param-type">
+        <code>number</code>
+    </span>
+    
+
+        
+
+        
+            <span class="param-attributes">
+            
+                &lt;optional&gt;<br>
+            
+
+            
+            </span>
+        
+
+        
+            <span class="param-default">
+            
+                <code>0</code>
+            
+            </span>
+        
+
+        <div class="param-description">
+            <p>Array of namespace ids or a single namespace id, see more: <a href="http://community.fandom.com/wiki/Help:Namespaces">Help:Namespaces</a></p>
+        </div>
+
+    </li>
+    
+
+    <li>
+        
+            <span class="param-name">limit</span>
+        
+
+        
+            
+
+
+    <span class="param-type">
+        <code>number</code>
+    </span>
+    
+
+        
+
+        
+            <span class="param-attributes">
+            
+                &lt;optional&gt;<br>
+            
+
+            
+            </span>
+        
+
+        
+            <span class="param-default">
+            
+                <code>25</code>
+            
+            </span>
+        
+
+        <div class="param-description">
+            <p>Limit the number of results</p>
+        </div>
+
+    </li>
+    
+
+    <li>
+        
+            <span class="param-name">offset</span>
+        
+
+        
+            
+
+
+    <span class="param-type">
+        <code>string</code>
+    </span>
+    
+
+        
+
+        
+            <span class="param-attributes">
+            
+                &lt;optional&gt;<br>
+            
+
+            
+            </span>
+        
+
+        
+            <span class="param-default">
+            
+                <code>"!"</code>
+            
+            </span>
+        
+
+        <div class="param-description">
+            <p>Only display articles where name is lexicographically greater than provided</p>
+        </div>
+
+    </li>
+    
+</ul>
+
+
+
+
+<div class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
 </div>
 
+
+
+
+
+
+
+    <h4>Source</h4>
+    <ul>
+        <li class="method-source">
+            <a href="req.js.html">req.js</a><a href="req.js.html#source.10">, line 10</a>
+        </li>
+    </ul>
+
+
+</article>
             
                 
-<div class="section-members">
-<h4 class="name" id="ArticleListReq">ArticleListReq</h4>
 
-
-
-
-
-
-
-
-    <h5 class="subsection-title">Properties:</h5>
-
-    
-
-<table class="props">
-    <thead>
-    <tr>
+<article class="member">
+    <div class="method-type">
         
-        <th>Name</th>
-        
+    </div>
+<h4 class="member-name" id="ArticleListRes">ArticleListRes</h4>
 
-        <th>Type</th>
 
-        
-        <th>Attributes</th>
-        
 
-        
-        <th>Default</th>
-        
 
-        <th class="last">Description</th>
-    </tr>
-    </thead>
 
-    <tbody>
-    
 
-        <tr>
-            
-                <td class="name"><code>category</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><code>string</code></span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-                </td>
-            
-
-            
-                <td class="default">
-                
-                </td>
-            
-
-            <td class="description last"><p>Return only articles belonging to the provided valid category title</p></td>
-        </tr>
-
-        
-
-    
-
-        <tr>
-            
-                <td class="name"><code>namespaces</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><code>Array.&lt;number></code></span>
-|
-
-<span class="param-type"><code>number</code></span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-                </td>
-            
-
-            
-                <td class="default">
-                
-                    0
-                
-                </td>
-            
-
-            <td class="description last"><p>Array of namespace ids or a single namespace id, see more: <a href="http://community.fandom.com/wiki/Help:Namespaces">Help:Namespaces</a></p></td>
-        </tr>
-
-        
-
-    
-
-        <tr>
-            
-                <td class="name"><code>limit</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><code>number</code></span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-                </td>
-            
-
-            
-                <td class="default">
-                
-                    25
-                
-                </td>
-            
-
-            <td class="description last"><p>Limit the number of results</p></td>
-        </tr>
-
-        
-
-    
-
-        <tr>
-            
-                <td class="name"><code>offset</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><code>string</code></span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-                </td>
-            
-
-            
-                <td class="default">
-                
-                    "!"
-                
-                </td>
-            
-
-            <td class="description last"><p>Only display articles where name is lexicographically greater than provided</p></td>
-        </tr>
-
-        
-
-    
-    </tbody>
-</table>
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="req.js.html">req.js</a>, <a href="req.js.html#line10">line 10</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-    <h5>Type:</h5>
+    <h4>Type</h4>
     <ul>
         <li>
             
-<span class="param-type"><code>Object</code></span>
 
+
+    <span class="param-type">
+        <code>Object</code>
+    </span>
+    
 
         </li>
     </ul>
@@ -1421,136 +1445,98 @@
 
 
 
-</div>
-
-            
-                
-<div class="section-members">
-<h4 class="name" id="ArticleListRes">ArticleListRes</h4>
-
-
-
-
-
-
-
-
-    <h5 class="subsection-title">Properties:</h5>
-
+    <h4 class="method-heading">Properties</h4>
     
 
-<table class="props">
-    <thead>
-    <tr>
+<ul class="method-params">
+
+
+    <li>
         
-        <th>Name</th>
+            <span class="param-name">items</span>
         
 
-        <th>Type</th>
+        
+            
+
+
+    <span class="param-type">
+        <code>Array.&lt;<a href="global.html#ArticleItem">ArticleItem</a>></code>
+    </span>
+    
 
         
 
         
 
-        <th class="last">Description</th>
-    </tr>
-    </thead>
+        
 
-    <tbody>
+        <div class="param-description">
+            
+        </div>
+
+    </li>
     
 
-        <tr>
-            
-                <td class="name"><code>items</code></td>
-            
+    <li>
+        
+            <span class="param-name">basepath</span>
+        
 
-            <td class="type">
-            
-                
-<span class="param-type"><code>Array.&lt;<a href="global.html#ArticleItem">ArticleItem</a>></code></span>
-
-
-            
-            </td>
-
+        
             
 
-            
 
-            <td class="description last"></td>
-        </tr>
+    <span class="param-type">
+        <code>string</code>
+    </span>
+    
 
         
 
-    
-
-        <tr>
-            
-                <td class="name"><code>basepath</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><code>string</code></span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
+        
 
         
 
+        <div class="param-description">
+            
+        </div>
+
+    </li>
     
 
-        <tr>
-            
-                <td class="name"><code>offset</code></td>
-            
+    <li>
+        
+            <span class="param-name">offset</span>
+        
 
-            <td class="type">
-            
-                
-<span class="param-type"><code>string</code></span>
-
-
-            
-            </td>
-
+        
             
 
-            
 
-            <td class="description last"></td>
-        </tr>
+    <span class="param-type">
+        <code>string</code>
+    </span>
+    
 
         
 
+        
+
+        
+
+        <div class="param-description">
+            
+        </div>
+
+    </li>
     
-    </tbody>
-</table>
+</ul>
 
 
 
 
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
+<div class="details">
     
 
     
@@ -1566,34 +1552,68 @@
     
 
     
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="res.js.html">res.js</a>, <a href="res.js.html#line38">line 38</a>
-    </li></ul></dd>
+
+    
+
     
 
     
 
     
-    <dt class="tag-see">See:</dt>
-    <dd class="tag-see">
+
+    
+
+    
+        <h4 class="method-heading">See</h4>
         <ul>
-            <li><a href="WikiaAPI.html#getArticleList">WikiaAPI#getArticleList</a></li>
+            
+                <li><a href="WikiaAPI.html#getArticleList">WikiaAPI#getArticleList</a></li>
+            
         </ul>
-    </dd>
     
 
     
-</dl>
+</div>
 
 
 
-    <h5>Type:</h5>
+
+
+
+
+    <h4>Source</h4>
+    <ul>
+        <li class="method-source">
+            <a href="res.js.html">res.js</a><a href="res.js.html#source.38">, line 38</a>
+        </li>
+    </ul>
+
+
+</article>
+            
+                
+
+<article class="member">
+    <div class="method-type">
+        
+    </div>
+<h4 class="member-name" id="SearchSuggestionsRes">SearchSuggestionsRes</h4>
+
+
+
+
+
+
+    <h4>Type</h4>
     <ul>
         <li>
             
-<span class="param-type"><code>Object</code></span>
 
+
+    <span class="param-type">
+        <code>Object</code>
+    </span>
+    
 
         </li>
     </ul>
@@ -1602,82 +1622,44 @@
 
 
 
-</div>
-
-            
-                
-<div class="section-members">
-<h4 class="name" id="SearchSuggestionsRes">SearchSuggestionsRes</h4>
-
-
-
-
-
-
-
-
-    <h5 class="subsection-title">Properties:</h5>
-
+    <h4 class="method-heading">Properties</h4>
     
 
-<table class="props">
-    <thead>
-    <tr>
+<ul class="method-params">
+
+
+    <li>
         
-        <th>Name</th>
+            <span class="param-name">items</span>
         
 
-        <th>Type</th>
+        
+            
+
+
+    <span class="param-type">
+        <code>Array.&lt;<a href="global.html#SearchSuggestionsResItem">SearchSuggestionsResItem</a>></code>
+    </span>
+    
 
         
 
         
 
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>items</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><code>Array.&lt;<a href="global.html#SearchSuggestionsResItem">SearchSuggestionsResItem</a>></code></span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
         
 
+        <div class="param-description">
+            
+        </div>
+
+    </li>
     
-    </tbody>
-</table>
+</ul>
 
 
 
 
-<dl class="details">
-
-    
-
-    
-
-    
-
+<div class="details">
     
 
     
@@ -1697,34 +1679,64 @@
     
 
     
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="res.js.html">res.js</a>, <a href="res.js.html#line103">line 103</a>
-    </li></ul></dd>
+
+    
+
     
 
     
 
     
-    <dt class="tag-see">See:</dt>
-    <dd class="tag-see">
+        <h4 class="method-heading">See</h4>
         <ul>
-            <li><a href="WikiaAPI.html#getSearchSuggestions">WikiaAPI#getSearchSuggestions</a></li>
+            
+                <li><a href="WikiaAPI.html#getSearchSuggestions">WikiaAPI#getSearchSuggestions</a></li>
+            
         </ul>
-    </dd>
     
 
     
-</dl>
+</div>
 
 
 
-    <h5>Type:</h5>
+
+
+
+
+    <h4>Source</h4>
+    <ul>
+        <li class="method-source">
+            <a href="res.js.html">res.js</a><a href="res.js.html#source.103">, line 103</a>
+        </li>
+    </ul>
+
+
+</article>
+            
+                
+
+<article class="member">
+    <div class="method-type">
+        
+    </div>
+<h4 class="member-name" id="SearchSuggestionsResItem">SearchSuggestionsResItem</h4>
+
+
+
+
+
+
+    <h4>Type</h4>
     <ul>
         <li>
             
-<span class="param-type"><code>Object</code></span>
 
+
+    <span class="param-type">
+        <code>Object</code>
+    </span>
+    
 
         </li>
     </ul>
@@ -1733,122 +1745,114 @@
 
 
 
+    <h4 class="method-heading">Properties</h4>
+    
+
+<ul class="method-params">
+
+
+    <li>
+        
+            <span class="param-name">title</span>
+        
+
+        
+            
+
+
+    <span class="param-type">
+        <code>string</code>
+    </span>
+    
+
+        
+
+        
+
+        
+
+        <div class="param-description">
+            
+        </div>
+
+    </li>
+    
+</ul>
+
+
+
+
+<div class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
 </div>
 
+
+
+
+
+
+
+    <h4>Source</h4>
+    <ul>
+        <li class="method-source">
+            <a href="res.js.html">res.js</a><a href="res.js.html#source.98">, line 98</a>
+        </li>
+    </ul>
+
+
+</article>
             
                 
-<div class="section-members">
-<h4 class="name" id="SearchSuggestionsResItem">SearchSuggestionsResItem</h4>
 
-
-
-
-
-
-
-
-    <h5 class="subsection-title">Properties:</h5>
-
-    
-
-<table class="props">
-    <thead>
-    <tr>
+<article class="member">
+    <div class="method-type">
         
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>title</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><code>string</code></span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-        
-
-    
-    </tbody>
-</table>
+    </div>
+<h4 class="member-name" id="TopArticlesReq">TopArticlesReq</h4>
 
 
 
 
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="res.js.html">res.js</a>, <a href="res.js.html#line98">line 98</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
 
 
-
-    <h5>Type:</h5>
+    <h4>Type</h4>
     <ul>
         <li>
             
-<span class="param-type"><code>Object</code></span>
 
+
+    <span class="param-type">
+        <code>Object</code>
+    </span>
+    
 
         </li>
     </ul>
@@ -1857,217 +1861,211 @@
 
 
 
+    <h4 class="method-heading">Properties</h4>
+    
+
+<ul class="method-params">
+
+
+    <li>
+        
+            <span class="param-name">namespaces</span>
+        
+
+        
+            
+
+
+    <span class="param-type">
+        <code>Array.&lt;number></code>
+    </span>
+    |
+
+    <span class="param-type">
+        <code>number</code>
+    </span>
+    
+
+        
+
+        
+            <span class="param-attributes">
+            
+                &lt;optional&gt;<br>
+            
+
+            
+            </span>
+        
+
+        
+            <span class="param-default">
+            
+            </span>
+        
+
+        <div class="param-description">
+            <p>Array of namespace ids or a single namespace id, see more: <a href="http://community.wikia.com/wiki/Help:Namespaces">Help:Namespaces</a></p>
+        </div>
+
+    </li>
+    
+
+    <li>
+        
+            <span class="param-name">category</span>
+        
+
+        
+            
+
+
+    <span class="param-type">
+        <code>string</code>
+    </span>
+    
+
+        
+
+        
+            <span class="param-attributes">
+            
+                &lt;optional&gt;<br>
+            
+
+            
+            </span>
+        
+
+        
+            <span class="param-default">
+            
+            </span>
+        
+
+        <div class="param-description">
+            <p>Return only articles belonging to the provided category title</p>
+        </div>
+
+    </li>
+    
+
+    <li>
+        
+            <span class="param-name">limit</span>
+        
+
+        
+            
+
+
+    <span class="param-type">
+        <code>number</code>
+    </span>
+    
+
+        
+
+        
+            <span class="param-attributes">
+            
+                &lt;optional&gt;<br>
+            
+
+            
+            </span>
+        
+
+        
+            <span class="param-default">
+            
+                <code>10</code>
+            
+            </span>
+        
+
+        <div class="param-description">
+            <p>Limit the number of results - maximum limit is 250</p>
+        </div>
+
+    </li>
+    
+</ul>
+
+
+
+
+<div class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
 </div>
 
+
+
+
+
+
+
+    <h4>Source</h4>
+    <ul>
+        <li class="method-source">
+            <a href="req.js.html">req.js</a><a href="req.js.html#source.18">, line 18</a>
+        </li>
+    </ul>
+
+
+</article>
             
                 
-<div class="section-members">
-<h4 class="name" id="TopArticlesReq">TopArticlesReq</h4>
 
-
-
-
-
-
-
-
-    <h5 class="subsection-title">Properties:</h5>
-
-    
-
-<table class="props">
-    <thead>
-    <tr>
+<article class="member">
+    <div class="method-type">
         
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-        <th>Attributes</th>
-        
-
-        
-        <th>Default</th>
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>namespaces</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><code>Array.&lt;number></code></span>
-|
-
-<span class="param-type"><code>number</code></span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-                </td>
-            
-
-            
-                <td class="default">
-                
-                </td>
-            
-
-            <td class="description last"><p>Array of namespace ids or a single namespace id, see more: <a href="http://community.wikia.com/wiki/Help:Namespaces">Help:Namespaces</a></p></td>
-        </tr>
-
-        
-
-    
-
-        <tr>
-            
-                <td class="name"><code>category</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><code>string</code></span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-                </td>
-            
-
-            
-                <td class="default">
-                
-                </td>
-            
-
-            <td class="description last"><p>Return only articles belonging to the provided category title</p></td>
-        </tr>
-
-        
-
-    
-
-        <tr>
-            
-                <td class="name"><code>limit</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><code>number</code></span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-                </td>
-            
-
-            
-                <td class="default">
-                
-                    10
-                
-                </td>
-            
-
-            <td class="description last"><p>Limit the number of results - maximum limit is 250</p></td>
-        </tr>
-
-        
-
-    
-    </tbody>
-</table>
+    </div>
+<h4 class="member-name" id="TopArticlesRes">TopArticlesRes</h4>
 
 
 
 
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="req.js.html">req.js</a>, <a href="req.js.html#line18">line 18</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
 
 
-
-    <h5>Type:</h5>
+    <h4>Type</h4>
     <ul>
         <li>
             
-<span class="param-type"><code>Object</code></span>
 
+
+    <span class="param-type">
+        <code>Object</code>
+    </span>
+    
 
         </li>
     </ul>
@@ -2076,107 +2074,71 @@
 
 
 
-</div>
-
-            
-                
-<div class="section-members">
-<h4 class="name" id="TopArticlesRes">TopArticlesRes</h4>
-
-
-
-
-
-
-
-
-    <h5 class="subsection-title">Properties:</h5>
-
+    <h4 class="method-heading">Properties</h4>
     
 
-<table class="props">
-    <thead>
-    <tr>
+<ul class="method-params">
+
+
+    <li>
         
-        <th>Name</th>
+            <span class="param-name">items</span>
         
 
-        <th>Type</th>
+        
+            
+
+
+    <span class="param-type">
+        <code>Array.&lt;<a href="global.html#ArticleItem">ArticleItem</a>></code>
+    </span>
+    
 
         
 
         
 
-        <th class="last">Description</th>
-    </tr>
-    </thead>
+        
 
-    <tbody>
+        <div class="param-description">
+            
+        </div>
+
+    </li>
     
 
-        <tr>
-            
-                <td class="name"><code>items</code></td>
-            
+    <li>
+        
+            <span class="param-name">basepath</span>
+        
 
-            <td class="type">
-            
-                
-<span class="param-type"><code>Array.&lt;<a href="global.html#ArticleItem">ArticleItem</a>></code></span>
-
-
-            
-            </td>
-
+        
             
 
-            
 
-            <td class="description last"></td>
-        </tr>
+    <span class="param-type">
+        <code>string</code>
+    </span>
+    
 
         
 
-    
-
-        <tr>
-            
-                <td class="name"><code>basepath</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><code>string</code></span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
+        
 
         
 
+        <div class="param-description">
+            
+        </div>
+
+    </li>
     
-    </tbody>
-</table>
+</ul>
 
 
 
 
-<dl class="details">
-
-    
-
-    
-
-    
-
+<div class="details">
     
 
     
@@ -2196,34 +2158,64 @@
     
 
     
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="res.js.html">res.js</a>, <a href="res.js.html#line46">line 46</a>
-    </li></ul></dd>
+
+    
+
     
 
     
 
     
-    <dt class="tag-see">See:</dt>
-    <dd class="tag-see">
+        <h4 class="method-heading">See</h4>
         <ul>
-            <li><a href="WikiaAPI.html#getTopArticles">WikiaAPI#getTopArticles</a></li>
+            
+                <li><a href="WikiaAPI.html#getTopArticles">WikiaAPI#getTopArticles</a></li>
+            
         </ul>
-    </dd>
     
 
     
-</dl>
+</div>
 
 
 
-    <h5>Type:</h5>
+
+
+
+
+    <h4>Source</h4>
+    <ul>
+        <li class="method-source">
+            <a href="res.js.html">res.js</a><a href="res.js.html#source.46">, line 46</a>
+        </li>
+    </ul>
+
+
+</article>
+            
+                
+
+<article class="member">
+    <div class="method-type">
+        
+    </div>
+<h4 class="member-name" id="UserDetailsReq">UserDetailsReq</h4>
+
+
+
+
+
+
+    <h4>Type</h4>
     <ul>
         <li>
             
-<span class="param-type"><code>Object</code></span>
 
+
+    <span class="param-type">
+        <code>Object</code>
+    </span>
+    
 
         </li>
     </ul>
@@ -2232,178 +2224,170 @@
 
 
 
+    <h4 class="method-heading">Properties</h4>
+    
+
+<ul class="method-params">
+
+
+    <li>
+        
+            <span class="param-name">ids</span>
+        
+
+        
+            
+
+
+    <span class="param-type">
+        <code>Array.&lt;number></code>
+    </span>
+    |
+
+    <span class="param-type">
+        <code>number</code>
+    </span>
+    
+
+        
+
+        
+            <span class="param-attributes">
+            
+
+            
+            </span>
+        
+
+        
+            <span class="param-default">
+            
+            </span>
+        
+
+        <div class="param-description">
+            <p>An array of user ids or a single user id</p>
+        </div>
+
+    </li>
+    
+
+    <li>
+        
+            <span class="param-name">size</span>
+        
+
+        
+            
+
+
+    <span class="param-type">
+        <code>number</code>
+    </span>
+    
+
+        
+
+        
+            <span class="param-attributes">
+            
+                &lt;optional&gt;<br>
+            
+
+            
+            </span>
+        
+
+        
+            <span class="param-default">
+            
+                <code>100</code>
+            
+            </span>
+        
+
+        <div class="param-description">
+            <p>The desired width and height of the thumbnail, defaults to 100, 0 for no thumbnail</p>
+        </div>
+
+    </li>
+    
+</ul>
+
+
+
+
+<div class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
 </div>
 
+
+
+
+
+
+
+    <h4>Source</h4>
+    <ul>
+        <li class="method-source">
+            <a href="req.js.html">req.js</a><a href="req.js.html#source.25">, line 25</a>
+        </li>
+    </ul>
+
+
+</article>
             
                 
-<div class="section-members">
-<h4 class="name" id="UserDetailsReq">UserDetailsReq</h4>
 
-
-
-
-
-
-
-
-    <h5 class="subsection-title">Properties:</h5>
-
-    
-
-<table class="props">
-    <thead>
-    <tr>
+<article class="member">
+    <div class="method-type">
         
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-        <th>Attributes</th>
-        
-
-        
-        <th>Default</th>
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>ids</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><code>Array.&lt;number></code></span>
-|
-
-<span class="param-type"><code>number</code></span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-
-                
-                </td>
-            
-
-            
-                <td class="default">
-                
-                </td>
-            
-
-            <td class="description last"><p>An array of user ids or a single user id</p></td>
-        </tr>
-
-        
-
-    
-
-        <tr>
-            
-                <td class="name"><code>size</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><code>number</code></span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-                </td>
-            
-
-            
-                <td class="default">
-                
-                    100
-                
-                </td>
-            
-
-            <td class="description last"><p>The desired width and height of the thumbnail, defaults to 100, 0 for no thumbnail</p></td>
-        </tr>
-
-        
-
-    
-    </tbody>
-</table>
+    </div>
+<h4 class="member-name" id="UserDetailsRes">UserDetailsRes</h4>
 
 
 
 
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="req.js.html">req.js</a>, <a href="req.js.html#line25">line 25</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
 
 
-
-    <h5>Type:</h5>
+    <h4>Type</h4>
     <ul>
         <li>
             
-<span class="param-type"><code>Object</code></span>
 
+
+    <span class="param-type">
+        <code>Object</code>
+    </span>
+    
 
         </li>
     </ul>
@@ -2412,107 +2396,71 @@
 
 
 
-</div>
-
-            
-                
-<div class="section-members">
-<h4 class="name" id="UserDetailsRes">UserDetailsRes</h4>
-
-
-
-
-
-
-
-
-    <h5 class="subsection-title">Properties:</h5>
-
+    <h4 class="method-heading">Properties</h4>
     
 
-<table class="props">
-    <thead>
-    <tr>
+<ul class="method-params">
+
+
+    <li>
         
-        <th>Name</th>
+            <span class="param-name">items</span>
         
 
-        <th>Type</th>
+        
+            
+
+
+    <span class="param-type">
+        <code><a href="global.html#UserDetailsResItem">UserDetailsResItem</a></code>
+    </span>
+    
 
         
 
         
 
-        <th class="last">Description</th>
-    </tr>
-    </thead>
+        
 
-    <tbody>
+        <div class="param-description">
+            
+        </div>
+
+    </li>
     
 
-        <tr>
-            
-                <td class="name"><code>items</code></td>
-            
+    <li>
+        
+            <span class="param-name">basepath</span>
+        
 
-            <td class="type">
-            
-                
-<span class="param-type"><code><a href="global.html#UserDetailsResItem">UserDetailsResItem</a></code></span>
-
-
-            
-            </td>
-
+        
             
 
-            
 
-            <td class="description last"></td>
-        </tr>
+    <span class="param-type">
+        <code>string</code>
+    </span>
+    
 
         
 
-    
-
-        <tr>
-            
-                <td class="name"><code>basepath</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><code>string</code></span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
+        
 
         
 
+        <div class="param-description">
+            
+        </div>
+
+    </li>
     
-    </tbody>
-</table>
+</ul>
 
 
 
 
-<dl class="details">
-
-    
-
-    
-
-    
-
+<div class="details">
     
 
     
@@ -2532,34 +2480,64 @@
     
 
     
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="res.js.html">res.js</a>, <a href="res.js.html#line120">line 120</a>
-    </li></ul></dd>
+
+    
+
     
 
     
 
     
-    <dt class="tag-see">See:</dt>
-    <dd class="tag-see">
+        <h4 class="method-heading">See</h4>
         <ul>
-            <li><a href="WikiaAPI.html#getUserDetails">WikiaAPI#getUserDetails</a></li>
+            
+                <li><a href="WikiaAPI.html#getUserDetails">WikiaAPI#getUserDetails</a></li>
+            
         </ul>
-    </dd>
     
 
     
-</dl>
+</div>
 
 
 
-    <h5>Type:</h5>
+
+
+
+
+    <h4>Source</h4>
+    <ul>
+        <li class="method-source">
+            <a href="res.js.html">res.js</a><a href="res.js.html#source.120">, line 120</a>
+        </li>
+    </ul>
+
+
+</article>
+            
+                
+
+<article class="member">
+    <div class="method-type">
+        
+    </div>
+<h4 class="member-name" id="UserDetailsResItem">UserDetailsResItem</h4>
+
+
+
+
+
+
+    <h4>Type</h4>
     <ul>
         <li>
             
-<span class="param-type"><code>Object</code></span>
 
+
+    <span class="param-type">
+        <code>Object</code>
+    </span>
+    
 
         </li>
     </ul>
@@ -2568,272 +2546,276 @@
 
 
 
+    <h4 class="method-heading">Properties</h4>
+    
+
+<ul class="method-params">
+
+
+    <li>
+        
+            <span class="param-name">user_id</span>
+        
+
+        
+            
+
+
+    <span class="param-type">
+        <code>number</code>
+    </span>
+    
+
+        
+
+        
+
+        
+
+        <div class="param-description">
+            
+        </div>
+
+    </li>
+    
+
+    <li>
+        
+            <span class="param-name">title</span>
+        
+
+        
+            
+
+
+    <span class="param-type">
+        <code>string</code>
+    </span>
+    
+
+        
+
+        
+
+        
+
+        <div class="param-description">
+            
+        </div>
+
+    </li>
+    
+
+    <li>
+        
+            <span class="param-name">name</span>
+        
+
+        
+            
+
+
+    <span class="param-type">
+        <code>string</code>
+    </span>
+    
+
+        
+
+        
+
+        
+
+        <div class="param-description">
+            
+        </div>
+
+    </li>
+    
+
+    <li>
+        
+            <span class="param-name">url</span>
+        
+
+        
+            
+
+
+    <span class="param-type">
+        <code>string</code>
+    </span>
+    
+
+        
+
+        
+
+        
+
+        <div class="param-description">
+            
+        </div>
+
+    </li>
+    
+
+    <li>
+        
+            <span class="param-name">numberofedits</span>
+        
+
+        
+            
+
+
+    <span class="param-type">
+        <code>number</code>
+    </span>
+    
+
+        
+
+        
+
+        
+
+        <div class="param-description">
+            
+        </div>
+
+    </li>
+    
+
+    <li>
+        
+            <span class="param-name">is_subject_to_ccpa</span>
+        
+
+        
+            
+
+
+    <span class="param-type">
+        <code>boolean</code>
+    </span>
+    
+
+        
+
+        
+
+        
+
+        <div class="param-description">
+            
+        </div>
+
+    </li>
+    
+
+    <li>
+        
+            <span class="param-name">avatar</span>
+        
+
+        
+            
+
+
+    <span class="param-type">
+        <code>string</code>
+    </span>
+    
+
+        
+
+        
+
+        
+
+        <div class="param-description">
+            
+        </div>
+
+    </li>
+    
+</ul>
+
+
+
+
+<div class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
 </div>
 
+
+
+
+
+
+
+    <h4>Source</h4>
+    <ul>
+        <li class="method-source">
+            <a href="res.js.html">res.js</a><a href="res.js.html#source.109">, line 109</a>
+        </li>
+    </ul>
+
+
+</article>
             
                 
-<div class="section-members">
-<h4 class="name" id="UserDetailsResItem">UserDetailsResItem</h4>
 
-
-
-
-
-
-
-
-    <h5 class="subsection-title">Properties:</h5>
-
-    
-
-<table class="props">
-    <thead>
-    <tr>
+<article class="member">
+    <div class="method-type">
         
-        <th>Name</th>
-        
+    </div>
+<h4 class="member-name" id="WikiVariablesRes">WikiVariablesRes</h4>
 
-        <th>Type</th>
 
-        
 
-        
 
-        <th class="last">Description</th>
-    </tr>
-    </thead>
 
-    <tbody>
-    
 
-        <tr>
-            
-                <td class="name"><code>user_id</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><code>number</code></span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-        
-
-    
-
-        <tr>
-            
-                <td class="name"><code>title</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><code>string</code></span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-        
-
-    
-
-        <tr>
-            
-                <td class="name"><code>name</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><code>string</code></span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-        
-
-    
-
-        <tr>
-            
-                <td class="name"><code>url</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><code>string</code></span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-        
-
-    
-
-        <tr>
-            
-                <td class="name"><code>numberofedits</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><code>number</code></span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-        
-
-    
-
-        <tr>
-            
-                <td class="name"><code>is_subject_to_ccpa</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><code>boolean</code></span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-        
-
-    
-
-        <tr>
-            
-                <td class="name"><code>avatar</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><code>string</code></span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-        
-
-    
-    </tbody>
-</table>
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="res.js.html">res.js</a>, <a href="res.js.html#line109">line 109</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-    <h5>Type:</h5>
+    <h4>Type</h4>
     <ul>
         <li>
             
-<span class="param-type"><code>Object</code></span>
 
+
+    <span class="param-type">
+        <code>Object</code>
+    </span>
+    
 
         </li>
     </ul>
@@ -2842,82 +2824,44 @@
 
 
 
-</div>
-
-            
-                
-<div class="section-members">
-<h4 class="name" id="WikiVariablesRes">WikiVariablesRes</h4>
-
-
-
-
-
-
-
-
-    <h5 class="subsection-title">Properties:</h5>
-
+    <h4 class="method-heading">Properties</h4>
     
 
-<table class="props">
-    <thead>
-    <tr>
+<ul class="method-params">
+
+
+    <li>
         
-        <th>Name</th>
+            <span class="param-name">data</span>
         
 
-        <th>Type</th>
+        
+            
+
+
+    <span class="param-type">
+        <code><a href="global.html#WikiVariablesResData">WikiVariablesResData</a></code>
+    </span>
+    
 
         
 
         
 
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>data</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><code><a href="global.html#WikiVariablesResData">WikiVariablesResData</a></code></span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
         
 
+        <div class="param-description">
+            
+        </div>
+
+    </li>
     
-    </tbody>
-</table>
+</ul>
 
 
 
 
-<dl class="details">
-
-    
-
-    
-
-    
-
+<div class="details">
     
 
     
@@ -2937,34 +2881,64 @@
     
 
     
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="res.js.html">res.js</a>, <a href="res.js.html#line92">line 92</a>
-    </li></ul></dd>
+
+    
+
     
 
     
 
     
-    <dt class="tag-see">See:</dt>
-    <dd class="tag-see">
+        <h4 class="method-heading">See</h4>
         <ul>
-            <li><a href="WikiaAPI.html#getWikiVariables">WikiaAPI#getWikiVariables</a></li>
+            
+                <li><a href="WikiaAPI.html#getWikiVariables">WikiaAPI#getWikiVariables</a></li>
+            
         </ul>
-    </dd>
     
 
     
-</dl>
+</div>
 
 
 
-    <h5>Type:</h5>
+
+
+
+
+    <h4>Source</h4>
+    <ul>
+        <li class="method-source">
+            <a href="res.js.html">res.js</a><a href="res.js.html#source.92">, line 92</a>
+        </li>
+    </ul>
+
+
+</article>
+            
+                
+
+<article class="member">
+    <div class="method-type">
+        
+    </div>
+<h4 class="member-name" id="WikiVariablesResData">WikiVariablesResData</h4>
+
+
+
+
+
+
+    <h4>Type</h4>
     <ul>
         <li>
             
-<span class="param-type"><code>Object</code></span>
 
+
+    <span class="param-type">
+        <code>Object</code>
+    </span>
+    
 
         </li>
     </ul>
@@ -2973,522 +2947,546 @@
 
 
 
+    <h4 class="method-heading">Properties</h4>
+    
+
+<ul class="method-params">
+
+
+    <li>
+        
+            <span class="param-name">vertical</span>
+        
+
+        
+            
+
+
+    <span class="param-type">
+        <code>string</code>
+    </span>
+    
+
+        
+
+        
+
+        
+
+        <div class="param-description">
+            
+        </div>
+
+    </li>
+    
+
+    <li>
+        
+            <span class="param-name">appleTouchIcon</span>
+        
+
+        
+            
+
+
+    <span class="param-type">
+        <code><a href="global.html#WikiVariablesResDataAppleTouchIcon">WikiVariablesResDataAppleTouchIcon</a></code>
+    </span>
+    
+
+        
+
+        
+
+        
+
+        <div class="param-description">
+            
+        </div>
+
+    </li>
+    
+
+    <li>
+        
+            <span class="param-name">articlePath</span>
+        
+
+        
+            
+
+
+    <span class="param-type">
+        <code>string</code>
+    </span>
+    
+
+        
+
+        
+
+        
+
+        <div class="param-description">
+            
+        </div>
+
+    </li>
+    
+
+    <li>
+        
+            <span class="param-name">basePath</span>
+        
+
+        
+            
+
+
+    <span class="param-type">
+        <code>string</code>
+    </span>
+    
+
+        
+
+        
+
+        
+
+        <div class="param-description">
+            
+        </div>
+
+    </li>
+    
+
+    <li>
+        
+            <span class="param-name">dbName</span>
+        
+
+        
+            
+
+
+    <span class="param-type">
+        <code>string</code>
+    </span>
+    
+
+        
+
+        
+
+        
+
+        <div class="param-description">
+            
+        </div>
+
+    </li>
+    
+
+    <li>
+        
+            <span class="param-name">favicon</span>
+        
+
+        
+            
+
+
+    <span class="param-type">
+        <code>string</code>
+    </span>
+    
+
+        
+
+        
+
+        
+
+        <div class="param-description">
+            
+        </div>
+
+    </li>
+    
+
+    <li>
+        
+            <span class="param-name">id</span>
+        
+
+        
+            
+
+
+    <span class="param-type">
+        <code>number</code>
+    </span>
+    
+
+        
+
+        
+
+        
+
+        <div class="param-description">
+            
+        </div>
+
+    </li>
+    
+
+    <li>
+        
+            <span class="param-name">isClosed</span>
+        
+
+        
+            
+
+
+    <span class="param-type">
+        <code>boolean</code>
+    </span>
+    
+
+        
+
+        
+
+        
+
+        <div class="param-description">
+            
+        </div>
+
+    </li>
+    
+
+    <li>
+        
+            <span class="param-name">htmlTitle</span>
+        
+
+        
+            
+
+
+    <span class="param-type">
+        <code><a href="global.html#WikiVariablesResDataHtmlTitle">WikiVariablesResDataHtmlTitle</a></code>
+    </span>
+    
+
+        
+
+        
+
+        
+
+        <div class="param-description">
+            
+        </div>
+
+    </li>
+    
+
+    <li>
+        
+            <span class="param-name">language</span>
+        
+
+        
+            
+
+
+    <span class="param-type">
+        <code><a href="global.html#WikiVariablesResDataLanguage">WikiVariablesResDataLanguage</a></code>
+    </span>
+    
+
+        
+
+        
+
+        
+
+        <div class="param-description">
+            
+        </div>
+
+    </li>
+    
+
+    <li>
+        
+            <span class="param-name">scriptPath</span>
+        
+
+        
+            
+
+
+    <span class="param-type">
+        <code>string</code>
+    </span>
+    
+
+        
+
+        
+
+        
+
+        <div class="param-description">
+            
+        </div>
+
+    </li>
+    
+
+    <li>
+        
+            <span class="param-name">siteName</span>
+        
+
+        
+            
+
+
+    <span class="param-type">
+        <code>string</code>
+    </span>
+    
+
+        
+
+        
+
+        
+
+        <div class="param-description">
+            
+        </div>
+
+    </li>
+    
+
+    <li>
+        
+            <span class="param-name">surrogateKey</span>
+        
+
+        
+            
+
+
+    <span class="param-type">
+        <code>string</code>
+    </span>
+    
+
+        
+
+        
+
+        
+
+        <div class="param-description">
+            
+        </div>
+
+    </li>
+    
+
+    <li>
+        
+            <span class="param-name">enableCommunityData</span>
+        
+
+        
+            
+
+
+    <span class="param-type">
+        <code>boolean</code>
+    </span>
+    
+
+        
+
+        
+
+        
+
+        <div class="param-description">
+            
+        </div>
+
+    </li>
+    
+
+    <li>
+        
+            <span class="param-name">mainPageTitle</span>
+        
+
+        
+            
+
+
+    <span class="param-type">
+        <code>string</code>
+    </span>
+    
+
+        
+
+        
+
+        
+
+        <div class="param-description">
+            
+        </div>
+
+    </li>
+    
+
+    <li>
+        
+            <span class="param-name">siteMessage</span>
+        
+
+        
+            
+
+
+    <span class="param-type">
+        <code>string</code>
+    </span>
+    
+
+        
+
+        
+
+        
+
+        <div class="param-description">
+            
+        </div>
+
+    </li>
+    
+
+    <li>
+        
+            <span class="param-name">cookieDomain</span>
+        
+
+        
+            
+
+
+    <span class="param-type">
+        <code>string</code>
+    </span>
+    
+
+        
+
+        
+
+        
+
+        <div class="param-description">
+            
+        </div>
+
+    </li>
+    
+</ul>
+
+
+
+
+<div class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
 </div>
 
+
+
+
+
+
+
+    <h4>Source</h4>
+    <ul>
+        <li class="method-source">
+            <a href="res.js.html">res.js</a><a href="res.js.html#source.71">, line 71</a>
+        </li>
+    </ul>
+
+
+</article>
             
                 
-<div class="section-members">
-<h4 class="name" id="WikiVariablesResData">WikiVariablesResData</h4>
 
-
-
-
-
-
-
-
-    <h5 class="subsection-title">Properties:</h5>
-
-    
-
-<table class="props">
-    <thead>
-    <tr>
+<article class="member">
+    <div class="method-type">
         
-        <th>Name</th>
-        
+    </div>
+<h4 class="member-name" id="WikiVariablesResDataAppleTouchIcon">WikiVariablesResDataAppleTouchIcon</h4>
 
-        <th>Type</th>
 
-        
 
-        
 
-        <th class="last">Description</th>
-    </tr>
-    </thead>
 
-    <tbody>
-    
 
-        <tr>
-            
-                <td class="name"><code>vertical</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><code>string</code></span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-        
-
-    
-
-        <tr>
-            
-                <td class="name"><code>appleTouchIcon</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><code><a href="global.html#WikiVariablesResDataAppleTouchIcon">WikiVariablesResDataAppleTouchIcon</a></code></span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-        
-
-    
-
-        <tr>
-            
-                <td class="name"><code>articlePath</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><code>string</code></span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-        
-
-    
-
-        <tr>
-            
-                <td class="name"><code>basePath</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><code>string</code></span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-        
-
-    
-
-        <tr>
-            
-                <td class="name"><code>dbName</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><code>string</code></span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-        
-
-    
-
-        <tr>
-            
-                <td class="name"><code>favicon</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><code>string</code></span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-        
-
-    
-
-        <tr>
-            
-                <td class="name"><code>id</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><code>number</code></span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-        
-
-    
-
-        <tr>
-            
-                <td class="name"><code>isClosed</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><code>boolean</code></span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-        
-
-    
-
-        <tr>
-            
-                <td class="name"><code>htmlTitle</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><code><a href="global.html#WikiVariablesResDataHtmlTitle">WikiVariablesResDataHtmlTitle</a></code></span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-        
-
-    
-
-        <tr>
-            
-                <td class="name"><code>language</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><code><a href="global.html#WikiVariablesResDataLanguage">WikiVariablesResDataLanguage</a></code></span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-        
-
-    
-
-        <tr>
-            
-                <td class="name"><code>scriptPath</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><code>string</code></span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-        
-
-    
-
-        <tr>
-            
-                <td class="name"><code>siteName</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><code>string</code></span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-        
-
-    
-
-        <tr>
-            
-                <td class="name"><code>surrogateKey</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><code>string</code></span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-        
-
-    
-
-        <tr>
-            
-                <td class="name"><code>enableCommunityData</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><code>boolean</code></span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-        
-
-    
-
-        <tr>
-            
-                <td class="name"><code>mainPageTitle</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><code>string</code></span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-        
-
-    
-
-        <tr>
-            
-                <td class="name"><code>siteMessage</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><code>string</code></span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-        
-
-    
-
-        <tr>
-            
-                <td class="name"><code>cookieDomain</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><code>string</code></span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-        
-
-    
-    </tbody>
-</table>
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="res.js.html">res.js</a>, <a href="res.js.html#line71">line 71</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-    <h5>Type:</h5>
+    <h4>Type</h4>
     <ul>
         <li>
             
-<span class="param-type"><code>Object</code></span>
 
+
+    <span class="param-type">
+        <code>Object</code>
+    </span>
+    
 
         </li>
     </ul>
@@ -3497,147 +3495,141 @@
 
 
 
+    <h4 class="method-heading">Properties</h4>
+    
+
+<ul class="method-params">
+
+
+    <li>
+        
+            <span class="param-name">url</span>
+        
+
+        
+            
+
+
+    <span class="param-type">
+        <code>string</code>
+    </span>
+    
+
+        
+
+        
+
+        
+
+        <div class="param-description">
+            
+        </div>
+
+    </li>
+    
+
+    <li>
+        
+            <span class="param-name">size</span>
+        
+
+        
+            
+
+
+    <span class="param-type">
+        <code>string</code>
+    </span>
+    
+
+        
+
+        
+
+        
+
+        <div class="param-description">
+            
+        </div>
+
+    </li>
+    
+</ul>
+
+
+
+
+<div class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
 </div>
 
+
+
+
+
+
+
+    <h4>Source</h4>
+    <ul>
+        <li class="method-source">
+            <a href="res.js.html">res.js</a><a href="res.js.html#source.53">, line 53</a>
+        </li>
+    </ul>
+
+
+</article>
             
                 
-<div class="section-members">
-<h4 class="name" id="WikiVariablesResDataAppleTouchIcon">WikiVariablesResDataAppleTouchIcon</h4>
 
-
-
-
-
-
-
-
-    <h5 class="subsection-title">Properties:</h5>
-
-    
-
-<table class="props">
-    <thead>
-    <tr>
+<article class="member">
+    <div class="method-type">
         
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>url</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><code>string</code></span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-        
-
-    
-
-        <tr>
-            
-                <td class="name"><code>size</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><code>string</code></span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-        
-
-    
-    </tbody>
-</table>
+    </div>
+<h4 class="member-name" id="WikiVariablesResDataHtmlTitle">WikiVariablesResDataHtmlTitle</h4>
 
 
 
 
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="res.js.html">res.js</a>, <a href="res.js.html#line53">line 53</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
 
 
-
-    <h5>Type:</h5>
+    <h4>Type</h4>
     <ul>
         <li>
             
-<span class="param-type"><code>Object</code></span>
 
+
+    <span class="param-type">
+        <code>Object</code>
+    </span>
+    
 
         </li>
     </ul>
@@ -3646,147 +3638,141 @@
 
 
 
+    <h4 class="method-heading">Properties</h4>
+    
+
+<ul class="method-params">
+
+
+    <li>
+        
+            <span class="param-name">separator</span>
+        
+
+        
+            
+
+
+    <span class="param-type">
+        <code>string</code>
+    </span>
+    
+
+        
+
+        
+
+        
+
+        <div class="param-description">
+            
+        </div>
+
+    </li>
+    
+
+    <li>
+        
+            <span class="param-name">parts</span>
+        
+
+        
+            
+
+
+    <span class="param-type">
+        <code>Array.&lt;string></code>
+    </span>
+    
+
+        
+
+        
+
+        
+
+        <div class="param-description">
+            
+        </div>
+
+    </li>
+    
+</ul>
+
+
+
+
+<div class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
 </div>
 
+
+
+
+
+
+
+    <h4>Source</h4>
+    <ul>
+        <li class="method-source">
+            <a href="res.js.html">res.js</a><a href="res.js.html#source.59">, line 59</a>
+        </li>
+    </ul>
+
+
+</article>
             
                 
-<div class="section-members">
-<h4 class="name" id="WikiVariablesResDataHtmlTitle">WikiVariablesResDataHtmlTitle</h4>
 
-
-
-
-
-
-
-
-    <h5 class="subsection-title">Properties:</h5>
-
-    
-
-<table class="props">
-    <thead>
-    <tr>
+<article class="member">
+    <div class="method-type">
         
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>separator</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><code>string</code></span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-        
-
-    
-
-        <tr>
-            
-                <td class="name"><code>parts</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><code>Array.&lt;string></code></span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-        
-
-    
-    </tbody>
-</table>
+    </div>
+<h4 class="member-name" id="WikiVariablesResDataLanguage">WikiVariablesResDataLanguage</h4>
 
 
 
 
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="res.js.html">res.js</a>, <a href="res.js.html#line59">line 59</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
 
 
-
-    <h5>Type:</h5>
+    <h4>Type</h4>
     <ul>
         <li>
             
-<span class="param-type"><code>Object</code></span>
 
+
+    <span class="param-type">
+        <code>Object</code>
+    </span>
+    
 
         </li>
     </ul>
@@ -3795,160 +3781,122 @@
 
 
 
+    <h4 class="method-heading">Properties</h4>
+    
+
+<ul class="method-params">
+
+
+    <li>
+        
+            <span class="param-name">content</span>
+        
+
+        
+            
+
+
+    <span class="param-type">
+        <code>string</code>
+    </span>
+    
+
+        
+
+        
+
+        
+
+        <div class="param-description">
+            
+        </div>
+
+    </li>
+    
+
+    <li>
+        
+            <span class="param-name">contentDir</span>
+        
+
+        
+            
+
+
+    <span class="param-type">
+        <code>"ltr"</code>
+    </span>
+    |
+
+    <span class="param-type">
+        <code>"rtl"</code>
+    </span>
+    
+
+        
+
+        
+
+        
+
+        <div class="param-description">
+            
+        </div>
+
+    </li>
+    
+</ul>
+
+
+
+
+<div class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
 </div>
 
-            
-                
-<div class="section-members">
-<h4 class="name" id="WikiVariablesResDataLanguage">WikiVariablesResDataLanguage</h4>
 
 
 
 
 
 
-
-
-    <h5 class="subsection-title">Properties:</h5>
-
-    
-
-<table class="props">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>content</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><code>string</code></span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-        
-
-    
-
-        <tr>
-            
-                <td class="name"><code>contentDir</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><code>"ltr"</code></span>
-|
-
-<span class="param-type"><code>"rtl"</code></span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-        
-
-    
-    </tbody>
-</table>
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="res.js.html">res.js</a>, <a href="res.js.html#line65">line 65</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-    <h5>Type:</h5>
+    <h4>Source</h4>
     <ul>
-        <li>
-            
-<span class="param-type"><code>Object</code></span>
-
-
+        <li class="method-source">
+            <a href="res.js.html">res.js</a><a href="res.js.html#source.65">, line 65</a>
         </li>
     </ul>
 
 
-
-
-
-</div>
-
+</article>
             
     
 
@@ -3960,15 +3908,17 @@
 
 
 
-</div>
+  </div>
+</main>
 
-<br class="clear">
-
-<footer>
-    Generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.11</a> using the Minami theme.
+<footer class="layout-footer">
+  <div class="container">
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.11</a>
+  </div>
 </footer>
 
-<script>prettyPrint();</script>
-<script src="scripts/linenumber.js"></script>
+
+
+<script src="scripts/prism.dev.js"></script>
 </body>
 </html>

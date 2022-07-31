@@ -33,8 +33,8 @@
     "eslint-plugin-prettier": "^4.2.1",
     "jest": "^28.1.3",
     "jsdoc": "^3.6.11",
-    "minami": "^1.2.3",
-    "prettier": "^2.7.1"
+    "prettier": "^2.7.1",
+    "tidy-jsdoc": "^1.4.1"
   },
   "dependencies": {
     "got": "^9.6.0"

@@ -2,36 +2,32 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>WikiaAPI - Documentation</title>
-
-    <script src="scripts/prettify/prettify.js"></script>
-    <script src="scripts/prettify/lang-css.js"></script>
-    <!--[if lt IE 9]>
-      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    <link type="text/css" rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
-    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+    <title>nodewikiaapi: WikiaAPI</title>
+    
+      <link type="text/css" rel="stylesheet" href="styles/vendor/prism-tomorrow-night.css">
+    
+    <link type="text/css" rel="stylesheet" href="styles/styles.css">
+    
 </head>
 <body>
 
-<input type="checkbox" id="nav-trigger" class="nav-trigger" />
-<label for="nav-trigger" class="navicon-button x">
-  <div class="navicon"></div>
-</label>
+<header class="layout-header">
+  
+  <h1>
+    <a href="./index.html">
+      nodewikiaapi
+    </a>
+  </h1>
+  <nav class="layout-nav">
+    <ul><li class="nav-heading">Tutorials</li><li class="nav-item"><a href="tutorial-endpoints.html">Endpoints</a></li><li class="nav-item"><a href="tutorial-getting-started.html">Getting started</a></li><li class="nav-item"><a href="tutorial-migration-guide.html">Migration guide (3.x)</a></li></ul><ul><li class="nav-heading">Classes</li><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class"><a href="WikiaAPI.html">WikiaAPI</a></span></li><li class="nav-item"><span class="nav-item-type type-member" title="member">M</span><span class="nav-item-name is-member"><a href="WikiaAPI.html#apiBasepath">apiBasepath</a></span></li><li class="nav-item"><span class="nav-item-type type-member" title="member">M</span><span class="nav-item-name is-member"><a href="WikiaAPI.html#language">language</a></span></li><li class="nav-item"><span class="nav-item-type type-member" title="member">M</span><span class="nav-item-name is-member"><a href="WikiaAPI.html#subdomain">subdomain</a></span></li><li class="nav-item"><span class="nav-item-type type-function" title="function">F</span><span class="nav-item-name is-function"><a href="WikiaAPI.html#getArticleDetails">getArticleDetails</a></span></li><li class="nav-item"><span class="nav-item-type type-function" title="function">F</span><span class="nav-item-name is-function"><a href="WikiaAPI.html#getArticleList">getArticleList</a></span></li><li class="nav-item"><span class="nav-item-type type-function" title="function">F</span><span class="nav-item-name is-function"><a href="WikiaAPI.html#getSearchSuggestions">getSearchSuggestions</a></span></li><li class="nav-item"><span class="nav-item-type type-function" title="function">F</span><span class="nav-item-name is-function"><a href="WikiaAPI.html#getTopArticles">getTopArticles</a></span></li><li class="nav-item"><span class="nav-item-type type-function" title="function">F</span><span class="nav-item-name is-function"><a href="WikiaAPI.html#getUserDetails">getUserDetails</a></span></li><li class="nav-item"><span class="nav-item-type type-function" title="function">F</span><span class="nav-item-name is-function"><a href="WikiaAPI.html#getWikiVariables">getWikiVariables</a></span></li></ul><li class="nav-heading"><a href="global.html">Globals</a></li><li class="nav-item"><span class="nav-item-type type-typedef" title="typedef">T</span><span class="nav-item-name is-typedef"><a href="global.html#ArticleDetailsReq">ArticleDetailsReq</a></span></li><li class="nav-item"><span class="nav-item-type type-typedef" title="typedef">T</span><span class="nav-item-name is-typedef"><a href="global.html#ArticleDetailsRes">ArticleDetailsRes</a></span></li><li class="nav-item"><span class="nav-item-type type-typedef" title="typedef">T</span><span class="nav-item-name is-typedef"><a href="global.html#ArticleDetailsResItem">ArticleDetailsResItem</a></span></li><li class="nav-item"><span class="nav-item-type type-typedef" title="typedef">T</span><span class="nav-item-name is-typedef"><a href="global.html#ArticleDetailsResItemRevision">ArticleDetailsResItemRevision</a></span></li><li class="nav-item"><span class="nav-item-type type-typedef" title="typedef">T</span><span class="nav-item-name is-typedef"><a href="global.html#ArticleItem">ArticleItem</a></span></li><li class="nav-item"><span class="nav-item-type type-typedef" title="typedef">T</span><span class="nav-item-name is-typedef"><a href="global.html#ArticleListReq">ArticleListReq</a></span></li><li class="nav-item"><span class="nav-item-type type-typedef" title="typedef">T</span><span class="nav-item-name is-typedef"><a href="global.html#ArticleListRes">ArticleListRes</a></span></li><li class="nav-item"><span class="nav-item-type type-typedef" title="typedef">T</span><span class="nav-item-name is-typedef"><a href="global.html#SearchSuggestionsRes">SearchSuggestionsRes</a></span></li><li class="nav-item"><span class="nav-item-type type-typedef" title="typedef">T</span><span class="nav-item-name is-typedef"><a href="global.html#SearchSuggestionsResItem">SearchSuggestionsResItem</a></span></li><li class="nav-item"><span class="nav-item-type type-typedef" title="typedef">T</span><span class="nav-item-name is-typedef"><a href="global.html#TopArticlesReq">TopArticlesReq</a></span></li><li class="nav-item"><span class="nav-item-type type-typedef" title="typedef">T</span><span class="nav-item-name is-typedef"><a href="global.html#TopArticlesRes">TopArticlesRes</a></span></li><li class="nav-item"><span class="nav-item-type type-typedef" title="typedef">T</span><span class="nav-item-name is-typedef"><a href="global.html#UserDetailsReq">UserDetailsReq</a></span></li><li class="nav-item"><span class="nav-item-type type-typedef" title="typedef">T</span><span class="nav-item-name is-typedef"><a href="global.html#UserDetailsRes">UserDetailsRes</a></span></li><li class="nav-item"><span class="nav-item-type type-typedef" title="typedef">T</span><span class="nav-item-name is-typedef"><a href="global.html#UserDetailsResItem">UserDetailsResItem</a></span></li><li class="nav-item"><span class="nav-item-type type-typedef" title="typedef">T</span><span class="nav-item-name is-typedef"><a href="global.html#WikiVariablesRes">WikiVariablesRes</a></span></li><li class="nav-item"><span class="nav-item-type type-typedef" title="typedef">T</span><span class="nav-item-name is-typedef"><a href="global.html#WikiVariablesResData">WikiVariablesResData</a></span></li><li class="nav-item"><span class="nav-item-type type-typedef" title="typedef">T</span><span class="nav-item-name is-typedef"><a href="global.html#WikiVariablesResDataAppleTouchIcon">WikiVariablesResDataAppleTouchIcon</a></span></li><li class="nav-item"><span class="nav-item-type type-typedef" title="typedef">T</span><span class="nav-item-name is-typedef"><a href="global.html#WikiVariablesResDataHtmlTitle">WikiVariablesResDataHtmlTitle</a></span></li><li class="nav-item"><span class="nav-item-type type-typedef" title="typedef">T</span><span class="nav-item-name is-typedef"><a href="global.html#WikiVariablesResDataLanguage">WikiVariablesResDataLanguage</a></span></li>
+  </nav>
+</header>
 
-<label for="nav-trigger" class="overlay"></label>
 
-<nav>
-    <li class="nav-link nav-home-link"><a href="index.html">Home</a></li><li class="nav-heading">Tutorials</li><li class="nav-item"><a href="tutorial-endpoints.html">Endpoints</a></li><li class="nav-item"><a href="tutorial-getting-started.html">Getting started</a></li><li class="nav-item"><a href="tutorial-migration-guide.html">Migration guide (3.x)</a></li><li class="nav-heading">Classes</li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="WikiaAPI.html">WikiaAPI</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="WikiaAPI.html#getArticleDetails">getArticleDetails</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="WikiaAPI.html#getArticleList">getArticleList</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="WikiaAPI.html#getSearchSuggestions">getSearchSuggestions</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="WikiaAPI.html#getTopArticles">getTopArticles</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="WikiaAPI.html#getUserDetails">getUserDetails</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="WikiaAPI.html#getWikiVariables">getWikiVariables</a></span></li><li class="nav-heading"><a href="global.html">Globals</a></li>
-</nav>
-
-<div id="main">
-    
+<main class="layout-main ">
+  <div class="container">
+    <p class="page-kind">Class</p>
     <h1 class="page-title">WikiaAPI</h1>
-    
-
     
 
 
@@ -39,12 +35,20 @@
 
 <section>
 
-<header>
+
+<header class="class">
+
+
     
-        <h2>
-        WikiaAPI
-        </h2>
         
+        <!-- <h2>WikiaAPI</h2> -->
+
+        
+
+        
+
+        
+            
             <div class="class-description"><p>Object wrapping a particular wiki's Wikia API V1.</p></div>
         
     
@@ -52,200 +56,194 @@
 
 <article>
     <div class="container-overview">
+
+
+
     
         
-<div class="section-method">
 
-    
-    <h2>Constructor</h2>
-    
 
-    <h4 class="name" id="WikiaAPI"><span class="type-signature"></span>new WikiaAPI<span class="signature">(subdomain, language<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+
+
 
     
 
 
-
-
-
-
-
-<dl class="details">
-
+    
+    <h3 class="subtitle">Constructor</h3>
     
 
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="main.js.html">main.js</a>, <a href="main.js.html#line12">line 12</a>
-    </li></ul></dd>
-    
-
-    
-    <dt class="tag-tutorial">Tutorials:</dt>
-    <dd class="tag-tutorial">
-        <ul>
-            <li><a href="tutorial-getting-started.html">Getting started</a></li>
-        
-            <li><a href="tutorial-endpoints.html">Endpoints</a></li>
-        
-            <li><a href="tutorial-migration-guide.html">Migration guide (3.x)</a></li>
-        </ul>
-    </dd>
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-        <th>Attributes</th>
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>subdomain</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><code>string</code></span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-
-                
-
-                
-                </td>
-            
-
-            
-
-            <td class="description last">
-                <p>Subdomain, for example &quot;dev&quot; for &quot;dev.fandom.com&quot;</p>
-                
-            </td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>language</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><code>string</code></span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-
-            <td class="description last">
-                <p>Optional language code, for example &quot;pl&quot; for &quot;leagueoflegends.fandom.com/pl&quot;</p>
-                
-            </td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</div>
+    <div class="method-type">
     
     </div>
 
+    <h4 class="method-name" id="WikiaAPI">new WikiaAPI<span class="signature">(subdomain, language<span class="signature-attributes">opt</span>)</span><span class="return-type-signature"></span>
+    </h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Parameters</h4>
     
+
+<ul class="method-params">
+    
+
+        <li>
+            
+                <span class="param-name">subdomain</span>
+            
+
+            
+                
+
+
+    <span class="param-type">
+        <code>string</code>
+    </span>
+    
+
+            
+
+            
+                <span class="param-attributes">
+                
+
+                
+
+                
+                </span>
+            
+
+            
+
+            <div class="param-description"><p>Subdomain, for example &quot;dev&quot; for &quot;dev.fandom.com&quot;</p></div>
+            
+        </li>
+
+    
+
+        <li>
+            
+                <span class="param-name">language</span>
+            
+
+            
+                
+
+
+    <span class="param-type">
+        <code>string</code>
+    </span>
+    
+
+            
+
+            
+                <span class="param-attributes">
+                
+                    &lt;optional&gt;<br>
+                
+
+                
+
+                
+                </span>
+            
+
+            
+
+            <div class="param-description"><p>Optional language code, for example &quot;pl&quot; for &quot;leagueoflegends.fandom.com/pl&quot;</p></div>
+            
+        </li>
+
+    
+</ul>
+
+
+
+
+
+<div class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h4 class="method-heading">Tutorials</h4>
+        <ul>
+            
+                <li><a href="tutorial-getting-started.html">Getting started</a></li>
+            
+                <li><a href="tutorial-endpoints.html">Endpoints</a></li>
+            
+                <li><a href="tutorial-migration-guide.html">Migration guide (3.x)</a></li>
+            
+        </ul>
+    
+
+    
+
+    
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Source</h4>
+    <ul>
+        <li class="method-source">
+            <a href="main.js.html">main.js</a><a href="main.js.html#source.12">, line 12</a>
+        </li>
+    </ul>
+
+
+
+    
+    </div>
 
     
 
@@ -256,12 +254,19 @@
     
 
     
-        <h3 class="subsection-title">Members</h3>
+
+
+    
+        <h3 class="subtitle">Members</h3>
 
         
             
-<div class="section-members">
-<h4 class="name" id="apiBasepath"><span class="type-signature">(readonly) </span>apiBasepath<span class="type-signature"> :string</span></h4>
+
+<article class="member">
+    <div class="method-type">
+        <span class="method-type-signature is-readonly">readonly</span>
+    </div>
+<h4 class="member-name" id="apiBasepath">apiBasepath<span class="type-signature">string</span></h4>
 
 
 
@@ -272,56 +277,16 @@
 
 
 
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="main.js.html">main.js</a>, <a href="main.js.html#line156">line 156</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-    <h5>Type:</h5>
+    <h4>Type</h4>
     <ul>
         <li>
             
-<span class="param-type"><code>string</code></span>
 
+
+    <span class="param-type">
+        <code>string</code>
+    </span>
+    
 
         </li>
     </ul>
@@ -330,12 +295,61 @@
 
 
 
+<div class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
 </div>
 
+
+
+
+
+
+
+    <h4>Source</h4>
+    <ul>
+        <li class="method-source">
+            <a href="main.js.html">main.js</a><a href="main.js.html#source.156">, line 156</a>
+        </li>
+    </ul>
+
+
+</article>
         
             
-<div class="section-members">
-<h4 class="name" id="language"><span class="type-signature"></span>language<span class="type-signature"> :string|null</span></h4>
+
+<article class="member">
+    <div class="method-type">
+        
+    </div>
+<h4 class="member-name" id="language">language<span class="type-signature">string|null</span></h4>
 
 
 
@@ -346,59 +360,21 @@
 
 
 
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="main.js.html">main.js</a>, <a href="main.js.html#line28">line 28</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-    <h5>Type:</h5>
+    <h4>Type</h4>
     <ul>
         <li>
             
-<span class="param-type"><code>string</code></span>
-|
 
-<span class="param-type"><code>null</code></span>
 
+    <span class="param-type">
+        <code>string</code>
+    </span>
+    |
+
+    <span class="param-type">
+        <code>null</code>
+    </span>
+    
 
         </li>
     </ul>
@@ -407,12 +383,61 @@
 
 
 
+<div class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
 </div>
 
+
+
+
+
+
+
+    <h4>Source</h4>
+    <ul>
+        <li class="method-source">
+            <a href="main.js.html">main.js</a><a href="main.js.html#source.28">, line 28</a>
+        </li>
+    </ul>
+
+
+</article>
         
             
-<div class="section-members">
-<h4 class="name" id="subdomain"><span class="type-signature"></span>subdomain<span class="type-signature"> :string</span></h4>
+
+<article class="member">
+    <div class="method-type">
+        
+    </div>
+<h4 class="member-name" id="subdomain">subdomain<span class="type-signature">string</span></h4>
 
 
 
@@ -423,56 +448,16 @@
 
 
 
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="main.js.html">main.js</a>, <a href="main.js.html#line22">line 22</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-    <h5>Type:</h5>
+    <h4>Type</h4>
     <ul>
         <li>
             
-<span class="param-type"><code>string</code></span>
 
+
+    <span class="param-type">
+        <code>string</code>
+    </span>
+    
 
         </li>
     </ul>
@@ -481,27 +466,86 @@
 
 
 
+<div class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
 </div>
 
+
+
+
+
+
+
+    <h4>Source</h4>
+    <ul>
+        <li class="method-source">
+            <a href="main.js.html">main.js</a><a href="main.js.html#source.22">, line 22</a>
+        </li>
+    </ul>
+
+
+</article>
         
     
 
     
-        <h3 class="subsection-title">Methods</h3>
+        <h3 class="subtitle">Methods</h3>
 
         
             
-<div class="section-method">
+
+
+    <article class="method">
+
+
+
 
     
 
-    <h4 class="name" id="getArticleDetails"><span class="type-signature"></span>getArticleDetails<span class="signature">(options)</span><span class="type-signature"> &rarr; {Promise.&lt;<a href="global.html#ArticleDetailsRes">ArticleDetailsRes</a>>}</span></h4>
 
     
 
+    <div class="method-type">
+    
+    </div>
+
+    <h4 class="method-name" id="getArticleDetails">getArticleDetails<span class="signature">(options)</span><span class="return-type-signature"> &rarr; {Promise.&lt;<a href="global.html#ArticleDetailsRes">ArticleDetailsRes</a>>}</span>
+    </h4>
 
 
-<div class="description">
+
+
+
+<div class="method-description">
+    
     <p>Get details about one or more articles.</p>
 </div>
 
@@ -509,155 +553,146 @@
 
 
 
-<dl class="details">
 
+
+
+
+    <h4 class="method-heading">Parameters</h4>
     
 
+<ul class="method-params">
     
 
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="main.js.html">main.js</a>, <a href="main.js.html#line37">line 37</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
+        <li>
             
-                <td class="name"><code>options</code></td>
+                <span class="param-name">options</span>
             
 
-            <td class="type">
             
                 
-<span class="param-type"><code><a href="global.html#ArticleDetailsReq">ArticleDetailsReq</a></code></span>
 
+
+    <span class="param-type">
+        <code><a href="global.html#ArticleDetailsReq">ArticleDetailsReq</a></code>
+    </span>
+    
 
             
-            </td>
 
             
 
             
 
-            <td class="description last">
-                
-                
-            </td>
-        </tr>
+            <div class="param-description"></div>
+            
+        </li>
 
     
-    </tbody>
-</table>
+</ul>
 
 
 
 
 
+<div class="details">
+    
 
+    
 
+    
 
+    
 
+    
 
+    
 
+    
 
+    
 
+    
 
-<div class="section-returns">
-<h5>Returns:</h5>
+    
 
-        
+    
 
-<dl class="param-type">
-    <dt>
-        Type:
-    </dt>
-    <dd>
-        
-<span class="param-type"><code>Promise.&lt;<a href="global.html#ArticleDetailsRes">ArticleDetailsRes</a>></code></span>
+    
 
+    
 
-    </dd>
-</dl>
-
+    
 
     
 </div>
 
 
 
-</div>
+    <h4 class="method-heading">Returns</h4>
+    <ul>
+    
+        <li class="method-returns">
+            
+                <code>Promise.&lt;ArticleDetailsRes></code>
+            
+            
+        </li>
+    
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Source</h4>
+    <ul>
+        <li class="method-source">
+            <a href="main.js.html">main.js</a><a href="main.js.html#source.37">, line 37</a>
+        </li>
+    </ul>
+
+
+
+    </article>
+
         
             
-<div class="section-method">
+
+
+    <article class="method">
+
+
+
 
     
 
-    <h4 class="name" id="getArticleList"><span class="type-signature"></span>getArticleList<span class="signature">(options<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Promise.&lt;<a href="global.html#ArticleListRes">ArticleListRes</a>>}</span></h4>
 
     
 
+    <div class="method-type">
+    
+    </div>
+
+    <h4 class="method-name" id="getArticleList">getArticleList<span class="signature">(options<span class="signature-attributes">opt</span>)</span><span class="return-type-signature"> &rarr; {Promise.&lt;<a href="global.html#ArticleListRes">ArticleListRes</a>>}</span>
+    </h4>
 
 
-<div class="description">
+
+
+
+<div class="method-description">
+    
     <p>Get article list in alphabetical order.</p>
 </div>
 
@@ -665,167 +700,156 @@
 
 
 
-<dl class="details">
 
+
+
+
+    <h4 class="method-heading">Parameters</h4>
     
 
+<ul class="method-params">
     
 
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="main.js.html">main.js</a>, <a href="main.js.html#line65">line 65</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-        <th>Attributes</th>
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
+        <li>
             
-                <td class="name"><code>options</code></td>
+                <span class="param-name">options</span>
             
 
-            <td class="type">
             
                 
-<span class="param-type"><code><a href="global.html#ArticleListReq">ArticleListReq</a></code></span>
 
+
+    <span class="param-type">
+        <code><a href="global.html#ArticleListReq">ArticleListReq</a></code>
+    </span>
+    
 
             
-            </td>
 
             
-                <td class="attributes">
+                <span class="param-attributes">
                 
-                    &lt;optional><br>
+                    &lt;optional&gt;<br>
                 
 
                 
 
                 
-                </td>
+                </span>
             
 
             
 
-            <td class="description last">
-                
-                
-            </td>
-        </tr>
+            <div class="param-description"></div>
+            
+        </li>
 
     
-    </tbody>
-</table>
+</ul>
 
 
 
 
 
+<div class="details">
+    
 
+    
 
+    
 
+    
 
+    
 
+    
 
+    
 
+    
 
+    
 
-<div class="section-returns">
-<h5>Returns:</h5>
+    
 
-        
+    
 
-<dl class="param-type">
-    <dt>
-        Type:
-    </dt>
-    <dd>
-        
-<span class="param-type"><code>Promise.&lt;<a href="global.html#ArticleListRes">ArticleListRes</a>></code></span>
+    
 
+    
 
-    </dd>
-</dl>
-
+    
 
     
 </div>
 
 
 
-</div>
+    <h4 class="method-heading">Returns</h4>
+    <ul>
+    
+        <li class="method-returns">
+            
+                <code>Promise.&lt;ArticleListRes></code>
+            
+            
+        </li>
+    
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Source</h4>
+    <ul>
+        <li class="method-source">
+            <a href="main.js.html">main.js</a><a href="main.js.html#source.65">, line 65</a>
+        </li>
+    </ul>
+
+
+
+    </article>
+
         
             
-<div class="section-method">
+
+
+    <article class="method">
+
+
+
 
     
 
-    <h4 class="name" id="getSearchSuggestions"><span class="type-signature"></span>getSearchSuggestions<span class="signature">(query)</span><span class="type-signature"> &rarr; {Promise.&lt;<a href="global.html#SearchSuggestionsRes">SearchSuggestionsRes</a>>}</span></h4>
 
     
 
+    <div class="method-type">
+    
+    </div>
+
+    <h4 class="method-name" id="getSearchSuggestions">getSearchSuggestions<span class="signature">(query)</span><span class="return-type-signature"> &rarr; {Promise.&lt;<a href="global.html#SearchSuggestionsRes">SearchSuggestionsRes</a>>}</span>
+    </h4>
 
 
-<div class="description">
+
+
+
+<div class="method-description">
+    
     <p>Find suggested phrases for chosen query.</p>
 </div>
 
@@ -833,155 +857,146 @@
 
 
 
-<dl class="details">
 
+
+
+
+    <h4 class="method-heading">Parameters</h4>
     
 
+<ul class="method-params">
     
 
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="main.js.html">main.js</a>, <a href="main.js.html#line124">line 124</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
+        <li>
             
-                <td class="name"><code>query</code></td>
+                <span class="param-name">query</span>
             
 
-            <td class="type">
             
                 
-<span class="param-type"><code>string</code></span>
 
+
+    <span class="param-type">
+        <code>string</code>
+    </span>
+    
 
             
-            </td>
 
             
 
             
 
-            <td class="description last">
-                <p>Search query</p>
-                
-            </td>
-        </tr>
+            <div class="param-description"><p>Search query</p></div>
+            
+        </li>
 
     
-    </tbody>
-</table>
+</ul>
 
 
 
 
 
+<div class="details">
+    
 
+    
 
+    
 
+    
 
+    
 
+    
 
+    
 
+    
 
+    
 
-<div class="section-returns">
-<h5>Returns:</h5>
+    
 
-        
+    
 
-<dl class="param-type">
-    <dt>
-        Type:
-    </dt>
-    <dd>
-        
-<span class="param-type"><code>Promise.&lt;<a href="global.html#SearchSuggestionsRes">SearchSuggestionsRes</a>></code></span>
+    
 
+    
 
-    </dd>
-</dl>
-
+    
 
     
 </div>
 
 
 
-</div>
+    <h4 class="method-heading">Returns</h4>
+    <ul>
+    
+        <li class="method-returns">
+            
+                <code>Promise.&lt;SearchSuggestionsRes></code>
+            
+            
+        </li>
+    
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Source</h4>
+    <ul>
+        <li class="method-source">
+            <a href="main.js.html">main.js</a><a href="main.js.html#source.124">, line 124</a>
+        </li>
+    </ul>
+
+
+
+    </article>
+
         
             
-<div class="section-method">
+
+
+    <article class="method">
+
+
+
 
     
 
-    <h4 class="name" id="getTopArticles"><span class="type-signature"></span>getTopArticles<span class="signature">(options<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Promise.&lt;<a href="global.html#TopArticlesRes">TopArticlesRes</a>>}</span></h4>
 
     
 
+    <div class="method-type">
+    
+    </div>
+
+    <h4 class="method-name" id="getTopArticles">getTopArticles<span class="signature">(options<span class="signature-attributes">opt</span>)</span><span class="return-type-signature"> &rarr; {Promise.&lt;<a href="global.html#TopArticlesRes">TopArticlesRes</a>>}</span>
+    </h4>
 
 
-<div class="description">
+
+
+
+<div class="method-description">
+    
     <p>Get the most viewed articles from this wiki.</p>
 </div>
 
@@ -989,167 +1004,156 @@
 
 
 
-<dl class="details">
 
+
+
+
+    <h4 class="method-heading">Parameters</h4>
     
 
+<ul class="method-params">
     
 
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="main.js.html">main.js</a>, <a href="main.js.html#line91">line 91</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-        <th>Attributes</th>
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
+        <li>
             
-                <td class="name"><code>options</code></td>
+                <span class="param-name">options</span>
             
 
-            <td class="type">
             
                 
-<span class="param-type"><code><a href="global.html#TopArticlesReq">TopArticlesReq</a></code></span>
 
+
+    <span class="param-type">
+        <code><a href="global.html#TopArticlesReq">TopArticlesReq</a></code>
+    </span>
+    
 
             
-            </td>
 
             
-                <td class="attributes">
+                <span class="param-attributes">
                 
-                    &lt;optional><br>
+                    &lt;optional&gt;<br>
                 
 
                 
 
                 
-                </td>
+                </span>
             
 
             
 
-            <td class="description last">
-                
-                
-            </td>
-        </tr>
+            <div class="param-description"></div>
+            
+        </li>
 
     
-    </tbody>
-</table>
+</ul>
 
 
 
 
 
+<div class="details">
+    
 
+    
 
+    
 
+    
 
+    
 
+    
 
+    
 
+    
 
+    
 
-<div class="section-returns">
-<h5>Returns:</h5>
+    
 
-        
+    
 
-<dl class="param-type">
-    <dt>
-        Type:
-    </dt>
-    <dd>
-        
-<span class="param-type"><code>Promise.&lt;<a href="global.html#TopArticlesRes">TopArticlesRes</a>></code></span>
+    
 
+    
 
-    </dd>
-</dl>
-
+    
 
     
 </div>
 
 
 
-</div>
+    <h4 class="method-heading">Returns</h4>
+    <ul>
+    
+        <li class="method-returns">
+            
+                <code>Promise.&lt;TopArticlesRes></code>
+            
+            
+        </li>
+    
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Source</h4>
+    <ul>
+        <li class="method-source">
+            <a href="main.js.html">main.js</a><a href="main.js.html#source.91">, line 91</a>
+        </li>
+    </ul>
+
+
+
+    </article>
+
         
             
-<div class="section-method">
+
+
+    <article class="method">
+
+
+
 
     
 
-    <h4 class="name" id="getUserDetails"><span class="type-signature"></span>getUserDetails<span class="signature">(options)</span><span class="type-signature"> &rarr; {Promise.&lt;<a href="global.html#UserDetailsRes">UserDetailsRes</a>>}</span></h4>
 
     
 
+    <div class="method-type">
+    
+    </div>
+
+    <h4 class="method-name" id="getUserDetails">getUserDetails<span class="signature">(options)</span><span class="return-type-signature"> &rarr; {Promise.&lt;<a href="global.html#UserDetailsRes">UserDetailsRes</a>>}</span>
+    </h4>
 
 
-<div class="description">
+
+
+
+<div class="method-description">
+    
     <p>Get details about selected users.</p>
 </div>
 
@@ -1157,155 +1161,146 @@
 
 
 
-<dl class="details">
 
+
+
+
+    <h4 class="method-heading">Parameters</h4>
     
 
+<ul class="method-params">
     
 
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="main.js.html">main.js</a>, <a href="main.js.html#line135">line 135</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
+        <li>
             
-                <td class="name"><code>options</code></td>
+                <span class="param-name">options</span>
             
 
-            <td class="type">
             
                 
-<span class="param-type"><code><a href="global.html#UserDetailsReq">UserDetailsReq</a></code></span>
 
+
+    <span class="param-type">
+        <code><a href="global.html#UserDetailsReq">UserDetailsReq</a></code>
+    </span>
+    
 
             
-            </td>
 
             
 
             
 
-            <td class="description last">
-                
-                
-            </td>
-        </tr>
+            <div class="param-description"></div>
+            
+        </li>
 
     
-    </tbody>
-</table>
+</ul>
 
 
 
 
 
+<div class="details">
+    
 
+    
 
+    
 
+    
 
+    
 
+    
 
+    
 
+    
 
+    
 
-<div class="section-returns">
-<h5>Returns:</h5>
+    
 
-        
+    
 
-<dl class="param-type">
-    <dt>
-        Type:
-    </dt>
-    <dd>
-        
-<span class="param-type"><code>Promise.&lt;<a href="global.html#UserDetailsRes">UserDetailsRes</a>></code></span>
+    
 
+    
 
-    </dd>
-</dl>
-
+    
 
     
 </div>
 
 
 
-</div>
+    <h4 class="method-heading">Returns</h4>
+    <ul>
+    
+        <li class="method-returns">
+            
+                <code>Promise.&lt;UserDetailsRes></code>
+            
+            
+        </li>
+    
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Source</h4>
+    <ul>
+        <li class="method-source">
+            <a href="main.js.html">main.js</a><a href="main.js.html#source.135">, line 135</a>
+        </li>
+    </ul>
+
+
+
+    </article>
+
         
             
-<div class="section-method">
+
+
+    <article class="method">
+
+
+
 
     
 
-    <h4 class="name" id="getWikiVariables"><span class="type-signature"></span>getWikiVariables<span class="signature">()</span><span class="type-signature"> &rarr; {Promise.&lt;<a href="global.html#WikiVariablesRes">WikiVariablesRes</a>>}</span></h4>
 
     
 
+    <div class="method-type">
+    
+    </div>
+
+    <h4 class="method-name" id="getWikiVariables">getWikiVariables<span class="signature">()</span><span class="return-type-signature"> &rarr; {Promise.&lt;<a href="global.html#WikiVariablesRes">WikiVariablesRes</a>>}</span>
+    </h4>
 
 
-<div class="description">
+
+
+
+<div class="method-description">
+    
     <p>Get wiki data, including key values, navigation data and more.</p>
 </div>
 
@@ -1313,8 +1308,15 @@
 
 
 
-<dl class="details">
 
+
+
+
+
+
+
+
+<div class="details">
     
 
     
@@ -1340,63 +1342,52 @@
     
 
     
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="main.js.html">main.js</a>, <a href="main.js.html#line114">line 114</a>
-    </li></ul></dd>
-    
 
     
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div class="section-returns">
-<h5>Returns:</h5>
-
-        
-
-<dl class="param-type">
-    <dt>
-        Type:
-    </dt>
-    <dd>
-        
-<span class="param-type"><code>Promise.&lt;<a href="global.html#WikiVariablesRes">WikiVariablesRes</a>></code></span>
-
-
-    </dd>
-</dl>
-
 
     
 </div>
 
 
 
-</div>
+    <h4 class="method-heading">Returns</h4>
+    <ul>
+    
+        <li class="method-returns">
+            
+                <code>Promise.&lt;WikiVariablesRes></code>
+            
+            
+        </li>
+    
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Source</h4>
+    <ul>
+        <li class="method-source">
+            <a href="main.js.html">main.js</a><a href="main.js.html#source.114">, line 114</a>
+        </li>
+    </ul>
+
+
+
+    </article>
+
         
     
 
@@ -1410,15 +1401,17 @@
 
 
 
-</div>
+  </div>
+</main>
 
-<br class="clear">
-
-<footer>
-    Generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.11</a> using the Minami theme.
+<footer class="layout-footer">
+  <div class="container">
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.11</a>
+  </div>
 </footer>
 
-<script>prettyPrint();</script>
-<script src="scripts/linenumber.js"></script>
+
+
+<script src="scripts/prism.dev.js"></script>
 </body>
 </html>

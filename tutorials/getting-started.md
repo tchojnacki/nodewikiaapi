@@ -1,13 +1,13 @@
-## Installation
+### Installation
 ```npm install nodewikiaapi```
 
-## Import
+### Import
 Import the module using `require`.
 ```JavaScript
 const WikiaAPI = require('nodewikiaapi')
 ```
 
-## Your first request
+### Your first request
 Create an instance of `WikiaAPI` and use any of the documented methods.
 ```JavaScript
 const WikiaAPI = require('nodewikiaapi')

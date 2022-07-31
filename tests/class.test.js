@@ -1,6 +1,6 @@
 // @ts-check
 
-const WikiaAPI = require('../main')
+const WikiaAPI = require('../')
 
 describe('WikiaAPI', () => {
   it('saves subdomain correctly', () => {

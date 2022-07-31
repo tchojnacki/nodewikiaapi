@@ -16,26 +16,26 @@ class WikiaAPI {
    */
   constructor(subdomain, language) {
     /**
-     * Subdomain, for example "dev" for "dev.fandom.com"
+     * Subdomain, for example "dev" for "dev.fandom.com".
      * @type {string}
      */
     this.subdomain = subdomain
 
     /**
-     * Language code, for example "pl" for "leagueoflegends.fandom.com/pl"
+     * Language code, for example "pl" for "leagueoflegends.fandom.com/pl".
      * @type {string | null}
      */
     this.language = language ?? null
   }
 
   /**
-   * Get details about one or more articles
+   * Get details about one or more articles.
    *
-   * @param {Object} [options] - An Object containing every other parameter
-   * @param {(number[]|number)} [options.ids] - An Array of article ids or a single article id
-   * @param {(string[]|string)} [options.titles] - An Array of article titles or a single article title, can be used alongside ids
-   * @param {number} [options.abstract=100] - The desired length for the article's abstract
-   * @return {Promise<Object, Error>} - A Promise with an Object containing articles details on fulfil, and Error on rejection
+   * @param {Object} [options] An object containing request parameters
+   * @param {(number[]|number)} [options.ids] An array of article ids or a single article id
+   * @param {(string[]|string)} [options.titles] An array of article titles or a single article title, can be used alongside ids
+   * @param {number} [options.abstract=100] The desired length for the article's abstract
+   * @returns {Promise<ArticleDetailsRes>}
    */
   getArticleDetails(options = {}) {
     const { ids, titles, abstract } = this._parseParams(
@@ -60,14 +60,14 @@ class WikiaAPI {
   }
 
   /**
-   * Get articles list in alphabetical order
+   * Get article list in alphabetical order.
    *
-   * @param {Object} [options] - An Object containing every other parameter
-   * @param {string} [options.category] - Return only articles belonging to the provided valid category title
-   * @param {(number[]|number)} [options.namespaces=0] - Array of namespace ids or a single namespace id, see more: {@link http://community.wikia.com/wiki/Help:Namespaces}
-   * @param {number} [options.limit=25] - Limit the number of results
-   * @param {string} [options.offset="!"] - Lexicographically minimal article title
-   * @return {Promise<Object, Error>} - A Promise with an Object containing articles list on fulfil, and Error on rejection
+   * @param {Object} [options] An object containing request parameters
+   * @param {string} [options.category] Return only articles belonging to the provided valid category title
+   * @param {(number[]|number)} [options.namespaces=0] Array of namespace ids or a single namespace id, see more: {@link http://community.fandom.com/wiki/Help:Namespaces Help:Namespaces}
+   * @param {number} [options.limit=25] Limit the number of results
+   * @param {string} [options.offset="!"] Only display articles where name is lexicographically greater than provided
+   * @returns {Promise<ArticleListRes>}
    */
   getArticleList(options = {}) {
     const { category, namespaces, limit, offset } = this._parseParams(
@@ -90,13 +90,13 @@ class WikiaAPI {
   }
 
   /**
-   * Get the most viewed articles on this wiki
+   * Get the most viewed articles from this wiki.
    *
-   * @param {Object} [options] - An Object containing every other parameter
-   * @param {(number[]|number)} [options.namespaces] -- Array of namespace ids or a single namespace id, see more: {@link http://community.wikia.com/wiki/Help:Namespaces}
-   * @param {string} [options.category] - Return only articles belonging to the provided valid category title
-   * @param {number} [options.limit=10] - Limit the number of result - maximum limit is 250
-   * @return {Promise<Object, Error>} - A Promise with an Object containing top articles on fulfil, and Error on rejection
+   * @param {Object} [options] An object containing request parameters
+   * @param {(number[]|number)} [options.namespaces] Array of namespace ids or a single namespace id, see more: {@link http://community.wikia.com/wiki/Help:Namespaces Help:Namespaces}
+   * @param {string} [options.category] Return only articles belonging to the provided category title
+   * @param {number} [options.limit=10] Limit the number of results - maximum limit is 250
+   * @returns {Promise<TopArticlesRes>}
    */
   getTopArticles(options = {}) {
     const { namespaces, category, limit } = this._parseParams(
@@ -117,20 +117,20 @@ class WikiaAPI {
   }
 
   /**
-   * Get wiki data, including key values, navigation data, and more
+   * Get wiki data, including key values, navigation data and more.
    *
-   * @return {Promise<Object, Error>} - A Promise with an Object containing wiki data on fulfil, and Error on rejection
+   * @returns {Promise<WikiVariablesRes>}
    */
   getWikiVariables() {
     return this._makeRequest('Mercury/WikiVariables')
   }
 
   /**
-   * Find suggested phrases for chosen query
+   * Find suggested phrases for chosen query.
    *
-   * @param {Object} [options] - An Object containing every other parameter
-   * @param {string} [options.query] - Search query
-   * @return {Promise<Object, Error>} - A Promise with an Object containing search suggestions on fulfil, and Error on rejection
+   * @param {Object} [options] An object containing request parameters
+   * @param {string} [options.query] Search query
+   * @returns {Promise<SearchSuggestionsRes>}
    */
   getSearchSuggestions(options = {}) {
     const { query } = this._parseParams(options, {}, { query: 'string' })
@@ -141,12 +141,12 @@ class WikiaAPI {
   }
 
   /**
-   * Get details about selected users
+   * Get details about selected users.
    *
-   * @param {Object} [options] - An Object containing every other parameter
-   * @param {(number[]|number)} [options.ids] - An Array of user ids or a single user id
-   * @param {number} [options.size=100] - The desired width (and height, because it is a square) for the thumbnail, defaults to 100, 0 for no thumbnail
-   * @return {Promise<Object, Error>} - A Promise with an Object containing user details on fulfil, and Error on rejection
+   * @param {Object} [options] An object containing request parameters
+   * @param {(number[]|number)} [options.ids] An array of user ids or a single user id
+   * @param {number} [options.size=100] The desired width and height of the thumbnail, defaults to 100, 0 for no thumbnail
+   * @returns {Promise<UserDetailsRes>}
    */
   getUserDetails(options = {}) {
     const { ids, size } = this._parseParams(
@@ -165,7 +165,7 @@ class WikiaAPI {
   }
 
   /**
-   * Basepath of Wikia API V1 for the given subdomain and language, for example "http://dev.fandom.com/api/v1/"
+   * Basepath of Wikia API V1 for the given subdomain and language, for example "http://dev.fandom.com/api/v1/".
    * @type {string}
    * @readonly
    */

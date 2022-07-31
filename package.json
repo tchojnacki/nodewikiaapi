@@ -1,18 +1,18 @@
 {
   "name": "nodewikiaapi",
   "version": "2.0.5",
-  "description": "Node.js wrapper for Wikia API V1.",
+  "description": "JavaScript wrapper for the Fandom's Wikia API V1.",
   "keywords": [
     "wikia",
     "api",
     "wrapper",
     "fandom"
   ],
-  "main": "main.js",
+  "main": "src/main.js",
   "scripts": {
     "docs": "jsdoc -c jsdoc.json",
     "test": "jest",
-    "lint": "eslint ./main.js ./tests/*.js"
+    "lint": "eslint ./src/*.js ./tests/*.js"
   },
   "repository": {
     "type": "git",

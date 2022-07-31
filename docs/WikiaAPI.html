@@ -24,7 +24,7 @@
 <label for="nav-trigger" class="overlay"></label>
 
 <nav>
-    <li class="nav-link nav-home-link"><a href="index.html">Home</a></li><li class="nav-heading">Tutorials</li><li class="nav-item"><a href="tutorial-endpoints.html">Endpoints</a></li><li class="nav-item"><a href="tutorial-getting-started.html">Getting started</a></li><li class="nav-item"><a href="tutorial-migration-guide.html">Migration guide (3.x)</a></li><li class="nav-heading">Classes</li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="WikiaAPI.html">WikiaAPI</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="WikiaAPI.html#getArticleDetails">getArticleDetails</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="WikiaAPI.html#getArticleList">getArticleList</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="WikiaAPI.html#getSearchSuggestions">getSearchSuggestions</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="WikiaAPI.html#getTopArticles">getTopArticles</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="WikiaAPI.html#getUserDetails">getUserDetails</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="WikiaAPI.html#getWikiVariables">getWikiVariables</a></span></li>
+    <li class="nav-link nav-home-link"><a href="index.html">Home</a></li><li class="nav-heading">Tutorials</li><li class="nav-item"><a href="tutorial-endpoints.html">Endpoints</a></li><li class="nav-item"><a href="tutorial-getting-started.html">Getting started</a></li><li class="nav-item"><a href="tutorial-migration-guide.html">Migration guide (3.x)</a></li><li class="nav-heading">Classes</li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="WikiaAPI.html">WikiaAPI</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="WikiaAPI.html#getArticleDetails">getArticleDetails</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="WikiaAPI.html#getArticleList">getArticleList</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="WikiaAPI.html#getSearchSuggestions">getSearchSuggestions</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="WikiaAPI.html#getTopArticles">getTopArticles</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="WikiaAPI.html#getUserDetails">getUserDetails</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="WikiaAPI.html#getWikiVariables">getWikiVariables</a></span></li><li class="nav-heading"><a href="global.html">Globals</a></li>
 </nav>
 
 <div id="main">
@@ -267,7 +267,7 @@
 
 
 <div class="description">
-    <p>Basepath of Wikia API V1 for the given subdomain and language, for example &quot;http://dev.fandom.com/api/v1/&quot;</p>
+    <p>Basepath of Wikia API V1 for the given subdomain and language, for example &quot;http://dev.fandom.com/api/v1/&quot;.</p>
 </div>
 
 
@@ -341,7 +341,7 @@
 
 
 <div class="description">
-    <p>Language code, for example &quot;pl&quot; for &quot;leagueoflegends.fandom.com/pl&quot;</p>
+    <p>Language code, for example &quot;pl&quot; for &quot;leagueoflegends.fandom.com/pl&quot;.</p>
 </div>
 
 
@@ -418,7 +418,7 @@
 
 
 <div class="description">
-    <p>Subdomain, for example &quot;dev&quot; for &quot;dev.fandom.com&quot;</p>
+    <p>Subdomain, for example &quot;dev&quot; for &quot;dev.fandom.com&quot;.</p>
 </div>
 
 
@@ -495,14 +495,14 @@
 
     
 
-    <h4 class="name" id="getArticleDetails"><span class="type-signature"></span>getArticleDetails<span class="signature">(options<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Promise.&lt;Object, Error>}</span></h4>
+    <h4 class="name" id="getArticleDetails"><span class="type-signature"></span>getArticleDetails<span class="signature">(options<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Promise.&lt;<a href="global.html#ArticleDetailsRes">ArticleDetailsRes</a>>}</span></h4>
 
     
 
 
 
 <div class="description">
-    <p>Get details about one or more articles</p>
+    <p>Get details about one or more articles.</p>
 </div>
 
 
@@ -611,7 +611,7 @@
             
 
             <td class="description last">
-                <p>An Object containing every other parameter</p>
+                <p>An object containing request parameters</p>
                 
                     
 
@@ -675,7 +675,7 @@
             
 
             <td class="description last">
-                <p>An Array of article ids or a single article id</p>
+                <p>An array of article ids or a single article id</p>
                 
             </td>
         </tr>
@@ -718,7 +718,7 @@
             
 
             <td class="description last">
-                <p>An Array of article titles or a single article title, can be used alongside ids</p>
+                <p>An array of article titles or a single article title, can be used alongside ids</p>
                 
             </td>
         </tr>
@@ -801,18 +801,12 @@
     </dt>
     <dd>
         
-<span class="param-type"><code>Promise.&lt;Object, Error></code></span>
+<span class="param-type"><code>Promise.&lt;<a href="global.html#ArticleDetailsRes">ArticleDetailsRes</a>></code></span>
 
 
     </dd>
 </dl>
 
-
-<div class="param-desc">
-    <ul>
-<li>A Promise with an Object containing articles details on fulfil, and Error on rejection</li>
-</ul>
-</div>
 
     
 </div>
@@ -826,14 +820,14 @@
 
     
 
-    <h4 class="name" id="getArticleList"><span class="type-signature"></span>getArticleList<span class="signature">(options<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Promise.&lt;Object, Error>}</span></h4>
+    <h4 class="name" id="getArticleList"><span class="type-signature"></span>getArticleList<span class="signature">(options<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Promise.&lt;<a href="global.html#ArticleListRes">ArticleListRes</a>>}</span></h4>
 
     
 
 
 
 <div class="description">
-    <p>Get articles list in alphabetical order</p>
+    <p>Get article list in alphabetical order.</p>
 </div>
 
 
@@ -942,7 +936,7 @@
             
 
             <td class="description last">
-                <p>An Object containing every other parameter</p>
+                <p>An object containing request parameters</p>
                 
                     
 
@@ -1048,7 +1042,7 @@
             
 
             <td class="description last">
-                <p>Array of namespace ids or a single namespace id, see more: <a href="http://community.wikia.com/wiki/Help:Namespaces">http://community.wikia.com/wiki/Help:Namespaces</a></p>
+                <p>Array of namespace ids or a single namespace id, see more: <a href="http://community.fandom.com/wiki/Help:Namespaces">Help:Namespaces</a></p>
                 
             </td>
         </tr>
@@ -1132,7 +1126,7 @@
             
 
             <td class="description last">
-                <p>Lexicographically minimal article title</p>
+                <p>Only display articles where name is lexicographically greater than provided</p>
                 
             </td>
         </tr>
@@ -1173,18 +1167,12 @@
     </dt>
     <dd>
         
-<span class="param-type"><code>Promise.&lt;Object, Error></code></span>
+<span class="param-type"><code>Promise.&lt;<a href="global.html#ArticleListRes">ArticleListRes</a>></code></span>
 
 
     </dd>
 </dl>
 
-
-<div class="param-desc">
-    <ul>
-<li>A Promise with an Object containing articles list on fulfil, and Error on rejection</li>
-</ul>
-</div>
 
     
 </div>
@@ -1198,14 +1186,14 @@
 
     
 
-    <h4 class="name" id="getSearchSuggestions"><span class="type-signature"></span>getSearchSuggestions<span class="signature">(options<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Promise.&lt;Object, Error>}</span></h4>
+    <h4 class="name" id="getSearchSuggestions"><span class="type-signature"></span>getSearchSuggestions<span class="signature">(options<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Promise.&lt;<a href="global.html#SearchSuggestionsRes">SearchSuggestionsRes</a>>}</span></h4>
 
     
 
 
 
 <div class="description">
-    <p>Find suggested phrases for chosen query</p>
+    <p>Find suggested phrases for chosen query.</p>
 </div>
 
 
@@ -1314,7 +1302,7 @@
             
 
             <td class="description last">
-                <p>An Object containing every other parameter</p>
+                <p>An object containing request parameters</p>
                 
                     
 
@@ -1410,18 +1398,12 @@
     </dt>
     <dd>
         
-<span class="param-type"><code>Promise.&lt;Object, Error></code></span>
+<span class="param-type"><code>Promise.&lt;<a href="global.html#SearchSuggestionsRes">SearchSuggestionsRes</a>></code></span>
 
 
     </dd>
 </dl>
 
-
-<div class="param-desc">
-    <ul>
-<li>A Promise with an Object containing search suggestions on fulfil, and Error on rejection</li>
-</ul>
-</div>
 
     
 </div>
@@ -1435,14 +1417,14 @@
 
     
 
-    <h4 class="name" id="getTopArticles"><span class="type-signature"></span>getTopArticles<span class="signature">(options<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Promise.&lt;Object, Error>}</span></h4>
+    <h4 class="name" id="getTopArticles"><span class="type-signature"></span>getTopArticles<span class="signature">(options<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Promise.&lt;<a href="global.html#TopArticlesRes">TopArticlesRes</a>>}</span></h4>
 
     
 
 
 
 <div class="description">
-    <p>Get the most viewed articles on this wiki</p>
+    <p>Get the most viewed articles from this wiki.</p>
 </div>
 
 
@@ -1551,7 +1533,7 @@
             
 
             <td class="description last">
-                <p>An Object containing every other parameter</p>
+                <p>An object containing request parameters</p>
                 
                     
 
@@ -1615,9 +1597,7 @@
             
 
             <td class="description last">
-                <ul>
-<li>Array of namespace ids or a single namespace id, see more: <a href="http://community.wikia.com/wiki/Help:Namespaces">http://community.wikia.com/wiki/Help:Namespaces</a></li>
-</ul>
+                <p>Array of namespace ids or a single namespace id, see more: <a href="http://community.wikia.com/wiki/Help:Namespaces">Help:Namespaces</a></p>
                 
             </td>
         </tr>
@@ -1657,7 +1637,7 @@
             
 
             <td class="description last">
-                <p>Return only articles belonging to the provided valid category title</p>
+                <p>Return only articles belonging to the provided category title</p>
                 
             </td>
         </tr>
@@ -1699,7 +1679,7 @@
             
 
             <td class="description last">
-                <p>Limit the number of result - maximum limit is 250</p>
+                <p>Limit the number of results - maximum limit is 250</p>
                 
             </td>
         </tr>
@@ -1740,18 +1720,12 @@
     </dt>
     <dd>
         
-<span class="param-type"><code>Promise.&lt;Object, Error></code></span>
+<span class="param-type"><code>Promise.&lt;<a href="global.html#TopArticlesRes">TopArticlesRes</a>></code></span>
 
 
     </dd>
 </dl>
 
-
-<div class="param-desc">
-    <ul>
-<li>A Promise with an Object containing top articles on fulfil, and Error on rejection</li>
-</ul>
-</div>
 
     
 </div>
@@ -1765,14 +1739,14 @@
 
     
 
-    <h4 class="name" id="getUserDetails"><span class="type-signature"></span>getUserDetails<span class="signature">(options<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Promise.&lt;Object, Error>}</span></h4>
+    <h4 class="name" id="getUserDetails"><span class="type-signature"></span>getUserDetails<span class="signature">(options<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Promise.&lt;<a href="global.html#UserDetailsRes">UserDetailsRes</a>>}</span></h4>
 
     
 
 
 
 <div class="description">
-    <p>Get details about selected users</p>
+    <p>Get details about selected users.</p>
 </div>
 
 
@@ -1881,7 +1855,7 @@
             
 
             <td class="description last">
-                <p>An Object containing every other parameter</p>
+                <p>An object containing request parameters</p>
                 
                     
 
@@ -1945,7 +1919,7 @@
             
 
             <td class="description last">
-                <p>An Array of user ids or a single user id</p>
+                <p>An array of user ids or a single user id</p>
                 
             </td>
         </tr>
@@ -1987,7 +1961,7 @@
             
 
             <td class="description last">
-                <p>The desired width (and height, because it is a square) for the thumbnail, defaults to 100, 0 for no thumbnail</p>
+                <p>The desired width and height of the thumbnail, defaults to 100, 0 for no thumbnail</p>
                 
             </td>
         </tr>
@@ -2028,18 +2002,12 @@
     </dt>
     <dd>
         
-<span class="param-type"><code>Promise.&lt;Object, Error></code></span>
+<span class="param-type"><code>Promise.&lt;<a href="global.html#UserDetailsRes">UserDetailsRes</a>></code></span>
 
 
     </dd>
 </dl>
 
-
-<div class="param-desc">
-    <ul>
-<li>A Promise with an Object containing user details on fulfil, and Error on rejection</li>
-</ul>
-</div>
 
     
 </div>
@@ -2053,14 +2021,14 @@
 
     
 
-    <h4 class="name" id="getWikiVariables"><span class="type-signature"></span>getWikiVariables<span class="signature">()</span><span class="type-signature"> &rarr; {Promise.&lt;Object, Error>}</span></h4>
+    <h4 class="name" id="getWikiVariables"><span class="type-signature"></span>getWikiVariables<span class="signature">()</span><span class="type-signature"> &rarr; {Promise.&lt;<a href="global.html#WikiVariablesRes">WikiVariablesRes</a>>}</span></h4>
 
     
 
 
 
 <div class="description">
-    <p>Get wiki data, including key values, navigation data, and more</p>
+    <p>Get wiki data, including key values, navigation data and more.</p>
 </div>
 
 
@@ -2138,18 +2106,12 @@
     </dt>
     <dd>
         
-<span class="param-type"><code>Promise.&lt;Object, Error></code></span>
+<span class="param-type"><code>Promise.&lt;<a href="global.html#WikiVariablesRes">WikiVariablesRes</a>></code></span>
 
 
     </dd>
 </dl>
 
-
-<div class="param-desc">
-    <ul>
-<li>A Promise with an Object containing wiki data on fulfil, and Error on rejection</li>
-</ul>
-</div>
 
     
 </div>

@@ -1,6 +1,6 @@
 {
   "source": {
-    "include": ["main.js", "README.md"]
+    "include": ["src/main.js", "src/res.js", "README.md"]
   },
   "opts": {
     "template": "node_modules/minami",

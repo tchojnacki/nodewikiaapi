@@ -31,12 +31,15 @@ class WikiaAPI {
   /**
    * Get details about one or more articles.
    *
-   * @param {ArticleDetailsReq} options
+   * @param {ArticleDetailsReq} request Request parameters
    * @returns {Promise<ArticleDetailsRes>}
+   *
+   * @see {@link ArticleDetailsReq}
+   * @see {@link ArticleDetailsRes}
    */
-  getArticleDetails(options) {
+  getArticleDetails(request) {
     const { ids, titles, abstract } = this._parseParams(
-      options,
+      request,
       { ids: -1, titles: '', abstract: 100 },
       {
         ids: x => typeof x === 'number' || Array.isArray(x),
@@ -52,19 +55,22 @@ class WikiaAPI {
     return this._makeRequest('Articles/Details', {
       ids: this._arrayOrSingleElement(ids),
       titles: this._arrayOrSingleElement(titles, 'string'),
-      abstract: abstract,
+      abstract,
     })
   }
 
   /**
    * Get article list in alphabetical order.
    *
-   * @param {ArticleListReq} [options]
+   * @param {ArticleListReq} [request] Optional request parameters
    * @returns {Promise<ArticleListRes>}
+   *
+   * @see {@link ArticleListReq}
+   * @see {@link ArticleListRes}
    */
-  getArticleList(options = {}) {
+  getArticleList(request = {}) {
     const { category, namespaces, limit, offset } = this._parseParams(
-      options,
+      request,
       { category: '', namespaces: 0, limit: 25, offset: '!' },
       {
         category: 'string',
@@ -75,22 +81,25 @@ class WikiaAPI {
     )
 
     return this._makeRequest('Articles/List', {
-      category: category,
+      category,
       namespaces: this._arrayOrSingleElement(namespaces),
-      limit: limit,
-      offset: offset,
+      limit,
+      offset,
     })
   }
 
   /**
    * Get the most viewed articles from this wiki.
    *
-   * @param {TopArticlesReq} [options]
+   * @param {TopArticlesReq} [request] Optional request parameters
    * @returns {Promise<TopArticlesRes>}
+   *
+   * @see {@link TopArticlesReq}
+   * @see {@link TopArticlesRes}
    */
-  getTopArticles(options = {}) {
+  getTopArticles(request = {}) {
     const { namespaces, category, limit } = this._parseParams(
-      options,
+      request,
       { namespaces: null, category: '', limit: 10 },
       {
         namespaces: x => typeof x === 'number' || Array.isArray(x) || x === null,
@@ -101,8 +110,8 @@ class WikiaAPI {
 
     return this._makeRequest('Articles/Top', {
       namespaces: this._arrayOrSingleElement(namespaces),
-      category: category,
-      limit: limit,
+      category,
+      limit,
     })
   }
 
@@ -110,6 +119,8 @@ class WikiaAPI {
    * Get wiki data, including key values, navigation data and more.
    *
    * @returns {Promise<WikiVariablesRes>}
+   *
+   * @see {@link WikiVariablesRes}
    */
   getWikiVariables() {
     return this._makeRequest('Mercury/WikiVariables')
@@ -120,6 +131,8 @@ class WikiaAPI {
    *
    * @param {string} query Search query
    * @returns {Promise<SearchSuggestionsRes>}
+   *
+   * @see {@link SearchSuggestionsRes}
    */
   getSearchSuggestions(query) {
     const { query: q } = this._parseParams({ query }, {}, { query: 'string' })
@@ -129,12 +142,15 @@ class WikiaAPI {
   /**
    * Get details about selected users.
    *
-   * @param {UserDetailsReq} options
+   * @param {UserDetailsReq} request Request parameters
    * @returns {Promise<UserDetailsRes>}
+   *
+   * @see {@link UserDetailsReq}
+   * @see {@link UserDetailsRes}
    */
-  getUserDetails(options) {
+  getUserDetails(request) {
     const { ids, size } = this._parseParams(
-      options,
+      request,
       { size: 100 },
       {
         ids: x => typeof x === 'number' || Array.isArray(x),
@@ -142,10 +158,7 @@ class WikiaAPI {
       }
     )
 
-    return this._makeRequest('User/Details', {
-      ids: ids,
-      size: size,
-    })
+    return this._makeRequest('User/Details', { ids, size })
   }
 
   /**

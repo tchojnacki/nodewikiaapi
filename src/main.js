@@ -47,16 +47,16 @@ class WikiaAPI {
         abstract: 'number',
       }
     )
-
     if (ids === -1 && titles === '') {
       throw new Error("Argument 'ids' or 'titles' should be passed")
     }
-
-    return this._makeRequest('Articles/Details', {
-      ids: this._arrayOrSingleElement(ids),
-      titles: this._arrayOrSingleElement(titles, 'string'),
-      abstract,
-    })
+    return /** @type {Promise<ArticleDetailsRes>} */ (
+      this._makeRequest('Articles/Details', {
+        ids: this._arrayOrSingleElement(ids),
+        titles: this._arrayOrSingleElement(titles, 'string'),
+        abstract,
+      })
+    )
   }
 
   /**
@@ -79,13 +79,14 @@ class WikiaAPI {
         offset: 'string',
       }
     )
-
-    return this._makeRequest('Articles/List', {
-      category,
-      namespaces: this._arrayOrSingleElement(namespaces),
-      limit,
-      offset,
-    })
+    return /** @type {Promise<ArticleListRes>} */ (
+      this._makeRequest('Articles/List', {
+        category,
+        namespaces: this._arrayOrSingleElement(namespaces),
+        limit,
+        offset,
+      })
+    )
   }
 
   /**
@@ -107,12 +108,13 @@ class WikiaAPI {
         limit: 'number',
       }
     )
-
-    return this._makeRequest('Articles/Top', {
-      namespaces: this._arrayOrSingleElement(namespaces),
-      category,
-      limit,
-    })
+    return /** @type {Promise<TopArticlesRes>} */ (
+      this._makeRequest('Articles/Top', {
+        namespaces: this._arrayOrSingleElement(namespaces),
+        category,
+        limit,
+      })
+    )
   }
 
   /**
@@ -123,7 +125,7 @@ class WikiaAPI {
    * @see {@link WikiVariablesRes}
    */
   getWikiVariables() {
-    return this._makeRequest('Mercury/WikiVariables')
+    return /** @type {Promise<WikiVariablesRes>} */ (this._makeRequest('Mercury/WikiVariables'))
   }
 
   /**
@@ -136,7 +138,7 @@ class WikiaAPI {
    */
   getSearchSuggestions(query) {
     const { query: q } = this._parseParams({ query }, {}, { query: 'string' })
-    return this._makeRequest('SearchSuggestions/List', { query: q })
+    return /** @type {Promise<SearchSuggestionsRes>} */ (this._makeRequest('SearchSuggestions/List', { query: q }))
   }
 
   /**
@@ -157,8 +159,7 @@ class WikiaAPI {
         size: 'number',
       }
     )
-
-    return this._makeRequest('User/Details', { ids, size })
+    return /** @type {Promise<UserDetailsRes>} */ (this._makeRequest('User/Details', { ids, size }))
   }
 
   /**
@@ -170,26 +171,37 @@ class WikiaAPI {
     return `https://${this.subdomain}.fandom.com/${this.language ? `${this.language}/` : ''}api/v1/`
   }
 
-  /** @private */
+  /**
+   * @private
+   * @ignore
+   *
+   * @param {string} endpoint
+   * @param {Object.<string, string | string[] | number | number[] | null>} [params]
+   * @param {"GET"} [method]
+   * @returns {Promise<unknown>}
+   */
   _makeRequest(endpoint, params, method) {
     return new Promise((resolve, reject) => {
+      /** @type {string[]} */
       let query = []
       for (let param in params) {
-        if (params[param] !== null) {
-          query.push(param + '=' + encodeURIComponent(params[param]).replace(/%7C/g, '|'))
+        const p = /** @type {string | number | null} */ (params[param])
+        if (p !== null) {
+          query.push(param + '=' + encodeURIComponent(p).replace(/%7C/g, '|'))
         }
       }
 
       const reqUrl = `${this.apiBasepath}${endpoint}?${query.join('&')}`
       got(reqUrl, { method: method || 'GET' })
         .then(response => {
+          /** @type {string} */
           let body
           try {
             body = JSON.parse(response.body)
+            resolve(body)
           } catch (error) {
             reject(new Error('Community not found'))
           }
-          resolve(body)
         })
         .catch(error => {
           reject(error)
@@ -197,36 +209,51 @@ class WikiaAPI {
     })
   }
 
-  /** @private */
+  /**
+   * @private
+   * @ignore
+   *
+   * @param {number | number[] | string | string[] | null} input
+   * @param {"number" | "string"} inputType
+   * @returns {string | null}
+   */
   _arrayOrSingleElement(input, inputType = 'number') {
-    let outputString
+    /** @type {string | null} */
+    let output
     if (Array.isArray(input)) {
-      outputString = input.join(',')
-    } else if (typeof input === inputType) {
-      outputString = input.toString()
+      output = input.join(',')
     } else if (input === null) {
-      outputString = input
+      output = input
+    } else if (typeof input === inputType) {
+      output = input.toString()
     } else {
       throw new Error(
         `Incorrect argument type. Expected ${inputType} or array of ${inputType}s, got ${typeof input} instead`
       )
     }
-    return outputString
+    return output
   }
 
-  /** @private */
+  /**
+   * @private
+   * @ignore
+   *
+   * @param {Object.<string, string | string[] | number | number[] | null>} options
+   * @param {Object.<string, string | string[] | number | number[] | null>} defaultOptions
+   * @param {Object.<string, "string" | "number" | function(any): boolean>} optionTypes
+   * @returns {Object.<string, string | string[] | number | number[] | null>}
+   */
   _parseParams(options, defaultOptions, optionTypes) {
     let newOptions
     newOptions = Object.assign({}, defaultOptions, options)
     for (let opt in optionTypes) {
-      if (typeof optionTypes[opt] === 'string') {
-        if (typeof newOptions[opt] !== optionTypes[opt]) {
-          throw new Error(
-            `Bad argument type. Expected ${opt} to be a ${optionTypes[opt]}, found ${typeof newOptions[opt]} instead`
-          )
+      const type = optionTypes[opt]
+      if (typeof type === 'string') {
+        if (typeof newOptions[opt] !== type) {
+          throw new Error(`Bad argument type. Expected ${opt} to be a ${type}, found ${typeof newOptions[opt]} instead`)
         }
       } else {
-        if (!optionTypes[opt](newOptions[opt])) {
+        if (!type(newOptions[opt])) {
           throw new Error(`Bad argument type for ${opt}`)
         }
       }

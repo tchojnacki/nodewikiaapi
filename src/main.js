@@ -12,6 +12,15 @@ import fetch from 'node-fetch'
  */
 
 /**
+ * @private
+ * @ignore
+ *
+ * @typedef {Object} Constraint
+ * @property {string} m
+ * @property {function(URLSearchParams): boolean} v
+ */
+
+/**
  * Object wrapping a particular wiki's Wikia API V1.
  *
  * @tutorial getting-started
@@ -47,12 +56,15 @@ class WikiaAPI {
    * @see {@link ArticleDetailsRes}
    */
   getArticleDetails(request) {
-    const params = this._parseParams(request, {
-      ids: this._paramParser([], 'number', true),
-      titles: this._paramParser([], 'string', true),
-      abstract: this._paramParser(100, 'number'),
-    })
-    if (!(params.has('ids') || params.has('titles'))) throw new Error('Argument ids or titles should be passed!')
+    const params = this._parseParams(
+      request,
+      {
+        ids: this._paramParser([], 'number', true),
+        titles: this._paramParser([], 'string', true),
+        abstract: this._paramParser(100, 'number'),
+      },
+      [{ m: 'Article ids, titles or both should be passed!', v: p => p.has('ids') || p.has('titles') }]
+    )
     return /** @type {Promise<ArticleDetailsRes>} */ (this._makeRequest('Articles/Details', params))
   }
 
@@ -186,9 +198,10 @@ class WikiaAPI {
    *
    * @param {Object<string, unknown>} options
    * @param {Object<string, ParamParser>} optionParsers
+   * @param {Constraint[]} [constraints=[]]
    * @returns {URLSearchParams}
    */
-  _parseParams(options, optionParsers) {
+  _parseParams(options, optionParsers, constraints = []) {
     const defaultOptions = Object.fromEntries(Object.entries(optionParsers).map(([p, { d }]) => [p, d]))
     const optionsWithDefaults = Object.assign({}, defaultOptions, options)
     const parsedOptions = new URLSearchParams()
@@ -199,6 +212,10 @@ class WikiaAPI {
       const paramValue = optionParsers[paramName].v(optionsWithDefaults[paramName])
       if (paramValue === '') continue
       parsedOptions.append(paramName, encodeURIComponent(paramValue).replace(/%7C/g, '|'))
+    }
+
+    for (const { m, v } of constraints) {
+      if (!v(parsedOptions)) throw new Error(m)
     }
 
     return parsedOptions

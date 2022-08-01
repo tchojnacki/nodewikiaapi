@@ -38,19 +38,16 @@ class WikiaAPI {
    * @see {@link ArticleDetailsRes}
    */
   getArticleDetails(request) {
-    const params = this._parseParams(
+    const { ids, titles, abstract } = this._parseParams(
       request,
       { ids: [], titles: [], abstract: 100 },
       {
-        ids: x => typeof x === 'number' || Array.isArray(x),
-        titles: x => typeof x === 'string' || Array.isArray(x),
-        abstract: 'number',
+        ids: this._paramParser('number', true),
+        titles: this._paramParser('string', true),
+        abstract: this._paramParser('number'),
       }
     )
-    const ids = this._arrayOrSingleElement(params.ids)
-    const titles = this._arrayOrSingleElement(params.titles, 'string')
-    const abstract = /** @type {number} */ (params.abstract)
-    if (ids === '' && titles === '') throw new Error("Argument 'ids' or 'titles' should be passed")
+    if (ids === '' && titles === '') throw new Error('Argument ids or titles should be passed!')
     return /** @type {Promise<ArticleDetailsRes>} */ (this._makeRequest('Articles/Details', { ids, titles, abstract }))
   }
 
@@ -64,20 +61,16 @@ class WikiaAPI {
    * @see {@link ArticleListRes}
    */
   getArticleList(request = {}) {
-    const params = this._parseParams(
+    const { category, namespaces, limit, offset } = this._parseParams(
       request,
       { category: '', namespaces: 0, limit: 25, offset: '!' },
       {
-        category: 'string',
-        namespaces: x => typeof x === 'number' || Array.isArray(x),
-        limit: 'number',
-        offset: 'string',
+        category: this._paramParser('string'),
+        namespaces: this._paramParser('number', true),
+        limit: this._paramParser('number'),
+        offset: this._paramParser('string'),
       }
     )
-    const category = /** @type {string} */ (params.category)
-    const namespaces = this._arrayOrSingleElement(params.namespaces)
-    const limit = /** @type {number} */ (params.limit)
-    const offset = /** @type {string} */ (params.offset)
     return /** @type {Promise<ArticleListRes>} */ (
       this._makeRequest('Articles/List', { category, namespaces, limit, offset })
     )
@@ -93,18 +86,15 @@ class WikiaAPI {
    * @see {@link TopArticlesRes}
    */
   getTopArticles(request = {}) {
-    const params = this._parseParams(
+    const { namespaces, category, limit } = this._parseParams(
       request,
       { namespaces: [], category: '', limit: 10 },
       {
-        namespaces: x => typeof x === 'number' || Array.isArray(x),
-        category: 'string',
-        limit: 'number',
+        namespaces: this._paramParser('number', true),
+        category: this._paramParser('string'),
+        limit: this._paramParser('number'),
       }
     )
-    const namespaces = this._arrayOrSingleElement(params.namespaces)
-    const category = /** @type {string} */ (params.category)
-    const limit = /** @type {number} */ (params.number)
     return /** @type {Promise<TopArticlesRes>} */ (this._makeRequest('Articles/Top', { namespaces, category, limit }))
   }
 
@@ -128,9 +118,10 @@ class WikiaAPI {
    * @see {@link SearchSuggestionsRes}
    */
   getSearchSuggestions(query) {
-    const params = this._parseParams({ query }, {}, { query: 'string' })
-    const q = /** @type {string} */ (params.query)
-    return /** @type {Promise<SearchSuggestionsRes>} */ (this._makeRequest('SearchSuggestions/List', { query: q }))
+    const params = this._parseParams({ query }, {}, { query: this._paramParser('string') })
+    return /** @type {Promise<SearchSuggestionsRes>} */ (
+      this._makeRequest('SearchSuggestions/List', { query: params.query })
+    )
   }
 
   /**
@@ -143,16 +134,14 @@ class WikiaAPI {
    * @see {@link UserDetailsRes}
    */
   getUserDetails(request) {
-    const params = this._parseParams(
+    const { ids, size } = this._parseParams(
       request,
       { size: 100 },
       {
-        ids: x => typeof x === 'number' || Array.isArray(x),
-        size: 'number',
+        ids: this._paramParser('number', true),
+        size: this._paramParser('number'),
       }
     )
-    const ids = this._arrayOrSingleElement(params.ids)
-    const size = /** @type {number} */ (params.size)
     return /** @type {Promise<UserDetailsRes>} */ (this._makeRequest('User/Details', { ids, size }))
   }
 
@@ -170,7 +159,7 @@ class WikiaAPI {
    * @ignore
    *
    * @param {string} endpoint
-   * @param {Object.<string, string | number>} [params]
+   * @param {Object.<string, string>} [params]
    * @returns {Promise<unknown>}
    */
   async _makeRequest(endpoint, params) {
@@ -188,50 +177,40 @@ class WikiaAPI {
    * @private
    * @ignore
    *
-   * @param {number | number[] | string | string[]} input
-   * @param {"number" | "string"} inputType
-   * @returns {string}
+   * @param {"number" | "string"} requiredType
+   * @param {boolean} [canBeArray=false]
+   * @returns {function(unknown):string}
    */
-  _arrayOrSingleElement(input, inputType = 'number') {
-    /** @type {string} */
-    let output
-    if (Array.isArray(input)) {
-      output = input.join(',')
-    } else if (typeof input === inputType) {
-      output = input.toString()
-    } else {
-      throw new Error(
-        `Incorrect argument type. Expected ${inputType} or array of ${inputType}s, got ${typeof input} instead`
-      )
+  _paramParser(requiredType, canBeArray = false) {
+    return input => {
+      if (typeof input === requiredType) return /** @type {number | string} */ (input).toString()
+
+      if (canBeArray && Array.isArray(input) && input.every(x => typeof x === requiredType)) return input.join(',')
+
+      throw new Error(`Given input (${input}) has invalid type!`)
     }
-    return output
   }
 
   /**
    * @private
    * @ignore
    *
-   * @param {Object.<string, string | string[] | number | number[]>} options
-   * @param {Object.<string, string | string[] | number | number[]>} defaultOptions
-   * @param {Object.<string, "string" | "number" | function(any): boolean>} optionTypes
-   * @returns {Object.<string, string | string[] | number | number[]>}
+   * @param {Object.<string, unknown>} options
+   * @param {Object.<string, unknown>} defaultOptions
+   * @param {Object.<string, function(unknown):string>} optionParsers
+   * @returns {Object.<string, string>}
    */
-  _parseParams(options, defaultOptions, optionTypes) {
-    let newOptions
-    newOptions = Object.assign({}, defaultOptions, options)
-    for (let opt in optionTypes) {
-      const type = optionTypes[opt]
-      if (typeof type === 'string') {
-        if (typeof newOptions[opt] !== type) {
-          throw new Error(`Bad argument type. Expected ${opt} to be a ${type}, found ${typeof newOptions[opt]} instead`)
-        }
-      } else {
-        if (!type(newOptions[opt])) {
-          throw new Error(`Bad argument type for ${opt}`)
-        }
-      }
+  _parseParams(options, defaultOptions, optionParsers) {
+    const optionsWithDefaults = Object.assign({}, defaultOptions, options)
+    const parsedOptions = /** @type {Object.<string, string>} */ ({})
+
+    for (const paramName in optionsWithDefaults) {
+      if (optionsWithDefaults[paramName] === undefined) continue
+      if (!(paramName in optionParsers)) throw new Error(`Unexpected param (${paramName}) given!`)
+      parsedOptions[paramName] = optionParsers[paramName](optionsWithDefaults[paramName])
     }
-    return newOptions
+
+    return parsedOptions
   }
 }
 

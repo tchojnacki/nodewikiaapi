@@ -38,25 +38,20 @@ class WikiaAPI {
    * @see {@link ArticleDetailsRes}
    */
   getArticleDetails(request) {
-    const { ids, titles, abstract } = this._parseParams(
+    const params = this._parseParams(
       request,
-      { ids: -1, titles: '', abstract: 100 },
+      { ids: [], titles: [], abstract: 100 },
       {
         ids: x => typeof x === 'number' || Array.isArray(x),
         titles: x => typeof x === 'string' || Array.isArray(x),
         abstract: 'number',
       }
     )
-    if (ids === -1 && titles === '') {
-      throw new Error("Argument 'ids' or 'titles' should be passed")
-    }
-    return /** @type {Promise<ArticleDetailsRes>} */ (
-      this._makeRequest('Articles/Details', {
-        ids: this._arrayOrSingleElement(ids),
-        titles: this._arrayOrSingleElement(titles, 'string'),
-        abstract,
-      })
-    )
+    const ids = this._arrayOrSingleElement(params.ids)
+    const titles = this._arrayOrSingleElement(params.titles, 'string')
+    const abstract = /** @type {number} */ (params.abstract)
+    if (ids === '' && titles === '') throw new Error("Argument 'ids' or 'titles' should be passed")
+    return /** @type {Promise<ArticleDetailsRes>} */ (this._makeRequest('Articles/Details', { ids, titles, abstract }))
   }
 
   /**
@@ -69,7 +64,7 @@ class WikiaAPI {
    * @see {@link ArticleListRes}
    */
   getArticleList(request = {}) {
-    const { category, namespaces, limit, offset } = this._parseParams(
+    const params = this._parseParams(
       request,
       { category: '', namespaces: 0, limit: 25, offset: '!' },
       {
@@ -79,13 +74,12 @@ class WikiaAPI {
         offset: 'string',
       }
     )
+    const category = /** @type {string} */ (params.category)
+    const namespaces = this._arrayOrSingleElement(params.namespaces)
+    const limit = /** @type {number} */ (params.limit)
+    const offset = /** @type {string} */ (params.offset)
     return /** @type {Promise<ArticleListRes>} */ (
-      this._makeRequest('Articles/List', {
-        category,
-        namespaces: this._arrayOrSingleElement(namespaces),
-        limit,
-        offset,
-      })
+      this._makeRequest('Articles/List', { category, namespaces, limit, offset })
     )
   }
 
@@ -99,22 +93,19 @@ class WikiaAPI {
    * @see {@link TopArticlesRes}
    */
   getTopArticles(request = {}) {
-    const { namespaces, category, limit } = this._parseParams(
+    const params = this._parseParams(
       request,
-      { namespaces: null, category: '', limit: 10 },
+      { namespaces: [], category: '', limit: 10 },
       {
-        namespaces: x => typeof x === 'number' || Array.isArray(x) || x === null,
+        namespaces: x => typeof x === 'number' || Array.isArray(x),
         category: 'string',
         limit: 'number',
       }
     )
-    return /** @type {Promise<TopArticlesRes>} */ (
-      this._makeRequest('Articles/Top', {
-        namespaces: this._arrayOrSingleElement(namespaces),
-        category,
-        limit,
-      })
-    )
+    const namespaces = this._arrayOrSingleElement(params.namespaces)
+    const category = /** @type {string} */ (params.category)
+    const limit = /** @type {number} */ (params.number)
+    return /** @type {Promise<TopArticlesRes>} */ (this._makeRequest('Articles/Top', { namespaces, category, limit }))
   }
 
   /**
@@ -137,7 +128,8 @@ class WikiaAPI {
    * @see {@link SearchSuggestionsRes}
    */
   getSearchSuggestions(query) {
-    const { query: q } = this._parseParams({ query }, {}, { query: 'string' })
+    const params = this._parseParams({ query }, {}, { query: 'string' })
+    const q = /** @type {string} */ (params.query)
     return /** @type {Promise<SearchSuggestionsRes>} */ (this._makeRequest('SearchSuggestions/List', { query: q }))
   }
 
@@ -151,7 +143,7 @@ class WikiaAPI {
    * @see {@link UserDetailsRes}
    */
   getUserDetails(request) {
-    const { ids, size } = this._parseParams(
+    const params = this._parseParams(
       request,
       { size: 100 },
       {
@@ -159,6 +151,8 @@ class WikiaAPI {
         size: 'number',
       }
     )
+    const ids = this._arrayOrSingleElement(params.ids)
+    const size = /** @type {number} */ (params.size)
     return /** @type {Promise<UserDetailsRes>} */ (this._makeRequest('User/Details', { ids, size }))
   }
 
@@ -176,26 +170,21 @@ class WikiaAPI {
    * @ignore
    *
    * @param {string} endpoint
-   * @param {Object.<string, string | string[] | number | number[] | null>} [params]
-   * @param {"GET"} [method]
+   * @param {Object.<string, string | number>} [params]
    * @returns {Promise<unknown>}
    */
-  _makeRequest(endpoint, params, method) {
+  _makeRequest(endpoint, params) {
     return new Promise((resolve, reject) => {
       /** @type {string[]} */
       let query = []
-      for (let param in params) {
-        const p = /**
-         * @ignore
-         * @type {string | number | null}
-         */ (params[param])
-        if (p !== null) {
-          query.push(param + '=' + encodeURIComponent(p).replace(/%7C/g, '|'))
+      for (let [param, value] of Object.entries(params ?? {})) {
+        if (value !== '') {
+          query.push(param + '=' + encodeURIComponent(value).replace(/%7C/g, '|'))
         }
       }
 
       const reqUrl = `${this.apiBasepath}${endpoint}?${query.join('&')}`
-      got(reqUrl, { method: method || 'GET' })
+      got(reqUrl)
         .then(response => {
           /** @type {string} */
           let body
@@ -216,17 +205,15 @@ class WikiaAPI {
    * @private
    * @ignore
    *
-   * @param {number | number[] | string | string[] | null} input
+   * @param {number | number[] | string | string[]} input
    * @param {"number" | "string"} inputType
-   * @returns {string | null}
+   * @returns {string}
    */
   _arrayOrSingleElement(input, inputType = 'number') {
-    /** @type {string | null} */
+    /** @type {string} */
     let output
     if (Array.isArray(input)) {
       output = input.join(',')
-    } else if (input === null) {
-      output = input
     } else if (typeof input === inputType) {
       output = input.toString()
     } else {
@@ -241,10 +228,10 @@ class WikiaAPI {
    * @private
    * @ignore
    *
-   * @param {Object.<string, string | string[] | number | number[] | null>} options
-   * @param {Object.<string, string | string[] | number | number[] | null>} defaultOptions
+   * @param {Object.<string, string | string[] | number | number[]>} options
+   * @param {Object.<string, string | string[] | number | number[]>} defaultOptions
    * @param {Object.<string, "string" | "number" | function(any): boolean>} optionTypes
-   * @returns {Object.<string, string | string[] | number | number[] | null>}
+   * @returns {Object.<string, string | string[] | number | number[]>}
    */
   _parseParams(options, defaultOptions, optionTypes) {
     let newOptions

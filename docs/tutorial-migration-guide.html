@@ -92,11 +92,25 @@
 <h3>Parameter changes</h3>
 <ul>
 <li><a href="WikiaAPI.html"><code>WikiaAPI</code></a>'s constructor <code>subdomain</code> param is now required</li>
-<li><a href="WikiaAPI.html#getArticleDetails"><code>WikiaAPI.getArticleDetails()</code></a>'s options object no longer contains <code>width</code> and <code>height</code></li>
-<li><a href="WikiaAPI.html#getTopArticles"><code>WikiaAPI.getTopArticles()</code></a>'s options object no longer contains <code>baseArticleId</code></li>
+<li><a href="WikiaAPI.html#getArticleDetails"><code>WikiaAPI.getArticleDetails()</code></a>'s options object:
+<ul>
+<li>is now required</li>
+<li>no longer contains <code>width</code> and <code>height</code></li>
+</ul>
+</li>
+<li><a href="WikiaAPI.html#getTopArticles"><code>WikiaAPI.getTopArticles()</code></a>'s options object:
+<ul>
+<li>no longer contains <code>baseArticleId</code></li>
+<li>no longer takes <code>null</code> as a valid <code>namespaces</code> value</li>
+</ul>
+</li>
 <li><a href="WikiaAPI.html#getSearchSuggestions"><code>WikiaAPI.getSearchSuggestions()</code></a> now takes a string as its only parameter (instead of an object containing a singular string value)</li>
-<li><a href="WikiaAPI.html#getArticleDetails"><code>WikiaAPI.getArticleDetails()</code></a>'s options object is now required</li>
-<li><a href="WikiaAPI.html#getUserDetails"><code>WikiaAPI.getUserDetails()</code></a>'s options object is now required, and its ids property is required</li>
+<li><a href="WikiaAPI.html#getUserDetails"><code>WikiaAPI.getUserDetails()</code></a>'s options object:
+<ul>
+<li>is now required</li>
+<li>now must contain the <code>ids</code> property</li>
+</ul>
+</li>
 </ul>
 <h3>Other changes</h3>
 <ul>

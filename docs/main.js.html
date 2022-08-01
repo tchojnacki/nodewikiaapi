@@ -190,7 +190,7 @@ class WikiaAPI {
    * @ignore
    *
    * @param {string} endpoint
-   * @param {Object.&lt;string, string>} [params]
+   * @param {Object&lt;string, string>} [params]
    * @returns {Promise&lt;unknown>}
    */
   async _makeRequest(endpoint, params) {
@@ -230,14 +230,14 @@ class WikiaAPI {
    * @private
    * @ignore
    *
-   * @param {Object.&lt;string, unknown>} options
-   * @param {Object.&lt;string, ParamParser>} optionParsers
-   * @returns {Object.&lt;string, string>}
+   * @param {Object&lt;string, unknown>} options
+   * @param {Object&lt;string, ParamParser>} optionParsers
+   * @returns {Object&lt;string, string>}
    */
   _parseParams(options, optionParsers) {
     const defaultOptions = Object.fromEntries(Object.entries(optionParsers).map(([p, { d }]) => [p, d]))
     const optionsWithDefaults = Object.assign({}, defaultOptions, options)
-    const parsedOptions = /** @type {Object.&lt;string, string>} */ ({})
+    const parsedOptions = /** @type {Object&lt;string, string>} */ ({})
 
     for (const paramName in optionsWithDefaults) {
       if (optionsWithDefaults[paramName] === undefined) continue

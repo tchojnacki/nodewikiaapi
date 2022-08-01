@@ -21,7 +21,7 @@
 
 /**
  * @typedef {Object} ArticleDetailsRes
- * @property {Object.<number, ArticleDetailsResItem>} items Dictionary mapping article ids to objects describing them
+ * @property {Object<number, ArticleDetailsResItem>} items Dictionary mapping article ids to objects describing them
  * @property {string} basepath URL of associated wiki
  *
  * @see {@link WikiaAPI#getArticleDetails}
@@ -67,7 +67,7 @@
 /**
  * @typedef {Object} WikiVariablesResLanguage
  * @property {string} content Wiki's content language
- * @property {"ltr"|"rtl"} contentDir Direction of text ("ltr" - left to right, "rtl" - right to left)
+ * @property {"ltr" | "rtl"} contentDir Direction of text ("ltr" - left to right, "rtl" - right to left)
  */
 
 /**

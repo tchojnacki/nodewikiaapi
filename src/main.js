@@ -1,6 +1,7 @@
 // @ts-check
 
 import fetch from 'node-fetch'
+import { Sema } from 'async-sema'
 
 /**
  * @private
@@ -44,6 +45,13 @@ class WikiaAPI {
      * @type {string | null}
      */
     this.language = language ?? null
+
+    /**
+     * @private
+     * @ignore
+     * @type {Sema}
+     */
+    this._semaphore = new Sema(3)
   }
 
   /**
@@ -185,9 +193,18 @@ class WikiaAPI {
    */
   async _makeRequest(endpoint, params) {
     const query = params ? `?${params.toString()}` : ''
-    const response = await fetch(`${this.apiBasepath}${endpoint}${query}`)
-    const data = await response.json()
-    return data
+    const url = `${this.apiBasepath}${endpoint}${query}`
+
+    await this._semaphore.acquire()
+    try {
+      const response = await fetch(url, { headers: new Headers({ 'User-Agent': 'nodewikiaapi' }) })
+      const data = await response.json()
+      return data
+    } catch {
+      throw new Error(`An error occured while requesting the resource (${url})!`)
+    } finally {
+      this._semaphore.release()
+    }
   }
 
   /**

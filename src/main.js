@@ -3,6 +3,15 @@
 import fetch from 'node-fetch'
 
 /**
+ * @private
+ * @ignore
+ *
+ * @typedef {Object} ParamParser
+ * @property {unknown} d
+ * @property {function(unknown): string} v
+ */
+
+/**
  * Object wrapping a particular wiki's Wikia API V1.
  *
  * @tutorial getting-started
@@ -38,15 +47,11 @@ class WikiaAPI {
    * @see {@link ArticleDetailsRes}
    */
   getArticleDetails(request) {
-    const { ids, titles, abstract } = this._parseParams(
-      request,
-      { ids: [], titles: [], abstract: 100 },
-      {
-        ids: this._paramParser('number', true),
-        titles: this._paramParser('string', true),
-        abstract: this._paramParser('number'),
-      }
-    )
+    const { ids, titles, abstract } = this._parseParams(request, {
+      ids: this._paramParser([], 'number', true),
+      titles: this._paramParser([], 'string', true),
+      abstract: this._paramParser(100, 'number'),
+    })
     if (ids === '' && titles === '') throw new Error('Argument ids or titles should be passed!')
     return /** @type {Promise<ArticleDetailsRes>} */ (this._makeRequest('Articles/Details', { ids, titles, abstract }))
   }
@@ -61,16 +66,12 @@ class WikiaAPI {
    * @see {@link ArticleListRes}
    */
   getArticleList(request = {}) {
-    const { category, namespaces, limit, offset } = this._parseParams(
-      request,
-      { category: '', namespaces: 0, limit: 25, offset: '!' },
-      {
-        category: this._paramParser('string'),
-        namespaces: this._paramParser('number', true),
-        limit: this._paramParser('number'),
-        offset: this._paramParser('string'),
-      }
-    )
+    const { category, namespaces, limit, offset } = this._parseParams(request, {
+      category: this._paramParser('', 'string'),
+      namespaces: this._paramParser([], 'number', true),
+      limit: this._paramParser(25, 'number'),
+      offset: this._paramParser('', 'string'),
+    })
     return /** @type {Promise<ArticleListRes>} */ (
       this._makeRequest('Articles/List', { category, namespaces, limit, offset })
     )
@@ -86,15 +87,11 @@ class WikiaAPI {
    * @see {@link TopArticlesRes}
    */
   getTopArticles(request = {}) {
-    const { namespaces, category, limit } = this._parseParams(
-      request,
-      { namespaces: [], category: '', limit: 10 },
-      {
-        namespaces: this._paramParser('number', true),
-        category: this._paramParser('string'),
-        limit: this._paramParser('number'),
-      }
-    )
+    const { namespaces, category, limit } = this._parseParams(request, {
+      namespaces: this._paramParser([], 'number', true),
+      category: this._paramParser('', 'string'),
+      limit: this._paramParser(10, 'number'),
+    })
     return /** @type {Promise<TopArticlesRes>} */ (this._makeRequest('Articles/Top', { namespaces, category, limit }))
   }
 
@@ -118,7 +115,7 @@ class WikiaAPI {
    * @see {@link SearchSuggestionsRes}
    */
   getSearchSuggestions(query) {
-    const params = this._parseParams({ query }, {}, { query: this._paramParser('string') })
+    const params = this._parseParams({ query }, { query: this._paramParser(undefined, 'string') })
     return /** @type {Promise<SearchSuggestionsRes>} */ (
       this._makeRequest('SearchSuggestions/List', { query: params.query })
     )
@@ -134,14 +131,10 @@ class WikiaAPI {
    * @see {@link UserDetailsRes}
    */
   getUserDetails(request) {
-    const { ids, size } = this._parseParams(
-      request,
-      { size: 100 },
-      {
-        ids: this._paramParser('number', true),
-        size: this._paramParser('number'),
-      }
-    )
+    const { ids, size } = this._parseParams(request, {
+      ids: this._paramParser([], 'number', true),
+      size: this._paramParser(100, 'number'),
+    })
     return /** @type {Promise<UserDetailsRes>} */ (this._makeRequest('User/Details', { ids, size }))
   }
 
@@ -177,17 +170,21 @@ class WikiaAPI {
    * @private
    * @ignore
    *
+   * @param {unknown} defaultValue
    * @param {"number" | "string"} requiredType
    * @param {boolean} [canBeArray=false]
-   * @returns {function(unknown):string}
+   * @returns {ParamParser}
    */
-  _paramParser(requiredType, canBeArray = false) {
-    return input => {
-      if (typeof input === requiredType) return /** @type {number | string} */ (input).toString()
+  _paramParser(defaultValue, requiredType, canBeArray = false) {
+    return {
+      d: defaultValue,
+      v: input => {
+        if (typeof input === requiredType) return /** @type {number | string} */ (input).toString()
 
-      if (canBeArray && Array.isArray(input) && input.every(x => typeof x === requiredType)) return input.join(',')
+        if (canBeArray && Array.isArray(input) && input.every(x => typeof x === requiredType)) return input.join(',')
 
-      throw new Error(`Given input (${input}) has invalid type!`)
+        throw new Error(`Given input (${input}) has invalid type!`)
+      },
     }
   }
 
@@ -196,18 +193,18 @@ class WikiaAPI {
    * @ignore
    *
    * @param {Object.<string, unknown>} options
-   * @param {Object.<string, unknown>} defaultOptions
-   * @param {Object.<string, function(unknown):string>} optionParsers
+   * @param {Object.<string, ParamParser>} optionParsers
    * @returns {Object.<string, string>}
    */
-  _parseParams(options, defaultOptions, optionParsers) {
+  _parseParams(options, optionParsers) {
+    const defaultOptions = Object.fromEntries(Object.entries(optionParsers).map(([p, { d }]) => [p, d]))
     const optionsWithDefaults = Object.assign({}, defaultOptions, options)
     const parsedOptions = /** @type {Object.<string, string>} */ ({})
 
     for (const paramName in optionsWithDefaults) {
       if (optionsWithDefaults[paramName] === undefined) continue
       if (!(paramName in optionParsers)) throw new Error(`Unexpected param (${paramName}) given!`)
-      parsedOptions[paramName] = optionParsers[paramName](optionsWithDefaults[paramName])
+      parsedOptions[paramName] = optionParsers[paramName].v(optionsWithDefaults[paramName])
     }
 
     return parsedOptions

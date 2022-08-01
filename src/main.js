@@ -173,32 +173,14 @@ class WikiaAPI {
    * @param {Object.<string, string | number>} [params]
    * @returns {Promise<unknown>}
    */
-  _makeRequest(endpoint, params) {
-    return new Promise((resolve, reject) => {
-      /** @type {string[]} */
-      let query = []
-      for (let [param, value] of Object.entries(params ?? {})) {
-        if (value !== '') {
-          query.push(param + '=' + encodeURIComponent(value).replace(/%7C/g, '|'))
-        }
-      }
+  async _makeRequest(endpoint, params) {
+    const query = Object.entries(params ?? {})
+      .filter(([, value]) => value !== '' && value !== undefined)
+      .map(([param, value]) => `${param}=${encodeURIComponent(value).replace(/%7C/g, '|')}`)
+      .join('&')
 
-      const reqUrl = `${this.apiBasepath}${endpoint}?${query.join('&')}`
-      got(reqUrl)
-        .then(response => {
-          /** @type {string} */
-          let body
-          try {
-            body = JSON.parse(response.body)
-            resolve(body)
-          } catch (error) {
-            reject(new Error('Community not found'))
-          }
-        })
-        .catch(error => {
-          reject(error)
-        })
-    })
+    const response = await got(`${this.apiBasepath}${endpoint}?${query}`)
+    return JSON.parse(response.body)
   }
 
   /**

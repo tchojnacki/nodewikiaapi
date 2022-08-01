@@ -1,6 +1,6 @@
 // @ts-check
 
-const got = require('got')
+import got from 'got'
 
 /**
  * Object wrapping a particular wiki's Wikia API V1.
@@ -185,7 +185,10 @@ class WikiaAPI {
       /** @type {string[]} */
       let query = []
       for (let param in params) {
-        const p = /** @type {string | number | null} */ (params[param])
+        const p = /**
+         * @ignore
+         * @type {string | number | null}
+         */ (params[param])
         if (p !== null) {
           query.push(param + '=' + encodeURIComponent(p).replace(/%7C/g, '|'))
         }
@@ -262,4 +265,4 @@ class WikiaAPI {
   }
 }
 
-module.exports = WikiaAPI
+export default WikiaAPI

@@ -1,6 +1,6 @@
 // @ts-check
 
-const WikiaAPI = require('../')
+import WikiaAPI from '../'
 
 test('ArticleDetails must return an object', () => {
   expect.assertions(2)

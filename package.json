@@ -8,10 +8,11 @@
     "wrapper",
     "fandom"
   ],
+  "type": "module",
   "main": "src/main.js",
   "scripts": {
     "docs": "jsdoc -c jsdoc.json",
-    "test": "jest",
+    "test": "cross-env NODE_OPTIONS=--experimental-vm-modules npx jest",
     "lint": "eslint ./src/*.js ./tests/*.js"
   },
   "repository": {
@@ -26,6 +27,7 @@
   "homepage": "https://tchojnacki.github.io/nodewikiaapi",
   "devDependencies": {
     "@types/jest": "^28.1.6",
+    "cross-env": "^7.0.3",
     "eslint": "^8.20.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-jest": "^26.7.0",
@@ -37,6 +39,6 @@
     "tidy-jsdoc": "^1.4.1"
   },
   "dependencies": {
-    "got": "^9.6.0"
+    "got": "^12.3.0"
   }
 }

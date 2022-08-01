@@ -1,5 +1,8 @@
 The following page lists **BREAKING CHANGES** between versions `2.x` and `3.x` of the library alongside any possible workarounds.
 
+### Importing
+The library is now exported as ESM instead of CJS. See more information [here](https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c#file-esm-package-md).
+
 ### Removed endpoints
 These endpoints were removed following the UCP, with no information on whether they will be made available again in the future. Thus they were also removed from the wrapper library. You should no longer depend on those methods.
 

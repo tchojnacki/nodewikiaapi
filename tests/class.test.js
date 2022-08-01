@@ -1,6 +1,6 @@
 // @ts-check
 
-const WikiaAPI = require('../')
+import WikiaAPI from '../'
 
 describe('WikiaAPI', () => {
   it('saves subdomain correctly', () => {

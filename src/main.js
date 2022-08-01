@@ -1,6 +1,6 @@
 // @ts-check
 
-import got from 'got'
+import fetch from 'node-fetch'
 
 /**
  * Object wrapping a particular wiki's Wikia API V1.
@@ -179,8 +179,9 @@ class WikiaAPI {
       .map(([param, value]) => `${param}=${encodeURIComponent(value).replace(/%7C/g, '|')}`)
       .join('&')
 
-    const response = await got(`${this.apiBasepath}${endpoint}?${query}`)
-    return JSON.parse(response.body)
+    const response = await fetch(`${this.apiBasepath}${endpoint}?${query}`)
+    const data = await response.json()
+    return data
   }
 
   /**

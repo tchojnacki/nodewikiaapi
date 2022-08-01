@@ -54,3 +54,4 @@ These endpoints were removed following the UCP, with no information on whether t
   - uses `https://` instead of `http://`
   - uses `fandom.com` instead of `wikia.com`
 - `WikiaAPI`'s `_makeRequest()`, `_arrayOrSingleElement()`, `_parseParams()` are now marked as `@private`, their use was never recommended or documented, but it is now prohibited by TypeScript
+- The underlying HTTP client is now [`fetch`](https://www.npmjs.com/package/node-fetch) instead of `got`

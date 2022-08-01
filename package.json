@@ -1,6 +1,6 @@
 {
   "name": "nodewikiaapi",
-  "version": "2.0.5",
+  "version": "3.0.0",
   "description": "JavaScript wrapper for Fandom's Wikia API V1.",
   "keywords": [
     "wikia",

@@ -1,6 +1,9 @@
-jsdoc.json
-.gitignore
-.gitattributes
-tutorials
-tests
+.github
+coverage
 docs
+tests
+tutorials
+.eslintrc.json
+.gitignore
+.prettierrc.json
+jsdoc.json

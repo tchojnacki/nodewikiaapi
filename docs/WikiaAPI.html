@@ -1,40 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    
     <meta charset="utf-8">
-    <title>WikiaAPI - Documentation</title>
+    <title>nodewikiaapi: WikiaAPI</title>
     
+      <link type="text/css" rel="stylesheet" href="styles/vendor/prism-tomorrow-night.css">
     
-    <script src="scripts/prettify/prettify.js"></script>
-    <script src="scripts/prettify/lang-css.js"></script>
-    <!--[if lt IE 9]>
-      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
-    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
-    <script src="scripts/nav.js" defer></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="text/css" rel="stylesheet" href="styles/styles.css">
+    
 </head>
 <body>
 
-<input type="checkbox" id="nav-trigger" class="nav-trigger" />
-<label for="nav-trigger" class="navicon-button x">
-  <div class="navicon"></div>
-</label>
+<header class="layout-header">
+  
+  <h1>
+    <a href="./index.html">
+      nodewikiaapi
+    </a>
+  </h1>
+  <nav class="layout-nav">
+    <ul><li class="nav-heading">Tutorials</li><li class="nav-item"><a href="tutorial-endpoints.html">Endpoints</a></li><li class="nav-item"><a href="tutorial-getting-started.html">Getting started</a></li><li class="nav-item"><a href="tutorial-migration-guide.html">Migration guide (3.x)</a></li></ul><ul><li class="nav-heading">Classes</li><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class"><a href="WikiaAPI.html">WikiaAPI</a></span></li><li class="nav-item"><span class="nav-item-type type-member" title="member">M</span><span class="nav-item-name is-member"><a href="WikiaAPI.html#apiBasepath">apiBasepath</a></span></li><li class="nav-item"><span class="nav-item-type type-member" title="member">M</span><span class="nav-item-name is-member"><a href="WikiaAPI.html#language">language</a></span></li><li class="nav-item"><span class="nav-item-type type-member" title="member">M</span><span class="nav-item-name is-member"><a href="WikiaAPI.html#subdomain">subdomain</a></span></li><li class="nav-item"><span class="nav-item-type type-function" title="function">F</span><span class="nav-item-name is-function"><a href="WikiaAPI.html#getArticleDetails">getArticleDetails</a></span></li><li class="nav-item"><span class="nav-item-type type-function" title="function">F</span><span class="nav-item-name is-function"><a href="WikiaAPI.html#getArticleList">getArticleList</a></span></li><li class="nav-item"><span class="nav-item-type type-function" title="function">F</span><span class="nav-item-name is-function"><a href="WikiaAPI.html#getSearchSuggestions">getSearchSuggestions</a></span></li><li class="nav-item"><span class="nav-item-type type-function" title="function">F</span><span class="nav-item-name is-function"><a href="WikiaAPI.html#getTopArticles">getTopArticles</a></span></li><li class="nav-item"><span class="nav-item-type type-function" title="function">F</span><span class="nav-item-name is-function"><a href="WikiaAPI.html#getUserDetails">getUserDetails</a></span></li><li class="nav-item"><span class="nav-item-type type-function" title="function">F</span><span class="nav-item-name is-function"><a href="WikiaAPI.html#getWikiVariables">getWikiVariables</a></span></li></ul><li class="nav-heading"><a href="global.html">Globals</a></li><li class="nav-item"><span class="nav-item-type type-typedef" title="typedef">T</span><span class="nav-item-name is-typedef"><a href="global.html#ArticleDetailsReq">ArticleDetailsReq</a></span></li><li class="nav-item"><span class="nav-item-type type-typedef" title="typedef">T</span><span class="nav-item-name is-typedef"><a href="global.html#ArticleDetailsRes">ArticleDetailsRes</a></span></li><li class="nav-item"><span class="nav-item-type type-typedef" title="typedef">T</span><span class="nav-item-name is-typedef"><a href="global.html#ArticleDetailsResItem">ArticleDetailsResItem</a></span></li><li class="nav-item"><span class="nav-item-type type-typedef" title="typedef">T</span><span class="nav-item-name is-typedef"><a href="global.html#ArticleDetailsResItemRevision">ArticleDetailsResItemRevision</a></span></li><li class="nav-item"><span class="nav-item-type type-typedef" title="typedef">T</span><span class="nav-item-name is-typedef"><a href="global.html#ArticleItem">ArticleItem</a></span></li><li class="nav-item"><span class="nav-item-type type-typedef" title="typedef">T</span><span class="nav-item-name is-typedef"><a href="global.html#ArticleListReq">ArticleListReq</a></span></li><li class="nav-item"><span class="nav-item-type type-typedef" title="typedef">T</span><span class="nav-item-name is-typedef"><a href="global.html#ArticleListRes">ArticleListRes</a></span></li><li class="nav-item"><span class="nav-item-type type-typedef" title="typedef">T</span><span class="nav-item-name is-typedef"><a href="global.html#SearchSuggestionsRes">SearchSuggestionsRes</a></span></li><li class="nav-item"><span class="nav-item-type type-typedef" title="typedef">T</span><span class="nav-item-name is-typedef"><a href="global.html#SearchSuggestionsResItem">SearchSuggestionsResItem</a></span></li><li class="nav-item"><span class="nav-item-type type-typedef" title="typedef">T</span><span class="nav-item-name is-typedef"><a href="global.html#TopArticlesReq">TopArticlesReq</a></span></li><li class="nav-item"><span class="nav-item-type type-typedef" title="typedef">T</span><span class="nav-item-name is-typedef"><a href="global.html#TopArticlesRes">TopArticlesRes</a></span></li><li class="nav-item"><span class="nav-item-type type-typedef" title="typedef">T</span><span class="nav-item-name is-typedef"><a href="global.html#UserDetailsReq">UserDetailsReq</a></span></li><li class="nav-item"><span class="nav-item-type type-typedef" title="typedef">T</span><span class="nav-item-name is-typedef"><a href="global.html#UserDetailsRes">UserDetailsRes</a></span></li><li class="nav-item"><span class="nav-item-type type-typedef" title="typedef">T</span><span class="nav-item-name is-typedef"><a href="global.html#UserDetailsResItem">UserDetailsResItem</a></span></li><li class="nav-item"><span class="nav-item-type type-typedef" title="typedef">T</span><span class="nav-item-name is-typedef"><a href="global.html#WikiVariablesRes">WikiVariablesRes</a></span></li><li class="nav-item"><span class="nav-item-type type-typedef" title="typedef">T</span><span class="nav-item-name is-typedef"><a href="global.html#WikiVariablesResAppleIcon">WikiVariablesResAppleIcon</a></span></li><li class="nav-item"><span class="nav-item-type type-typedef" title="typedef">T</span><span class="nav-item-name is-typedef"><a href="global.html#WikiVariablesResData">WikiVariablesResData</a></span></li><li class="nav-item"><span class="nav-item-type type-typedef" title="typedef">T</span><span class="nav-item-name is-typedef"><a href="global.html#WikiVariablesResHtmlTitle">WikiVariablesResHtmlTitle</a></span></li><li class="nav-item"><span class="nav-item-type type-typedef" title="typedef">T</span><span class="nav-item-name is-typedef"><a href="global.html#WikiVariablesResLanguage">WikiVariablesResLanguage</a></span></li>
+  </nav>
+</header>
 
-<label for="nav-trigger" class="overlay"></label>
 
-<nav >
-    
-    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="WikiaAPI.html">WikiaAPI</a><ul class='methods'><li data-type='method'><a href="WikiaAPI.html#getArticleAsSimpleJson">getArticleAsSimpleJson</a></li><li data-type='method'><a href="WikiaAPI.html#getArticlesDetails">getArticlesDetails</a></li><li data-type='method'><a href="WikiaAPI.html#getArticlesList">getArticlesList</a></li><li data-type='method'><a href="WikiaAPI.html#getArticlesListExpanded">getArticlesListExpanded</a></li><li data-type='method'><a href="WikiaAPI.html#getLatestActivity">getLatestActivity</a></li><li data-type='method'><a href="WikiaAPI.html#getMostLinked">getMostLinked</a></li><li data-type='method'><a href="WikiaAPI.html#getMostLinkedExpanded">getMostLinkedExpanded</a></li><li data-type='method'><a href="WikiaAPI.html#getNavigationData">getNavigationData</a></li><li data-type='method'><a href="WikiaAPI.html#getNewArticles">getNewArticles</a></li><li data-type='method'><a href="WikiaAPI.html#getPopularArticles">getPopularArticles</a></li><li data-type='method'><a href="WikiaAPI.html#getPopularArticlesExpanded">getPopularArticlesExpanded</a></li><li data-type='method'><a href="WikiaAPI.html#getRecentlyChangedArticles">getRecentlyChangedArticles</a></li><li data-type='method'><a href="WikiaAPI.html#getRelatedPages">getRelatedPages</a></li><li data-type='method'><a href="WikiaAPI.html#getSearchList">getSearchList</a></li><li data-type='method'><a href="WikiaAPI.html#getSearchSuggestions">getSearchSuggestions</a></li><li data-type='method'><a href="WikiaAPI.html#getTopArticles">getTopArticles</a></li><li data-type='method'><a href="WikiaAPI.html#getTopArticlesExpanded">getTopArticlesExpanded</a></li><li data-type='method'><a href="WikiaAPI.html#getUserDetails">getUserDetails</a></li><li data-type='method'><a href="WikiaAPI.html#getWikiVariables">getWikiVariables</a></li></ul></li></ul><h3>Tutorials</h3><ul><li><a href="tutorial-Endpoints.html">Endpoints</a></li><li><a href="tutorial-Getting started.html">Getting started</a></li></ul>
-</nav>
-
-<div id="main">
-    
+<main class="layout-main ">
+  <div class="container">
+    <p class="page-kind">Class</p>
     <h1 class="page-title">WikiaAPI</h1>
-    
-
     
 
 
@@ -42,55 +35,145 @@
 
 <section>
 
-<header>
+
+<header class="class">
+
+
     
-        <h2>
-        WikiaAPI
-        </h2>
         
-            <div class="class-description usertext"><p>Class representing Wikia API V1 wrapper</p></div>
+        <!-- <h2>WikiaAPI</h2> -->
+
+        
+
+        
+
+        
+            
+            <div class="class-description"><p>Object wrapping a particular wiki's Wikia API V1.</p></div>
         
     
 </header>
 
 <article>
+    <div class="container-overview">
+
+
+
     
-        <div class="container-overview">
         
+
+
+
+
+
+    
+
+
+    
+    <h3 class="subtitle">Constructor</h3>
+    
+
+    <div class="method-type">
+    
+    </div>
+
+    <h4 class="method-name" id="WikiaAPI">new WikiaAPI<span class="signature">(subdomain, language<span class="signature-attributes">opt</span>)</span><span class="return-type-signature"></span>
+    </h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Parameters</h4>
+    
+
+<ul class="method-params">
+    
+
+        <li>
+            
+                <span class="param-name">subdomain</span>
             
 
-    
-    <h2>Constructor</h2>
-    
-
-    <h4 class="name" id="WikiaAPI"><span class="type-signature"></span>new WikiaAPI<span class="signature">(subdomain<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
-
-    
+            
+                
 
 
-
-
-<dl class="details">
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="main.js.html">main.js</a>, <a href="main.js.html#line12">line 12</a>
-    </li></ul></dd>
+    <span class="param-type">
+        <code>string</code>
+    </span>
     
 
-    
+            
 
-    
+            
+                <span class="param-attributes">
+                
 
-    
+                
 
-    
+                
+                </span>
+            
 
-    
+            
+
+            <div class="param-description"><p>Subdomain, for example &quot;dev&quot; for &quot;dev.fandom.com&quot;</p></div>
+            
+        </li>
 
     
 
+        <li>
+            
+                <span class="param-name">language</span>
+            
+
+            
+                
+
+
+    <span class="param-type">
+        <code>string</code>
+    </span>
+    
+
+            
+
+            
+                <span class="param-attributes">
+                
+                    &lt;optional&gt;<br>
+                
+
+                
+
+                
+                </span>
+            
+
+            
+
+            <div class="param-description"><p>Optional language code, for example &quot;pl&quot; for &quot;leagueoflegends.fandom.com/pl&quot;</p></div>
+            
+        </li>
+
+    
+</ul>
+
+
+
+
+
+<div class="details">
     
 
     
@@ -104,20 +187,34 @@
     
 
     
-    <dt class="tag-tutorial">Tutorials:</dt>
-    <dd class="tag-tutorial">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h4 class="method-heading">Tutorials</h4>
         <ul>
-            <li><a href="tutorial-Endpoints.html">Endpoints</a></li>
-        
-            <li><a href="tutorial-Getting started.html">Getting started</a></li>
+            
+                <li><a href="tutorial-getting-started.html">Getting started</a></li>
+            
+                <li><a href="tutorial-endpoints.html">Endpoints</a></li>
+            
+                <li><a href="tutorial-migration-guide.html">Migration guide (3.x)</a></li>
+            
         </ul>
-    </dd>
     
 
     
 
     
-</dl>
+</div>
 
 
 
@@ -133,94 +230,23 @@
 
 
 
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-        <th>Attributes</th>
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>subdomain</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
 
 
-            
-            </td>
 
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
+    <h4 class="method-heading">Source</h4>
+    <ul>
+        <li class="method-source">
+            <a href="main.js.html">main.js</a><a href="main.js.html#source.31">, line 31</a>
+        </li>
+    </ul>
 
-                
 
-                
-                </td>
-            
-
-            
-
-            <td class="description last"><p>Subdomain, for example &quot;dev&quot; or &quot;pl.community&quot;. Providing subdomain isn't necessary, but strongly recommended, because without it you can only use global (non-wiki) APIs.</p></td>
-        </tr>
 
     
-    </tbody>
-</table>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-        </div>
-    
+    </div>
 
     
 
-    
-
-    
-    
     
 
      
@@ -228,72 +254,39 @@
     
 
     
-        <h3 class="subsection-title">Members</h3>
+
+
+    
+        <h3 class="subtitle">Members</h3>
 
         
             
-<h4 class="name" id=".wikiaapiurl"><span class="type-signature">(static, readonly) </span>wikiaapiurl<span class="type-signature"> :string</span></h4>
+
+<article class="member">
+    <div class="method-type">
+        <span class="method-type-signature is-readonly">readonly</span>
+    </div>
+<h4 class="member-name" id="apiBasepath">apiBasepath<span class="type-signature">string</span></h4>
 
 
 
 
-
-<dl class="details">
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="main.js.html">main.js</a>, <a href="main.js.html#line417">line 417</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-<div class="description usertext">
-    <p>Basepath of Wikia API V1 for Wikia (http://wikia.com/api/v1/)</p>
+<div class="description">
+    <p>Basepath of Wikia API V1 for the given subdomain and language, for example &quot;http://dev.fandom.com/api/v1/&quot;.</p>
 </div>
 
 
 
-    <h5>Type:</h5>
+    <h4>Type</h4>
     <ul>
         <li>
             
-<span class="param-type">string</span>
 
+
+    <span class="param-type">
+        <code>string</code>
+    </span>
+    
 
         </li>
     </ul>
@@ -302,22 +295,7 @@
 
 
 
-
-        
-            
-<h4 class="name" id=".wikiaurl"><span class="type-signature">(static, readonly) </span>wikiaurl<span class="type-signature"> :string</span></h4>
-
-
-
-
-
-<dl class="details">
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="main.js.html">main.js</a>, <a href="main.js.html#line427">line 427</a>
-    </li></ul></dd>
+<div class="details">
     
 
     
@@ -347,26 +325,56 @@
     
 
     
-
-    
-</dl>
-
-
-
-
-
-<div class="description usertext">
-    <p>Basepath of Wikia (http://wikia.com)</p>
 </div>
 
 
 
-    <h5>Type:</h5>
+
+
+
+
+    <h4>Source</h4>
+    <ul>
+        <li class="method-source">
+            <a href="main.js.html">main.js</a><a href="main.js.html#source.183">, line 183</a>
+        </li>
+    </ul>
+
+
+</article>
+        
+            
+
+<article class="member">
+    <div class="method-type">
+        
+    </div>
+<h4 class="member-name" id="language">language<span class="type-signature">string|null</span></h4>
+
+
+
+
+<div class="description">
+    <p>Language code, for example &quot;pl&quot; for &quot;leagueoflegends.fandom.com/pl&quot;.</p>
+</div>
+
+
+
+    <h4>Type</h4>
     <ul>
         <li>
             
-<span class="param-type">string</span>
 
+
+    <span class="param-type">
+        <code>string</code>
+    </span>
+    |
+
+    <span class="param-type">
+        <code>null</code>
+    </span>
+    
 
         </li>
     </ul>
@@ -375,22 +383,7 @@
 
 
 
-
-        
-            
-<h4 class="name" id="subdomain"><span class="type-signature"></span>subdomain<span class="type-signature"> :string</span></h4>
-
-
-
-
-
-<dl class="details">
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="main.js.html">main.js</a>, <a href="main.js.html#line14">line 14</a>
-    </li></ul></dd>
+<div class="details">
     
 
     
@@ -420,33 +413,51 @@
     
 
     
-    <dt class="tag-see">See:</dt>
-    <dd class="tag-see">
-        <ul>
-            <li><p><a href="http://community.wikia.com/wiki/Help:URL">Help:URL</a> on Community Central</p></li>
-        </ul>
-    </dd>
-    
-
-    
-</dl>
-
-
-
-
-
-<div class="description usertext">
-    <p>Subdomain, for example &quot;dev&quot; or &quot;pl.community&quot;</p>
 </div>
 
 
 
-    <h5>Type:</h5>
+
+
+
+
+    <h4>Source</h4>
+    <ul>
+        <li class="method-source">
+            <a href="main.js.html">main.js</a><a href="main.js.html#source.47">, line 47</a>
+        </li>
+    </ul>
+
+
+</article>
+        
+            
+
+<article class="member">
+    <div class="method-type">
+        
+    </div>
+<h4 class="member-name" id="subdomain">subdomain<span class="type-signature">string</span></h4>
+
+
+
+
+<div class="description">
+    <p>Subdomain, for example &quot;dev&quot; for &quot;dev.fandom.com&quot;.</p>
+</div>
+
+
+
+    <h4>Type</h4>
     <ul>
         <li>
             
-<span class="param-type">string</span>
 
+
+    <span class="param-type">
+        <code>string</code>
+    </span>
+    
 
         </li>
     </ul>
@@ -455,22 +466,7 @@
 
 
 
-
-        
-            
-<h4 class="name" id="wikiapiurl"><span class="type-signature">(readonly) </span>wikiapiurl<span class="type-signature"> :string</span></h4>
-
-
-
-
-
-<dl class="details">
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="main.js.html">main.js</a>, <a href="main.js.html#line391">line 391</a>
-    </li></ul></dd>
+<div class="details">
     
 
     
@@ -500,28 +496,157 @@
     
 
     
-
-    
-</dl>
-
-
-
-
-
-<div class="description usertext">
-    <p>Basepath of Wikia API V1 for given subdomain, for example &quot;http://dev.wikia.com/api/v1/&quot;</p>
 </div>
 
 
 
-    <h5>Type:</h5>
+
+
+
+
+    <h4>Source</h4>
     <ul>
+        <li class="method-source">
+            <a href="main.js.html">main.js</a><a href="main.js.html#source.41">, line 41</a>
+        </li>
+    </ul>
+
+
+</article>
+        
+    
+
+    
+        <h3 class="subtitle">Methods</h3>
+
+        
+            
+
+
+    <article class="method">
+
+
+
+
+    
+
+
+    
+
+    <div class="method-type">
+    
+    </div>
+
+    <h4 class="method-name" id="getArticleDetails">getArticleDetails<span class="signature">(request)</span><span class="return-type-signature"> &rarr; {Promise.&lt;<a href="global.html#ArticleDetailsRes">ArticleDetailsRes</a>>}</span>
+    </h4>
+
+
+
+
+
+<div class="method-description">
+    
+    <p>Get details about one or more articles.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Parameters</h4>
+    
+
+<ul class="method-params">
+    
+
         <li>
             
-<span class="param-type">string</span>
+                <span class="param-name">request</span>
+            
+
+            
+                
 
 
+    <span class="param-type">
+        <code><a href="global.html#ArticleDetailsReq">ArticleDetailsReq</a></code>
+    </span>
+    
+
+            
+
+            
+
+            
+
+            <div class="param-description"><p>Request parameters</p></div>
+            
         </li>
+
+    
+</ul>
+
+
+
+
+
+<div class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h4 class="method-heading">See</h4>
+        <ul>
+            
+                <li><a href="global.html#ArticleDetailsReq">ArticleDetailsReq</a></li>
+            
+                <li><a href="global.html#ArticleDetailsRes">ArticleDetailsRes</a></li>
+            
+        </ul>
+    
+
+    
+</div>
+
+
+
+    <h4 class="method-heading">Returns</h4>
+    <ul>
+    
+        <li class="method-returns">
+            
+                <code>Promise.&lt;ArticleDetailsRes></code>
+            
+            
+        </li>
+    
     </ul>
 
 
@@ -529,72 +654,165 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Source</h4>
+    <ul>
+        <li class="method-source">
+            <a href="main.js.html">main.js</a><a href="main.js.html#source.67">, line 67</a>
+        </li>
+    </ul>
+
+
+
+    </article>
+
         
             
-<h4 class="name" id="wikiurl"><span class="type-signature">(readonly) </span>wikiurl<span class="type-signature"> :string</span></h4>
+
+
+    <article class="method">
 
 
 
-
-
-<dl class="details">
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="main.js.html">main.js</a>, <a href="main.js.html#line404">line 404</a>
-    </li></ul></dd>
-    
 
     
 
-    
 
     
 
+    <div class="method-type">
     
+    </div>
 
+    <h4 class="method-name" id="getArticleList">getArticleList<span class="signature">(request<span class="signature-attributes">opt</span>)</span><span class="return-type-signature"> &rarr; {Promise.&lt;<a href="global.html#ArticleListRes">ArticleListRes</a>>}</span>
+    </h4>
+
+
+
+
+
+<div class="method-description">
     
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-<div class="description usertext">
-    <p>Basepath of wiki for given subdomain, for example &quot;http://dev.wikia.com&quot;</p>
+    <p>Get article list in alphabetical order.</p>
 </div>
 
 
 
-    <h5>Type:</h5>
-    <ul>
+
+
+
+
+
+
+    <h4 class="method-heading">Parameters</h4>
+    
+
+<ul class="method-params">
+    
+
         <li>
             
-<span class="param-type">string</span>
+                <span class="param-name">request</span>
+            
+
+            
+                
 
 
+    <span class="param-type">
+        <code><a href="global.html#ArticleListReq">ArticleListReq</a></code>
+    </span>
+    
+
+            
+
+            
+                <span class="param-attributes">
+                
+                    &lt;optional&gt;<br>
+                
+
+                
+
+                
+                </span>
+            
+
+            
+
+            <div class="param-description"><p>Optional request parameters</p></div>
+            
         </li>
+
+    
+</ul>
+
+
+
+
+
+<div class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h4 class="method-heading">See</h4>
+        <ul>
+            
+                <li><a href="global.html#ArticleListReq">ArticleListReq</a></li>
+            
+                <li><a href="global.html#ArticleListRes">ArticleListRes</a></li>
+            
+        </ul>
+    
+
+    
+</div>
+
+
+
+    <h4 class="method-heading">Returns</h4>
+    <ul>
+    
+        <li class="method-returns">
+            
+                <code>Promise.&lt;ArticleListRes></code>
+            
+            
+        </li>
+    
     </ul>
 
 
@@ -602,261 +820,103 @@
 
 
 
-        
-    
 
-    
-        <h3 class="subsection-title">Methods</h3>
 
-        
-            
 
-    
 
-    <h4 class="name" id="getArticleAsSimpleJson"><span class="type-signature"></span>getArticleAsSimpleJson<span class="signature">(options<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Promise.&lt;Object, Error>}</span></h4>
 
-    
 
 
 
 
-<dl class="details">
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="main.js.html">main.js</a>, <a href="main.js.html#line67">line 67</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-        <dt class="important tag-deprecated">Deprecated:</dt><dd><ul class="dummy"><li>since 2.0.5</li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-see">See:</dt>
-    <dd class="tag-see">
-        <ul>
-            <li><p><a href="http://dev.wikia.com/api/v1#!/Articles/getAsSimpleJson_get_0">Articles/AsSimpleJson</a></p></li>
-        </ul>
-    </dd>
-    
-
-    
-</dl>
-
-
-
-
-
-<div class="description usertext">
-    <p>Get simplified article contents</p>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-        <th>Attributes</th>
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>options</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Object</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-
-            <td class="description last"><p>An Object containing every other parameter</p>
-                <h6>Properties</h6>
-                
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>id</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">number</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>A single article ID</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-            </td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
+    <h4 class="method-heading">Source</h4>
     <ul>
-<li>A Promise with an Object containing simple article data on fulfil, and Error on rejection</li>
+        <li class="method-source">
+            <a href="main.js.html">main.js</a><a href="main.js.html#source.93">, line 93</a>
+        </li>
+    </ul>
+
+
+
+    </article>
+
+        
+            
+
+
+    <article class="method">
+
+
+
+
+    
+
+
+    
+
+    <div class="method-type">
+    
+    </div>
+
+    <h4 class="method-name" id="getSearchSuggestions">getSearchSuggestions<span class="signature">(query)</span><span class="return-type-signature"> &rarr; {Promise.&lt;<a href="global.html#SearchSuggestionsRes">SearchSuggestionsRes</a>>}</span>
+    </h4>
+
+
+
+
+
+<div class="method-description">
+    
+    <p>Find suggested phrases for chosen query.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Parameters</h4>
+    
+
+<ul class="method-params">
+    
+
+        <li>
+            
+                <span class="param-name">query</span>
+            
+
+            
+                
+
+
+    <span class="param-type">
+        <code>string</code>
+    </span>
+    
+
+            
+
+            
+
+            
+
+            <div class="param-description"><p>Search query</p></div>
+            
+        </li>
+
+    
 </ul>
-</div>
-
-
-
-<dl class="param-type">
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">Promise.&lt;Object, Error></span>
-
-
-    </dd>
-</dl>
-
-    
-
-
-
-        
-            
-
-    
-
-    <h4 class="name" id="getArticlesDetails"><span class="type-signature"></span>getArticlesDetails<span class="signature">(options<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Promise.&lt;Object, Error>}</span></h4>
-
-    
 
 
 
 
-<dl class="details">
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="main.js.html">main.js</a>, <a href="main.js.html#line83">line 83</a>
-    </li></ul></dd>
+<div class="details">
     
 
     
@@ -884,751 +944,143 @@
     
 
     
-
-    
-    <dt class="tag-see">See:</dt>
-    <dd class="tag-see">
+        <h4 class="method-heading">See</h4>
         <ul>
-            <li><p><a href="http://dev.wikia.com/api/v1#!/Articles/getDetails_get_1">Articles/Details</a></p></li>
+            
+                <li><a href="global.html#SearchSuggestionsRes">SearchSuggestionsRes</a></li>
+            
         </ul>
-    </dd>
     
 
     
-</dl>
-
-
-
-
-
-<div class="description usertext">
-    <p>Get details about one or more articles</p>
 </div>
 
 
 
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-        <th>Attributes</th>
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>options</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Object</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-
-            <td class="description last"><p>An Object containing every other parameter</p>
-                <h6>Properties</h6>
-                
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-        <th>Attributes</th>
-        
-
-        
-        <th>Default</th>
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>ids</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Array.&lt;number></span>
-|
-
-<span class="param-type">number</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-                <td class="default">
-                
-                </td>
-            
-
-            <td class="description last"><p>An Array of article ids or a single article id</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>titles</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Array.&lt;string></span>
-|
-
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-                <td class="default">
-                
-                </td>
-            
-
-            <td class="description last"><p>An Array of article titles or a single article title, can be used alongside ids</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>abstract</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">number</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-                <td class="default">
-                
-                    <code>100</code>
-                
-                </td>
-            
-
-            <td class="description last"><p>The desired length for the article's abstract</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>width</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">number</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-                <td class="default">
-                
-                    <code>200</code>
-                
-                </td>
-            
-
-            <td class="description last"><p>The desired width for the thumbnail</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>height</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">number</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-                <td class="default">
-                
-                    <code>200</code>
-                
-                </td>
-            
-
-            <td class="description last"><p>The desired height for the thumbnail</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-            </td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
+    <h4 class="method-heading">Returns</h4>
     <ul>
-<li>A Promise with an Object containing articles details on fulfil, and Error on rejection</li>
-</ul>
-</div>
-
-
-
-<dl class="param-type">
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">Promise.&lt;Object, Error></span>
-
-
-    </dd>
-</dl>
-
     
-
-
-
-        
+        <li class="method-returns">
             
-
+                <code>Promise.&lt;SearchSuggestionsRes></code>
+            
+            
+        </li>
     
+    </ul>
 
-    <h4 class="name" id="getArticlesList"><span class="type-signature"></span>getArticlesList<span class="signature">(options<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Promise.&lt;Object, Error>}</span></h4>
 
-    
 
 
 
 
-<dl class="details">
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="main.js.html">main.js</a>, <a href="main.js.html#line116">line 116</a>
-    </li></ul></dd>
-    
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-see">See:</dt>
-    <dd class="tag-see">
-        <ul>
-            <li><p><a href="http://dev.wikia.com/api/v1#!/Articles/getList_get_2">Articles/List</a></p></li>
-        </ul>
-    </dd>
-    
-
-    
-</dl>
-
-
-
-
-
-<div class="description usertext">
-    <p>Get articles list in alphabetical order</p>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-        <th>Attributes</th>
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>options</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Object</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-
-            <td class="description last"><p>An Object containing every other parameter</p>
-                <h6>Properties</h6>
-                
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-        <th>Attributes</th>
-        
-
-        
-        <th>Default</th>
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>category</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-                <td class="default">
-                
-                </td>
-            
-
-            <td class="description last"><p>Return only articles belonging to the provided valid category title</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>namespaces</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Array.&lt;number></span>
-|
-
-<span class="param-type">number</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-                <td class="default">
-                
-                    <code>0</code>
-                
-                </td>
-            
-
-            <td class="description last"><p>Array of namespace ids or a single namespace id, see more: <a href="http://community.wikia.com/wiki/Help:Namespaces">http://community.wikia.com/wiki/Help:Namespaces</a></p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>limit</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">number</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-                <td class="default">
-                
-                    <code>25</code>
-                
-                </td>
-            
-
-            <td class="description last"><p>Limit the number of results</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>offset</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-                <td class="default">
-                
-                    <code>!</code>
-                
-                </td>
-            
-
-            <td class="description last"><p>Lexicographically minimal article title</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-            </td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
+    <h4 class="method-heading">Source</h4>
     <ul>
-<li>A Promise with an Object containing articles list on fulfil, and Error on rejection</li>
+        <li class="method-source">
+            <a href="main.js.html">main.js</a><a href="main.js.html#source.148">, line 148</a>
+        </li>
+    </ul>
+
+
+
+    </article>
+
+        
+            
+
+
+    <article class="method">
+
+
+
+
+    
+
+
+    
+
+    <div class="method-type">
+    
+    </div>
+
+    <h4 class="method-name" id="getTopArticles">getTopArticles<span class="signature">(request<span class="signature-attributes">opt</span>)</span><span class="return-type-signature"> &rarr; {Promise.&lt;<a href="global.html#TopArticlesRes">TopArticlesRes</a>>}</span>
+    </h4>
+
+
+
+
+
+<div class="method-description">
+    
+    <p>Get the most viewed articles from this wiki.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h4 class="method-heading">Parameters</h4>
+    
+
+<ul class="method-params">
+    
+
+        <li>
+            
+                <span class="param-name">request</span>
+            
+
+            
+                
+
+
+    <span class="param-type">
+        <code><a href="global.html#TopArticlesReq">TopArticlesReq</a></code>
+    </span>
+    
+
+            
+
+            
+                <span class="param-attributes">
+                
+                    &lt;optional&gt;<br>
+                
+
+                
+
+                
+                </span>
+            
+
+            
+
+            <div class="param-description"><p>Optional request parameters</p></div>
+            
+        </li>
+
+    
 </ul>
-</div>
-
-
-
-<dl class="param-type">
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">Promise.&lt;Object, Error></span>
-
-
-    </dd>
-</dl>
-
-    
-
-
-
-        
-            
-
-    
-
-    <h4 class="name" id="getArticlesListExpanded"><span class="type-signature"></span>getArticlesListExpanded<span class="signature">(options<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Promise.&lt;Object, Error>}</span></h4>
-
-    
 
 
 
 
-<dl class="details">
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="main.js.html">main.js</a>, <a href="main.js.html#line144">line 144</a>
-    </li></ul></dd>
+<div class="details">
     
 
     
@@ -1656,842 +1108,87 @@
     
 
     
-
-    
-    <dt class="tag-see">See:</dt>
-    <dd class="tag-see">
+        <h4 class="method-heading">See</h4>
         <ul>
-            <li><p><a href="http://dev.wikia.com/api/v1#!/Articles/getListExpanded_get_3">Articles/List?expand=1</a></p></li>
+            
+                <li><a href="global.html#TopArticlesReq">TopArticlesReq</a></li>
+            
+                <li><a href="global.html#TopArticlesRes">TopArticlesRes</a></li>
+            
         </ul>
-    </dd>
     
 
     
-</dl>
-
-
-
-
-
-<div class="description usertext">
-    <p>Get a list of pages on the current wiki</p>
 </div>
 
 
 
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-        <th>Attributes</th>
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>options</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Object</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-
-            <td class="description last"><p>An Object containing every other parameter</p>
-                <h6>Properties</h6>
-                
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-        <th>Attributes</th>
-        
-
-        
-        <th>Default</th>
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>category</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-                <td class="default">
-                
-                </td>
-            
-
-            <td class="description last"><p>Return only articles belonging to the provided valid category title</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>namespaces</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Array.&lt;number></span>
-|
-
-<span class="param-type">number</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-                <td class="default">
-                
-                    <code>0</code>
-                
-                </td>
-            
-
-            <td class="description last"><p>Array of namespace ids or a single namespace id, see more: <a href="http://community.wikia.com/wiki/Help:Namespaces">http://community.wikia.com/wiki/Help:Namespaces</a></p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>limit</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">number</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-                <td class="default">
-                
-                    <code>25</code>
-                
-                </td>
-            
-
-            <td class="description last"><p>Limit the number of results</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>offset</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-                <td class="default">
-                
-                    <code>!</code>
-                
-                </td>
-            
-
-            <td class="description last"><p>Lexicographically minimal article title</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-            </td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
+    <h4 class="method-heading">Returns</h4>
     <ul>
-<li>A Promise with an Object containing expanded articles list on fulfil, and Error on rejection</li>
-</ul>
-</div>
-
-
-
-<dl class="param-type">
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">Promise.&lt;Object, Error></span>
-
-
-    </dd>
-</dl>
-
     
-
-
-
-        
+        <li class="method-returns">
             
-
-    
-
-    <h4 class="name" id="getLatestActivity"><span class="type-signature"></span>getLatestActivity<span class="signature">(options<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Promise.&lt;Object, Error>}</span></h4>
-
-    
-
-
-
-
-<dl class="details">
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="main.js.html">main.js</a>, <a href="main.js.html#line39">line 39</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-        <dt class="important tag-deprecated">Deprecated:</dt><dd><ul class="dummy"><li>since 2.0.5</li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-see">See:</dt>
-    <dd class="tag-see">
-        <ul>
-            <li><p><a href="http://dev.wikia.com/api/v1#!/Activity/getLatestActivity_get_0">Activity/LatestActivity</a></p></li>
-        </ul>
-    </dd>
-    
-
-    
-</dl>
-
-
-
-
-
-<div class="description usertext">
-    <p>Get latest activity information</p>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-        <th>Attributes</th>
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
+                <code>Promise.&lt;TopArticlesRes></code>
             
-                <td class="name"><code>options</code></td>
             
-
-            <td class="type">
-            
-                
-<span class="param-type">Object</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-
-            <td class="description last"><p>An Object containing every other parameter</p>
-                <h6>Properties</h6>
-                
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-        <th>Attributes</th>
-        
-
-        
-        <th>Default</th>
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
+        </li>
     
+    </ul>
 
-        <tr>
-            
-                <td class="name"><code>limit</code></td>
-            
 
-            <td class="type">
-            
-                
-<span class="param-type">number</span>
 
 
-            
-            </td>
 
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
 
-                
 
-                
-                </td>
-            
 
-            
-                <td class="default">
-                
-                    <code>10</code>
-                
-                </td>
-            
 
-            <td class="description last"><p>Limit the number of results</p></td>
-        </tr>
 
-    
 
-        <tr>
-            
-                <td class="name"><code>namespaces</code></td>
-            
 
-            <td class="type">
-            
-                
-<span class="param-type">Array.&lt;number></span>
-|
 
-<span class="param-type">number</span>
 
 
-            
-            </td>
 
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-                <td class="default">
-                
-                    <code>0</code>
-                
-                </td>
-            
-
-            <td class="description last"><p>Array of namespace ids or a single namespace id, see more: <a href="http://community.wikia.com/wiki/Help:Namespaces">http://community.wikia.com/wiki/Help:Namespaces</a></p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>allowDuplicates</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">boolean</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-                <td class="default">
-                
-                    <code>true</code>
-                
-                </td>
-            
-
-            <td class="description last"><p>Set if duplicate values of an article's revisions made by the same user are not allowed</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-            </td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    <p>A Promise with an Object containing latest activity on fulfil, and Error on rejection</p>
-</div>
-
-
-
-<dl class="param-type">
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">Promise.&lt;Object, Error></span>
-
-
-    </dd>
-</dl>
-
-    
-
-
-
-        
-            
-
-    
-
-    <h4 class="name" id="getMostLinked"><span class="type-signature"></span>getMostLinked<span class="signature">()</span><span class="type-signature"> &rarr; {Promise.&lt;Object, Error>}</span></h4>
-
-    
-
-
-
-
-<dl class="details">
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="main.js.html">main.js</a>, <a href="main.js.html#line169">line 169</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-        <dt class="important tag-deprecated">Deprecated:</dt><dd><ul class="dummy"><li>since 2.0.5</li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-see">See:</dt>
-    <dd class="tag-see">
-        <ul>
-            <li><p><a href="http://dev.wikia.com/api/v1#!/Articles/getTop_get_4">Articles/MostLinked</a></p></li>
-        </ul>
-    </dd>
-    
-
-    
-</dl>
-
-
-
-
-
-<div class="description usertext">
-    <p>Get the most linked articles on this wiki</p>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
+    <h4 class="method-heading">Source</h4>
     <ul>
-<li>A Promise with an Object containing most linked articles on fulfil, and Error on rejection</li>
-</ul>
-</div>
+        <li class="method-source">
+            <a href="main.js.html">main.js</a><a href="main.js.html#source.116">, line 116</a>
+        </li>
+    </ul>
 
 
 
-<dl class="param-type">
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">Promise.&lt;Object, Error></span>
-
-
-    </dd>
-</dl>
-
-    
-
-
+    </article>
 
         
             
 
-    
 
-    <h4 class="name" id="getMostLinkedExpanded"><span class="type-signature"></span>getMostLinkedExpanded<span class="signature">()</span><span class="type-signature"> &rarr; {Promise.&lt;Object, Error>}</span></h4>
-
-    
+    <article class="method">
 
 
 
-
-<dl class="details">
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="main.js.html">main.js</a>, <a href="main.js.html#line180">line 180</a>
-    </li></ul></dd>
-    
 
     
 
-    
 
     
 
+    <div class="method-type">
     
+    </div>
 
+    <h4 class="method-name" id="getUserDetails">getUserDetails<span class="signature">(request)</span><span class="return-type-signature"> &rarr; {Promise.&lt;<a href="global.html#UserDetailsRes">UserDetailsRes</a>>}</span>
+    </h4>
+
+
+
+
+
+<div class="method-description">
     
-
-    
-
-    
-
-    
-        <dt class="important tag-deprecated">Deprecated:</dt><dd><ul class="dummy"><li>since 2.0.5</li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-see">See:</dt>
-    <dd class="tag-see">
-        <ul>
-            <li><p><a href="http://dev.wikia.com/api/v1#!/Articles/getTopExpanded_get_5">Articles/MostLinked?expand=1</a></p></li>
-        </ul>
-    </dd>
-    
-
-    
-</dl>
-
-
-
-
-
-<div class="description usertext">
-    <p>Get the most linked articles on this wiki (expanded results)</p>
+    <p>Get details about selected users.</p>
 </div>
 
 
@@ -2502,117 +1199,97 @@
 
 
 
+    <h4 class="method-heading">Parameters</h4>
+    
+
+<ul class="method-params">
+    
+
+        <li>
+            
+                <span class="param-name">request</span>
+            
+
+            
+                
+
+
+    <span class="param-type">
+        <code><a href="global.html#UserDetailsReq">UserDetailsReq</a></code>
+    </span>
+    
+
+            
+
+            
+
+            
+
+            <div class="param-description"><p>Request parameters</p></div>
+            
+        </li>
+
+    
+</ul>
 
 
 
 
 
+<div class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h4 class="method-heading">See</h4>
+        <ul>
+            
+                <li><a href="global.html#UserDetailsReq">UserDetailsReq</a></li>
+            
+                <li><a href="global.html#UserDetailsRes">UserDetailsRes</a></li>
+            
+        </ul>
+    
+
+    
+</div>
 
 
 
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
+    <h4 class="method-heading">Returns</h4>
     <ul>
-<li>A Promise with an Object containing most linked articles on fulfil, and Error on rejection</li>
-</ul>
-</div>
-
-
-
-<dl class="param-type">
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">Promise.&lt;Object, Error></span>
-
-
-    </dd>
-</dl>
-
     
-
-
-
-        
+        <li class="method-returns">
             
-
+                <code>Promise.&lt;UserDetailsRes></code>
+            
+            
+        </li>
     
-
-    <h4 class="name" id="getNavigationData"><span class="type-signature"></span>getNavigationData<span class="signature">()</span><span class="type-signature"> &rarr; {Promise.&lt;Object, Error>}</span></h4>
-
-    
-
-
-
-
-<dl class="details">
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="main.js.html">main.js</a>, <a href="main.js.html#line307">line 307</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-        <dt class="important tag-deprecated">Deprecated:</dt><dd><ul class="dummy"><li>since 2.0.5</li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-see">See:</dt>
-    <dd class="tag-see">
-        <ul>
-            <li><p><a href="http://dev.wikia.com/api/v1#!/Navigation/getData_get_0">Navigation/Data</a></p></li>
-        </ul>
-    </dd>
-    
-
-    
-</dl>
-
-
-
-
-
-<div class="description usertext">
-    <p>Get wiki navigation links (the main menu of given wiki)</p>
-</div>
+    </ul>
 
 
 
@@ -2629,65 +1306,60 @@
 
 
 
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
+    <h4 class="method-heading">Source</h4>
     <ul>
-<li>A Promise with an Object containing navigation data on fulfil, and Error on rejection</li>
-</ul>
-</div>
+        <li class="method-source">
+            <a href="main.js.html">main.js</a><a href="main.js.html#source.166">, line 166</a>
+        </li>
+    </ul>
 
 
 
-<dl class="param-type">
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">Promise.&lt;Object, Error></span>
-
-
-    </dd>
-</dl>
-
-    
-
-
+    </article>
 
         
             
 
-    
 
-    <h4 class="name" id="getNewArticles"><span class="type-signature"></span>getNewArticles<span class="signature">(options<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Promise.&lt;Object, Error>}</span></h4>
-
-    
+    <article class="method">
 
 
 
-
-<dl class="details">
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="main.js.html">main.js</a>, <a href="main.js.html#line195">line 195</a>
-    </li></ul></dd>
-    
 
     
 
+
+    
+
+    <div class="method-type">
+    
+    </div>
+
+    <h4 class="method-name" id="getWikiVariables">getWikiVariables<span class="signature">()</span><span class="return-type-signature"> &rarr; {Promise.&lt;<a href="global.html#WikiVariablesRes">WikiVariablesRes</a>>}</span>
+    </h4>
+
+
+
+
+
+<div class="method-description">
+    
+    <p>Get wiki data, including key values, navigation data and more.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="details">
     
 
     
@@ -2701,8 +1373,6 @@
     
 
     
-        <dt class="important tag-deprecated">Deprecated:</dt><dd><ul class="dummy"><li>since 2.0.5</li></ul></dd>
-    
 
     
 
@@ -2715,529 +1385,32 @@
     
 
     
-    <dt class="tag-see">See:</dt>
-    <dd class="tag-see">
+
+    
+        <h4 class="method-heading">See</h4>
         <ul>
-            <li><p><a href="http://dev.wikia.com/api/v1#!/Articles/getNew_get_6">Articles/New</a></p></li>
+            
+                <li><a href="global.html#WikiVariablesRes">WikiVariablesRes</a></li>
+            
         </ul>
-    </dd>
     
 
     
-</dl>
-
-
-
-
-
-<div class="description usertext">
-    <p>Get list of new articles on this wiki</p>
 </div>
 
 
 
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-        <th>Attributes</th>
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>options</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Object</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-
-            <td class="description last"><p>An Object containing every other parameter</p>
-                <h6>Properties</h6>
-                
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-        <th>Attributes</th>
-        
-
-        
-        <th>Default</th>
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>namespaces</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Array.&lt;number></span>
-|
-
-<span class="param-type">number</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-                <td class="default">
-                
-                </td>
-            
-
-            <td class="description last"><p>Array of namespace ids or a single namespace id, see more: <a href="http://community.wikia.com/wiki/Help:Namespaces">http://community.wikia.com/wiki/Help:Namespaces</a></p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>limit</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">number</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-                <td class="default">
-                
-                    <code>20</code>
-                
-                </td>
-            
-
-            <td class="description last"><p>Limit the number of result - maximum limit is 100</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>minArticleQuality</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">number</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-                <td class="default">
-                
-                    <code>10</code>
-                
-                </td>
-            
-
-            <td class="description last"><p>Minimal value of article quality. Ranges from 0 to 99</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-            </td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
+    <h4 class="method-heading">Returns</h4>
     <ul>
-<li>A Promise with an Object containing new articles on fulfil, and Error on rejection</li>
-</ul>
-</div>
-
-
-
-<dl class="param-type">
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">Promise.&lt;Object, Error></span>
-
-
-    </dd>
-</dl>
-
     
-
-
-
-        
+        <li class="method-returns">
             
-
-    
-
-    <h4 class="name" id="getPopularArticles"><span class="type-signature"></span>getPopularArticles<span class="signature">(options<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Promise.&lt;Object, Error>}</span></h4>
-
-    
-
-
-
-
-<dl class="details">
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="main.js.html">main.js</a>, <a href="main.js.html#line209">line 209</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-        <dt class="important tag-deprecated">Deprecated:</dt><dd><ul class="dummy"><li>since 2.0.5</li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-see">See:</dt>
-    <dd class="tag-see">
-        <ul>
-            <li><p><a href="http://dev.wikia.com/api/v1#!/Articles/getPopular_get_7">Articles/Popular</a></p></li>
-        </ul>
-    </dd>
-    
-
-    
-</dl>
-
-
-
-
-
-<div class="description usertext">
-    <p>Get popular articles for the current wiki (from the beginning of time)</p>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-        <th>Attributes</th>
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
+                <code>Promise.&lt;WikiVariablesRes></code>
             
-                <td class="name"><code>options</code></td>
             
-
-            <td class="type">
-            
-                
-<span class="param-type">Object</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-
-            <td class="description last"><p>An Object containing every other parameter</p>
-                <h6>Properties</h6>
-                
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-        <th>Attributes</th>
-        
-
-        
-        <th>Default</th>
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
+        </li>
     
-
-        <tr>
-            
-                <td class="name"><code>limit</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">integer</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-                <td class="default">
-                
-                    <code>10</code>
-                
-                </td>
-            
-
-            <td class="description last"><p>Limit the number of result - maximum limit is 10</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>baseArticleId</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">integer</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-                <td class="default">
-                
-                </td>
-            
-
-            <td class="description last"><p>Trending and popular related to article with given id</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-            </td>
-        </tr>
-
-    
-    </tbody>
-</table>
+    </ul>
 
 
 
@@ -3254,2722 +1427,16 @@
 
 
 
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
+    <h4 class="method-heading">Source</h4>
     <ul>
-<li>A Promise with an Object containing popular articles on fulfil, and Error on rejection</li>
-</ul>
-</div>
+        <li class="method-source">
+            <a href="main.js.html">main.js</a><a href="main.js.html#source.136">, line 136</a>
+        </li>
+    </ul>
 
 
 
-<dl class="param-type">
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">Promise.&lt;Object, Error></span>
-
-
-    </dd>
-</dl>
-
-    
-
-
-
-        
-            
-
-    
-
-    <h4 class="name" id="getPopularArticlesExpanded"><span class="type-signature"></span>getPopularArticlesExpanded<span class="signature">(options<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Promise.&lt;Object, Error>}</span></h4>
-
-    
-
-
-
-
-<dl class="details">
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="main.js.html">main.js</a>, <a href="main.js.html#line223">line 223</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-        <dt class="important tag-deprecated">Deprecated:</dt><dd><ul class="dummy"><li>since 2.0.5</li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-see">See:</dt>
-    <dd class="tag-see">
-        <ul>
-            <li><p><a href="http://dev.wikia.com/api/v1#!/Articles/getPopularExpanded_get_8">Articles/Popular?expand=1</a></p></li>
-        </ul>
-    </dd>
-    
-
-    
-</dl>
-
-
-
-
-
-<div class="description usertext">
-    <p>Get popular articles for the current wiki (from the beginning of time)</p>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-        <th>Attributes</th>
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>options</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Object</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-
-            <td class="description last"><p>An Object containing every other parameter</p>
-                <h6>Properties</h6>
-                
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-        <th>Attributes</th>
-        
-
-        
-        <th>Default</th>
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>limit</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">integer</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-                <td class="default">
-                
-                    <code>10</code>
-                
-                </td>
-            
-
-            <td class="description last"><p>Limit the number of result - maximum limit is 10</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>baseArticleId</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">integer</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-                <td class="default">
-                
-                </td>
-            
-
-            <td class="description last"><p>Trending and popular related to article with given id</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-            </td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    <ul>
-<li>A Promise with an Object containing popular articles on fulfil, and Error on rejection</li>
-</ul>
-</div>
-
-
-
-<dl class="param-type">
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">Promise.&lt;Object, Error></span>
-
-
-    </dd>
-</dl>
-
-    
-
-
-
-        
-            
-
-    
-
-    <h4 class="name" id="getRecentlyChangedArticles"><span class="type-signature"></span>getRecentlyChangedArticles<span class="signature">(options<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Promise.&lt;Object, Error>}</span></h4>
-
-    
-
-
-
-
-<dl class="details">
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="main.js.html">main.js</a>, <a href="main.js.html#line54">line 54</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-        <dt class="important tag-deprecated">Deprecated:</dt><dd><ul class="dummy"><li>since 2.0.5</li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-see">See:</dt>
-    <dd class="tag-see">
-        <ul>
-            <li><p><a href="http://dev.wikia.com/api/v1#!/Activity/getRecentlyChangedArticles_get_1">Activity/RecentlyChangedArticles</a></p></li>
-        </ul>
-    </dd>
-    
-
-    
-</dl>
-
-
-
-
-
-<div class="description usertext">
-    <p>Get recently changed articles</p>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-        <th>Attributes</th>
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>options</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Object</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-
-            <td class="description last"><p>An Object containing every other parameter</p>
-                <h6>Properties</h6>
-                
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-        <th>Attributes</th>
-        
-
-        
-        <th>Default</th>
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>limit</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">number</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-                <td class="default">
-                
-                    <code>10</code>
-                
-                </td>
-            
-
-            <td class="description last"><p>Limit the number of results</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>namespaces</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Array.&lt;number></span>
-|
-
-<span class="param-type">number</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-                <td class="default">
-                
-                    <code>0</code>
-                
-                </td>
-            
-
-            <td class="description last"><p>Array of namespace ids or a single namespace id, see more: <a href="http://community.wikia.com/wiki/Help:Namespaces">http://community.wikia.com/wiki/Help:Namespaces</a></p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>allowDuplicates</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">boolean</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-                <td class="default">
-                
-                    <code>true</code>
-                
-                </td>
-            
-
-            <td class="description last"><p>Set if duplicate values of an article's revisions made by the same user are not allowed</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-            </td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    <p>A Promise with an Object containing recently changed articles on fulfil, and Error on rejection</p>
-</div>
-
-
-
-<dl class="param-type">
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">Promise.&lt;Object, Error></span>
-
-
-    </dd>
-</dl>
-
-    
-
-
-
-        
-            
-
-    
-
-    <h4 class="name" id="getRelatedPages"><span class="type-signature"></span>getRelatedPages<span class="signature">(options)</span><span class="type-signature"> &rarr; {Promise.&lt;Object, Error>}</span></h4>
-
-    
-
-
-
-
-<dl class="details">
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="main.js.html">main.js</a>, <a href="main.js.html#line322">line 322</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-        <dt class="important tag-deprecated">Deprecated:</dt><dd><ul class="dummy"><li>since 2.0.5</li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-see">See:</dt>
-    <dd class="tag-see">
-        <ul>
-            <li><p><a href="http://dev.wikia.com/api/v1#!/RelatedPages/getList_get_0">RelatedPages/List</a></p></li>
-        </ul>
-    </dd>
-    
-
-    
-</dl>
-
-
-
-
-
-<div class="description usertext">
-    <p>Get pages related to a given article ID
-WARNING: RelatedPages extension is disabled on every wiki</p>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>options</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Object</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>An Object containing every other parameter</p>
-                <h6>Properties</h6>
-                
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-        <th>Attributes</th>
-        
-
-        
-        <th>Default</th>
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>ids</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Array.&lt;number></span>
-|
-
-<span class="param-type">number</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-
-                
-
-                
-                </td>
-            
-
-            
-                <td class="default">
-                
-                </td>
-            
-
-            <td class="description last"><p>An Array of article ids or a single article id</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>limit</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">number</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-                <td class="default">
-                
-                    <code>3</code>
-                
-                </td>
-            
-
-            <td class="description last"><p>Limit the number of results</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-            </td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    <ul>
-<li>A Promise with an Object containing related pages on fulfil, and Error on rejection</li>
-</ul>
-</div>
-
-
-
-<dl class="param-type">
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">Promise.&lt;Object, Error></span>
-
-
-    </dd>
-</dl>
-
-    
-
-
-
-        
-            
-
-    
-
-    <h4 class="name" id="getSearchList"><span class="type-signature"></span>getSearchList<span class="signature">(options)</span><span class="type-signature"> &rarr; {Promise.&lt;Object, Error>}</span></h4>
-
-    
-
-
-
-
-<dl class="details">
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="main.js.html">main.js</a>, <a href="main.js.html#line341">line 341</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-        <dt class="important tag-deprecated">Deprecated:</dt><dd><ul class="dummy"><li>since 2.0.5</li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-see">See:</dt>
-    <dd class="tag-see">
-        <ul>
-            <li><p><a href="http://dev.wikia.com/api/v1#!/Search/getList_get_1">Search/List</a></p></li>
-        </ul>
-    </dd>
-    
-
-    
-</dl>
-
-
-
-
-
-<div class="description usertext">
-    <p>Do search for given phrase</p>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>options</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Object</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>An Object containing every other parameter</p>
-                <h6>Properties</h6>
-                
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-        <th>Attributes</th>
-        
-
-        
-        <th>Default</th>
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>query</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-
-                
-
-                
-                </td>
-            
-
-            
-                <td class="default">
-                
-                </td>
-            
-
-            <td class="description last"><p>Search query</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>type</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-                <td class="default">
-                
-                    <code>articles</code>
-                
-                </td>
-            
-
-            <td class="description last"><p>The search type, either articles (default) or videos. For 'videos' value, this parameter should be used with namespaces parameter (namespaces needs to be set to 6)</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>rank</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-                <td class="default">
-                
-                    <code>default</code>
-                
-                </td>
-            
-
-            <td class="description last"><p>The ranking to use in fetching the list of results, one of default, newest, oldest, recently-modified, stable, most-viewed, freshest, stalest</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>limit</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">number</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-                <td class="default">
-                
-                    <code>25</code>
-                
-                </td>
-            
-
-            <td class="description last"><p>Limit the number of results</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>minArticleQuality</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">number</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-                <td class="default">
-                
-                    <code>10</code>
-                
-                </td>
-            
-
-            <td class="description last"><p>Minimal value of article quality. Ranges from 0 to 99</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>batch</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">number</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-                <td class="default">
-                
-                    <code>1</code>
-                
-                </td>
-            
-
-            <td class="description last"><p>The batch (page) of results to fetch</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>namespaces</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Array.&lt;number></span>
-|
-
-<span class="param-type">number</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-                <td class="default">
-                
-                    <code>[0, 14]</code>
-                
-                </td>
-            
-
-            <td class="description last"><p>Array of namespace ids or a single namespace id, see more: <a href="http://community.wikia.com/wiki/Help:Namespaces">http://community.wikia.com/wiki/Help:Namespaces</a></p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-            </td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    <ul>
-<li>A Promise with an Object containing search results on fulfil, and Error on rejection</li>
-</ul>
-</div>
-
-
-
-<dl class="param-type">
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">Promise.&lt;Object, Error></span>
-
-
-    </dd>
-</dl>
-
-    
-
-
-
-        
-            
-
-    
-
-    <h4 class="name" id="getSearchSuggestions"><span class="type-signature"></span>getSearchSuggestions<span class="signature">(options)</span><span class="type-signature"> &rarr; {Promise.&lt;Object, Error>}</span></h4>
-
-    
-
-
-
-
-<dl class="details">
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="main.js.html">main.js</a>, <a href="main.js.html#line353">line 353</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-see">See:</dt>
-    <dd class="tag-see">
-        <ul>
-            <li><p><a href="http://dev.wikia.com/api/v1#!/SearchSuggestions/getList_get_0">SearchSuggestions/List</a></p></li>
-        </ul>
-    </dd>
-    
-
-    
-</dl>
-
-
-
-
-
-<div class="description usertext">
-    <p>Find suggested phrases for chosen query</p>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>options</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Object</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>An Object containing every other parameter</p>
-                <h6>Properties</h6>
-                
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>query</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Search query</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-            </td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    <ul>
-<li>A Promise with an Object containing search suggestions on fulfil, and Error on rejection</li>
-</ul>
-</div>
-
-
-
-<dl class="param-type">
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">Promise.&lt;Object, Error></span>
-
-
-    </dd>
-</dl>
-
-    
-
-
-
-        
-            
-
-    
-
-    <h4 class="name" id="getTopArticles"><span class="type-signature"></span>getTopArticles<span class="signature">(options<span class="signature-attributes">opt</span>, baseArticleId<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Promise.&lt;Object, Error>}</span></h4>
-
-    
-
-
-
-
-<dl class="details">
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="main.js.html">main.js</a>, <a href="main.js.html#line238">line 238</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-see">See:</dt>
-    <dd class="tag-see">
-        <ul>
-            <li><p><a href="http://dev.wikia.com/api/v1#!/Articles/getTop_get_9">Aricles/Top</a></p></li>
-        </ul>
-    </dd>
-    
-
-    
-</dl>
-
-
-
-
-
-<div class="description usertext">
-    <p>Get the most viewed articles on this wiki</p>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-        <th>Attributes</th>
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>options</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Object</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-
-            <td class="description last"><p>An Object containing every other parameter</p>
-                <h6>Properties</h6>
-                
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-        <th>Attributes</th>
-        
-
-        
-        <th>Default</th>
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>namespaces</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Array.&lt;number></span>
-|
-
-<span class="param-type">number</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-                <td class="default">
-                
-                </td>
-            
-
-            <td class="description last"><ul>
-<li>Array of namespace ids or a single namespace id, see more: <a href="http://community.wikia.com/wiki/Help:Namespaces">http://community.wikia.com/wiki/Help:Namespaces</a></li>
-</ul></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>category</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-                <td class="default">
-                
-                </td>
-            
-
-            <td class="description last"><p>Return only articles belonging to the provided valid category title</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>limit</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">number</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-                <td class="default">
-                
-                    <code>10</code>
-                
-                </td>
-            
-
-            <td class="description last"><p>Limit the number of result - maximum limit is 250</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-            </td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>baseArticleId</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">number</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-
-            <td class="description last"><p>Trending and popular related to article with given id</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    <ul>
-<li>A Promise with an Object containing top articles on fulfil, and Error on rejection</li>
-</ul>
-</div>
-
-
-
-<dl class="param-type">
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">Promise.&lt;Object, Error></span>
-
-
-    </dd>
-</dl>
-
-    
-
-
-
-        
-            
-
-    
-
-    <h4 class="name" id="getTopArticlesExpanded"><span class="type-signature"></span>getTopArticlesExpanded<span class="signature">(options<span class="signature-attributes">opt</span>, baseArticleId<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Promise.&lt;Object, Error>}</span></h4>
-
-    
-
-
-
-
-<dl class="details">
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="main.js.html">main.js</a>, <a href="main.js.html#line266">line 266</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-see">See:</dt>
-    <dd class="tag-see">
-        <ul>
-            <li><p><a href="http://dev.wikia.com/api/v1#!/Articles/getTopExpanded_get_10">Aricles/Top?expand=1</a></p></li>
-        </ul>
-    </dd>
-    
-
-    
-</dl>
-
-
-
-
-
-<div class="description usertext">
-    <p>Get the most viewed articles on this wiki (expanded results)</p>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-        <th>Attributes</th>
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>options</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Object</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-
-            <td class="description last"><p>An Object containing every other parameter</p>
-                <h6>Properties</h6>
-                
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-        <th>Attributes</th>
-        
-
-        
-        <th>Default</th>
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>namespaces</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Array.&lt;number></span>
-|
-
-<span class="param-type">number</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-                <td class="default">
-                
-                </td>
-            
-
-            <td class="description last"><p>Array of namespace ids or a single namespace id, see more: <a href="http://community.wikia.com/wiki/Help:Namespaces">http://community.wikia.com/wiki/Help:Namespaces</a></p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>category</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-                <td class="default">
-                
-                </td>
-            
-
-            <td class="description last"><p>Return only articles belonging to the provided valid category title</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>limit</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">number</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-                <td class="default">
-                
-                    <code>10</code>
-                
-                </td>
-            
-
-            <td class="description last"><p>Limit the number of result - maximum limit is 250</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-            </td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>baseArticleId</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">number</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-
-            <td class="description last"><p>Trending and popular related to article with given id</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    <ul>
-<li>A Promise with an Object containing top articles on fulfil, and Error on rejection</li>
-</ul>
-</div>
-
-
-
-<dl class="param-type">
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">Promise.&lt;Object, Error></span>
-
-
-    </dd>
-</dl>
-
-    
-
-
-
-        
-            
-
-    
-
-    <h4 class="name" id="getUserDetails"><span class="type-signature"></span>getUserDetails<span class="signature">(options)</span><span class="type-signature"> &rarr; {Promise.&lt;Object, Error>}</span></h4>
-
-    
-
-
-
-
-<dl class="details">
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="main.js.html">main.js</a>, <a href="main.js.html#line376">line 376</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-see">See:</dt>
-    <dd class="tag-see">
-        <ul>
-            <li><p><a href="http://dev.wikia.com/api/v1#!/User/getDetails_get_0">User/Details</a></p></li>
-        </ul>
-    </dd>
-    
-
-    
-</dl>
-
-
-
-
-
-<div class="description usertext">
-    <p>Get details about selected users</p>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>options</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Object</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>An Object containing every other parameter</p>
-                <h6>Properties</h6>
-                
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-        <th>Attributes</th>
-        
-
-        
-        <th>Default</th>
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>ids</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Array.&lt;number></span>
-|
-
-<span class="param-type">number</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-
-                
-
-                
-                </td>
-            
-
-            
-                <td class="default">
-                
-                </td>
-            
-
-            <td class="description last"><p>An Array of user ids or a single user id</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>size</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">number</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-                <td class="default">
-                
-                    <code>100</code>
-                
-                </td>
-            
-
-            <td class="description last"><p>The desired width (and height, because it is a square) for the thumbnail, defaults to 100, 0 for no thumbnail</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-            </td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    <ul>
-<li>A Promise with an Object containing user details on fulfil, and Error on rejection</li>
-</ul>
-</div>
-
-
-
-<dl class="param-type">
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">Promise.&lt;Object, Error></span>
-
-
-    </dd>
-</dl>
-
-    
-
-
-
-        
-            
-
-    
-
-    <h4 class="name" id="getWikiVariables"><span class="type-signature"></span>getWikiVariables<span class="signature">()</span><span class="type-signature"> &rarr; {Promise.&lt;Object, Error>}</span></h4>
-
-    
-
-
-
-
-<dl class="details">
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="main.js.html">main.js</a>, <a href="main.js.html#line290">line 290</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-see">See:</dt>
-    <dd class="tag-see">
-        <ul>
-            <li><p><a href="http://dev.wikia.com/api/v1#!/Mercury/getWikiData_get_0">Mercury/WikiVariables</a></p></li>
-        </ul>
-    </dd>
-    
-
-    
-</dl>
-
-
-
-
-
-<div class="description usertext">
-    <p>Get wiki data, including key values, navigation data, and more</p>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    <ul>
-<li>A Promise with an Object containing wiki data on fulfil, and Error on rejection</li>
-</ul>
-</div>
-
-
-
-<dl class="param-type">
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">Promise.&lt;Object, Error></span>
-
-
-    </dd>
-</dl>
-
-    
-
-
+    </article>
 
         
     
@@ -5984,21 +1451,17 @@ WARNING: RelatedPages extension is disabled on every wiki</p>
 
 
 
-    
-    
-</div>
+  </div>
+</main>
 
-<br class="clear">
-
-<footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.11</a> using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+<footer class="layout-footer">
+  <div class="container">
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.11</a>
+  </div>
 </footer>
 
-<script>prettyPrint();</script>
-<script src="scripts/polyfill.js"></script>
-<script src="scripts/linenumber.js"></script>
 
 
-
+<script src="scripts/prism.dev.js"></script>
 </body>
 </html>

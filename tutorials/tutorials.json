@@ -1,0 +1,11 @@
+{
+    "getting-started": {
+        "title": "Getting started"
+    },
+    "endpoints": {
+        "title": "Endpoints"
+    },
+    "migration-guide": {
+        "title": "Migration guide (3.x)"
+    }
+}

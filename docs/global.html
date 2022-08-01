@@ -1,0 +1,3948 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>nodewikiaapi: Global</title>
+    
+      <link type="text/css" rel="stylesheet" href="styles/vendor/prism-tomorrow-night.css">
+    
+    <link type="text/css" rel="stylesheet" href="styles/styles.css">
+    
+</head>
+<body>
+
+<header class="layout-header">
+  
+  <h1>
+    <a href="./index.html">
+      nodewikiaapi
+    </a>
+  </h1>
+  <nav class="layout-nav">
+    <ul><li class="nav-heading">Tutorials</li><li class="nav-item"><a href="tutorial-endpoints.html">Endpoints</a></li><li class="nav-item"><a href="tutorial-getting-started.html">Getting started</a></li><li class="nav-item"><a href="tutorial-migration-guide.html">Migration guide (3.x)</a></li></ul><ul><li class="nav-heading">Classes</li><li class="nav-heading"><span class="nav-item-type type-class" title="class">C</span><span class="nav-item-name is-class"><a href="WikiaAPI.html">WikiaAPI</a></span></li><li class="nav-item"><span class="nav-item-type type-member" title="member">M</span><span class="nav-item-name is-member"><a href="WikiaAPI.html#apiBasepath">apiBasepath</a></span></li><li class="nav-item"><span class="nav-item-type type-member" title="member">M</span><span class="nav-item-name is-member"><a href="WikiaAPI.html#language">language</a></span></li><li class="nav-item"><span class="nav-item-type type-member" title="member">M</span><span class="nav-item-name is-member"><a href="WikiaAPI.html#subdomain">subdomain</a></span></li><li class="nav-item"><span class="nav-item-type type-function" title="function">F</span><span class="nav-item-name is-function"><a href="WikiaAPI.html#getArticleDetails">getArticleDetails</a></span></li><li class="nav-item"><span class="nav-item-type type-function" title="function">F</span><span class="nav-item-name is-function"><a href="WikiaAPI.html#getArticleList">getArticleList</a></span></li><li class="nav-item"><span class="nav-item-type type-function" title="function">F</span><span class="nav-item-name is-function"><a href="WikiaAPI.html#getSearchSuggestions">getSearchSuggestions</a></span></li><li class="nav-item"><span class="nav-item-type type-function" title="function">F</span><span class="nav-item-name is-function"><a href="WikiaAPI.html#getTopArticles">getTopArticles</a></span></li><li class="nav-item"><span class="nav-item-type type-function" title="function">F</span><span class="nav-item-name is-function"><a href="WikiaAPI.html#getUserDetails">getUserDetails</a></span></li><li class="nav-item"><span class="nav-item-type type-function" title="function">F</span><span class="nav-item-name is-function"><a href="WikiaAPI.html#getWikiVariables">getWikiVariables</a></span></li></ul><li class="nav-heading"><a href="global.html">Globals</a></li><li class="nav-item"><span class="nav-item-type type-typedef" title="typedef">T</span><span class="nav-item-name is-typedef"><a href="global.html#ArticleDetailsReq">ArticleDetailsReq</a></span></li><li class="nav-item"><span class="nav-item-type type-typedef" title="typedef">T</span><span class="nav-item-name is-typedef"><a href="global.html#ArticleDetailsRes">ArticleDetailsRes</a></span></li><li class="nav-item"><span class="nav-item-type type-typedef" title="typedef">T</span><span class="nav-item-name is-typedef"><a href="global.html#ArticleDetailsResItem">ArticleDetailsResItem</a></span></li><li class="nav-item"><span class="nav-item-type type-typedef" title="typedef">T</span><span class="nav-item-name is-typedef"><a href="global.html#ArticleDetailsResItemRevision">ArticleDetailsResItemRevision</a></span></li><li class="nav-item"><span class="nav-item-type type-typedef" title="typedef">T</span><span class="nav-item-name is-typedef"><a href="global.html#ArticleItem">ArticleItem</a></span></li><li class="nav-item"><span class="nav-item-type type-typedef" title="typedef">T</span><span class="nav-item-name is-typedef"><a href="global.html#ArticleListReq">ArticleListReq</a></span></li><li class="nav-item"><span class="nav-item-type type-typedef" title="typedef">T</span><span class="nav-item-name is-typedef"><a href="global.html#ArticleListRes">ArticleListRes</a></span></li><li class="nav-item"><span class="nav-item-type type-typedef" title="typedef">T</span><span class="nav-item-name is-typedef"><a href="global.html#SearchSuggestionsRes">SearchSuggestionsRes</a></span></li><li class="nav-item"><span class="nav-item-type type-typedef" title="typedef">T</span><span class="nav-item-name is-typedef"><a href="global.html#SearchSuggestionsResItem">SearchSuggestionsResItem</a></span></li><li class="nav-item"><span class="nav-item-type type-typedef" title="typedef">T</span><span class="nav-item-name is-typedef"><a href="global.html#TopArticlesReq">TopArticlesReq</a></span></li><li class="nav-item"><span class="nav-item-type type-typedef" title="typedef">T</span><span class="nav-item-name is-typedef"><a href="global.html#TopArticlesRes">TopArticlesRes</a></span></li><li class="nav-item"><span class="nav-item-type type-typedef" title="typedef">T</span><span class="nav-item-name is-typedef"><a href="global.html#UserDetailsReq">UserDetailsReq</a></span></li><li class="nav-item"><span class="nav-item-type type-typedef" title="typedef">T</span><span class="nav-item-name is-typedef"><a href="global.html#UserDetailsRes">UserDetailsRes</a></span></li><li class="nav-item"><span class="nav-item-type type-typedef" title="typedef">T</span><span class="nav-item-name is-typedef"><a href="global.html#UserDetailsResItem">UserDetailsResItem</a></span></li><li class="nav-item"><span class="nav-item-type type-typedef" title="typedef">T</span><span class="nav-item-name is-typedef"><a href="global.html#WikiVariablesRes">WikiVariablesRes</a></span></li><li class="nav-item"><span class="nav-item-type type-typedef" title="typedef">T</span><span class="nav-item-name is-typedef"><a href="global.html#WikiVariablesResAppleIcon">WikiVariablesResAppleIcon</a></span></li><li class="nav-item"><span class="nav-item-type type-typedef" title="typedef">T</span><span class="nav-item-name is-typedef"><a href="global.html#WikiVariablesResData">WikiVariablesResData</a></span></li><li class="nav-item"><span class="nav-item-type type-typedef" title="typedef">T</span><span class="nav-item-name is-typedef"><a href="global.html#WikiVariablesResHtmlTitle">WikiVariablesResHtmlTitle</a></span></li><li class="nav-item"><span class="nav-item-type type-typedef" title="typedef">T</span><span class="nav-item-name is-typedef"><a href="global.html#WikiVariablesResLanguage">WikiVariablesResLanguage</a></span></li>
+  </nav>
+</header>
+
+
+<main class="layout-main ">
+  <div class="container">
+    <p class="page-kind"></p>
+    <h1 class="page-title">Global</h1>
+    
+
+
+
+
+<section>
+
+
+<header class="not-class">
+
+
+    
+        
+        <!-- <h2></h2> -->
+
+        
+
+        
+
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+
+
+
+    
+        
+
+        
+
+
+<div class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</div>
+
+
+        
+    
+    </div>
+
+    
+
+    
+
+     
+
+    
+
+    
+
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Type Definitions</h3>
+
+        
+                
+
+<article class="member">
+    <div class="method-type">
+        
+    </div>
+<h4 class="member-name" id="ArticleDetailsReq">ArticleDetailsReq</h4>
+
+
+
+
+
+
+    <h4>Type</h4>
+    <ul>
+        <li>
+            
+
+
+    <span class="param-type">
+        <code>Object</code>
+    </span>
+    
+
+        </li>
+    </ul>
+
+
+
+
+
+    <h4 class="method-heading">Properties</h4>
+    
+
+<ul class="method-params">
+
+
+    <li>
+        
+            <span class="param-name">ids</span>
+        
+
+        
+            
+
+
+    <span class="param-type">
+        <code>number</code>
+    </span>
+    |
+
+    <span class="param-type">
+        <code>Array.&lt;number></code>
+    </span>
+    
+
+        
+
+        
+            <span class="param-attributes">
+            
+                &lt;optional&gt;<br>
+            
+
+            
+            </span>
+        
+
+        
+            <span class="param-default">
+            
+            </span>
+        
+
+        <div class="param-description">
+            <p>An array of article ids or a single article id</p>
+        </div>
+
+    </li>
+    
+
+    <li>
+        
+            <span class="param-name">titles</span>
+        
+
+        
+            
+
+
+    <span class="param-type">
+        <code>string</code>
+    </span>
+    |
+
+    <span class="param-type">
+        <code>Array.&lt;string></code>
+    </span>
+    
+
+        
+
+        
+            <span class="param-attributes">
+            
+                &lt;optional&gt;<br>
+            
+
+            
+            </span>
+        
+
+        
+            <span class="param-default">
+            
+            </span>
+        
+
+        <div class="param-description">
+            <p>An array of article titles or a single article title, can be used alongside ids</p>
+        </div>
+
+    </li>
+    
+
+    <li>
+        
+            <span class="param-name">abstract</span>
+        
+
+        
+            
+
+
+    <span class="param-type">
+        <code>number</code>
+    </span>
+    
+
+        
+
+        
+            <span class="param-attributes">
+            
+                &lt;optional&gt;<br>
+            
+
+            
+            </span>
+        
+
+        
+            <span class="param-default">
+            
+                <code>100</code>
+            
+            </span>
+        
+
+        <div class="param-description">
+            <p>The desired length for the article's abstract</p>
+        </div>
+
+    </li>
+    
+</ul>
+
+
+
+
+<div class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h4 class="method-heading">See</h4>
+        <ul>
+            
+                <li><a href="WikiaAPI.html#getArticleDetails">WikiaAPI#getArticleDetails</a></li>
+            
+        </ul>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    <h4>Source</h4>
+    <ul>
+        <li class="method-source">
+            <a href="req.js.html">req.js</a><a href="req.js.html#source.3">, line 3</a>
+        </li>
+    </ul>
+
+
+</article>
+            
+                
+
+<article class="member">
+    <div class="method-type">
+        
+    </div>
+<h4 class="member-name" id="ArticleDetailsRes">ArticleDetailsRes</h4>
+
+
+
+
+
+
+    <h4>Type</h4>
+    <ul>
+        <li>
+            
+
+
+    <span class="param-type">
+        <code>Object</code>
+    </span>
+    
+
+        </li>
+    </ul>
+
+
+
+
+
+    <h4 class="method-heading">Properties</h4>
+    
+
+<ul class="method-params">
+
+
+    <li>
+        
+            <span class="param-name">items</span>
+        
+
+        
+            
+
+
+    <span class="param-type">
+        <code>Object.&lt;number, <a href="global.html#ArticleDetailsResItem">ArticleDetailsResItem</a>></code>
+    </span>
+    
+
+        
+
+        
+
+        
+
+        <div class="param-description">
+            <p>Dictionary mapping article ids to objects describing them</p>
+        </div>
+
+    </li>
+    
+
+    <li>
+        
+            <span class="param-name">basepath</span>
+        
+
+        
+            
+
+
+    <span class="param-type">
+        <code>string</code>
+    </span>
+    
+
+        
+
+        
+
+        
+
+        <div class="param-description">
+            <p>URL of associated wiki</p>
+        </div>
+
+    </li>
+    
+</ul>
+
+
+
+
+<div class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h4 class="method-heading">See</h4>
+        <ul>
+            
+                <li><a href="WikiaAPI.html#getArticleDetails">WikiaAPI#getArticleDetails</a></li>
+            
+        </ul>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    <h4>Source</h4>
+    <ul>
+        <li class="method-source">
+            <a href="res.js.html">res.js</a><a href="res.js.html#source.22">, line 22</a>
+        </li>
+    </ul>
+
+
+</article>
+            
+                
+
+<article class="member">
+    <div class="method-type">
+        
+    </div>
+<h4 class="member-name" id="ArticleDetailsResItem">ArticleDetailsResItem</h4>
+
+
+
+
+
+
+    <h4>Type</h4>
+    <ul>
+        <li>
+            
+
+
+    <span class="param-type">
+        <code>Object</code>
+    </span>
+    
+
+        </li>
+    </ul>
+
+
+
+
+
+    <h4 class="method-heading">Properties</h4>
+    
+
+<ul class="method-params">
+
+
+    <li>
+        
+            <span class="param-name">id</span>
+        
+
+        
+            
+
+
+    <span class="param-type">
+        <code>number</code>
+    </span>
+    
+
+        
+
+        
+
+        
+
+        <div class="param-description">
+            <p>Internal article identifier</p>
+        </div>
+
+    </li>
+    
+
+    <li>
+        
+            <span class="param-name">title</span>
+        
+
+        
+            
+
+
+    <span class="param-type">
+        <code>string</code>
+    </span>
+    
+
+        
+
+        
+
+        
+
+        <div class="param-description">
+            <p>Article's title</p>
+        </div>
+
+    </li>
+    
+
+    <li>
+        
+            <span class="param-name">ns</span>
+        
+
+        
+            
+
+
+    <span class="param-type">
+        <code>number</code>
+    </span>
+    
+
+        
+
+        
+
+        
+
+        <div class="param-description">
+            <p>Article's namespace, see: see: <a href="http://community.wikia.com/wiki/Help:Namespaces">Help:Namespaces</a></p>
+        </div>
+
+    </li>
+    
+
+    <li>
+        
+            <span class="param-name">url</span>
+        
+
+        
+            
+
+
+    <span class="param-type">
+        <code>string</code>
+    </span>
+    
+
+        
+
+        
+
+        
+
+        <div class="param-description">
+            <p>Article's URL</p>
+        </div>
+
+    </li>
+    
+
+    <li>
+        
+            <span class="param-name">revision</span>
+        
+
+        
+            
+
+
+    <span class="param-type">
+        <code><a href="global.html#ArticleDetailsResItemRevision">ArticleDetailsResItemRevision</a></code>
+    </span>
+    
+
+        
+
+        
+
+        
+
+        <div class="param-description">
+            <p>Last revision of the article</p>
+        </div>
+
+    </li>
+    
+
+    <li>
+        
+            <span class="param-name">type</span>
+        
+
+        
+            
+
+
+    <span class="param-type">
+        <code>string</code>
+    </span>
+    
+
+        
+
+        
+
+        
+
+        <div class="param-description">
+            <p>Type of the page (&quot;article&quot; for articles)</p>
+        </div>
+
+    </li>
+    
+
+    <li>
+        
+            <span class="param-name">abstract</span>
+        
+
+        
+            
+
+
+    <span class="param-type">
+        <code>string</code>
+    </span>
+    
+
+        
+
+        
+
+        
+
+        <div class="param-description">
+            <p>Short description of the article</p>
+        </div>
+
+    </li>
+    
+</ul>
+
+
+
+
+<div class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    <h4>Source</h4>
+    <ul>
+        <li class="method-source">
+            <a href="res.js.html">res.js</a><a href="res.js.html#source.11">, line 11</a>
+        </li>
+    </ul>
+
+
+</article>
+            
+                
+
+<article class="member">
+    <div class="method-type">
+        
+    </div>
+<h4 class="member-name" id="ArticleDetailsResItemRevision">ArticleDetailsResItemRevision</h4>
+
+
+
+
+
+
+    <h4>Type</h4>
+    <ul>
+        <li>
+            
+
+
+    <span class="param-type">
+        <code>Object</code>
+    </span>
+    
+
+        </li>
+    </ul>
+
+
+
+
+
+    <h4 class="method-heading">Properties</h4>
+    
+
+<ul class="method-params">
+
+
+    <li>
+        
+            <span class="param-name">id</span>
+        
+
+        
+            
+
+
+    <span class="param-type">
+        <code>number</code>
+    </span>
+    
+
+        
+
+        
+
+        
+
+        <div class="param-description">
+            <p>Internal revision identifier</p>
+        </div>
+
+    </li>
+    
+
+    <li>
+        
+            <span class="param-name">user</span>
+        
+
+        
+            
+
+
+    <span class="param-type">
+        <code>string</code>
+    </span>
+    
+
+        
+
+        
+
+        
+
+        <div class="param-description">
+            <p>Username of associated editor</p>
+        </div>
+
+    </li>
+    
+
+    <li>
+        
+            <span class="param-name">user_id</span>
+        
+
+        
+            
+
+
+    <span class="param-type">
+        <code>number</code>
+    </span>
+    
+
+        
+
+        
+
+        
+
+        <div class="param-description">
+            <p>Identifier of associated editor</p>
+        </div>
+
+    </li>
+    
+
+    <li>
+        
+            <span class="param-name">timestamp</span>
+        
+
+        
+            
+
+
+    <span class="param-type">
+        <code>string</code>
+    </span>
+    
+
+        
+
+        
+
+        
+
+        <div class="param-description">
+            <p>Time of the revision</p>
+        </div>
+
+    </li>
+    
+</ul>
+
+
+
+
+<div class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    <h4>Source</h4>
+    <ul>
+        <li class="method-source">
+            <a href="res.js.html">res.js</a><a href="res.js.html#source.3">, line 3</a>
+        </li>
+    </ul>
+
+
+</article>
+            
+                
+
+<article class="member">
+    <div class="method-type">
+        
+    </div>
+<h4 class="member-name" id="ArticleItem">ArticleItem</h4>
+
+
+
+
+
+
+    <h4>Type</h4>
+    <ul>
+        <li>
+            
+
+
+    <span class="param-type">
+        <code>Object</code>
+    </span>
+    
+
+        </li>
+    </ul>
+
+
+
+
+
+    <h4 class="method-heading">Properties</h4>
+    
+
+<ul class="method-params">
+
+
+    <li>
+        
+            <span class="param-name">id</span>
+        
+
+        
+            
+
+
+    <span class="param-type">
+        <code>number</code>
+    </span>
+    
+
+        
+
+        
+
+        
+
+        <div class="param-description">
+            <p>Internal article identifier</p>
+        </div>
+
+    </li>
+    
+
+    <li>
+        
+            <span class="param-name">title</span>
+        
+
+        
+            
+
+
+    <span class="param-type">
+        <code>string</code>
+    </span>
+    
+
+        
+
+        
+
+        
+
+        <div class="param-description">
+            <p>Article's title</p>
+        </div>
+
+    </li>
+    
+
+    <li>
+        
+            <span class="param-name">url</span>
+        
+
+        
+            
+
+
+    <span class="param-type">
+        <code>string</code>
+    </span>
+    
+
+        
+
+        
+
+        
+
+        <div class="param-description">
+            <p>Article's URL</p>
+        </div>
+
+    </li>
+    
+
+    <li>
+        
+            <span class="param-name">ns</span>
+        
+
+        
+            
+
+
+    <span class="param-type">
+        <code>number</code>
+    </span>
+    
+
+        
+
+        
+
+        
+
+        <div class="param-description">
+            <p>Article's namespace, see: see: <a href="http://community.wikia.com/wiki/Help:Namespaces">Help:Namespaces</a></p>
+        </div>
+
+    </li>
+    
+</ul>
+
+
+
+
+<div class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    <h4>Source</h4>
+    <ul>
+        <li class="method-source">
+            <a href="res.js.html">res.js</a><a href="res.js.html#source.30">, line 30</a>
+        </li>
+    </ul>
+
+
+</article>
+            
+                
+
+<article class="member">
+    <div class="method-type">
+        
+    </div>
+<h4 class="member-name" id="ArticleListReq">ArticleListReq</h4>
+
+
+
+
+
+
+    <h4>Type</h4>
+    <ul>
+        <li>
+            
+
+
+    <span class="param-type">
+        <code>Object</code>
+    </span>
+    
+
+        </li>
+    </ul>
+
+
+
+
+
+    <h4 class="method-heading">Properties</h4>
+    
+
+<ul class="method-params">
+
+
+    <li>
+        
+            <span class="param-name">category</span>
+        
+
+        
+            
+
+
+    <span class="param-type">
+        <code>string</code>
+    </span>
+    
+
+        
+
+        
+            <span class="param-attributes">
+            
+                &lt;optional&gt;<br>
+            
+
+            
+            </span>
+        
+
+        
+            <span class="param-default">
+            
+            </span>
+        
+
+        <div class="param-description">
+            <p>Return only articles belonging to the provided valid category title</p>
+        </div>
+
+    </li>
+    
+
+    <li>
+        
+            <span class="param-name">namespaces</span>
+        
+
+        
+            
+
+
+    <span class="param-type">
+        <code>number</code>
+    </span>
+    |
+
+    <span class="param-type">
+        <code>Array.&lt;number></code>
+    </span>
+    
+
+        
+
+        
+            <span class="param-attributes">
+            
+                &lt;optional&gt;<br>
+            
+
+            
+            </span>
+        
+
+        
+            <span class="param-default">
+            
+            </span>
+        
+
+        <div class="param-description">
+            <p>Array of namespace ids or a single namespace id, see: <a href="http://community.fandom.com/wiki/Help:Namespaces">Help:Namespaces</a></p>
+        </div>
+
+    </li>
+    
+
+    <li>
+        
+            <span class="param-name">limit</span>
+        
+
+        
+            
+
+
+    <span class="param-type">
+        <code>number</code>
+    </span>
+    
+
+        
+
+        
+            <span class="param-attributes">
+            
+                &lt;optional&gt;<br>
+            
+
+            
+            </span>
+        
+
+        
+            <span class="param-default">
+            
+                <code>25</code>
+            
+            </span>
+        
+
+        <div class="param-description">
+            <p>Limit the number of results</p>
+        </div>
+
+    </li>
+    
+
+    <li>
+        
+            <span class="param-name">offset</span>
+        
+
+        
+            
+
+
+    <span class="param-type">
+        <code>string</code>
+    </span>
+    
+
+        
+
+        
+            <span class="param-attributes">
+            
+                &lt;optional&gt;<br>
+            
+
+            
+            </span>
+        
+
+        
+            <span class="param-default">
+            
+            </span>
+        
+
+        <div class="param-description">
+            <p>Only display articles where name is lexicographically greater than provided</p>
+        </div>
+
+    </li>
+    
+</ul>
+
+
+
+
+<div class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h4 class="method-heading">See</h4>
+        <ul>
+            
+                <li><a href="WikiaAPI.html#getArticleList">WikiaAPI#getArticleList</a></li>
+            
+        </ul>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    <h4>Source</h4>
+    <ul>
+        <li class="method-source">
+            <a href="req.js.html">req.js</a><a href="req.js.html#source.12">, line 12</a>
+        </li>
+    </ul>
+
+
+</article>
+            
+                
+
+<article class="member">
+    <div class="method-type">
+        
+    </div>
+<h4 class="member-name" id="ArticleListRes">ArticleListRes</h4>
+
+
+
+
+
+
+    <h4>Type</h4>
+    <ul>
+        <li>
+            
+
+
+    <span class="param-type">
+        <code>Object</code>
+    </span>
+    
+
+        </li>
+    </ul>
+
+
+
+
+
+    <h4 class="method-heading">Properties</h4>
+    
+
+<ul class="method-params">
+
+
+    <li>
+        
+            <span class="param-name">items</span>
+        
+
+        
+            
+
+
+    <span class="param-type">
+        <code>Array.&lt;<a href="global.html#ArticleItem">ArticleItem</a>></code>
+    </span>
+    
+
+        
+
+        
+
+        
+
+        <div class="param-description">
+            <p>Array of article items</p>
+        </div>
+
+    </li>
+    
+
+    <li>
+        
+            <span class="param-name">basepath</span>
+        
+
+        
+            
+
+
+    <span class="param-type">
+        <code>string</code>
+    </span>
+    
+
+        
+
+        
+
+        
+
+        <div class="param-description">
+            <p>URL of associated wiki</p>
+        </div>
+
+    </li>
+    
+
+    <li>
+        
+            <span class="param-name">offset</span>
+        
+
+        
+            
+
+
+    <span class="param-type">
+        <code>string</code>
+    </span>
+    
+
+        
+
+        
+
+        
+
+        <div class="param-description">
+            <p>Current lexicographical offset (lists first articles where titles are greater lexicographically than that offset)</p>
+        </div>
+
+    </li>
+    
+</ul>
+
+
+
+
+<div class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h4 class="method-heading">See</h4>
+        <ul>
+            
+                <li><a href="WikiaAPI.html#getArticleList">WikiaAPI#getArticleList</a></li>
+            
+        </ul>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    <h4>Source</h4>
+    <ul>
+        <li class="method-source">
+            <a href="res.js.html">res.js</a><a href="res.js.html#source.38">, line 38</a>
+        </li>
+    </ul>
+
+
+</article>
+            
+                
+
+<article class="member">
+    <div class="method-type">
+        
+    </div>
+<h4 class="member-name" id="SearchSuggestionsRes">SearchSuggestionsRes</h4>
+
+
+
+
+
+
+    <h4>Type</h4>
+    <ul>
+        <li>
+            
+
+
+    <span class="param-type">
+        <code>Object</code>
+    </span>
+    
+
+        </li>
+    </ul>
+
+
+
+
+
+    <h4 class="method-heading">Properties</h4>
+    
+
+<ul class="method-params">
+
+
+    <li>
+        
+            <span class="param-name">items</span>
+        
+
+        
+            
+
+
+    <span class="param-type">
+        <code>Array.&lt;<a href="global.html#SearchSuggestionsResItem">SearchSuggestionsResItem</a>></code>
+    </span>
+    
+
+        
+
+        
+
+        
+
+        <div class="param-description">
+            <p>List of suggested articles for a given query</p>
+        </div>
+
+    </li>
+    
+</ul>
+
+
+
+
+<div class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h4 class="method-heading">See</h4>
+        <ul>
+            
+                <li><a href="WikiaAPI.html#getSearchSuggestions">WikiaAPI#getSearchSuggestions</a></li>
+            
+        </ul>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    <h4>Source</h4>
+    <ul>
+        <li class="method-source">
+            <a href="res.js.html">res.js</a><a href="res.js.html#source.106">, line 106</a>
+        </li>
+    </ul>
+
+
+</article>
+            
+                
+
+<article class="member">
+    <div class="method-type">
+        
+    </div>
+<h4 class="member-name" id="SearchSuggestionsResItem">SearchSuggestionsResItem</h4>
+
+
+
+
+
+
+    <h4>Type</h4>
+    <ul>
+        <li>
+            
+
+
+    <span class="param-type">
+        <code>Object</code>
+    </span>
+    
+
+        </li>
+    </ul>
+
+
+
+
+
+    <h4 class="method-heading">Properties</h4>
+    
+
+<ul class="method-params">
+
+
+    <li>
+        
+            <span class="param-name">title</span>
+        
+
+        
+            
+
+
+    <span class="param-type">
+        <code>string</code>
+    </span>
+    
+
+        
+
+        
+
+        
+
+        <div class="param-description">
+            <p>Suggested article's title</p>
+        </div>
+
+    </li>
+    
+</ul>
+
+
+
+
+<div class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    <h4>Source</h4>
+    <ul>
+        <li class="method-source">
+            <a href="res.js.html">res.js</a><a href="res.js.html#source.101">, line 101</a>
+        </li>
+    </ul>
+
+
+</article>
+            
+                
+
+<article class="member">
+    <div class="method-type">
+        
+    </div>
+<h4 class="member-name" id="TopArticlesReq">TopArticlesReq</h4>
+
+
+
+
+
+
+    <h4>Type</h4>
+    <ul>
+        <li>
+            
+
+
+    <span class="param-type">
+        <code>Object</code>
+    </span>
+    
+
+        </li>
+    </ul>
+
+
+
+
+
+    <h4 class="method-heading">Properties</h4>
+    
+
+<ul class="method-params">
+
+
+    <li>
+        
+            <span class="param-name">namespaces</span>
+        
+
+        
+            
+
+
+    <span class="param-type">
+        <code>number</code>
+    </span>
+    |
+
+    <span class="param-type">
+        <code>Array.&lt;number></code>
+    </span>
+    
+
+        
+
+        
+            <span class="param-attributes">
+            
+                &lt;optional&gt;<br>
+            
+
+            
+            </span>
+        
+
+        
+            <span class="param-default">
+            
+            </span>
+        
+
+        <div class="param-description">
+            <p>Array of namespace ids or a single namespace id, see: <a href="http://community.wikia.com/wiki/Help:Namespaces">Help:Namespaces</a></p>
+        </div>
+
+    </li>
+    
+
+    <li>
+        
+            <span class="param-name">category</span>
+        
+
+        
+            
+
+
+    <span class="param-type">
+        <code>string</code>
+    </span>
+    
+
+        
+
+        
+            <span class="param-attributes">
+            
+                &lt;optional&gt;<br>
+            
+
+            
+            </span>
+        
+
+        
+            <span class="param-default">
+            
+            </span>
+        
+
+        <div class="param-description">
+            <p>Return only articles belonging to the provided category title</p>
+        </div>
+
+    </li>
+    
+
+    <li>
+        
+            <span class="param-name">limit</span>
+        
+
+        
+            
+
+
+    <span class="param-type">
+        <code>number</code>
+    </span>
+    
+
+        
+
+        
+            <span class="param-attributes">
+            
+                &lt;optional&gt;<br>
+            
+
+            
+            </span>
+        
+
+        
+            <span class="param-default">
+            
+                <code>10</code>
+            
+            </span>
+        
+
+        <div class="param-description">
+            <p>Limit the number of results - maximum limit is 250</p>
+        </div>
+
+    </li>
+    
+</ul>
+
+
+
+
+<div class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h4 class="method-heading">See</h4>
+        <ul>
+            
+                <li><a href="WikiaAPI.html#getTopArticles">WikiaAPI#getTopArticles</a></li>
+            
+        </ul>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    <h4>Source</h4>
+    <ul>
+        <li class="method-source">
+            <a href="req.js.html">req.js</a><a href="req.js.html#source.22">, line 22</a>
+        </li>
+    </ul>
+
+
+</article>
+            
+                
+
+<article class="member">
+    <div class="method-type">
+        
+    </div>
+<h4 class="member-name" id="TopArticlesRes">TopArticlesRes</h4>
+
+
+
+
+
+
+    <h4>Type</h4>
+    <ul>
+        <li>
+            
+
+
+    <span class="param-type">
+        <code>Object</code>
+    </span>
+    
+
+        </li>
+    </ul>
+
+
+
+
+
+    <h4 class="method-heading">Properties</h4>
+    
+
+<ul class="method-params">
+
+
+    <li>
+        
+            <span class="param-name">items</span>
+        
+
+        
+            
+
+
+    <span class="param-type">
+        <code>Array.&lt;<a href="global.html#ArticleItem">ArticleItem</a>></code>
+    </span>
+    
+
+        
+
+        
+
+        
+
+        <div class="param-description">
+            <p>Array of article items</p>
+        </div>
+
+    </li>
+    
+
+    <li>
+        
+            <span class="param-name">basepath</span>
+        
+
+        
+            
+
+
+    <span class="param-type">
+        <code>string</code>
+    </span>
+    
+
+        
+
+        
+
+        
+
+        <div class="param-description">
+            <p>URL of associated wiki</p>
+        </div>
+
+    </li>
+    
+</ul>
+
+
+
+
+<div class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h4 class="method-heading">See</h4>
+        <ul>
+            
+                <li><a href="WikiaAPI.html#getTopArticles">WikiaAPI#getTopArticles</a></li>
+            
+        </ul>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    <h4>Source</h4>
+    <ul>
+        <li class="method-source">
+            <a href="res.js.html">res.js</a><a href="res.js.html#source.47">, line 47</a>
+        </li>
+    </ul>
+
+
+</article>
+            
+                
+
+<article class="member">
+    <div class="method-type">
+        
+    </div>
+<h4 class="member-name" id="UserDetailsReq">UserDetailsReq</h4>
+
+
+
+
+
+
+    <h4>Type</h4>
+    <ul>
+        <li>
+            
+
+
+    <span class="param-type">
+        <code>Object</code>
+    </span>
+    
+
+        </li>
+    </ul>
+
+
+
+
+
+    <h4 class="method-heading">Properties</h4>
+    
+
+<ul class="method-params">
+
+
+    <li>
+        
+            <span class="param-name">ids</span>
+        
+
+        
+            
+
+
+    <span class="param-type">
+        <code>number</code>
+    </span>
+    |
+
+    <span class="param-type">
+        <code>Array.&lt;number></code>
+    </span>
+    
+
+        
+
+        
+            <span class="param-attributes">
+            
+
+            
+            </span>
+        
+
+        
+            <span class="param-default">
+            
+            </span>
+        
+
+        <div class="param-description">
+            <p>An array of user ids or a single user id</p>
+        </div>
+
+    </li>
+    
+
+    <li>
+        
+            <span class="param-name">size</span>
+        
+
+        
+            
+
+
+    <span class="param-type">
+        <code>number</code>
+    </span>
+    
+
+        
+
+        
+            <span class="param-attributes">
+            
+                &lt;optional&gt;<br>
+            
+
+            
+            </span>
+        
+
+        
+            <span class="param-default">
+            
+                <code>100</code>
+            
+            </span>
+        
+
+        <div class="param-description">
+            <p>The desired width and height of the thumbnail, defaults to 100, 0 for no thumbnail</p>
+        </div>
+
+    </li>
+    
+</ul>
+
+
+
+
+<div class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h4 class="method-heading">See</h4>
+        <ul>
+            
+                <li><a href="WikiaAPI.html#getUserDetails">WikiaAPI#getUserDetails</a></li>
+            
+        </ul>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    <h4>Source</h4>
+    <ul>
+        <li class="method-source">
+            <a href="req.js.html">req.js</a><a href="req.js.html#source.31">, line 31</a>
+        </li>
+    </ul>
+
+
+</article>
+            
+                
+
+<article class="member">
+    <div class="method-type">
+        
+    </div>
+<h4 class="member-name" id="UserDetailsRes">UserDetailsRes</h4>
+
+
+
+
+
+
+    <h4>Type</h4>
+    <ul>
+        <li>
+            
+
+
+    <span class="param-type">
+        <code>Object</code>
+    </span>
+    
+
+        </li>
+    </ul>
+
+
+
+
+
+    <h4 class="method-heading">Properties</h4>
+    
+
+<ul class="method-params">
+
+
+    <li>
+        
+            <span class="param-name">items</span>
+        
+
+        
+            
+
+
+    <span class="param-type">
+        <code>Array.&lt;<a href="global.html#UserDetailsResItem">UserDetailsResItem</a>></code>
+    </span>
+    
+
+        
+
+        
+
+        
+
+        <div class="param-description">
+            <p>Array of matching users</p>
+        </div>
+
+    </li>
+    
+
+    <li>
+        
+            <span class="param-name">basepath</span>
+        
+
+        
+            
+
+
+    <span class="param-type">
+        <code>string</code>
+    </span>
+    
+
+        
+
+        
+
+        
+
+        <div class="param-description">
+            <p>URL of associated wiki</p>
+        </div>
+
+    </li>
+    
+</ul>
+
+
+
+
+<div class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h4 class="method-heading">See</h4>
+        <ul>
+            
+                <li><a href="WikiaAPI.html#getUserDetails">WikiaAPI#getUserDetails</a></li>
+            
+        </ul>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    <h4>Source</h4>
+    <ul>
+        <li class="method-source">
+            <a href="res.js.html">res.js</a><a href="res.js.html#source.124">, line 124</a>
+        </li>
+    </ul>
+
+
+</article>
+            
+                
+
+<article class="member">
+    <div class="method-type">
+        
+    </div>
+<h4 class="member-name" id="UserDetailsResItem">UserDetailsResItem</h4>
+
+
+
+
+
+
+    <h4>Type</h4>
+    <ul>
+        <li>
+            
+
+
+    <span class="param-type">
+        <code>Object</code>
+    </span>
+    
+
+        </li>
+    </ul>
+
+
+
+
+
+    <h4 class="method-heading">Properties</h4>
+    
+
+<ul class="method-params">
+
+
+    <li>
+        
+            <span class="param-name">user_id</span>
+        
+
+        
+            
+
+
+    <span class="param-type">
+        <code>number</code>
+    </span>
+    
+
+        
+
+        
+
+        
+
+        <div class="param-description">
+            <p>Internal user identifier</p>
+        </div>
+
+    </li>
+    
+
+    <li>
+        
+            <span class="param-name">title</span>
+        
+
+        
+            
+
+
+    <span class="param-type">
+        <code>string</code>
+    </span>
+    
+
+        
+
+        
+
+        
+
+        <div class="param-description">
+            <p>User's title</p>
+        </div>
+
+    </li>
+    
+
+    <li>
+        
+            <span class="param-name">name</span>
+        
+
+        
+            
+
+
+    <span class="param-type">
+        <code>string</code>
+    </span>
+    
+
+        
+
+        
+
+        
+
+        <div class="param-description">
+            <p>User's name</p>
+        </div>
+
+    </li>
+    
+
+    <li>
+        
+            <span class="param-name">url</span>
+        
+
+        
+            
+
+
+    <span class="param-type">
+        <code>string</code>
+    </span>
+    
+
+        
+
+        
+
+        
+
+        <div class="param-description">
+            <p>URL of user's profile page</p>
+        </div>
+
+    </li>
+    
+
+    <li>
+        
+            <span class="param-name">numberofedits</span>
+        
+
+        
+            
+
+
+    <span class="param-type">
+        <code>number</code>
+    </span>
+    
+
+        
+
+        
+
+        
+
+        <div class="param-description">
+            <p>Number of user's edits on the given wiki</p>
+        </div>
+
+    </li>
+    
+
+    <li>
+        
+            <span class="param-name">is_subject_to_ccpa</span>
+        
+
+        
+            
+
+
+    <span class="param-type">
+        <code>boolean</code>
+    </span>
+    
+
+        
+
+        
+
+        
+
+        <div class="param-description">
+            <p>See: <a href="https://oag.ca.gov/privacy/ccpa">CCPA</a></p>
+        </div>
+
+    </li>
+    
+
+    <li>
+        
+            <span class="param-name">avatar</span>
+        
+
+        
+            
+
+
+    <span class="param-type">
+        <code>string</code>
+    </span>
+    
+
+        
+
+        
+
+        
+
+        <div class="param-description">
+            <p>Link to user's avatar</p>
+        </div>
+
+    </li>
+    
+</ul>
+
+
+
+
+<div class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    <h4>Source</h4>
+    <ul>
+        <li class="method-source">
+            <a href="res.js.html">res.js</a><a href="res.js.html#source.113">, line 113</a>
+        </li>
+    </ul>
+
+
+</article>
+            
+                
+
+<article class="member">
+    <div class="method-type">
+        
+    </div>
+<h4 class="member-name" id="WikiVariablesRes">WikiVariablesRes</h4>
+
+
+
+
+
+
+    <h4>Type</h4>
+    <ul>
+        <li>
+            
+
+
+    <span class="param-type">
+        <code>Object</code>
+    </span>
+    
+
+        </li>
+    </ul>
+
+
+
+
+
+    <h4 class="method-heading">Properties</h4>
+    
+
+<ul class="method-params">
+
+
+    <li>
+        
+            <span class="param-name">data</span>
+        
+
+        
+            
+
+
+    <span class="param-type">
+        <code><a href="global.html#WikiVariablesResData">WikiVariablesResData</a></code>
+    </span>
+    
+
+        
+
+        
+
+        
+
+        <div class="param-description">
+            <p>Wrapper object containing all of the other info</p>
+        </div>
+
+    </li>
+    
+</ul>
+
+
+
+
+<div class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h4 class="method-heading">See</h4>
+        <ul>
+            
+                <li><a href="WikiaAPI.html#getWikiVariables">WikiaAPI#getWikiVariables</a></li>
+            
+        </ul>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    <h4>Source</h4>
+    <ul>
+        <li class="method-source">
+            <a href="res.js.html">res.js</a><a href="res.js.html#source.94">, line 94</a>
+        </li>
+    </ul>
+
+
+</article>
+            
+                
+
+<article class="member">
+    <div class="method-type">
+        
+    </div>
+<h4 class="member-name" id="WikiVariablesResAppleIcon">WikiVariablesResAppleIcon</h4>
+
+
+
+
+
+
+    <h4>Type</h4>
+    <ul>
+        <li>
+            
+
+
+    <span class="param-type">
+        <code>Object</code>
+    </span>
+    
+
+        </li>
+    </ul>
+
+
+
+
+
+    <h4 class="method-heading">Properties</h4>
+    
+
+<ul class="method-params">
+
+
+    <li>
+        
+            <span class="param-name">url</span>
+        
+
+        
+            
+
+
+    <span class="param-type">
+        <code>string</code>
+    </span>
+    
+
+        
+
+        
+
+        
+
+        <div class="param-description">
+            <p>Icon's URL</p>
+        </div>
+
+    </li>
+    
+
+    <li>
+        
+            <span class="param-name">size</span>
+        
+
+        
+            
+
+
+    <span class="param-type">
+        <code>string</code>
+    </span>
+    
+
+        
+
+        
+
+        
+
+        <div class="param-description">
+            <p>String describing icon's dimensions</p>
+        </div>
+
+    </li>
+    
+</ul>
+
+
+
+
+<div class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    <h4>Source</h4>
+    <ul>
+        <li class="method-source">
+            <a href="res.js.html">res.js</a><a href="res.js.html#source.55">, line 55</a>
+        </li>
+    </ul>
+
+
+</article>
+            
+                
+
+<article class="member">
+    <div class="method-type">
+        
+    </div>
+<h4 class="member-name" id="WikiVariablesResData">WikiVariablesResData</h4>
+
+
+
+
+
+
+    <h4>Type</h4>
+    <ul>
+        <li>
+            
+
+
+    <span class="param-type">
+        <code>Object</code>
+    </span>
+    
+
+        </li>
+    </ul>
+
+
+
+
+
+    <h4 class="method-heading">Properties</h4>
+    
+
+<ul class="method-params">
+
+
+    <li>
+        
+            <span class="param-name">vertical</span>
+        
+
+        
+            
+
+
+    <span class="param-type">
+        <code>string</code>
+    </span>
+    
+
+        
+
+        
+
+        
+
+        <div class="param-description">
+            <p>Primary category of the wiki</p>
+        </div>
+
+    </li>
+    
+
+    <li>
+        
+            <span class="param-name">appleTouchIcon</span>
+        
+
+        
+            
+
+
+    <span class="param-type">
+        <code><a href="global.html#WikiVariablesResAppleIcon">WikiVariablesResAppleIcon</a></code>
+    </span>
+    
+
+        
+
+        
+
+        
+
+        <div class="param-description">
+            <p>Object describing icon shown on Apple devices</p>
+        </div>
+
+    </li>
+    
+
+    <li>
+        
+            <span class="param-name">articlePath</span>
+        
+
+        
+            
+
+
+    <span class="param-type">
+        <code>string</code>
+    </span>
+    
+
+        
+
+        
+
+        
+
+        <div class="param-description">
+            <p>Base URL of wiki's articles</p>
+        </div>
+
+    </li>
+    
+
+    <li>
+        
+            <span class="param-name">basePath</span>
+        
+
+        
+            
+
+
+    <span class="param-type">
+        <code>string</code>
+    </span>
+    
+
+        
+
+        
+
+        
+
+        <div class="param-description">
+            <p>Base URL of the entire site</p>
+        </div>
+
+    </li>
+    
+
+    <li>
+        
+            <span class="param-name">dbName</span>
+        
+
+        
+            
+
+
+    <span class="param-type">
+        <code>string</code>
+    </span>
+    
+
+        
+
+        
+
+        
+
+        <div class="param-description">
+            <p>Name of related database</p>
+        </div>
+
+    </li>
+    
+
+    <li>
+        
+            <span class="param-name">favicon</span>
+        
+
+        
+            
+
+
+    <span class="param-type">
+        <code>string</code>
+    </span>
+    
+
+        
+
+        
+
+        
+
+        <div class="param-description">
+            <p>URL of site's favicon, see <a href="https://community.fandom.com/wiki/Help:Favicon">Help:Favicon</a></p>
+        </div>
+
+    </li>
+    
+
+    <li>
+        
+            <span class="param-name">id</span>
+        
+
+        
+            
+
+
+    <span class="param-type">
+        <code>number</code>
+    </span>
+    
+
+        
+
+        
+
+        
+
+        <div class="param-description">
+            <p>Internal wiki identifier</p>
+        </div>
+
+    </li>
+    
+
+    <li>
+        
+            <span class="param-name">isClosed</span>
+        
+
+        
+            
+
+
+    <span class="param-type">
+        <code>boolean</code>
+    </span>
+    
+
+        
+
+        
+
+        
+
+        <div class="param-description">
+            <p>Whether the wiki is closed</p>
+        </div>
+
+    </li>
+    
+
+    <li>
+        
+            <span class="param-name">htmlTitle</span>
+        
+
+        
+            
+
+
+    <span class="param-type">
+        <code><a href="global.html#WikiVariablesResHtmlTitle">WikiVariablesResHtmlTitle</a></code>
+    </span>
+    
+
+        
+
+        
+
+        
+
+        <div class="param-description">
+            <p>Object describing how wiki's <code>&lt;title&gt;</code> tag is formed</p>
+        </div>
+
+    </li>
+    
+
+    <li>
+        
+            <span class="param-name">language</span>
+        
+
+        
+            
+
+
+    <span class="param-type">
+        <code><a href="global.html#WikiVariablesResLanguage">WikiVariablesResLanguage</a></code>
+    </span>
+    
+
+        
+
+        
+
+        
+
+        <div class="param-description">
+            <p>Object describing wiki's language</p>
+        </div>
+
+    </li>
+    
+
+    <li>
+        
+            <span class="param-name">scriptPath</span>
+        
+
+        
+            
+
+
+    <span class="param-type">
+        <code>string</code>
+    </span>
+    
+
+        
+
+        
+
+        
+
+        <div class="param-description">
+            <p>Base URL of site's JS scripts</p>
+        </div>
+
+    </li>
+    
+
+    <li>
+        
+            <span class="param-name">siteName</span>
+        
+
+        
+            
+
+
+    <span class="param-type">
+        <code>string</code>
+    </span>
+    
+
+        
+
+        
+
+        
+
+        <div class="param-description">
+            <p>Main title of the wiki in its full form</p>
+        </div>
+
+    </li>
+    
+
+    <li>
+        
+            <span class="param-name">surrogateKey</span>
+        
+
+        
+            
+
+
+    <span class="param-type">
+        <code>string</code>
+    </span>
+    
+
+        
+
+        
+
+        
+
+        <div class="param-description">
+            <p>Wiki's identifier in internal databases</p>
+        </div>
+
+    </li>
+    
+
+    <li>
+        
+            <span class="param-name">enableCommunityData</span>
+        
+
+        
+            
+
+
+    <span class="param-type">
+        <code>boolean</code>
+    </span>
+    
+
+        
+
+        
+
+        
+
+        <div class="param-description">
+            
+        </div>
+
+    </li>
+    
+
+    <li>
+        
+            <span class="param-name">mainPageTitle</span>
+        
+
+        
+            
+
+
+    <span class="param-type">
+        <code>string</code>
+    </span>
+    
+
+        
+
+        
+
+        
+
+        <div class="param-description">
+            <p>Title of wiki's home/landing article</p>
+        </div>
+
+    </li>
+    
+
+    <li>
+        
+            <span class="param-name">siteMessage</span>
+        
+
+        
+            
+
+
+    <span class="param-type">
+        <code>string</code>
+    </span>
+    
+
+        
+
+        
+
+        
+
+        <div class="param-description">
+            <p>Full wiki title</p>
+        </div>
+
+    </li>
+    
+
+    <li>
+        
+            <span class="param-name">cookieDomain</span>
+        
+
+        
+            
+
+
+    <span class="param-type">
+        <code>string</code>
+    </span>
+    
+
+        
+
+        
+
+        
+
+        <div class="param-description">
+            <p>Scope of cookies stored on this wiki</p>
+        </div>
+
+    </li>
+    
+</ul>
+
+
+
+
+<div class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    <h4>Source</h4>
+    <ul>
+        <li class="method-source">
+            <a href="res.js.html">res.js</a><a href="res.js.html#source.73">, line 73</a>
+        </li>
+    </ul>
+
+
+</article>
+            
+                
+
+<article class="member">
+    <div class="method-type">
+        
+    </div>
+<h4 class="member-name" id="WikiVariablesResHtmlTitle">WikiVariablesResHtmlTitle</h4>
+
+
+
+
+
+
+    <h4>Type</h4>
+    <ul>
+        <li>
+            
+
+
+    <span class="param-type">
+        <code>Object</code>
+    </span>
+    
+
+        </li>
+    </ul>
+
+
+
+
+
+    <h4 class="method-heading">Properties</h4>
+    
+
+<ul class="method-params">
+
+
+    <li>
+        
+            <span class="param-name">separator</span>
+        
+
+        
+            
+
+
+    <span class="param-type">
+        <code>string</code>
+    </span>
+    
+
+        
+
+        
+
+        
+
+        <div class="param-description">
+            <p>Title separator sequence</p>
+        </div>
+
+    </li>
+    
+
+    <li>
+        
+            <span class="param-name">parts</span>
+        
+
+        
+            
+
+
+    <span class="param-type">
+        <code>Array.&lt;string></code>
+    </span>
+    
+
+        
+
+        
+
+        
+
+        <div class="param-description">
+            <p>Parts of the title</p>
+        </div>
+
+    </li>
+    
+</ul>
+
+
+
+
+<div class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    <h4>Source</h4>
+    <ul>
+        <li class="method-source">
+            <a href="res.js.html">res.js</a><a href="res.js.html#source.61">, line 61</a>
+        </li>
+    </ul>
+
+
+</article>
+            
+                
+
+<article class="member">
+    <div class="method-type">
+        
+    </div>
+<h4 class="member-name" id="WikiVariablesResLanguage">WikiVariablesResLanguage</h4>
+
+
+
+
+
+
+    <h4>Type</h4>
+    <ul>
+        <li>
+            
+
+
+    <span class="param-type">
+        <code>Object</code>
+    </span>
+    
+
+        </li>
+    </ul>
+
+
+
+
+
+    <h4 class="method-heading">Properties</h4>
+    
+
+<ul class="method-params">
+
+
+    <li>
+        
+            <span class="param-name">content</span>
+        
+
+        
+            
+
+
+    <span class="param-type">
+        <code>string</code>
+    </span>
+    
+
+        
+
+        
+
+        
+
+        <div class="param-description">
+            <p>Wiki's content language</p>
+        </div>
+
+    </li>
+    
+
+    <li>
+        
+            <span class="param-name">contentDir</span>
+        
+
+        
+            
+
+
+    <span class="param-type">
+        <code>"ltr"</code>
+    </span>
+    |
+
+    <span class="param-type">
+        <code>"rtl"</code>
+    </span>
+    
+
+        
+
+        
+
+        
+
+        <div class="param-description">
+            <p>Direction of text (&quot;ltr&quot; - left to right, &quot;rtl&quot; - right to left)</p>
+        </div>
+
+    </li>
+    
+</ul>
+
+
+
+
+<div class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    <h4>Source</h4>
+    <ul>
+        <li class="method-source">
+            <a href="res.js.html">res.js</a><a href="res.js.html#source.67">, line 67</a>
+        </li>
+    </ul>
+
+
+</article>
+            
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+  </div>
+</main>
+
+<footer class="layout-footer">
+  <div class="container">
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.11</a>
+  </div>
+</footer>
+
+
+
+<script src="scripts/prism.dev.js"></script>
+</body>
+</html>

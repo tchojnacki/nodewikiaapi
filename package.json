@@ -1,34 +1,47 @@
 {
   "name": "nodewikiaapi",
-  "version": "2.0.5",
-  "description": "Node.js wrapper for Wikia API V1.",
+  "version": "3.0.0",
+  "description": "JavaScript wrapper for Fandom's Wikia API V1.",
   "keywords": [
     "wikia",
     "api",
+    "api-wrapper",
     "wrapper",
-    "fandom"
+    "fandom",
+    "wikia-api"
   ],
-  "main": "main.js",
+  "type": "module",
+  "main": "src/main.js",
   "scripts": {
-    "docs": "npx jsdoc -c jsdoc.json",
-    "test": "jest"
+    "docs": "jsdoc -c jsdoc.json",
+    "test": "cross-env NODE_OPTIONS=--experimental-vm-modules npx jest",
+    "lint": "eslint ./src/*.js ./tests/*.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/tchojnacki/nodewikiaapi.git"
   },
-  "author": "Tomasz Chojnacki <tomekch6@gmail.com>",
+  "author": "Tomasz Chojnacki <tomaszchojnacki2001@gmail.com>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/tchojnacki/nodewikiaapi/issues"
   },
   "homepage": "https://tchojnacki.github.io/nodewikiaapi",
   "devDependencies": {
-    "docdash": "^1.2.0",
+    "@types/jest": "^28.1.6",
+    "cross-env": "^7.0.3",
+    "eslint": "^8.20.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-jest": "^26.7.0",
+    "eslint-plugin-jest-formatting": "^3.1.0",
+    "eslint-plugin-prettier": "^4.2.1",
     "jest": "^28.1.3",
-    "jsdoc": "^3.6.11"
+    "jsdoc": "^3.6.11",
+    "prettier": "^2.7.1",
+    "tidy-jsdoc": "^1.4.1"
   },
   "dependencies": {
-    "got": "^9.6.0"
+    "async-sema": "^3.1.1",
+    "node-fetch": "^3.2.10"
   }
 }

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>nodewikiaapi: </title>
+    <title>nodewikiaapi: Tutorial: Migration guide (3.x)</title>
     
       <link type="text/css" rel="stylesheet" href="styles/vendor/prism-tomorrow-night.css">
     
@@ -27,63 +27,108 @@
 <main class="layout-main ">
   <div class="container">
     <p class="page-kind"></p>
-    <h1 class="page-title"></h1>
+    <h1 class="page-title">Tutorial: Migration guide (3.x)</h1>
+    <section>
+
+<header>
     
 
+    <h2>Migration guide (3.x)</h2>
+</header>
 
-
-    
-
-
-    <h3> </h3>
-
-
-
-
-
-
-
-
-
-
-    
-
-
-
-
-    <section class="readme">
-        <article><h1>nodewikiaapi</h1>
-<p>JavaScript wrapper for the (no longer supported) Fandom's <strong>Wikia API V1</strong>.</p>
-<h2>⚠️ DEPRECATED ⚠️</h2>
-<h3>Deprecation notice</h3>
-<p>This library will get no new feature updates, only serious and common-case bugs will be fixed. It is not recommended to use this library (or the Wikia API V1 itself) for fresh projects any longer, however, I am keeping it online to make sure that all of the current users can keep depending on it.</p>
-<h3>Why?</h3>
-<p>The Wikia API V1 <a href="https://community.fandom.com/f/p/4400000000001906655">lost its documentation</a> following the <a href="https://community.fandom.com/wiki/Help:Unified_Community_Platform">UCP update</a>. Some of the endpoints disappeared without notice throughout the years and, generally, it seems that this API is no longer supported. Thus any of the wrapper library's methods could stop working at any time.</p>
-<h2>About</h2>
-<h3>Features</h3>
+<article>
+    <p>The following page lists <strong>BREAKING CHANGES</strong> between versions <code>2.x</code> and <code>3.x</code> of the library alongside any possible workarounds.</p>
+<p>If any of the changes make you unable to use the library, you can install version <code>2.x</code> which had all of the security vulnerabilities patched as of the day of the release of version <code>3.0.0</code>.</p>
+<h3>Importing</h3>
+<p>The library is now exported as ESM instead of CJS. See more information <a href="https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c#file-esm-package-md">here</a>.</p>
+<h3>Removed endpoints</h3>
+<p>These endpoints were removed following the UCP, with no information on whether they will be made available again in the future. Thus they were also removed from the wrapper library. You should no longer depend on those methods.</p>
 <ul>
-<li>All of the (still functional) endpoints covered and fully documented</li>
-<li>Strong typing for request and response objects (through <a href="https://www.typescriptlang.org/docs/handbook/jsdoc-supported-types.html">JSDoc</a>)</li>
-<li>Rate limiting to avoid flooding the server</li>
-<li>All endpoints covered by tests (100% code coverage)</li>
-</ul>
-<h3>Documentation</h3>
-<p>The documentation is available on <a href="https://tchojnacki.github.io/nodewikiaapi/">Github Pages</a>.</p>
-<p>See also:</p>
+<li><code>Activity</code>
 <ul>
-<li><a href="https://tchojnacki.github.io/nodewikiaapi/tutorial-getting-started.html">Getting started tutorial</a></li>
-<li><a href="https://tchojnacki.github.io/nodewikiaapi/tutorial-migration-guide.html">Migration guide (3.x)</a></li>
-<li><a href="https://tchojnacki.github.io/nodewikiaapi/tutorial-endpoints.html">List of available endpoints</a></li>
-<li><a href="https://www.npmjs.com/package/nodewikiaapi">This package in the npm registry</a></li>
+<li><code>LatestActivity</code> (<code>getLatestActivity()</code>)</li>
+<li><code>RecentlyChangedArticles</code> (<code>getRecentlyChangedArticles()</code>)</li>
 </ul>
-<h3>Legal info</h3>
-<p>Text content accessed through the API is made available under the <a href="https://www.fandom.com/licensing">Creative Commons Attribution-Share Alike License 3.0</a>. Wikia is a registered trademark of <a href="https://www.fandom.com/terms-of-use">Fandom, Inc.</a> (formerly known as Wikia, Inc.). This library isn't endorsed by Fandom, Inc. and doesn't reflect the views or opinions of the company.</p></article>
-    </section>
+</li>
+<li><code>Articles</code>
+<ul>
+<li><code>AsSimpleJson</code> (<code>getArticleAsSimpleJson()</code>)</li>
+<li><code>MostLinked</code> (<code>getMostLinked()</code>)</li>
+<li><code>MostLinked?expand=1</code> (<code>getMostLinkedExpanded()</code>)</li>
+<li><code>New</code> (<code>getNewArticles()</code>)</li>
+<li><code>Popular</code> (<code>getPopularArticles()</code>)</li>
+<li><code>Popular?expand=1</code> (<code>getPopularArticlesExpanded()</code>)</li>
+<li><code>List?expand=1</code> (<code>getArticlesListExpanded()</code>)</li>
+<li><code>Top?expand=1</code> (<code>getTopArticlesExpanded()</code>)</li>
+</ul>
+</li>
+<li><code>Navigation</code>
+<ul>
+<li><code>Data</code> (<code>getNavigationData()</code>)</li>
+</ul>
+</li>
+<li><code>RelatedPages</code>
+<ul>
+<li><code>List</code> (<code>getRelatedPages()</code>)</li>
+</ul>
+</li>
+<li><code>Search</code>
+<ul>
+<li><code>List</code> (<code>getSearchList()</code>)</li>
+</ul>
+</li>
+</ul>
+<h3>Removed members</h3>
+<ul>
+<li><code>WikiaAPI.wikiaapiurl</code> static member has been removed as the <code>subdomain</code> is now required</li>
+<li><code>WikiaAPI.wikiurl</code> instance member has been removed as the <code>subdomain</code> is now required</li>
+<li><code>WikiaAPI.wikiaurl</code> static member has been removed as the <code>subdomain</code> is now required</li>
+</ul>
+<h3>Renames</h3>
+<ul>
+<li><code>WikiaAPI.wikiapiurl</code> is now called <a href="WikiaAPI.html#apiBasepath"><code>WikiaAPI.apiBasepath</code></a></li>
+<li><code>WikiaAPI.getArticlesDetails()</code> is now called <a href="WikiaAPI.html#getArticleDetails"><code>WikiaAPI.getArticleDetails()</code></a></li>
+<li><code>WikiaAPI.getArticlesList()</code> is now called <a href="WikiaAPI.html#getArticleList"><code>WikiaAPI.getArticleList()</code></a></li>
+</ul>
+<h3>Parameter changes</h3>
+<ul>
+<li><a href="WikiaAPI.html"><code>WikiaAPI</code></a>'s constructor <code>subdomain</code> param is now required</li>
+<li><a href="WikiaAPI.html#getArticleDetails"><code>WikiaAPI.getArticleDetails()</code></a>'s options object:
+<ul>
+<li>is now required</li>
+<li>no longer contains <code>width</code> and <code>height</code></li>
+</ul>
+</li>
+<li><a href="WikiaAPI.html#getTopArticles"><code>WikiaAPI.getTopArticles()</code></a>'s options object:
+<ul>
+<li>no longer contains <code>baseArticleId</code></li>
+<li>no longer takes <code>null</code> as a valid <code>namespaces</code> value</li>
+</ul>
+</li>
+<li><a href="WikiaAPI.html#getSearchSuggestions"><code>WikiaAPI.getSearchSuggestions()</code></a> now takes a string as its only parameter (instead of an object containing a singular string value)</li>
+<li><a href="WikiaAPI.html#getUserDetails"><code>WikiaAPI.getUserDetails()</code></a>'s options object:
+<ul>
+<li>is now required</li>
+<li>now must contain the <code>ids</code> property</li>
+</ul>
+</li>
+</ul>
+<h3>Other changes</h3>
+<ul>
+<li><a href="WikiaAPI.html#apiBasepath"><code>WikiaAPI.apiBasepath</code></a> (formerly <code>wikiapiurl</code>) now:
+<ul>
+<li>returns an extra trailing slash</li>
+<li>uses <code>https://</code> instead of <code>http://</code></li>
+<li>uses <code>fandom.com</code> instead of <code>wikia.com</code></li>
+</ul>
+</li>
+<li><code>WikiaAPI</code>'s methods starting with an underscore are now marked as <code>@private</code>, their use was never recommended or documented, but it is now prohibited by TypeScript</li>
+<li>The underlying HTTP client is now <a href="https://www.npmjs.com/package/node-fetch"><code>fetch</code></a> instead of <code>got</code></li>
+<li>The API is now limited to maximally two concurrent data connections at any point in time</li>
+</ul>
+</article>
 
-
-
-
-
+</section>
 
   </div>
 </main>

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>nodewikiaapi: </title>
+    <title>nodewikiaapi: Tutorial: Endpoints</title>
     
       <link type="text/css" rel="stylesheet" href="styles/vendor/prism-tomorrow-night.css">
     
@@ -27,63 +27,44 @@
 <main class="layout-main ">
   <div class="container">
     <p class="page-kind"></p>
-    <h1 class="page-title"></h1>
+    <h1 class="page-title">Tutorial: Endpoints</h1>
+    <section>
+
+<header>
     
 
+    <h2>Endpoints</h2>
+</header>
 
-
-    
-
-
-    <h3> </h3>
-
-
-
-
-
-
-
-
-
-
-    
-
-
-
-
-    <section class="readme">
-        <article><h1>nodewikiaapi</h1>
-<p>JavaScript wrapper for the (no longer supported) Fandom's <strong>Wikia API V1</strong>.</p>
-<h2>⚠️ DEPRECATED ⚠️</h2>
-<h3>Deprecation notice</h3>
-<p>This library will get no new feature updates, only serious and common-case bugs will be fixed. It is not recommended to use this library (or the Wikia API V1 itself) for fresh projects any longer, however, I am keeping it online to make sure that all of the current users can keep depending on it.</p>
-<h3>Why?</h3>
-<p>The Wikia API V1 <a href="https://community.fandom.com/f/p/4400000000001906655">lost its documentation</a> following the <a href="https://community.fandom.com/wiki/Help:Unified_Community_Platform">UCP update</a>. Some of the endpoints disappeared without notice throughout the years and, generally, it seems that this API is no longer supported. Thus any of the wrapper library's methods could stop working at any time.</p>
-<h2>About</h2>
-<h3>Features</h3>
+<article>
+    <p>List of all Wikia API V1 endpoints which are still supported.</p>
 <ul>
-<li>All of the (still functional) endpoints covered and fully documented</li>
-<li>Strong typing for request and response objects (through <a href="https://www.typescriptlang.org/docs/handbook/jsdoc-supported-types.html">JSDoc</a>)</li>
-<li>Rate limiting to avoid flooding the server</li>
-<li>All endpoints covered by tests (100% code coverage)</li>
-</ul>
-<h3>Documentation</h3>
-<p>The documentation is available on <a href="https://tchojnacki.github.io/nodewikiaapi/">Github Pages</a>.</p>
-<p>See also:</p>
+<li><code>Articles</code>
 <ul>
-<li><a href="https://tchojnacki.github.io/nodewikiaapi/tutorial-getting-started.html">Getting started tutorial</a></li>
-<li><a href="https://tchojnacki.github.io/nodewikiaapi/tutorial-migration-guide.html">Migration guide (3.x)</a></li>
-<li><a href="https://tchojnacki.github.io/nodewikiaapi/tutorial-endpoints.html">List of available endpoints</a></li>
-<li><a href="https://www.npmjs.com/package/nodewikiaapi">This package in the npm registry</a></li>
+<li><code>Details</code> (<a href="WikiaAPI.html#getArticlesDetails"><code>getArticlesDetails()</code></a>)</li>
+<li><code>List</code> (<a href="WikiaAPI.html#getArticlesList"><code>getArticlesList()</code></a>)</li>
+<li><code>Top</code> (<a href="WikiaAPI.html#getTopArticles"><code>getTopArticles()</code></a>)</li>
 </ul>
-<h3>Legal info</h3>
-<p>Text content accessed through the API is made available under the <a href="https://www.fandom.com/licensing">Creative Commons Attribution-Share Alike License 3.0</a>. Wikia is a registered trademark of <a href="https://www.fandom.com/terms-of-use">Fandom, Inc.</a> (formerly known as Wikia, Inc.). This library isn't endorsed by Fandom, Inc. and doesn't reflect the views or opinions of the company.</p></article>
-    </section>
+</li>
+<li><code>Mercury</code>
+<ul>
+<li><code>WikiVariables</code> (<a href="WikiaAPI.html#getWikiVariables"><code>getWikiVariables()</code></a>)</li>
+</ul>
+</li>
+<li><code>SearchSuggestions</code>
+<ul>
+<li><code>List</code> (<a href="WikiaAPI.html#getSearchSuggestions"><code>getSearchSuggestions()</code></a>)</li>
+</ul>
+</li>
+<li><code>User</code>
+<ul>
+<li><code>Details</code> (<a href="WikiaAPI.html#getUserDetails"><code>getUserDetails()</code></a>)</li>
+</ul>
+</li>
+</ul>
+</article>
 
-
-
-
-
+</section>
 
   </div>
 </main>

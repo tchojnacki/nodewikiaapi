@@ -47,13 +47,13 @@ class WikiaAPI {
    * @see {@link ArticleDetailsRes}
    */
   getArticleDetails(request) {
-    const { ids, titles, abstract } = this._parseParams(request, {
+    const params = this._parseParams(request, {
       ids: this._paramParser([], 'number', true),
       titles: this._paramParser([], 'string', true),
       abstract: this._paramParser(100, 'number'),
     })
-    if (ids === '' && titles === '') throw new Error('Argument ids or titles should be passed!')
-    return /** @type {Promise<ArticleDetailsRes>} */ (this._makeRequest('Articles/Details', { ids, titles, abstract }))
+    if (!(params.has('ids') || params.has('titles'))) throw new Error('Argument ids or titles should be passed!')
+    return /** @type {Promise<ArticleDetailsRes>} */ (this._makeRequest('Articles/Details', params))
   }
 
   /**
@@ -66,15 +66,13 @@ class WikiaAPI {
    * @see {@link ArticleListRes}
    */
   getArticleList(request = {}) {
-    const { category, namespaces, limit, offset } = this._parseParams(request, {
+    const params = this._parseParams(request, {
       category: this._paramParser('', 'string'),
       namespaces: this._paramParser([], 'number', true),
       limit: this._paramParser(25, 'number'),
       offset: this._paramParser('', 'string'),
     })
-    return /** @type {Promise<ArticleListRes>} */ (
-      this._makeRequest('Articles/List', { category, namespaces, limit, offset })
-    )
+    return /** @type {Promise<ArticleListRes>} */ (this._makeRequest('Articles/List', params))
   }
 
   /**
@@ -87,12 +85,12 @@ class WikiaAPI {
    * @see {@link TopArticlesRes}
    */
   getTopArticles(request = {}) {
-    const { namespaces, category, limit } = this._parseParams(request, {
+    const params = this._parseParams(request, {
       namespaces: this._paramParser([], 'number', true),
       category: this._paramParser('', 'string'),
       limit: this._paramParser(10, 'number'),
     })
-    return /** @type {Promise<TopArticlesRes>} */ (this._makeRequest('Articles/Top', { namespaces, category, limit }))
+    return /** @type {Promise<TopArticlesRes>} */ (this._makeRequest('Articles/Top', params))
   }
 
   /**
@@ -116,9 +114,7 @@ class WikiaAPI {
    */
   getSearchSuggestions(query) {
     const params = this._parseParams({ query }, { query: this._paramParser(undefined, 'string') })
-    return /** @type {Promise<SearchSuggestionsRes>} */ (
-      this._makeRequest('SearchSuggestions/List', { query: params.query })
-    )
+    return /** @type {Promise<SearchSuggestionsRes>} */ (this._makeRequest('SearchSuggestions/List', params))
   }
 
   /**
@@ -131,11 +127,11 @@ class WikiaAPI {
    * @see {@link UserDetailsRes}
    */
   getUserDetails(request) {
-    const { ids, size } = this._parseParams(request, {
+    const params = this._parseParams(request, {
       ids: this._paramParser([], 'number', true),
       size: this._paramParser(100, 'number'),
     })
-    return /** @type {Promise<UserDetailsRes>} */ (this._makeRequest('User/Details', { ids, size }))
+    return /** @type {Promise<UserDetailsRes>} */ (this._makeRequest('User/Details', params))
   }
 
   /**
@@ -152,16 +148,12 @@ class WikiaAPI {
    * @ignore
    *
    * @param {string} endpoint
-   * @param {Object<string, string>} [params]
+   * @param {URLSearchParams} [params]
    * @returns {Promise<unknown>}
    */
   async _makeRequest(endpoint, params) {
-    const query = Object.entries(params ?? {})
-      .filter(([, value]) => value !== '' && value !== undefined)
-      .map(([param, value]) => `${param}=${encodeURIComponent(value).replace(/%7C/g, '|')}`)
-      .join('&')
-
-    const response = await fetch(`${this.apiBasepath}${endpoint}?${query}`)
+    const query = params ? `?${params.toString()}` : ''
+    const response = await fetch(`${this.apiBasepath}${endpoint}${query}`)
     const data = await response.json()
     return data
   }
@@ -194,17 +186,19 @@ class WikiaAPI {
    *
    * @param {Object<string, unknown>} options
    * @param {Object<string, ParamParser>} optionParsers
-   * @returns {Object<string, string>}
+   * @returns {URLSearchParams}
    */
   _parseParams(options, optionParsers) {
     const defaultOptions = Object.fromEntries(Object.entries(optionParsers).map(([p, { d }]) => [p, d]))
     const optionsWithDefaults = Object.assign({}, defaultOptions, options)
-    const parsedOptions = /** @type {Object<string, string>} */ ({})
+    const parsedOptions = new URLSearchParams()
 
     for (const paramName in optionsWithDefaults) {
       if (optionsWithDefaults[paramName] === undefined) continue
       if (!(paramName in optionParsers)) throw new Error(`Unexpected param (${paramName}) given!`)
-      parsedOptions[paramName] = optionParsers[paramName].v(optionsWithDefaults[paramName])
+      const paramValue = optionParsers[paramName].v(optionsWithDefaults[paramName])
+      if (paramValue === '') continue
+      parsedOptions.append(paramName, encodeURIComponent(paramValue).replace(/%7C/g, '|'))
     }
 
     return parsedOptions

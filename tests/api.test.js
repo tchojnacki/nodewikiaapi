@@ -2,63 +2,198 @@
 
 import WikiaAPI from '../'
 
-test('ArticleDetails must return an object', () => {
-  expect.assertions(2)
-  return new WikiaAPI('dev').getArticleDetails({ ids: 8168 }).then(data => {
-    expect(typeof data).toBe('object')
-    expect(Object.keys(data.items)).toHaveLength(1)
+describe('API', () => {
+  it('correctly calls foreign community APIs', async () => {
+    const language = 'pl'
+    const foreignLolApi = new WikiaAPI('leagueoflegends', language)
+
+    const { data } = await foreignLolApi.getWikiVariables()
+
+    expect(data.language.content).toBe(language)
+  })
+
+  it('throws on unexpected params', async () => {
+    const devApi = new WikiaAPI('dev')
+
+    expect(() => {
+      // @ts-ignore
+      devApi.getArticleDetails({ test: true })
+    }).toThrow()
+  })
+
+  it('throws on incorrect param types', async () => {
+    const devApi = new WikiaAPI('dev')
+
+    expect(() => {
+      // @ts-ignore
+      devApi.getArticleDetails({ ids: ['a'] })
+    }).toThrow()
+  })
+
+  it('throws when requesting non-existent wiki', async () => {
+    await expect(new WikiaAPI('89fcc7686189a53aeaed2aee760859d3').getWikiVariables()).rejects.toThrow()
+  })
+
+  it('ignores undefined params', async () => {
+    const devApi = new WikiaAPI('dev')
+
+    const { offset } = await devApi.getArticleList({ offset: undefined })
+
+    expect(offset).toMatch(/^a/i)
   })
 })
 
-test('ArticleDetails needs at least one generator', () => {
-  expect(() => {
-    new WikiaAPI('dev').getArticleDetails({})
-  }).toThrow()
-})
+describe('ArticleDetails', () => {
+  it('retrieves article details', async () => {
+    const devApi = new WikiaAPI('dev')
+    const id = 21843
 
-test('ArticleDetails with space in title', () => {
-  expect.assertions(1)
+    const { items } = await devApi.getArticleDetails({ ids: id })
 
-  const wikia = new WikiaAPI('dev')
-  return Promise.all([
-    wikia.getArticleDetails({ titles: 'Lua_templating/Basics' }),
-    wikia.getArticleDetails({ titles: 'Lua templating/Basics' }),
-  ]).then(data => {
-    expect(Object.keys(data[0].items)).toEqual(Object.keys(data[1].items))
+    expect(Object.keys(items)).toStrictEqual([id.toString()])
+  })
+
+  it('requires at least one generator', () => {
+    const devApi = new WikiaAPI('dev')
+
+    expect(() => {
+      devApi.getArticleDetails({})
+    }).toThrow()
+  })
+
+  it('can be called with titles containing spaces', async () => {
+    const devApi = new WikiaAPI('dev')
+
+    const [first, second] = await Promise.all([
+      devApi.getArticleDetails({ titles: 'List_of_JavaScript_enhancements' }),
+      devApi.getArticleDetails({ titles: 'List of JavaScript enhancements' }),
+    ])
+
+    expect(Object.keys(first.items)).toStrictEqual(Object.keys(second.items))
+  })
+
+  it('can use both ids and titles at the same time', async () => {
+    const devApi = new WikiaAPI('dev')
+
+    const { items } = await devApi.getArticleDetails({ titles: 'DiscordIntegrator', ids: 1911 })
+
+    expect(Object.keys(items)).toHaveLength(2)
+  })
+
+  it('returns correct abstract length', async () => {
+    const devApi = new WikiaAPI('dev')
+    const id = 9775
+    const length = 42
+
+    const { items } = await devApi.getArticleDetails({ ids: id, abstract: length })
+
+    expect(items[id].abstract.length).toBeLessThanOrEqual(length)
   })
 })
 
-test('ArticleList must return an object', () => {
-  expect.assertions(1)
-  return new WikiaAPI('dev').getArticleList().then(data => {
-    expect(typeof data).toBe('object')
+describe('ArticleList', () => {
+  it('retrieves list of articles', async () => {
+    const devApi = new WikiaAPI('dev')
+
+    const { items } = await devApi.getArticleList()
+
+    expect(items.length).toBeGreaterThan(0)
+  })
+
+  it('returns articles, which can be queried further', async () => {
+    const devApi = new WikiaAPI('dev')
+
+    const articleList = await devApi.getArticleList()
+    const id = articleList.items[0].id
+    const articleDetails = await devApi.getArticleDetails({ ids: id })
+
+    expect(articleList.items[0].title).toBe(articleDetails.items[id].title)
+  })
+
+  it('filters articles by namespace', async () => {
+    const devApi = new WikiaAPI('dev')
+    const namespaces = 1
+
+    const { items } = await devApi.getArticleList({ namespaces })
+
+    expect(items.every(({ ns }) => ns === namespaces)).toBe(true)
+  })
+
+  it('correctly limits result count', async () => {
+    const devApi = new WikiaAPI('dev')
+    const limit = 10
+
+    const { items } = await devApi.getArticleList({ limit })
+
+    expect(items.length).toBeLessThanOrEqual(limit)
   })
 })
 
-test('TopArticles must return an object', () => {
-  expect.assertions(1)
-  return new WikiaAPI('dev').getTopArticles().then(data => {
-    expect(typeof data).toBe('object')
+describe('TopArticles', () => {
+  it('retrieves top articles', async () => {
+    const devApi = new WikiaAPI('dev')
+
+    const { items } = await devApi.getTopArticles()
+
+    expect(items.length).toBeGreaterThan(0)
+  })
+
+  it('filters articles by namespace', async () => {
+    const devApi = new WikiaAPI('dev')
+    const namespaces = 1
+
+    const { items } = await devApi.getTopArticles({ namespaces })
+
+    expect(items.every(({ ns }) => ns === namespaces)).toBe(true)
+  })
+
+  it('correctly limits result count', async () => {
+    const devApi = new WikiaAPI('dev')
+    const limit = 10
+
+    const { items } = await devApi.getTopArticles({ limit })
+
+    expect(items.length).toBeLessThanOrEqual(limit)
   })
 })
 
-test('WikiVariables must return an object', () => {
-  expect.assertions(1)
-  return new WikiaAPI('dev').getWikiVariables().then(data => {
-    expect(typeof data).toBe('object')
+describe('WikiVariables', () => {
+  it('retrieves wiki variables', async () => {
+    const devApi = new WikiaAPI('dev')
+
+    const { data } = await devApi.getWikiVariables()
+
+    expect(data.isClosed).toBe(false)
+    expect(data.language.content).toBe('en')
   })
 })
 
-test('SearchSuggestions must return an object', () => {
-  expect.assertions(1)
-  return new WikiaAPI('dev').getSearchSuggestions('js').then(data => {
-    expect(typeof data).toBe('object')
+describe('SearchSuggestions', () => {
+  it('retrieves search suggestions', async () => {
+    const devApi = new WikiaAPI('dev')
+    const searchTerm = 'C'
+
+    const { items } = await devApi.getSearchSuggestions(searchTerm)
+
+    expect(items.every(i => i.title.startsWith(searchTerm))).toBe(true)
   })
 })
 
-test('UserDetails must return an object', () => {
-  expect.assertions(1)
-  return new WikiaAPI('dev').getUserDetails({ ids: 26200197 }).then(data => {
-    expect(typeof data).toBe('object')
+describe('UserDetails', () => {
+  it('retrieves user details', async () => {
+    const devApi = new WikiaAPI('dev')
+
+    const { items } = await devApi.getUserDetails({ ids: 26200197 })
+
+    expect(items[0].name).toBe('DuckeyD')
+  })
+
+  it('fetches correct thumbnail size', async () => {
+    const devApi = new WikiaAPI('dev')
+    const size = 64
+
+    const { items } = await devApi.getUserDetails({ ids: 26200197, size })
+
+    expect(items[0].avatar.endsWith(`width/${size}/height/${size}`)).toBe(true)
   })
 })

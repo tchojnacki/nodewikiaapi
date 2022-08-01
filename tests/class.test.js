@@ -21,6 +21,7 @@ describe('WikiaAPI', () => {
 
   it('can have subdomain changed', () => {
     const wikia = new WikiaAPI('dev')
+
     wikia.subdomain = 'community'
 
     expect(wikia.apiBasepath).toBe('https://community.fandom.com/api/v1/')

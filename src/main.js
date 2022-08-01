@@ -248,7 +248,7 @@ class WikiaAPI {
       if (!(paramName in optionParsers)) throw new Error(`Unexpected param (${paramName}) given!`)
       const paramValue = optionParsers[paramName].v(optionsWithDefaults[paramName])
       if (paramValue === '') continue
-      parsedOptions.append(paramName, encodeURIComponent(paramValue).replace(/%7C/g, '|'))
+      parsedOptions.append(paramName, paramValue)
     }
 
     for (const { m, v } of constraints) {

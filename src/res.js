@@ -123,7 +123,7 @@
 
 /**
  * @typedef {Object} UserDetailsRes
- * @property {UserDetailsResItem} items Array of matching users
+ * @property {UserDetailsResItem[]} items Array of matching users
  * @property {string} basepath URL of associated wiki
  *
  * @see {@link WikiaAPI#getUserDetails}

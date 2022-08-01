@@ -1,5 +1,7 @@
 The following page lists **BREAKING CHANGES** between versions `2.x` and `3.x` of the library alongside any possible workarounds.
 
+If any of the changes make you unable to use the library, you can install version `2.x` which had all of the security vulnerabilities patched as of the day of the release of version `3.0.0`.
+
 ### Importing
 The library is now exported as ESM instead of CJS. See more information [here](https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c#file-esm-package-md).
 
@@ -53,5 +55,6 @@ These endpoints were removed following the UCP, with no information on whether t
   - returns an extra trailing slash
   - uses `https://` instead of `http://`
   - uses `fandom.com` instead of `wikia.com`
-- `WikiaAPI`'s `_makeRequest()`, `_arrayOrSingleElement()`, `_parseParams()` are now marked as `@private`, their use was never recommended or documented, but it is now prohibited by TypeScript
+- `WikiaAPI`'s methods starting with an underscore are now marked as `@private`, their use was never recommended or documented, but it is now prohibited by TypeScript
 - The underlying HTTP client is now [`fetch`](https://www.npmjs.com/package/node-fetch) instead of `got`
+- The API is now limited to maximally two concurrent data connections at any point in time

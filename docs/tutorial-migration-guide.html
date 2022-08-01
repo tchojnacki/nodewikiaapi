@@ -38,6 +38,7 @@
 
 <article>
     <p>The following page lists <strong>BREAKING CHANGES</strong> between versions <code>2.x</code> and <code>3.x</code> of the library alongside any possible workarounds.</p>
+<p>If any of the changes make you unable to use the library, you can install version <code>2.x</code> which had all of the security vulnerabilities patched as of the day of the release of version <code>3.0.0</code>.</p>
 <h3>Importing</h3>
 <p>The library is now exported as ESM instead of CJS. See more information <a href="https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c#file-esm-package-md">here</a>.</p>
 <h3>Removed endpoints</h3>
@@ -121,8 +122,9 @@
 <li>uses <code>fandom.com</code> instead of <code>wikia.com</code></li>
 </ul>
 </li>
-<li><code>WikiaAPI</code>'s <code>_makeRequest()</code>, <code>_arrayOrSingleElement()</code>, <code>_parseParams()</code> are now marked as <code>@private</code>, their use was never recommended or documented, but it is now prohibited by TypeScript</li>
+<li><code>WikiaAPI</code>'s methods starting with an underscore are now marked as <code>@private</code>, their use was never recommended or documented, but it is now prohibited by TypeScript</li>
 <li>The underlying HTTP client is now <a href="https://www.npmjs.com/package/node-fetch"><code>fetch</code></a> instead of <code>got</code></li>
+<li>The API is now limited to maximally two concurrent data connections at any point in time</li>
 </ul>
 </article>
 

@@ -1,12 +1,14 @@
 {
   "name": "nodewikiaapi",
   "version": "2.0.5",
-  "description": "JavaScript wrapper for the Fandom's Wikia API V1.",
+  "description": "JavaScript wrapper for Fandom's Wikia API V1.",
   "keywords": [
     "wikia",
     "api",
+    "api-wrapper",
     "wrapper",
-    "fandom"
+    "fandom",
+    "wikia-api"
   ],
   "type": "module",
   "main": "src/main.js",

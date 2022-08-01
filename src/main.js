@@ -45,14 +45,15 @@ class WikiaAPI {
      * @type {string | null}
      */
     this.language = language ?? null
-
-    /**
-     * @private
-     * @ignore
-     * @type {Sema}
-     */
-    this._semaphore = new Sema(3)
   }
+
+  /**
+   * @private
+   * @ignore
+   * @static
+   * @type {Sema}
+   */
+  static _semaphore = new Sema(2)
 
   /**
    * Get details about one or more articles.
@@ -195,7 +196,7 @@ class WikiaAPI {
     const query = params ? `?${params.toString()}` : ''
     const url = `${this.apiBasepath}${endpoint}${query}`
 
-    await this._semaphore.acquire()
+    await WikiaAPI._semaphore.acquire()
     try {
       const response = await fetch(url, { headers: new Headers({ 'User-Agent': 'nodewikiaapi' }) })
       const data = await response.json()
@@ -203,7 +204,7 @@ class WikiaAPI {
     } catch {
       throw new Error(`An error occured while requesting the resource (${url})!`)
     } finally {
-      this._semaphore.release()
+      WikiaAPI._semaphore.release()
     }
   }
 

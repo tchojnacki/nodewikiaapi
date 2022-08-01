@@ -56,16 +56,20 @@ class WikiaAPI {
    * @see {@link ArticleDetailsRes}
    */
   getArticleDetails(request) {
-    const params = this._parseParams(
-      request,
-      {
-        ids: this._paramParser([], 'number', true),
-        titles: this._paramParser([], 'string', true),
-        abstract: this._paramParser(100, 'number'),
-      },
-      [{ m: 'Article ids, titles or both should be passed!', v: p => p.has('ids') || p.has('titles') }]
+    return /** @type {Promise<ArticleDetailsRes>} */ (
+      this._makeRequest(
+        'Articles/Details',
+        this._parseParams(
+          request,
+          {
+            ids: this._paramParser([], 'number', true),
+            titles: this._paramParser([], 'string', true),
+            abstract: this._paramParser(100, 'number'),
+          },
+          [{ m: 'Article ids, titles or both should be passed!', v: p => p.has('ids') || p.has('titles') }]
+        )
+      )
     )
-    return /** @type {Promise<ArticleDetailsRes>} */ (this._makeRequest('Articles/Details', params))
   }
 
   /**
@@ -78,13 +82,17 @@ class WikiaAPI {
    * @see {@link ArticleListRes}
    */
   getArticleList(request = {}) {
-    const params = this._parseParams(request, {
-      category: this._paramParser('', 'string'),
-      namespaces: this._paramParser([], 'number', true),
-      limit: this._paramParser(25, 'number'),
-      offset: this._paramParser('', 'string'),
-    })
-    return /** @type {Promise<ArticleListRes>} */ (this._makeRequest('Articles/List', params))
+    return /** @type {Promise<ArticleListRes>} */ (
+      this._makeRequest(
+        'Articles/List',
+        this._parseParams(request, {
+          category: this._paramParser('', 'string'),
+          namespaces: this._paramParser([], 'number', true),
+          limit: this._paramParser(25, 'number'),
+          offset: this._paramParser('', 'string'),
+        })
+      )
+    )
   }
 
   /**
@@ -97,12 +105,16 @@ class WikiaAPI {
    * @see {@link TopArticlesRes}
    */
   getTopArticles(request = {}) {
-    const params = this._parseParams(request, {
-      namespaces: this._paramParser([], 'number', true),
-      category: this._paramParser('', 'string'),
-      limit: this._paramParser(10, 'number'),
-    })
-    return /** @type {Promise<TopArticlesRes>} */ (this._makeRequest('Articles/Top', params))
+    return /** @type {Promise<TopArticlesRes>} */ (
+      this._makeRequest(
+        'Articles/Top',
+        this._parseParams(request, {
+          namespaces: this._paramParser([], 'number', true),
+          category: this._paramParser('', 'string'),
+          limit: this._paramParser(10, 'number'),
+        })
+      )
+    )
   }
 
   /**
@@ -125,8 +137,12 @@ class WikiaAPI {
    * @see {@link SearchSuggestionsRes}
    */
   getSearchSuggestions(query) {
-    const params = this._parseParams({ query }, { query: this._paramParser(undefined, 'string') })
-    return /** @type {Promise<SearchSuggestionsRes>} */ (this._makeRequest('SearchSuggestions/List', params))
+    return /** @type {Promise<SearchSuggestionsRes>} */ (
+      this._makeRequest(
+        'SearchSuggestions/List',
+        this._parseParams({ query }, { query: this._paramParser(undefined, 'string') })
+      )
+    )
   }
 
   /**
@@ -139,11 +155,15 @@ class WikiaAPI {
    * @see {@link UserDetailsRes}
    */
   getUserDetails(request) {
-    const params = this._parseParams(request, {
-      ids: this._paramParser([], 'number', true),
-      size: this._paramParser(100, 'number'),
-    })
-    return /** @type {Promise<UserDetailsRes>} */ (this._makeRequest('User/Details', params))
+    return /** @type {Promise<UserDetailsRes>} */ (
+      this._makeRequest(
+        'User/Details',
+        this._parseParams(request, {
+          ids: this._paramParser([], 'number', true),
+          size: this._paramParser(100, 'number'),
+        })
+      )
+    )
   }
 
   /**
